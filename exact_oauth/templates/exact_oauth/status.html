@@ -1,0 +1,115 @@
+{% extends 'exact_oauth/base.html' %}
+
+{% block title %}Exact Online OAuth Status{% endblock %}
+{% block header %}Exact Online OAuth Status{% endblock %}
+
+{% block content %}
+    <div class="section">
+        <h2>Configuration Status</h2>
+        <div class="card">
+            {% if configured %}
+                <p>✅ <strong>Configured:</strong> Environment variables are set</p>
+                <p><strong>Country:</strong> {{ config.country }}</p>
+                <p><strong>Redirect URI:</strong> {{ config.redirect_uri }}</p>
+            {% else %}
+                <p>❌ <strong>Not Configured:</strong> Missing environment variables</p>
+                <p>Please set the following environment variables:</p>
+                <ul>
+                    <li><code>EXACT_CLIENT_ID</code></li>
+                    <li><code>EXACT_CLIENT_SECRET</code></li>
+                    <li><code>EXACT_COUNTRY</code> (optional, defaults to NL)</li>
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Authorization Status</h2>
+        <div class="card">
+            {% if has_token %}
+                {% if is_expired %}
+                    <p>❌ <strong>Token Expired</strong></p>
+                    <p>Your token expired on {{ token.expires_at|date:"Y-m-d H:i:s" }} UTC</p>
+                {% elif expires_soon %}
+                    <p>⚠️ <strong>Token Expires Soon</strong></p>
+                    <p>Your token will expire on {{ token.expires_at|date:"Y-m-d H:i:s" }} UTC</p>
+                {% else %}
+                    <p>✅ <strong>Authorized</strong></p>
+                    <p>Token expires on {{ token.expires_at|date:"Y-m-d H:i:s" }} UTC</p>
+                {% endif %}
+                
+                {% if token.division %}
+                    <p><strong>Division:</strong> {{ token.division }}</p>
+                {% endif %}
+                
+                <div style="margin-top: 20px;">
+                    <a href="{% url 'exact_oauth:refresh_token' %}" class="btn btn-success">Refresh Token</a>
+                    <form method="post" action="{% url 'exact_oauth:revoke' %}" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to revoke access?')">Revoke Access</button>
+                    </form>
+                </div>
+            {% else %}
+                <p>❌ <strong>Not Authorized</strong></p>
+                {% if configured %}
+                    <a href="{% url 'exact_oauth:authorize' %}" class="btn btn-primary">Authorize Now</a>
+                {% else %}
+                    <p>Configure environment variables first</p>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+
+    {% if has_token and not is_expired %}
+    <div class="section">
+        <h2>API Testing</h2>
+        <div class="card">
+            <p>Test your API connection:</p>
+            <button onclick="testAPI()" class="btn btn-primary">Test API Call</button>
+            <div id="api-result" style="margin-top: 10px;"></div>
+        </div>
+    </div>
+    
+    <script>
+    function testAPI() {
+        document.getElementById('api-result').innerHTML = 'Testing...';
+        
+        fetch('{% url "exact_oauth:test_api" %}')
+            .then(response => response.json())
+            .then(data => {
+                const resultDiv = document.getElementById('api-result');
+                if (data.status === 'success') {
+                    resultDiv.innerHTML = '<div style="color: green;">✅ API call successful!</div><pre style="background: #f8f9fa; padding: 10px; margin-top: 10px;">' + JSON.stringify(data.data, null, 2) + '</pre>';
+                } else {
+                    resultDiv.innerHTML = '<div style="color: red;">❌ API call failed: ' + data.message + '</div>';
+                }
+            })
+            .catch(error => {
+                document.getElementById('api-result').innerHTML = '<div style="color: red;">❌ Error: ' + error.message + '</div>';
+            });
+    }
+    </script>
+    {% endif %}
+
+    <div class="section">
+        <h2>Usage Example</h2>
+        <div class="card">
+            <p>Once authorized, you can use the service in your Python code:</p>
+            <pre style="background-color: #f8f9fa; padding: 15px; border-radius: 4px; overflow-x: auto;">
+<code>from exact_oauth.services import get_service
+
+# Get service instance
+service = get_service(request.user)
+
+# Make API calls
+accounts = service.get_accounts()
+items = service.get_items()
+invoices = service.get_sales_invoices()
+
+# Custom requests
+response = service.get('crm/Accounts')
+response = service.post('crm/Accounts', {'Name': 'New Account'})
+</code></pre>
+        </div>
+    </div>
+{% endblock %}

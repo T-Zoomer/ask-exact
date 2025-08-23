@@ -1,0 +1,59 @@
+{% extends 'exact_oauth/base.html' %}
+
+{% block title %}Exact Online Apps - OAuth Manager{% endblock %}
+
+{% block header %}Exact Online Applications{% endblock %}
+
+{% block content %}
+    <div class="section">
+        <h2>Available Applications</h2>
+        
+        {% if apps %}
+            {% for app in apps %}
+                <div class="card">
+                    <h3>{{ app.name }} ({{ app.get_country_display }})</h3>
+                    <p><strong>Country:</strong> {{ app.get_country_display }}</p>
+                    <p><strong>Base URL:</strong> {{ app.auth_base_url }}</p>
+                    
+                    {% if app.id in app_status %}
+                        {% with status=app_status|get_item:app.id %}
+                            {% if status.authorized %}
+                                {% if status.expired %}
+                                    <span class="status status-expired">Token Expired</span>
+                                {% else %}
+                                    <span class="status status-authorized">Authorized</span>
+                                {% endif %}
+                                <br><br>
+                                <a href="{% url 'exact_oauth:token_detail' status.token.id %}" class="btn btn-primary">View Token Details</a>
+                                <a href="{% url 'exact_oauth:refresh_token' status.token.id %}" class="btn btn-success">Refresh Token</a>
+                                <a href="{% url 'exact_oauth:revoke_token' status.token.id %}" class="btn btn-danger">Revoke Access</a>
+                            {% else %}
+                                <span class="status status-unauthorized">Not Authorized</span>
+                                <br><br>
+                                <a href="{% url 'exact_oauth:authorize_app' app.id %}" class="btn btn-primary">Authorize Application</a>
+                            {% endif %}
+                        {% endwith %}
+                    {% else %}
+                        <span class="status status-unauthorized">Not Authorized</span>
+                        <br><br>
+                        <a href="{% url 'exact_oauth:authorize_app' app.id %}" class="btn btn-primary">Authorize Application</a>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="card">
+                <p>No Exact Online applications configured. Please add applications through the Django admin panel.</p>
+                <a href="{% url 'admin:index' %}" class="btn btn-primary">Go to Admin</a>
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="section" style="margin-top: 30px;">
+        <h2>Quick Actions</h2>
+        <div class="card">
+            <p>Manage your Exact Online applications and OAuth tokens:</p>
+            <a href="{% url 'admin:exact_oauth_exactonlineapp_changelist' %}" class="btn btn-primary">Manage Apps</a>
+            <a href="{% url 'admin:exact_oauth_exactonlinetoken_changelist' %}" class="btn btn-primary">View All Tokens</a>
+        </div>
+    </div>
+{% endblock %}

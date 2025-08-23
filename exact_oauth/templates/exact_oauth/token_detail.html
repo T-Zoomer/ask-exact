@@ -1,0 +1,99 @@
+{% extends 'exact_oauth/base.html' %}
+
+{% block title %}Token Details - {{ token.app.name }}{% endblock %}
+
+{% block header %}Token Details: {{ token.app.name }}{% endblock %}
+
+{% block content %}
+    <div class="section">
+        <h2>OAuth Token Information</h2>
+        
+        <table class="info-table">
+            <tr>
+                <th>Application</th>
+                <td>{{ token.app.name }} ({{ token.app.get_country_display }})</td>
+            </tr>
+            <tr>
+                <th>User</th>
+                <td>{{ token.user.username }}</td>
+            </tr>
+            <tr>
+                <th>Token Type</th>
+                <td>{{ token.token_type }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>
+                    {% if is_expired %}
+                        <span class="status status-expired">Expired</span>
+                    {% elif expires_soon %}
+                        <span class="status status-expired">Expires Soon</span>
+                    {% else %}
+                        <span class="status status-authorized">Valid</span>
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Expires At</th>
+                <td>{{ token.expires_at|date:"Y-m-d H:i:s" }} UTC</td>
+            </tr>
+            <tr>
+                <th>Division</th>
+                <td>{{ token.division|default:"Not set" }}</td>
+            </tr>
+            <tr>
+                <th>Base Server URI</th>
+                <td>{{ token.base_server_uri|default:"Not set" }}</td>
+            </tr>
+            <tr>
+                <th>Created</th>
+                <td>{{ token.created_at|date:"Y-m-d H:i:s" }} UTC</td>
+            </tr>
+            <tr>
+                <th>Last Updated</th>
+                <td>{{ token.updated_at|date:"Y-m-d H:i:s" }} UTC</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section" style="margin-top: 30px;">
+        <h2>Token Management</h2>
+        <div class="card">
+            {% if is_expired or expires_soon %}
+                <p>Your token has expired or will expire soon. Refresh it to continue using the Exact Online API.</p>
+                <a href="{% url 'exact_oauth:refresh_token' token.id %}" class="btn btn-success">Refresh Token</a>
+            {% else %}
+                <p>Your token is valid and can be used to make API requests.</p>
+                <a href="{% url 'exact_oauth:refresh_token' token.id %}" class="btn btn-success">Refresh Token</a>
+            {% endif %}
+            
+            <a href="{% url 'exact_oauth:revoke_token' token.id %}" class="btn btn-danger">Revoke Access</a>
+            <a href="{% url 'exact_oauth:app_list' %}" class="btn btn-primary">Back to Apps</a>
+        </div>
+    </div>
+
+    <div class="section" style="margin-top: 30px;">
+        <h2>API Usage Example</h2>
+        <div class="card">
+            <p>You can use this token to make requests to the Exact Online API. Here's a Python example:</p>
+            <pre style="background-color: #f8f9fa; padding: 15px; border-radius: 4px; overflow-x: auto;">
+<code>from exact_oauth.services import ExactOnlineService
+
+# Create a service instance
+service = ExactOnlineService(user={{ token.user.id }}, app_id={{ token.app.id }})
+
+# Get accounts
+accounts = service.get_accounts()
+
+# Get items  
+items = service.get_items()
+
+# Get sales invoices
+invoices = service.get_sales_invoices()
+
+# Make custom API request
+response = service.get('crm/Accounts', params={'$top': 10})
+</code></pre>
+        </div>
+    </div>
+{% endblock %}

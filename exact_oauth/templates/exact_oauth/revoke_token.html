@@ -1,0 +1,58 @@
+{% extends 'exact_oauth/base.html' %}
+
+{% block title %}Revoke Token - {{ token.app.name }}{% endblock %}
+
+{% block header %}Revoke OAuth Token{% endblock %}
+
+{% block content %}
+    <div class="section">
+        <h2>Confirm Token Revocation</h2>
+        
+        <div class="card">
+            <p><strong>Warning:</strong> You are about to revoke OAuth access for the following application:</p>
+            
+            <table class="info-table">
+                <tr>
+                    <th>Application</th>
+                    <td>{{ token.app.name }}</td>
+                </tr>
+                <tr>
+                    <th>Country</th>
+                    <td>{{ token.app.get_country_display }}</td>
+                </tr>
+                <tr>
+                    <th>User</th>
+                    <td>{{ token.user.username }}</td>
+                </tr>
+                <tr>
+                    <th>Created</th>
+                    <td>{{ token.created_at|date:"Y-m-d H:i:s" }} UTC</td>
+                </tr>
+            </table>
+            
+            <p style="margin-top: 20px;">
+                <strong>This action will:</strong>
+            </p>
+            <ul>
+                <li>Permanently delete the stored OAuth token</li>
+                <li>Prevent this application from making API requests on your behalf</li>
+                <li>Require you to re-authorize if you want to use this application again</li>
+            </ul>
+            
+            <p style="color: #dc3545; font-weight: bold;">
+                This action cannot be undone!
+            </p>
+        </div>
+    </div>
+
+    <div class="section" style="margin-top: 30px;">
+        <h2>Confirmation</h2>
+        <div class="card">
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Yes, Revoke Access</button>
+                <a href="{% url 'exact_oauth:token_detail' token.id %}" class="btn btn-primary">Cancel</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}
