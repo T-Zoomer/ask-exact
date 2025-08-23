@@ -4,28 +4,27 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('exact_oauth', '0002_simplified_models'),
+        ("exact_oauth", "0002_simplified_models"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='exactonlineauthstate',
-            name='user',
+            model_name="exactonlineauthstate",
+            name="user",
         ),
         migrations.RemoveField(
-            model_name='exactonlinetoken',
-            name='user',
+            model_name="exactonlinetoken",
+            name="user",
         ),
         migrations.AddField(
-            model_name='exactonlineauthstate',
-            name='session_key',
+            model_name="exactonlineauthstate",
+            name="session_key",
             field=models.CharField(max_length=40, null=True),
         ),
         migrations.AddField(
-            model_name='exactonlinetoken',
-            name='session_key',
+            model_name="exactonlinetoken",
+            name="session_key",
             field=models.CharField(max_length=40, null=True, unique=True),
         ),
     ]

@@ -6,31 +6,32 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('exact_oauth', '0001_initial'),
+        ("exact_oauth", "0001_initial"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='exactonlineauthstate',
-            name='app',
+            model_name="exactonlineauthstate",
+            name="app",
         ),
         migrations.AlterUniqueTogether(
-            name='exactonlinetoken',
+            name="exactonlinetoken",
             unique_together=set(),
         ),
         migrations.AlterField(
-            model_name='exactonlinetoken',
-            name='user',
-            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
+            model_name="exactonlinetoken",
+            name="user",
+            field=models.OneToOneField(
+                on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL
+            ),
         ),
         migrations.RemoveField(
-            model_name='exactonlinetoken',
-            name='app',
+            model_name="exactonlinetoken",
+            name="app",
         ),
         migrations.DeleteModel(
-            name='ExactOnlineApp',
+            name="ExactOnlineApp",
         ),
     ]

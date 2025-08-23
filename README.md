@@ -148,6 +148,29 @@ Temporary storage for OAuth state parameters during the authorization flow.
 
 ## Important Notes
 
+### Session Management
+
+#### Automatic Storage by Django
+
+**Client-side (User's browser):**
+- Django stores a session cookie (typically named `sessionid`) in the user's browser
+- This cookie contains the session key value
+- The browser automatically sends this cookie with each request
+
+**Server-side (Django):**
+- Django stores session data in the configured session backend (database, cache, etc.)
+- The session key maps to session data on the server
+
+#### User Experience
+
+From the user's perspective:
+1. They visit the application
+2. Django automatically creates a session and sets a cookie in their browser
+3. The session key is transparent to the user - they never see or handle it directly
+4. Their OAuth tokens are linked to this session key in the database
+
+The user only needs to keep their browser session active (don't clear cookies) to maintain access to their stored Exact Online tokens. If they clear cookies or use a different browser, they'll get a new session key and need to re-authorize with Exact Online.
+
 ### Token Refresh Behavior
 - Exact Online tokens expire every 10 minutes
 - Refresh tokens are invalidated when used and replaced with new ones

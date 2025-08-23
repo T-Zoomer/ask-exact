@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('exact_oauth', '0003_remove_exactonlineauthstate_user_and_more'),
+        ("exact_oauth", "0003_remove_exactonlineauthstate_user_and_more"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='exactonlinetoken',
-            name='expires_at',
+            model_name="exactonlinetoken",
+            name="expires_at",
             field=models.DateTimeField(null=True),
         ),
     ]
