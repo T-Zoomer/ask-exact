@@ -145,28 +145,13 @@ class ExactOnlineService:
         response = self.get("system/Me")
         return response.json() if response.status_code == 200 else None
 
-    def get_profit_loss_overview(
-        self,
-        current_year=None,
-        current_period=None,
-        previous_year=None,
-        previous_year_period=None,
-        currency_code=None,
-    ):
-        params = {}
-        if current_year:
-            params["CurrentYear"] = current_year
-        if current_period:
-            params["CurrentPeriod"] = current_period
-        if previous_year:
-            params["PreviousYear"] = previous_year
-        if previous_year_period:
-            params["PreviousYearPeriod"] = previous_year_period
-        if currency_code:
-            params["CurrencyCode"] = currency_code
-
-        response = self.get("read/financial/ProfitLossOverview", params=params)
+    def get_profit_loss_overview(self, **kwargs):
+        """
+        https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialProfitLossOverview
+        """
+        response = self.get("read/financial/ProfitLossOverview", params=kwargs)
         return response.json() if response.status_code == 200 else None
+
 
 
 # Simple helper functions
