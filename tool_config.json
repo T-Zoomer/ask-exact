@@ -1,0 +1,311 @@
+{
+  "exact_online_api": {
+    "common_parameters": {
+      "pagination": {
+        "$top": {
+          "type": "integer",
+          "description": "Maximum number of records to return",
+          "default": 60,
+          "max": 1000
+        },
+        "$skip": {
+          "type": "integer",
+          "description": "Number of records to skip",
+          "default": 0
+        }
+      },
+      "query": {
+        "$filter": {
+          "type": "string",
+          "description": "OData filter expression"
+        },
+        "$select": {
+          "type": "string",
+          "description": "Comma-separated list of fields to return"
+        },
+        "$orderby": {
+          "type": "string",
+          "description": "Field to order results by"
+        }
+      }
+    },
+    "endpoints": {
+      "SalesInvoices": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/salesinvoice/SalesInvoices",
+        "description": "Get sales invoices"
+      },
+      "SalesOrders": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/salesorder/SalesOrders",
+        "description": "Get sales orders"
+      },
+      "SalesOrderLines": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/salesorder/SalesOrderLines",
+        "description": "Get sales order lines"
+      },
+      "SalesEntries": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/salesentry/SalesEntries",
+        "description": "Get sales entries"
+      },
+      "SalesEntryLines": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/salesentry/SalesEntryLines",
+        "description": "Get sales entry lines"
+      },
+      "Quotations": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/crm/Quotations",
+        "description": "Get quotations"
+      },
+      "QuotationLines": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/crm/QuotationLines",
+        "description": "Get quotation lines"
+      },
+      "SalesInvoiceLines": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/salesinvoice/SalesInvoiceLines",
+        "description": "Get sales invoice lines"
+      },
+      "PurchaseInvoices": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/purchaseinvoice/PurchaseInvoices",
+        "description": "Get purchase invoices"
+      },
+      "PurchaseOrders": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/purchaseorder/PurchaseOrders",
+        "description": "Get purchase orders"
+      },
+      "PurchaseOrderLines": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/purchaseorder/PurchaseOrderLines",
+        "description": "Get purchase order lines"
+      },
+      "PurchaseEntries": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/purchaseentry/PurchaseEntries",
+        "description": "Get purchase entries"
+      },
+      "PurchaseEntryLines": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/purchaseentry/PurchaseEntryLines",
+        "description": "Get purchase entry lines"
+      },
+      "PurchaseInvoiceLines": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/purchaseinvoice/PurchaseInvoiceLines",
+        "description": "Get purchase invoice lines"
+      },
+      "Suppliers": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/purchase/Suppliers",
+        "description": "Get suppliers"
+      },
+      "ReceiptLines": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/inventory/ReceiptLines",
+        "description": "Get receipt lines"
+      },
+      "GLAccounts": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/financial/GLAccounts",
+        "description": "Get general ledger accounts"
+      },
+      "GeneralJournalEntries": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/generaljournalentry/GeneralJournalEntries",
+        "description": "Get general journal entries"
+      },
+      "GeneralJournalEntryLines": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/generaljournalentry/GeneralJournalEntryLines",
+        "description": "Get general journal entry lines"
+      },
+      "BankEntries": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/financialtransaction/BankEntries",
+        "description": "Get bank entries"
+      },
+      "BankEntryLines": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/financialtransaction/BankEntryLines",
+        "description": "Get bank entry lines"
+      },
+      "CashEntries": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/financialtransaction/CashEntries",
+        "description": "Get cash entries"
+      },
+      "CashEntryLines": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/financialtransaction/CashEntryLines",
+        "description": "Get cash entry lines"
+      },
+      "TransactionLines": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/financialtransaction/TransactionLines",
+        "description": "Get transaction lines"
+      },
+      "ProfitLossOverview": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/read/financial/ProfitLossOverview",
+        "description": "Get profit and loss overview"
+      },
+      "BalanceSheetOverview": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/read/financial/BalanceSheetOverview",
+        "description": "Get balance sheet overview"
+      },
+      "ReportingBalance": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/financial/ReportingBalance",
+        "description": "Get reporting balance"
+      },
+      "ExchangeRates": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/financial/ExchangeRates",
+        "description": "Get exchange rates"
+      },
+      "Employees": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/payroll/Employees",
+        "description": "Get employees"
+      },
+      "PayrollTransactions": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/payroll/PayrollTransactions",
+        "description": "Get payroll transactions"
+      },
+      "Departments": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/hrm/Departments",
+        "description": "Get departments"
+      },
+      "EmploymentContracts": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/payroll/EmploymentContracts",
+        "description": "Get employment contracts"
+      },
+      "EmploymentContractFlexPhases": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/payroll/EmploymentContractFlexPhases",
+        "description": "Get employment contract flex phases"
+      },
+      "Schedules": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/manufacturing/Schedules",
+        "description": "Get schedules"
+      },
+      "LeaveRegistrations": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/payroll/LeaveRegistrations",
+        "description": "Get leave registrations"
+      },
+      "ActiveEmployments": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/payroll/ActiveEmployments",
+        "description": "Get active employments"
+      },
+      "Assets": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/assets/Assets",
+        "description": "Get assets"
+      },
+      "AssetGroups": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/assets/AssetGroups",
+        "description": "Get asset groups"
+      },
+      "DepreciationMethods": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/assets/DepreciationMethods",
+        "description": "Get depreciation methods"
+      },
+      "DepreciationRuns": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/assets/DepreciationRuns",
+        "description": "Get depreciation runs"
+      },
+      "CommercialBuildingValues": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/assets/CommercialBuildingValues",
+        "description": "Get commercial building values"
+      },
+      "DepreciationRunDetails": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/assets/DepreciationRunDetails",
+        "description": "Get depreciation run details"
+      },
+      "Divisions": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/system/Divisions",
+        "description": "Get divisions"
+      },
+      "Me": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/system/Me",
+        "description": "Get current user information"
+      },
+      "Users": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/users/Users",
+        "description": "Get users"
+      },
+      "UserRoles": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/users/UserRoles",
+        "description": "Get user roles"
+      },
+      "UserRolesPerDivision": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/users/UserRolesPerDivision",
+        "description": "Get user roles per division"
+      },
+      "AvailableFeatures": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/system/AvailableFeatures",
+        "description": "Get available features"
+      },
+      "Currencies": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/financial/Currencies",
+        "description": "Get currencies"
+      },
+      "SyncSalesInvoices": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/sync/SalesInvoice/SalesInvoices",
+        "description": "Sync sales invoices (bulk endpoint)",
+        "page_size": 1000
+      },
+      "SyncSalesOrders": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/sync/SalesOrder/SalesOrders",
+        "description": "Sync sales orders (bulk endpoint)",
+        "page_size": 1000
+      },
+      "SyncPurchaseInvoices": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/sync/PurchaseInvoice/PurchaseInvoices",
+        "description": "Sync purchase invoices (bulk endpoint)",
+        "page_size": 1000
+      },
+      "SyncPurchaseOrders": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/sync/PurchaseOrder/PurchaseOrders",
+        "description": "Sync purchase orders (bulk endpoint)",
+        "page_size": 1000
+      },
+      "SyncGLAccounts": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/sync/Financial/GLAccounts",
+        "description": "Sync general ledger accounts (bulk endpoint)",
+        "page_size": 1000
+      },
+      "SyncItems": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/sync/Logistics/Items",
+        "description": "Sync items (bulk endpoint)",
+        "page_size": 1000
+      },
+      "SyncAccounts": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/sync/CRM/Accounts",
+        "description": "Sync accounts (bulk endpoint)",
+        "page_size": 1000
+      },
+      "SyncTransactionLines": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/sync/FinancialTransaction/TransactionLines",
+        "description": "Sync transaction lines (bulk endpoint)",
+        "page_size": 1000
+      },
+      "CashflowOverview": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/read/financial/CashflowOverview",
+        "description": "Get cashflow overview"
+      },
+      "PaymentConditions": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/cashflow/PaymentConditions",
+        "description": "Get payment conditions"
+      },
+      "Receivables": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/read/financial/Receivables",
+        "description": "Get receivables"
+      },
+      "Payables": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/read/financial/Payables",
+        "description": "Get payables"
+      },
+      "DirectDebitMandates": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/cashflow/DirectDebitMandates",
+        "description": "Get direct debit mandates"
+      },
+      "BankAccounts": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/cashflow/BankAccounts",
+        "description": "Get bank accounts"
+      },
+      "PaymentMethods": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/cashflow/PaymentMethods",
+        "description": "Get payment methods"
+      },
+      "Budgets": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/budget/Budgets",
+        "description": "Get budgets"
+      },
+      "BudgetScenarios": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/budget/BudgetScenarios",
+        "description": "Get budget scenarios"
+      },
+      "BudgetReportingBalance": {
+        "path": "https://start.exactonline.nl/api/v1/{division}/read/financial/BudgetReportingBalance",
+        "description": "Get budget reporting balance"
+      }
+    }
+  }
+}

@@ -64,6 +64,8 @@ class ExactOnlineService:
             raise ValueError(f"Network error during token refresh: {str(e)}")
 
     def _ensure_user_info(self):
+
+        self._get_or_refresh_token()
         print("DEBUG - _ensure_user_info called")
         if not self.token.current_division:
             me_url = f"{self.base_url}/api/v1/current/Me"
@@ -96,8 +98,6 @@ class ExactOnlineService:
             "Authorization": f"{self.token.token_type} {self.token.access_token}",
             "Accept": "application/json",
         }
-
-        print(f"DEBUG - headers: {headers}")
 
         request_kwargs = {"headers": headers, "params": params}
 
