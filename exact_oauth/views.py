@@ -158,7 +158,13 @@ def refresh_token(request):
         }
 
         base_url = get_auth_base_url(config["country"])
-        response = requests.post(f"{base_url}/api/oauth2/token", data=refresh_data)
+        token_url = f"{base_url}/api/oauth2/token"
+        print(f"DEBUG - MANUAL REFRESH: Using base_url: {base_url}")
+        print(f"DEBUG - MANUAL REFRESH: refresh_token length: {len(token.refresh_token) if token.refresh_token else 0}")
+        print(f"DEBUG - MANUAL REFRESH: client_id: {config['client_id'][:10] if config['client_id'] else 'None'}...")
+        print(f"DEBUG - MANUAL REFRESH: Making request to {token_url}")
+        response = requests.post(token_url, data=refresh_data)
+        print(f"DEBUG - MANUAL REFRESH: Response status: {response.status_code}")
 
         if response.status_code == 200:
             token_response = response.json()
@@ -187,47 +193,3 @@ def revoke(request):
             messages.error(request, "No authorization to revoke")
 
     return redirect("exact_oauth:status")
-
-
-def test_api(request):
-    """Test API call"""
-    session_key = get_session_key(request)
-
-    # Check if token exists
-    try:
-        token = ExactOnlineToken.objects.get(session_key=session_key)
-        if token.is_expired():
-            return JsonResponse(
-                {
-                    "status": "error",
-                    "message": "Token expired. Please authorize first.",
-                },
-                status=401,
-            )
-    except ExactOnlineToken.DoesNotExist:
-        return JsonResponse(
-            {"status": "error", "message": "No token found. Please authorize first."},
-            status=404,
-        )
-
-    # Make API call and return consistent JSON response
-    try:
-        service = ExactOnlineService(session_key)
-        response = service.get("system/Me")
-
-        if response.status_code == 200:
-            try:
-                data = response.json()
-                return JsonResponse({"status": "success", "data": data})
-            except ValueError:
-                return JsonResponse({"status": "success", "data": response.text})
-        else:
-            return JsonResponse(
-                {
-                    "status": "error",
-                    "message": f"API returned {response.status_code}: {response.text}",
-                },
-                status=response.status_code,
-            )
-    except Exception as e:
-        return JsonResponse({"status": "error", "message": str(e)}, status=500)

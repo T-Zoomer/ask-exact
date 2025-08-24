@@ -60,35 +60,4 @@
         </div>
     </div>
 
-    {% if has_token and not is_expired %}
-    <div class="section">
-        <h2>API Testing</h2>
-        <div class="card">
-            <p>Test your API connection:</p>
-            <button onclick="testAPI()" class="btn btn-primary">Test API Call</button>
-            <div id="api-result" style="margin-top: 10px;"></div>
-        </div>
-    </div>
-    
-    <script>
-    function testAPI() {
-        document.getElementById('api-result').innerHTML = 'Testing...';
-        
-        fetch('{% url "exact_oauth:test_api" %}')
-            .then(response => response.json())
-            .then(data => {
-                const resultDiv = document.getElementById('api-result');
-                if (data.status === 'success') {
-                    resultDiv.innerHTML = '<div style="color: green;">✅ API call successful!</div><pre style="background: #f8f9fa; padding: 10px; margin-top: 10px;">' + JSON.stringify(data.data, null, 2) + '</pre>';
-                } else {
-                    resultDiv.innerHTML = '<div style="color: red;">❌ API call failed: ' + (data.message || 'Unknown error') + '</div>';
-                }
-            })
-            .catch(error => {
-                document.getElementById('api-result').innerHTML = '<div style="color: red;">❌ Error: ' + error.message + '</div>';
-            });
-    }
-    </script>
-    {% endif %}
-
 {% endblock %}

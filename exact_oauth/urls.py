@@ -9,5 +9,4 @@ urlpatterns = [
     path("callback/", views.callback, name="callback"),
     path("refresh/", views.refresh_token, name="refresh_token"),
     path("revoke/", views.revoke, name="revoke"),
-    path("test/", views.test_api, name="test_api"),
 ]

@@ -19,65 +19,43 @@ class ExactOnlineService:
     def _get_or_refresh_token(self):
         try:
             token = ExactOnlineToken.objects.get(session_key=self.session_key)
-
-            # Only refresh if token is actually expired, not just expires soon
-            if token.is_expired():
-                self._refresh_token(token)
-
-            return token
+            return token.ensure_valid_token()
         except ExactOnlineToken.DoesNotExist:
             raise ValueError("No valid token found. Please authorize first.")
 
-    def _refresh_token(self, token):
-        print("DEBUG - _refresh_token called")
-        refresh_data = {
-            "grant_type": "refresh_token",
-            "client_id": self.config["client_id"],
-            "client_secret": self.config["client_secret"],
-            "refresh_token": token.refresh_token,
-        }
-
-        print(f"BASE: {self.base_url}")
+    def _handle_auth_error_and_retry(self, url, request_method, **request_kwargs):
+        """Handle authentication errors by refreshing token and retrying the request"""
+        print(f"DEBUG - Got auth error in {request_method}(), attempting token refresh")
         try:
-            headers = {"Content-Type": "application/x-www-form-urlencoded"}
-            token_url = f"{self.base_url}/oauth2/token"
-            response = requests.post(token_url, data=refresh_data, headers=headers)
-            print(f"DEBUG - _refresh_token response status: {response.status_code}")
-            print(f"DEBUG - _refresh_token response text: {response.text}")
+            self.token.refresh_access_token()
+            headers = request_kwargs.get("headers", {})
+            headers["Authorization"] = f"{self.token.token_type} {self.token.access_token}"
+            request_kwargs["headers"] = headers
+            response = getattr(requests, request_method)(url, **request_kwargs)
+            print(f"DEBUG - Retry response status: {response.status_code}")
+            return response
+        except ValueError as e:
+            print(f"DEBUG - Token refresh failed: {e}")
+            # If refresh fails, return None to indicate retry failed
+            return None
 
-            if response.status_code == 200:
-                token_response = response.json()
-                token.set_token_data(token_response)
-                # Reload the token instance to get the updated data
-                token.refresh_from_db()
-            elif response.status_code == 400:
-                # Refresh token is likely expired or invalid
-                token.delete()
-                raise ValueError(
-                    "Refresh token expired or invalid. Please reauthorize."
-                )
-            else:
-                raise ValueError(
-                    f"Failed to refresh token (HTTP {response.status_code}): {response.text}"
-                )
-        except requests.RequestException as e:
-            raise ValueError(f"Network error during token refresh: {str(e)}")
 
     def _ensure_user_info(self):
-
         self._get_or_refresh_token()
-        print("DEBUG - _ensure_user_info called")
+        
         if not self.token.current_division:
             me_url = f"{self.base_url}/api/v1/current/Me"
             headers = {
                 "Authorization": f"{self.token.token_type} {self.token.access_token}",
                 "Accept": "application/json",
             }
-
-            print(f"DEBUG - Making request to: {me_url}")
             response = requests.get(me_url, headers=headers)
-            print(f"DEBUG - _ensure_user_info response status: {response.status_code}")
-            print(f"DEBUG - _ensure_user_info response text: {response.text}")
+
+            # Handle authentication failures by refreshing token and retrying
+            if response.status_code == 401 or response.status_code == 404:
+                retry_response = self._handle_auth_error_and_retry(me_url, "get", headers=headers)
+                if retry_response is not None:
+                    response = retry_response
 
             if response.status_code == 200:
                 me_data = response.json()
@@ -87,6 +65,7 @@ class ExactOnlineService:
                     self.token.save()
             else:
                 raise ValueError(f"Failed to get user info: {response.text}")
+
 
     def get(self, endpoint, params=None):
         self._ensure_user_info()
@@ -98,60 +77,21 @@ class ExactOnlineService:
             "Authorization": f"{self.token.token_type} {self.token.access_token}",
             "Accept": "application/json",
         }
-
         request_kwargs = {"headers": headers, "params": params}
-
         response = getattr(requests, "get")(url, **request_kwargs)
 
-        print(f"RESPONSE STATUS code: {response.status_code}")
+        # Handle authentication failures by refreshing token and retrying
+        if response.status_code == 401 or response.status_code == 404:
+            retry_response = self._handle_auth_error_and_retry(url, "get", **request_kwargs)
+            if retry_response is not None:
+                response = retry_response
 
-        print(f"RESPONSE: {response.json()}")
-
-        if response.status_code == 401:
-            # Only retry with refresh if token is actually expired
-            if self.token.is_expired():
-                self._refresh_token(self.token)
-                headers["Authorization"] = (
-                    f"{self.token.token_type} {self.token.access_token}"
-                )
-                request_kwargs["headers"] = headers
-                response = getattr(requests, "get")(url, **request_kwargs)
-            else:
-                print("Token not expired but getting 401 - might be permissions issue")
-                pass
+        if response.status_code == 200:
+            print(f"RESPONSE: succesfull")
+        else:
+            print(f"ERROR RESPONSE: {response.text}")
 
         return response
-
-    def get_accounts(self, top=100, skip=0):
-        params = {"$top": top, "$skip": skip}
-        response = self.get("crm/Accounts", params=params)
-        return response.json() if response.status_code == 200 else None
-
-    def get_items(self, top=100, skip=0):
-        params = {"$top": top, "$skip": skip}
-        response = self.get("logistics/Items", params=params)
-        return response.json() if response.status_code == 200 else None
-
-    def get_sales_invoices(self, top=100, skip=0):
-        params = {"$top": top, "$skip": skip}
-        response = self.get("salesinvoice/SalesInvoices", params=params)
-        return response.json() if response.status_code == 200 else None
-
-    def get_divisions(self):
-        response = self.get("system/Divisions")
-        return response.json() if response.status_code == 200 else None
-
-    def get_me(self):
-        response = self.get("system/Me")
-        return response.json() if response.status_code == 200 else None
-
-    def get_profit_loss_overview(self, **kwargs):
-        """
-        https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialProfitLossOverview
-        """
-        response = self.get("read/financial/ProfitLossOverview", params=kwargs)
-        return response.json() if response.status_code == 200 else None
-
 
 
 # Simple helper functions

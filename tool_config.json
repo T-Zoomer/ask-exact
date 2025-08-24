@@ -32,279 +32,346 @@
     "endpoints": {
       "SalesInvoices": {
         "path": "https://start.exactonline.nl/api/v1/{division}/salesinvoice/SalesInvoices",
-        "description": "Get sales invoices"
+        "description": "Retrieve sales invoices - finalized billing documents sent to customers for goods/services sold. Contains invoice amounts, dates, customer details, and payment status.",
+        "keywords": ["sales", "invoices", "billing", "customers", "revenue", "accounts receivable", "payments", "financial", "invoice number", "due date", "invoice amount"]
       },
       "SalesOrders": {
         "path": "https://start.exactonline.nl/api/v1/{division}/salesorder/SalesOrders",
-        "description": "Get sales orders"
+        "description": "Retrieve sales orders - customer purchase commitments before invoicing. Contains order details, quantities, pricing, delivery dates, and order status.",
+        "keywords": ["sales", "orders", "customers", "purchase orders", "order management", "delivery", "quantities", "pricing", "order status", "fulfillment"]
       },
       "SalesOrderLines": {
         "path": "https://start.exactonline.nl/api/v1/{division}/salesorder/SalesOrderLines",
-        "description": "Get sales order lines"
+        "description": "Retrieve individual line items from sales orders. Contains detailed product/service information, quantities, unit prices, discounts, and line-level delivery details.",
+        "keywords": ["sales", "order lines", "line items", "products", "services", "quantities", "unit prices", "discounts", "item details", "order details"]
       },
       "SalesEntries": {
         "path": "https://start.exactonline.nl/api/v1/{division}/salesentry/SalesEntries",
-        "description": "Get sales entries"
+        "description": "Retrieve sales journal entries - accounting transactions for sales activities. Contains financial postings, GL account distributions, and transaction details for sales.",
+        "keywords": ["sales", "journal entries", "accounting", "transactions", "financial postings", "general ledger", "GL accounts", "bookkeeping", "accounting entries"]
       },
       "SalesEntryLines": {
         "path": "https://start.exactonline.nl/api/v1/{division}/salesentry/SalesEntryLines",
-        "description": "Get sales entry lines"
+        "description": "Retrieve detailed line items from sales journal entries. Contains individual GL account postings, amounts, descriptions, and accounting distributions for each sales transaction.",
+        "keywords": ["sales", "journal entry lines", "GL account postings", "accounting details", "transaction lines", "debit", "credit", "amounts", "financial details"]
       },
       "Quotations": {
         "path": "https://start.exactonline.nl/api/v1/{division}/crm/Quotations",
-        "description": "Get quotations"
+        "description": "Retrieve sales quotations - preliminary pricing offers sent to prospects/customers. Contains quoted prices, terms, validity periods, and quote status before conversion to orders.",
+        "keywords": ["quotations", "quotes", "proposals", "pricing", "estimates", "prospects", "customers", "CRM", "sales process", "quote status", "validity"]
       },
       "QuotationLines": {
         "path": "https://start.exactonline.nl/api/v1/{division}/crm/QuotationLines",
-        "description": "Get quotation lines"
+        "description": "Retrieve individual line items from quotations. Contains detailed product/service pricing, quantities, descriptions, and line-level terms for each quoted item.",
+        "keywords": ["quotation lines", "quote lines", "line items", "quoted products", "pricing details", "quantities", "product descriptions", "quote details"]
       },
       "SalesInvoiceLines": {
         "path": "https://start.exactonline.nl/api/v1/{division}/salesinvoice/SalesInvoiceLines",
-        "description": "Get sales invoice lines"
+        "description": "Retrieve individual line items from sales invoices. Contains detailed billing information for each product/service, including quantities, unit prices, discounts, taxes, and line totals.",
+        "keywords": ["sales", "invoice lines", "billing details", "line items", "products", "services", "quantities", "unit prices", "discounts", "taxes", "line totals"]
       },
       "PurchaseInvoices": {
         "path": "https://start.exactonline.nl/api/v1/{division}/purchaseinvoice/PurchaseInvoices",
-        "description": "Get purchase invoices"
+        "description": "Retrieve purchase invoices - bills received from suppliers for goods/services purchased. Contains supplier details, invoice amounts, due dates, and payment status for accounts payable.",
+        "keywords": ["purchase", "invoices", "bills", "suppliers", "vendors", "accounts payable", "expenses", "costs", "supplier invoices", "payment due", "procurement"]
       },
       "PurchaseOrders": {
         "path": "https://start.exactonline.nl/api/v1/{division}/purchaseorder/PurchaseOrders",
-        "description": "Get purchase orders"
+        "description": "Retrieve purchase orders - formal requests sent to suppliers to purchase goods/services. Contains order details, quantities, pricing, delivery requirements, and approval status.",
+        "keywords": ["purchase", "orders", "PO", "suppliers", "vendors", "procurement", "ordering", "purchasing", "supply chain", "approval", "delivery"]
       },
       "PurchaseOrderLines": {
         "path": "https://start.exactonline.nl/api/v1/{division}/purchaseorder/PurchaseOrderLines",
-        "description": "Get purchase order lines"
+        "description": "Retrieve individual line items from purchase orders. Contains detailed product/service specifications, quantities, unit costs, delivery dates, and line-level purchasing details.",
+        "keywords": ["purchase", "order lines", "PO lines", "line items", "products", "services", "quantities", "unit costs", "specifications", "delivery dates"]
       },
       "PurchaseEntries": {
         "path": "https://start.exactonline.nl/api/v1/{division}/purchaseentry/PurchaseEntries",
-        "description": "Get purchase entries"
+        "description": "Retrieve purchase journal entries - accounting transactions for purchase activities. Contains financial postings, GL account distributions, and transaction details for purchases.",
+        "keywords": ["purchase", "journal entries", "accounting", "transactions", "financial postings", "general ledger", "GL accounts", "expense accounting", "purchase accounting"]
       },
       "PurchaseEntryLines": {
         "path": "https://start.exactonline.nl/api/v1/{division}/purchaseentry/PurchaseEntryLines",
-        "description": "Get purchase entry lines"
+        "description": "Retrieve detailed line items from purchase journal entries. Contains individual GL account postings, amounts, descriptions, and accounting distributions for each purchase transaction.",
+        "keywords": ["purchase", "journal entry lines", "GL account postings", "accounting details", "transaction lines", "debit", "credit", "expense details", "cost allocation"]
       },
       "PurchaseInvoiceLines": {
         "path": "https://start.exactonline.nl/api/v1/{division}/purchaseinvoice/PurchaseInvoiceLines",
-        "description": "Get purchase invoice lines"
+        "description": "Retrieve individual line items from purchase invoices. Contains detailed billing information for each purchased product/service, including quantities, unit costs, taxes, and expense allocations.",
+        "keywords": ["purchase", "invoice lines", "billing details", "line items", "products", "services", "quantities", "unit costs", "taxes", "expense allocation", "cost details"]
       },
       "Suppliers": {
         "path": "https://start.exactonline.nl/api/v1/{division}/purchase/Suppliers",
-        "description": "Get suppliers"
+        "description": "Retrieve supplier information - vendor master data including contact details, payment terms, tax information, and supplier relationships for procurement management.",
+        "keywords": ["suppliers", "vendors", "procurement", "vendor management", "contact details", "payment terms", "tax information", "supplier relationships", "vendor master data"]
       },
       "ReceiptLines": {
         "path": "https://start.exactonline.nl/api/v1/{division}/inventory/ReceiptLines",
-        "description": "Get receipt lines"
+        "description": "Retrieve inventory receipt lines - records of goods received into inventory. Contains receipt quantities, locations, dates, and links to purchase orders for inventory management.",
+        "keywords": ["inventory", "receipts", "goods received", "warehouse", "stock movements", "inventory management", "receiving", "quantities", "locations", "purchase orders"]
       },
       "GLAccounts": {
         "path": "https://start.exactonline.nl/api/v1/{division}/financial/GLAccounts",
-        "description": "Get general ledger accounts"
+        "description": "Retrieve general ledger accounts - chart of accounts structure for financial reporting. Contains account codes, descriptions, account types, and balances for financial management.",
+        "keywords": ["general ledger", "GL accounts", "chart of accounts", "account codes", "financial reporting", "accounting", "balances", "account types", "bookkeeping"]
       },
       "GeneralJournalEntries": {
         "path": "https://start.exactonline.nl/api/v1/{division}/generaljournalentry/GeneralJournalEntries",
-        "description": "Get general journal entries"
+        "description": "Retrieve general journal entries - manual accounting transactions for adjustments, accruals, and corrections. Contains transaction headers, dates, and references for financial postings.",
+        "keywords": ["general journal", "journal entries", "manual transactions", "adjustments", "accruals", "corrections", "accounting entries", "financial postings", "bookkeeping"]
       },
       "GeneralJournalEntryLines": {
         "path": "https://start.exactonline.nl/api/v1/{division}/generaljournalentry/GeneralJournalEntryLines",
-        "description": "Get general journal entry lines"
+        "description": "Retrieve detailed line items from general journal entries. Contains individual GL account postings, debit/credit amounts, descriptions, and cost center allocations.",
+        "keywords": ["general journal", "journal entry lines", "GL postings", "debit", "credit", "amounts", "accounting details", "cost centers", "transaction details"]
       },
       "BankEntries": {
         "path": "https://start.exactonline.nl/api/v1/{division}/financialtransaction/BankEntries",
-        "description": "Get bank entries"
+        "description": "Retrieve bank transaction entries - banking activities like deposits, withdrawals, transfers. Contains bank account movements, transaction dates, amounts, and bank reconciliation data.",
+        "keywords": ["bank", "banking", "bank transactions", "deposits", "withdrawals", "transfers", "bank reconciliation", "cash management", "bank accounts", "financial transactions"]
       },
       "BankEntryLines": {
         "path": "https://start.exactonline.nl/api/v1/{division}/financialtransaction/BankEntryLines",
-        "description": "Get bank entry lines"
+        "description": "Retrieve detailed line items from bank entries. Contains individual bank transaction details, GL account postings, amounts, and bank statement line matching information.",
+        "keywords": ["bank", "bank entry lines", "transaction details", "GL postings", "bank statements", "line matching", "bank reconciliation", "transaction lines"]
       },
       "CashEntries": {
         "path": "https://start.exactonline.nl/api/v1/{division}/financialtransaction/CashEntries",
-        "description": "Get cash entries"
+        "description": "Retrieve cash transaction entries - petty cash and cash register activities. Contains cash receipts, payments, and cash management transactions for cash flow tracking.",
+        "keywords": ["cash", "petty cash", "cash register", "cash transactions", "cash receipts", "cash payments", "cash management", "cash flow", "financial transactions"]
       },
       "CashEntryLines": {
         "path": "https://start.exactonline.nl/api/v1/{division}/financialtransaction/CashEntryLines",
-        "description": "Get cash entry lines"
+        "description": "Retrieve detailed line items from cash entries. Contains individual cash transaction details, GL account postings, amounts, and cash allocation information.",
+        "keywords": ["cash", "cash entry lines", "transaction details", "GL postings", "cash allocation", "petty cash details", "cash transaction lines"]
       },
       "TransactionLines": {
         "path": "https://start.exactonline.nl/api/v1/{division}/financialtransaction/TransactionLines",
-        "description": "Get transaction lines"
+        "description": "Retrieve all financial transaction lines across all transaction types. Contains comprehensive transaction details, GL postings, amounts, and cross-references for complete financial analysis.",
+        "keywords": ["transactions", "transaction lines", "financial transactions", "GL postings", "comprehensive", "financial analysis", "accounting", "transaction details", "all transactions"]
       },
       "ProfitLossOverview": {
         "path": "https://start.exactonline.nl/api/v1/{division}/read/financial/ProfitLossOverview",
-        "description": "Get profit and loss overview"
+        "description": "Retrieve profit and loss statement data - financial performance summary showing revenues, expenses, and net income. Contains P&L breakdown for financial reporting and analysis.",
+        "keywords": ["profit and loss", "P&L", "income statement", "revenues", "expenses", "net income", "financial performance", "financial reporting", "profitability"]
       },
       "BalanceSheetOverview": {
         "path": "https://start.exactonline.nl/api/v1/{division}/read/financial/BalanceSheetOverview",
-        "description": "Get balance sheet overview"
+        "description": "Retrieve balance sheet data - financial position snapshot showing assets, liabilities, and equity. Contains balance sheet breakdown for financial reporting and analysis.",
+        "keywords": ["balance sheet", "assets", "liabilities", "equity", "financial position", "financial reporting", "financial analysis", "accounting", "financial snapshot"]
       },
       "ReportingBalance": {
         "path": "https://start.exactonline.nl/api/v1/{division}/financial/ReportingBalance",
-        "description": "Get reporting balance"
+        "description": "Retrieve reporting balance data - detailed GL account balances for financial reporting periods. Contains account balances, comparatives, and period-over-period analysis.",
+        "keywords": ["reporting balance", "account balances", "GL balances", "financial reporting", "period analysis", "comparatives", "accounting periods", "balance reporting"]
       },
       "ExchangeRates": {
         "path": "https://start.exactonline.nl/api/v1/{division}/financial/ExchangeRates",
-        "description": "Get exchange rates"
+        "description": "Retrieve foreign exchange rates - currency conversion rates for multi-currency transactions. Contains exchange rates, effective dates, and currency pair information.",
+        "keywords": ["exchange rates", "currency", "foreign exchange", "forex", "multi-currency", "currency conversion", "international", "exchange rate dates"]
       },
       "Employees": {
         "path": "https://start.exactonline.nl/api/v1/{division}/payroll/Employees",
-        "description": "Get employees"
+        "description": "Retrieve employee information - personnel master data including personal details, employment information, and organizational assignments for HR and payroll management.",
+        "keywords": ["employees", "personnel", "HR", "human resources", "staff", "employment", "payroll", "employee data", "organizational structure"]
       },
       "PayrollTransactions": {
         "path": "https://start.exactonline.nl/api/v1/{division}/payroll/PayrollTransactions",
-        "description": "Get payroll transactions"
+        "description": "Retrieve payroll transaction data - salary calculations, deductions, benefits, and payroll processing details. Contains pay periods, amounts, and payroll components.",
+        "keywords": ["payroll", "salary", "wages", "deductions", "benefits", "pay periods", "payroll processing", "compensation", "payroll calculations"]
       },
       "Departments": {
         "path": "https://start.exactonline.nl/api/v1/{division}/hrm/Departments",
-        "description": "Get departments"
+        "description": "Retrieve department information - organizational structure including department codes, names, hierarchies, and cost center assignments for organizational management.",
+        "keywords": ["departments", "organizational structure", "organization", "cost centers", "department codes", "hierarchies", "HRM", "organizational management"]
       },
       "EmploymentContracts": {
         "path": "https://start.exactonline.nl/api/v1/{division}/payroll/EmploymentContracts",
-        "description": "Get employment contracts"
+        "description": "Retrieve employment contract details - formal employment agreements including terms, conditions, salary structures, and contract periods for HR administration.",
+        "keywords": ["employment contracts", "contracts", "employment terms", "salary structures", "HR administration", "contract periods", "employment conditions", "legal agreements"]
       },
       "EmploymentContractFlexPhases": {
         "path": "https://start.exactonline.nl/api/v1/{division}/payroll/EmploymentContractFlexPhases",
-        "description": "Get employment contract flex phases"
+        "description": "Retrieve employment contract flexible phases - temporary contract phases and transitions for flexible employment arrangements and contract management.",
+        "keywords": ["employment contracts", "flex phases", "temporary contracts", "contract phases", "flexible employment", "contract transitions", "temporary employment"]
       },
       "Schedules": {
         "path": "https://start.exactonline.nl/api/v1/{division}/manufacturing/Schedules",
-        "description": "Get schedules"
+        "description": "Retrieve manufacturing schedules - production planning and scheduling information including work orders, resource allocation, and production timelines.",
+        "keywords": ["schedules", "manufacturing", "production planning", "work orders", "resource allocation", "production timelines", "manufacturing schedules"]
       },
       "LeaveRegistrations": {
         "path": "https://start.exactonline.nl/api/v1/{division}/payroll/LeaveRegistrations",
-        "description": "Get leave registrations"
+        "description": "Retrieve employee leave registrations - vacation, sick leave, and other absence records including dates, types, and approval status for time and attendance management.",
+        "keywords": ["leave", "vacation", "sick leave", "absence", "time off", "employee absences", "leave management", "attendance", "leave registrations"]
       },
       "ActiveEmployments": {
         "path": "https://start.exactonline.nl/api/v1/{division}/payroll/ActiveEmployments",
-        "description": "Get active employments"
+        "description": "Retrieve active employment records - currently active employee employment statuses, positions, and assignments for workforce management and reporting.",
+        "keywords": ["active employment", "current employees", "employment status", "workforce", "active staff", "employment records", "workforce management"]
       },
       "Assets": {
         "path": "https://start.exactonline.nl/api/v1/{division}/assets/Assets",
-        "description": "Get assets"
+        "description": "Retrieve fixed asset information - company assets including equipment, buildings, vehicles with acquisition costs, depreciation, and asset tracking details.",
+        "keywords": ["assets", "fixed assets", "equipment", "buildings", "vehicles", "asset management", "depreciation", "acquisition costs", "asset tracking"]
       },
       "AssetGroups": {
         "path": "https://start.exactonline.nl/api/v1/{division}/assets/AssetGroups",
-        "description": "Get asset groups"
+        "description": "Retrieve asset group classifications - categories for organizing and managing fixed assets with similar characteristics and depreciation methods.",
+        "keywords": ["asset groups", "asset categories", "asset classification", "fixed asset management", "asset organization", "depreciation categories"]
       },
       "DepreciationMethods": {
         "path": "https://start.exactonline.nl/api/v1/{division}/assets/DepreciationMethods",
-        "description": "Get depreciation methods"
+        "description": "Retrieve depreciation method definitions - calculation methods for asset depreciation including straight-line, declining balance, and other depreciation approaches.",
+        "keywords": ["depreciation methods", "asset depreciation", "depreciation calculations", "straight-line", "declining balance", "asset accounting", "depreciation approaches"]
       },
       "DepreciationRuns": {
         "path": "https://start.exactonline.nl/api/v1/{division}/assets/DepreciationRuns",
-        "description": "Get depreciation runs"
+        "description": "Retrieve depreciation run executions - batch processes for calculating and posting asset depreciation for accounting periods.",
+        "keywords": ["depreciation runs", "depreciation processing", "batch depreciation", "asset depreciation", "depreciation calculations", "accounting periods"]
       },
       "CommercialBuildingValues": {
         "path": "https://start.exactonline.nl/api/v1/{division}/assets/CommercialBuildingValues",
-        "description": "Get commercial building values"
+        "description": "Retrieve commercial building asset valuations - property values and assessments for commercial real estate assets including appraisals and market values.",
+        "keywords": ["commercial buildings", "property values", "real estate", "asset valuations", "building assessments", "property appraisals", "commercial property"]
       },
       "DepreciationRunDetails": {
         "path": "https://start.exactonline.nl/api/v1/{division}/assets/DepreciationRunDetails",
-        "description": "Get depreciation run details"
+        "description": "Retrieve detailed results from depreciation run executions - individual asset depreciation calculations and postings from batch depreciation processes.",
+        "keywords": ["depreciation run details", "depreciation calculations", "asset depreciation", "depreciation postings", "batch results", "individual asset depreciation"]
       },
       "Divisions": {
         "path": "https://start.exactonline.nl/api/v1/{division}/system/Divisions",
-        "description": "Get divisions"
+        "description": "Retrieve company divisions - organizational units and subsidiaries within the company structure for multi-entity management and reporting.",
+        "keywords": ["divisions", "organizational units", "subsidiaries", "company structure", "multi-entity", "corporate structure", "business units"]
       },
       "Me": {
         "path": "https://start.exactonline.nl/api/v1/{division}/system/Me",
-        "description": "Get current user information"
+        "description": "Retrieve current authenticated user information - profile details, permissions, and system access information for the logged-in user.",
+        "keywords": ["current user", "user profile", "authentication", "user information", "permissions", "logged-in user", "user details", "system access"]
       },
       "Users": {
         "path": "https://start.exactonline.nl/api/v1/{division}/users/Users",
-        "description": "Get users"
+        "description": "Retrieve system users - user accounts, profiles, and basic information for user management and administration purposes.",
+        "keywords": ["users", "user accounts", "user management", "user administration", "system users", "user profiles", "account management"]
       },
       "UserRoles": {
         "path": "https://start.exactonline.nl/api/v1/{division}/users/UserRoles",
-        "description": "Get user roles"
+        "description": "Retrieve user role assignments - security roles and permissions assigned to users for access control and authorization management.",
+        "keywords": ["user roles", "roles", "permissions", "security", "access control", "authorization", "role assignments", "user permissions"]
       },
       "UserRolesPerDivision": {
         "path": "https://start.exactonline.nl/api/v1/{division}/users/UserRolesPerDivision",
-        "description": "Get user roles per division"
+        "description": "Retrieve user roles by division - role assignments specific to each organizational division for multi-entity access control management.",
+        "keywords": ["user roles", "division roles", "multi-entity roles", "divisional permissions", "organizational access", "division-specific access", "role management"]
       },
       "AvailableFeatures": {
         "path": "https://start.exactonline.nl/api/v1/{division}/system/AvailableFeatures",
-        "description": "Get available features"
+        "description": "Retrieve available system features - enabled modules and functionalities for the division including licensing and feature availability information.",
+        "keywords": ["available features", "system features", "modules", "functionality", "licensing", "feature availability", "enabled features", "system capabilities"]
       },
       "Currencies": {
         "path": "https://start.exactonline.nl/api/v1/{division}/financial/Currencies",
-        "description": "Get currencies"
+        "description": "Retrieve currency master data - supported currencies including currency codes, names, symbols, and multi-currency configuration for international transactions.",
+        "keywords": ["currencies", "currency codes", "multi-currency", "international", "currency symbols", "financial", "foreign currency", "currency configuration"]
       },
       "SyncSalesInvoices": {
         "path": "https://start.exactonline.nl/api/v1/{division}/sync/SalesInvoice/SalesInvoices",
-        "description": "Sync sales invoices (bulk endpoint)",
+        "description": "Bulk synchronization endpoint for sales invoices - high-performance endpoint for retrieving large volumes of sales invoice data for data integration and synchronization.",
+        "keywords": ["sync", "bulk", "sales invoices", "data integration", "synchronization", "high volume", "bulk endpoint", "data sync", "invoice sync"],
         "page_size": 1000
       },
       "SyncSalesOrders": {
         "path": "https://start.exactonline.nl/api/v1/{division}/sync/SalesOrder/SalesOrders",
-        "description": "Sync sales orders (bulk endpoint)",
+        "description": "Bulk synchronization endpoint for sales orders - high-performance endpoint for retrieving large volumes of sales order data for data integration and synchronization.",
+        "keywords": ["sync", "bulk", "sales orders", "data integration", "synchronization", "high volume", "bulk endpoint", "data sync", "order sync"],
         "page_size": 1000
       },
       "SyncPurchaseInvoices": {
         "path": "https://start.exactonline.nl/api/v1/{division}/sync/PurchaseInvoice/PurchaseInvoices",
-        "description": "Sync purchase invoices (bulk endpoint)",
+        "description": "Bulk synchronization endpoint for purchase invoices - high-performance endpoint for retrieving large volumes of purchase invoice data for data integration and synchronization.",
+        "keywords": ["sync", "bulk", "purchase invoices", "data integration", "synchronization", "high volume", "bulk endpoint", "data sync", "supplier invoice sync"],
         "page_size": 1000
       },
       "SyncPurchaseOrders": {
         "path": "https://start.exactonline.nl/api/v1/{division}/sync/PurchaseOrder/PurchaseOrders",
-        "description": "Sync purchase orders (bulk endpoint)",
+        "description": "Bulk synchronization endpoint for purchase orders - high-performance endpoint for retrieving large volumes of purchase order data for data integration and synchronization.",
+        "keywords": ["sync", "bulk", "purchase orders", "data integration", "synchronization", "high volume", "bulk endpoint", "data sync", "PO sync"],
         "page_size": 1000
       },
       "SyncGLAccounts": {
         "path": "https://start.exactonline.nl/api/v1/{division}/sync/Financial/GLAccounts",
-        "description": "Sync general ledger accounts (bulk endpoint)",
+        "description": "Bulk synchronization endpoint for general ledger accounts - high-performance endpoint for retrieving chart of accounts data for data integration and synchronization.",
+        "keywords": ["sync", "bulk", "general ledger", "GL accounts", "chart of accounts", "data integration", "synchronization", "high volume", "account sync"],
         "page_size": 1000
       },
       "SyncItems": {
         "path": "https://start.exactonline.nl/api/v1/{division}/sync/Logistics/Items",
-        "description": "Sync items (bulk endpoint)",
+        "description": "Bulk synchronization endpoint for inventory items - high-performance endpoint for retrieving large volumes of product/item master data for data integration and synchronization.",
+        "keywords": ["sync", "bulk", "items", "products", "inventory", "logistics", "data integration", "synchronization", "high volume", "item sync"],
         "page_size": 1000
       },
       "SyncAccounts": {
         "path": "https://start.exactonline.nl/api/v1/{division}/sync/CRM/Accounts",
-        "description": "Sync accounts (bulk endpoint)",
+        "description": "Bulk synchronization endpoint for CRM accounts - high-performance endpoint for retrieving large volumes of customer/prospect account data for data integration and synchronization.",
+        "keywords": ["sync", "bulk", "accounts", "customers", "CRM", "prospects", "data integration", "synchronization", "high volume", "account sync"],
         "page_size": 1000
       },
       "SyncTransactionLines": {
         "path": "https://start.exactonline.nl/api/v1/{division}/sync/FinancialTransaction/TransactionLines",
-        "description": "Sync transaction lines (bulk endpoint)",
+        "description": "Bulk synchronization endpoint for transaction lines - high-performance endpoint for retrieving large volumes of financial transaction data for data integration and synchronization.",
+        "keywords": ["sync", "bulk", "transaction lines", "financial transactions", "data integration", "synchronization", "high volume", "transaction sync", "financial data"],
         "page_size": 1000
       },
       "CashflowOverview": {
         "path": "https://start.exactonline.nl/api/v1/{division}/read/financial/CashflowOverview",
-        "description": "Get cashflow overview"
+        "description": "Retrieve cash flow overview - cash flow statement data showing cash inflows and outflows from operating, investing, and financing activities for financial analysis.",
+        "keywords": ["cash flow", "cashflow overview", "cash inflows", "cash outflows", "operating activities", "investing activities", "financing activities", "financial analysis", "liquidity"]
       },
       "PaymentConditions": {
         "path": "https://start.exactonline.nl/api/v1/{division}/cashflow/PaymentConditions",
-        "description": "Get payment conditions"
+        "description": "Retrieve payment conditions - payment terms and conditions including due dates, discounts, and payment schedules for customer and supplier transactions.",
+        "keywords": ["payment conditions", "payment terms", "due dates", "payment discounts", "payment schedules", "cash flow management", "credit terms"]
       },
       "Receivables": {
         "path": "https://start.exactonline.nl/api/v1/{division}/read/financial/Receivables",
-        "description": "Get receivables"
+        "description": "Retrieve accounts receivable - outstanding customer invoices and amounts owed to the company including aging analysis and collection information.",
+        "keywords": ["receivables", "accounts receivable", "customer invoices", "outstanding amounts", "aging analysis", "collections", "customer payments", "AR"]
       },
       "Payables": {
         "path": "https://start.exactonline.nl/api/v1/{division}/read/financial/Payables",
-        "description": "Get payables"
+        "description": "Retrieve accounts payable - outstanding supplier invoices and amounts owed by the company including payment due dates and vendor payment information.",
+        "keywords": ["payables", "accounts payable", "supplier invoices", "outstanding bills", "payment due", "vendor payments", "supplier payments", "AP"]
       },
       "DirectDebitMandates": {
         "path": "https://start.exactonline.nl/api/v1/{division}/cashflow/DirectDebitMandates",
-        "description": "Get direct debit mandates"
+        "description": "Retrieve direct debit mandates - customer authorizations for automatic payment collection including mandate details and status for cash flow management.",
+        "keywords": ["direct debit", "mandates", "automatic payments", "payment collection", "customer authorization", "cash flow management", "payment automation"]
       },
       "BankAccounts": {
         "path": "https://start.exactonline.nl/api/v1/{division}/cashflow/BankAccounts",
-        "description": "Get bank accounts"
+        "description": "Retrieve company bank account information - banking details including account numbers, bank details, and account configurations for cash management.",
+        "keywords": ["bank accounts", "banking", "account numbers", "bank details", "cash management", "banking information", "financial accounts"]
       },
       "PaymentMethods": {
         "path": "https://start.exactonline.nl/api/v1/{division}/cashflow/PaymentMethods",
-        "description": "Get payment methods"
+        "description": "Retrieve available payment methods - payment types and methods including cash, credit card, bank transfer, and other payment options for transaction processing.",
+        "keywords": ["payment methods", "payment types", "cash", "credit card", "bank transfer", "payment options", "transaction processing", "payment processing"]
       },
       "Budgets": {
         "path": "https://start.exactonline.nl/api/v1/{division}/budget/Budgets",
-        "description": "Get budgets"
+        "description": "Retrieve budget information - financial budgets and planning data including budget amounts, periods, and budget vs actual comparisons for financial planning.",
+        "keywords": ["budgets", "financial planning", "budget amounts", "budget periods", "budget vs actual", "financial budgets", "planning", "budget management"]
       },
       "BudgetScenarios": {
         "path": "https://start.exactonline.nl/api/v1/{division}/budget/BudgetScenarios",
-        "description": "Get budget scenarios"
+        "description": "Retrieve budget scenario configurations - different budget planning scenarios and assumptions for financial forecasting and what-if analysis.",
+        "keywords": ["budget scenarios", "financial forecasting", "budget planning", "what-if analysis", "scenarios", "budget assumptions", "planning scenarios"]
       },
       "BudgetReportingBalance": {
         "path": "https://start.exactonline.nl/api/v1/{division}/read/financial/BudgetReportingBalance",
-        "description": "Get budget reporting balance"
+        "description": "Retrieve budget reporting balance data - detailed budget vs actual reporting with variances and balance information for budget performance analysis.",
+        "keywords": ["budget reporting", "budget balance", "budget vs actual", "variances", "budget performance", "financial reporting", "budget analysis"]
       }
     }
   }
