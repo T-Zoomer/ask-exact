@@ -102,8 +102,9 @@
                 "uri": "/api/v1/{division}/read/financial/ProfitLossOverview",
                 "example_usage": "/api/v1/{division}/read/financial/ProfitLossOverview"
             },
+            "llm_data_description": "Provides key P&L metrics including total revenue, costs, and profit/loss results for current and previous periods/years. Essential for understanding company financial performance and period-over-period comparisons.",
             "llm_description": "Retrieve profit and loss overview data including costs and revenues for current and previous periods/years",
-            "keywords": [
+            "llm_keywords": [
                 "profit",
                 "loss",
                 "P&L",
@@ -263,8 +264,9 @@
                 "uri": "/api/v1/{division}/budget/Budgets",
                 "example_usage": "/api/v1/{division}/budget/Budgets"
             },
+            "llm_data_description": "Returns budget allocations by G/L account, cost center, and cost unit with scenario planning. Shows budgeted amounts, responsible parties, and reporting periods - crucial for budget monitoring and variance analysis.",
             "llm_description": "Access budget allocations for G/L accounts, cost centers, cost units and items with scenario planning",
-            "keywords": [
+            "llm_keywords": [
                 "budget",
                 "planning",
                 "allocation",
@@ -689,8 +691,9 @@
                 "uri": "/api/v1/{division}/bulk/Cashflow/Receivables",
                 "example_usage": "/api/v1/{division}/bulk/Cashflow/Receivables"
             },
+            "llm_data_description": "Lists all outstanding customer payments with amounts, due dates, payment status, and collection information. Critical for cash flow management and tracking overdue invoices.",
             "llm_description": "Use this endpoint to get an overview of all the payment to be received in your administration. Paymentlines are grouped by own bank account, account bank account, payment reference, payment method, entry date and status. Payments of one entry have the same TransactionId. Among other things, with this endpoint you can get information like the payments status (e.g. Open, Processed) or when is the collection is due.\r\nThis bulk service has a page size of 1000.\r\nIt is mandatory to provide the $select query option with a selection of one or more of the resource properties.\r\nOnly the following filters are supported for this endpoint:\r\nAccount, Document, EndDate, EndToEndID, EntryDate, EntryID, GLAccount, ID, InvoiceDate, InvoiceNumber, Source, Status, TransactionID, TransactionType",
-            "keywords": [
+            "llm_keywords": [
                 "cashflow/receivables",
                 "data",
                 "api",
@@ -806,8 +809,9 @@
                 "uri": "/api/v1/{division}/financial/ReportingBalance",
                 "example_usage": "/api/v1/{division}/financial/ReportingBalance"
             },
+            "llm_data_description": "Provides summarized financial transaction data grouped by G/L account, cost center, and period. Shows debit/credit amounts and transaction counts - essential for balance sheet and detailed financial analysis.",
             "llm_description": "This service returns summarized data of financial transactions. It's intended for reporting balances and period totals. The summarized amounts are grouped by: Division, ReportingYear, ReportingPeriod, G/L account, Cost center, Cost unit, Type, Status. For optimal filter, only include a reporting year in the filter.",
-            "keywords": [
+            "llm_keywords": [
                 "reportingbalance",
                 "data",
                 "api",
@@ -932,8 +936,9 @@
                 "uri": "/api/v1/{division}/financialtransaction/BankEntries",
                 "example_usage": "/api/v1/{division}/financialtransaction/BankEntries"
             },
+            "llm_data_description": "Contains bank statement transactions with opening/closing balances, transaction lines, and journal entries. Key for bank reconciliation and cash position monitoring.",
             "llm_description": "Access bank transaction entries and financial transaction records",
-            "keywords": [
+            "llm_keywords": [
                 "bank entries",
                 "transactions",
                 "banking",
@@ -1051,8 +1056,9 @@
                 "uri": "/api/v1/{division}/read/financial/PayablesList",
                 "example_usage": "/api/v1/{division}/read/financial/PayablesList"
             },
+            "llm_data_description": "Shows all supplier payment obligations with amounts due, payment terms, approval status, and due dates. Essential for accounts payable management and cash flow planning.",
             "llm_description": "Retrieve accounts payable information and outstanding payment obligations",
-            "keywords": [
+            "llm_keywords": [
                 "payables",
                 "accounts payable",
                 "AP",
@@ -1247,8 +1253,9 @@
                 "uri": "/api/v1/{division}/hrm/Divisions",
                 "example_usage": "/api/v1/{division}/hrm/Divisions"
             },
+            "llm_data_description": "Company organizational structure information including division details, currencies, countries, and VAT numbers. Important for multi-entity reporting and compliance.",
             "llm_description": "Access company division and organizational structure information",
-            "keywords": [
+            "llm_keywords": [
                 "divisions",
                 "company",
                 "organization",
@@ -1326,8 +1333,9 @@
                 "uri": "/api/v1/{division}/cashflow/Banks",
                 "example_usage": "/api/v1/{division}/cashflow/Banks"
             },
+            "llm_data_description": "Master data of supported banks with identification codes and account formats. Used for payment processing and bank account setup.",
             "llm_description": "Access bank account information and banking details for cash flow management",
-            "keywords": [
+            "llm_keywords": [
                 "bank",
                 "banking",
                 "account",
@@ -1459,8 +1467,9 @@
                 "uri": "/api/v1/{division}/cashflow/DirectDebitMandates",
                 "example_usage": "/api/v1/{division}/cashflow/DirectDebitMandates"
             },
+            "llm_data_description": "Direct debit authorization details for automated payment collection including mandate status, payment types, and customer bank accounts.",
             "llm_description": "Handle direct debit mandates for automated payment collection processes",
-            "keywords": [
+            "llm_keywords": [
                 "direct debit",
                 "mandate",
                 "payment",
@@ -1836,8 +1845,9 @@
                 "uri": "/api/v1/{division}/financialtransaction/TransactionLines",
                 "example_usage": "/api/v1/{division}/financialtransaction/TransactionLines"
             },
+            "llm_data_description": "Detailed line-item data for all financial transactions including amounts, accounts, cost centers, and VAT. Provides granular transaction analysis and audit trail.",
             "llm_description": "Access detailed transaction line items and financial transaction details",
-            "keywords": [
+            "llm_keywords": [
                 "transaction lines",
                 "line items",
                 "transaction details",
@@ -1976,8 +1986,9 @@
                 "uri": "/api/v1/{division}/financialtransaction/CashEntries",
                 "example_usage": "/api/v1/{division}/financialtransaction/CashEntries"
             },
+            "llm_data_description": "Cash transaction records with opening/closing balances and transaction details. Important for petty cash management and cash-based accounting.",
             "llm_description": "Manage cash transaction entries and cash-based financial records",
-            "keywords": [
+            "llm_keywords": [
                 "cash entries",
                 "cash transactions",
                 "petty cash",

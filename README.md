@@ -9,12 +9,12 @@ User intent forming proces
 So to build this i need to:
 
 1. Finish the ExactToolbox
-* Get all the tool / API call specifications in a JSON. I was busy building a scraper for this: scrape_exact_api_specs.py 
-* Or just get some important ones but make them complete. 
+* FINISHED Get all the tool / API call specifications in a JSON. I was busy building a scraper for this: scrape_exact_api_specs.py 
+* FINISHED Or just get some important ones but make them complete. 
 
 2. 
 * Then build a second LLM call where the LLM sees the user input, tool and the API spec. Then it parses input args.  
-* 
+* Have to build the IntentParser anew. 
 
 ------
 

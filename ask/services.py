@@ -140,9 +140,6 @@ class Intent:
 # ExactToolbox
 # --------------------------
 
-# TODO: Make better general tool overview.
-# TODO: Add the individual tool API data here.
-
 # Load the tool configuration
 config_path = os.path.join(
     os.path.dirname(os.path.dirname(__file__)), "exact_specs", "api_specs", "cleaned", "TOOL_DOCUMENTATION.json"
@@ -163,16 +160,15 @@ class ExactToolbox:
 
         # Generate tools for each API endpoint
         for endpoint_name, endpoint_config in TOOL_CONFIG.items():
-            documentation = endpoint_config.get('documentation', {})
-            description = documentation.get('llm_description', f'Access {endpoint_name} data')
-            keywords = documentation.get('keywords', [])
+            documentation = endpoint_config.get('documentation')
+            description = documentation.get('llm_description')
+            keywords = documentation.get('llm_keywords')
+            data_info = documentation.get('llm_data_info')
             
             tool = {
-                "type": "function",
-                "function": {
-                    "name": f"get_{endpoint_name.lower()}",
-                    "description": f"{description}\n\nKeywords: {', '.join(keywords)}",
-                },
+                "name": f"get_{endpoint_name.lower()}",
+                "description": f"{description}\n\nKeywords: {', '.join(keywords or [])}",
+                "data_summary": data_info,
             }
             tools.append(tool)
 
