@@ -92,10 +92,10 @@ def ai_chat(request):
             return JsonResponse({"error": "Invalid JSON"}, status=400)
 
         # Import and use the AI client
-        from .openai_mcp_client import ExactOnlineAIClient
+        from .services import IntentFormer
 
         print(f"🚀 Django View: Creating AI client and processing request...")
-        client = ExactOnlineAIClient(openai_api_key, session_key)
+        client = IntentFormer(openai_api_key, session_key)
         response = client.chat(message)
 
         print(f"✅ Django View: Got AI response, length: {len(response)}")
@@ -107,3 +107,64 @@ def ai_chat(request):
     except Exception as e:
         print(f"❌ Django View: Exception: {e}")
         return JsonResponse({"error": "Internal server error"}, status=500)
+
+
+def test_intent(request):
+    """Test page for IntentFormer to see Intent objects."""
+    import os
+    import time
+    
+    intent = None
+    debug_info = None
+    message = None
+    
+    if request.method == "POST":
+        message = request.POST.get("message", "").strip()
+        
+        if not message:
+            return render(request, "ask/test_intent.html", {
+                "error": "Please enter a message",
+                "message": message
+            })
+        
+        # Check for OpenAI API key
+        openai_api_key = os.getenv("OPENAI_API_KEY")
+        if not openai_api_key:
+            return render(request, "ask/test_intent.html", {
+                "error": "OpenAI API key not configured",
+                "message": message
+            })
+        
+        try:
+            # Get session key (dummy for testing)
+            session_key = "test_session"
+            
+            # Import and create IntentFormer
+            from .services import IntentFormer
+            
+            start_time = time.time()
+            intent_former = IntentFormer(openai_api_key, session_key)
+            
+            # Parse the intent
+            intent = intent_former.parse_intent(message)
+            processing_time = int((time.time() - start_time) * 1000)
+            
+            # Create debug info
+            debug_info = {
+                "selected_tool": intent.tool_call,
+                "fields_count": len(intent.filters) if intent.filters else 0,
+                "processing_time": processing_time
+            }
+            
+        except Exception as e:
+            print(f"❌ Test Intent View: Error: {e}")
+            return render(request, "ask/test_intent.html", {
+                "error": f"Error processing intent: {str(e)}",
+                "message": message
+            })
+    
+    return render(request, "ask/test_intent.html", {
+        "intent": intent,
+        "debug_info": debug_info,
+        "message": message
+    })
