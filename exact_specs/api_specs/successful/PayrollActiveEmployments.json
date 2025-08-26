@@ -1,0 +1,328 @@
+{
+  "name": "PayrollActiveEmployments",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "AverageDaysPerWeek": {
+      "name": "AverageDaysPerWeek",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The average number of contract days that an employee works per week"
+    },
+    "AverageHoursPerWeek": {
+      "name": "AverageHoursPerWeek",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The average number of contract hours that an employee works per week"
+    },
+    "Contract": {
+      "name": "Contract",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Employment contract ID"
+    },
+    "ContractDocument": {
+      "name": "ContractDocument",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Document ID of the employment contract"
+    },
+    "ContractEndDate": {
+      "name": "ContractEndDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "End date of employment contract"
+    },
+    "ContractProbationEndDate": {
+      "name": "ContractProbationEndDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Employment probation end date"
+    },
+    "ContractProbationPeriod": {
+      "name": "ContractProbationPeriod",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Employment probation period"
+    },
+    "ContractStartDate": {
+      "name": "ContractStartDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Start date of employment contract"
+    },
+    "ContractType": {
+      "name": "ContractType",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Type of employment contract. 1 - Definite, 2 - Indefinite, 3 - External"
+    },
+    "ContractTypeDescription": {
+      "name": "ContractTypeDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of employment contract type"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of creator"
+    },
+    "Department": {
+      "name": "Department",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Department of employee"
+    },
+    "DepartmentCode": {
+      "name": "DepartmentCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Department code of employee"
+    },
+    "DepartmentDescription": {
+      "name": "DepartmentDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of department"
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "Employee": {
+      "name": "Employee",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Employee ID"
+    },
+    "EmployeeFullName": {
+      "name": "EmployeeFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of employee"
+    },
+    "EmployeeHID": {
+      "name": "EmployeeHID",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Numeric number of Employee"
+    },
+    "EmploymentOrganization": {
+      "name": "EmploymentOrganization",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Organization of employment"
+    },
+    "EndDate": {
+      "name": "EndDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "End date of employment"
+    },
+    "HID": {
+      "name": "HID",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Numeric ID of the employment"
+    },
+    "HourlyWage": {
+      "name": "HourlyWage",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Hourly wage"
+    },
+    "InternalRate": {
+      "name": "InternalRate",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Internal rate for time & billing or professional service user"
+    },
+    "Jobtitle": {
+      "name": "Jobtitle",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Job title of employee"
+    },
+    "JobtitleDescription": {
+      "name": "JobtitleDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of job title"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of modifier"
+    },
+    "ReasonEnd": {
+      "name": "ReasonEnd",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "ID of employment ended"
+    },
+    "ReasonEndDescription": {
+      "name": "ReasonEndDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reason of end of employment"
+    },
+    "ReasonEndFlex": {
+      "name": "ReasonEndFlex",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reason of ended flexible employment"
+    },
+    "ReasonEndFlexDescription": {
+      "name": "ReasonEndFlexDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Other reason for end of employment"
+    },
+    "Salary": {
+      "name": "Salary",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Employment salary"
+    },
+    "Schedule": {
+      "name": "Schedule",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Work schedule"
+    },
+    "ScheduleAverageHours": {
+      "name": "ScheduleAverageHours",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Average hours per week in a schedule."
+    },
+    "ScheduleCode": {
+      "name": "ScheduleCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Work schedule code"
+    },
+    "ScheduleDays": {
+      "name": "ScheduleDays",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Number of days of work per week"
+    },
+    "ScheduleDescription": {
+      "name": "ScheduleDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of work schedule"
+    },
+    "ScheduleHours": {
+      "name": "ScheduleHours",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Number of work hours per week."
+    },
+    "StartDate": {
+      "name": "StartDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Start date of employment"
+    },
+    "StartDateOrganization": {
+      "name": "StartDateOrganization",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Start date of the employee in the organization. This field is used to count the years in service."
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 16:23:14 UTC",
+    "total_fields": 44,
+    "scraping_method": "documentation_only",
+    "doc_url": "PayrollActiveEmployments"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "ActiveEmployments",
+      "good_to_know": "Use this endpoint to read active employments.This endpoint gives the basic information of the employee's employment that is active at this moment.\r\n\t\t\t\t An employment consists of multiple parts, like contract, organization and salary. \r\n\t\t\t\t For each, the detailed information can be read using the specifc endpoint.For more information about the employments functionality in Exact Online, see Working with employees in Exact Online.",
+      "scope": "Hrm payroll",
+      "uri": "/api/v1/{division}/payroll/ActiveEmployments",
+      "example_usage": "/api/v1/{division}/payroll/ActiveEmployments"
+    }
+  }
+}

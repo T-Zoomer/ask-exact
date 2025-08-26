@@ -1,0 +1,118 @@
+{
+  "name": "FinancialExchangeRates",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of creator"
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of modifier"
+    },
+    "Rate": {
+      "name": "Rate",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The exchange rate is stored as 1 TARGET CURRENCY = 1/x SOURCE CURRENCY"
+    },
+    "SourceCurrency": {
+      "name": "SourceCurrency",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "The foreign currency"
+    },
+    "SourceCurrencyDescription": {
+      "name": "SourceCurrencyDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of the foreign currency"
+    },
+    "StartDate": {
+      "name": "StartDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The date as of which the rate is valid. The rate is valid until a next rate is defined"
+    },
+    "TargetCurrency": {
+      "name": "TargetCurrency",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The default currency of the division"
+    },
+    "TargetCurrencyDescription": {
+      "name": "TargetCurrencyDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of the default currency"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 16:23:13 UTC",
+    "total_fields": 14,
+    "scraping_method": "documentation_only",
+    "doc_url": "FinancialExchangeRates"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "ExchangeRates",
+      "good_to_know": "Use this endpoint to create, update, view and delete exchange rates. The exchange rate of a foreign currency is defined related to the default currency of the company. Example: 1 EUR = XXX,XX in foreign currency (source currency).",
+      "scope": "Financial currencies",
+      "uri": "/api/v1/{division}/financial/ExchangeRates",
+      "example_usage": "/api/v1/{division}/financial/ExchangeRates"
+    }
+  }
+}

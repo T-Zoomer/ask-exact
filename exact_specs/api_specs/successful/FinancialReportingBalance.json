@@ -1,0 +1,146 @@
+{
+  "name": "FinancialReportingBalance",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Int64",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Record ID"
+    },
+    "Amount": {
+      "name": "Amount",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The sum of the amounts of all transactions in the grouping."
+    },
+    "AmountCredit": {
+      "name": "AmountCredit",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The sum of the amounts of all credit transactions in the grouping."
+    },
+    "AmountDebit": {
+      "name": "AmountDebit",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The sum of the amounts of all debit transactions in the grouping."
+    },
+    "BalanceType": {
+      "name": "BalanceType",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Balance type of the G/L account: B = Balance Sheet, W = Profit & Loss."
+    },
+    "CostCenterCode": {
+      "name": "CostCenterCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The code of the cost center."
+    },
+    "CostCenterDescription": {
+      "name": "CostCenterDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The description of the cost center."
+    },
+    "CostUnitCode": {
+      "name": "CostUnitCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The code of the cost unit."
+    },
+    "CostUnitDescription": {
+      "name": "CostUnitDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The description of the cost unit."
+    },
+    "Count": {
+      "name": "Count",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The number of transactions in the grouping."
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "GLAccount": {
+      "name": "GLAccount",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "G/L account"
+    },
+    "GLAccountCode": {
+      "name": "GLAccountCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The code of the G/L account."
+    },
+    "GLAccountDescription": {
+      "name": "GLAccountDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The description of the G/L account."
+    },
+    "ReportingPeriod": {
+      "name": "ReportingPeriod",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The reporting period of the transactions in the grouping."
+    },
+    "ReportingYear": {
+      "name": "ReportingYear",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The reporting year of the transactions in the grouping."
+    },
+    "Status": {
+      "name": "Status",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Status: 20 = Open, 50 = Processed. To get 'after entry' results, both Open and Processed amounts have to be included. This is by default, so it requires no extra filtering."
+    },
+    "Type": {
+      "name": "Type",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The type of the transactions in the grouping."
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 16:09:01 UTC",
+    "total_fields": 18,
+    "scraping_method": "documentation_only",
+    "doc_url": "FinancialReportingBalance"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "ReportingBalance",
+      "good_to_know": "This service returns summarized data of financial transactions. It's intended for reporting balances and period totals. The summarized amounts are grouped by: Division, ReportingYear, ReportingPeriod, G/L account, Cost center, Cost unit, Type, Status. For optimal filter, only include a reporting year in the filter.",
+      "scope": "Financial accounting",
+      "uri": "/api/v1/{division}/financial/ReportingBalance",
+      "example_usage": "/api/v1/{division}/financial/ReportingBalance"
+    }
+  }
+}

@@ -1,45 +1,143 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exact Online API Explorer</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
-        .container { max-width: 1200px; margin: 0 auto; }
-        .form-section { background: #f9f9f9; padding: 20px; margin: 20px 0; border-radius: 8px; }
-        .form-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; font-weight: bold; }
-        select, input[type="text"], input[type="number"], textarea { 
-            width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;
+{% extends 'base.html' %}
+
+{% block title %}Home - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
+    <h2 class="text-2xl font-bold text-gray-900 mb-4">🤖 AI Assistant for Exact Online</h2>
+    <p class="text-gray-600 mb-6">Ask questions about your Exact Online data and the AI will use the appropriate APIs to answer you.</p>
+    
+    <div class="mb-4">
+        <label for="chatMessage" class="block text-sm font-medium text-gray-700 mb-2">Ask a question:</label>
+        <textarea id="chatMessage" rows="3" 
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                  placeholder="e.g., 'Show me recent sales invoices' or 'What are the available API endpoints?'"></textarea>
+    </div>
+    
+    <button onclick="sendChatMessage()" 
+            class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
+        Send Message
+    </button>
+    
+    <div id="chatResult" class="mt-6 hidden">
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">AI Response:</h3>
+        <div id="chatResponse" class="bg-gray-50 rounded-md p-4 border border-gray-200"></div>
+    </div>
+    
+    <div id="chatError" class="mt-4 hidden bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-md"></div>
+</div>
+
+<div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
+    <h3 class="text-xl font-bold text-gray-900 mb-4">🎯 Current User Intent</h3>
+    {% if user_intent %}
+    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-md">
+        <h4 class="text-lg font-medium text-gray-900 mt-0 mb-3">{{ user_intent.description }}</h4>
+        <div class="mb-3">
+            <strong class="text-gray-700">Tool Call:</strong> 
+            <code class="bg-gray-100 px-2 py-1 rounded text-sm">{{ user_intent.tool_call }}</code>
+        </div>
+        {% if user_intent.start_date or user_intent.end_date %}
+        <div class="mb-3">
+            <strong class="text-gray-700">Date Range:</strong> 
+            {% if user_intent.start_date %}{{ user_intent.start_date }}{% endif %}
+            {% if user_intent.start_date and user_intent.end_date %} to {% endif %}
+            {% if user_intent.end_date %}{{ user_intent.end_date }}{% endif %}
+            {% if user_intent.date_variable %} (on field: <code class="bg-gray-100 px-1 py-0.5 rounded text-sm">{{ user_intent.date_variable }}</code>){% endif %}
+        </div>
+        {% endif %}
+        {% if user_intent.filters %}
+        <div class="mb-3">
+            <strong class="text-gray-700">Filters:</strong>
+            <ul class="list-disc ml-5 mt-2">
+            {% for filter in user_intent.filters %}
+                <li><strong>{{ filter.variable }}</strong> {{ filter.operator }} <em>{{ filter.values|join:", " }}</em></li>
+            {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        {% if user_intent.arguments %}
+        <div class="mb-3">
+            <strong class="text-gray-700">Arguments:</strong>
+            <pre class="bg-gray-100 p-3 mt-2 text-xs rounded-md overflow-x-auto">{{ user_intent.arguments|pprint }}</pre>
+        </div>
+        {% endif %}
+        <div class="text-sm text-gray-500">
+            <strong>Valid:</strong> {% if user_intent.is_valid %}✅ Yes{% else %}❌ No{% endif %}
+        </div>
+    </div>
+    {% else %}
+    <p class="text-gray-500 italic">No user intent available</p>
+    {% endif %}
+</div>
+
+<div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+    <h3 class="text-xl font-bold text-gray-900 mb-4">💡 Example Questions</h3>
+    <ul class="space-y-2 text-gray-700">
+        <li><strong>Discovery:</strong> "What API endpoints are available?" or "Find endpoints related to customers"</li>
+        <li><strong>Data Queries:</strong> "Show me recent sales invoices" or "Get the latest purchase orders"</li>
+        <li><strong>Financial Data:</strong> "Show me the general ledger accounts" or "Get recent bank transactions"</li>
+        <li><strong>Filtered Queries:</strong> "Show me sales invoices from this month" or "Get customers with names containing 'ABC'"</li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    async function sendChatMessage() {
+        const message = document.getElementById('chatMessage').value.trim();
+        if (!message) {
+            alert('Please enter a message');
+            return;
         }
-        select { height: 40px; }
-        .query-params { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        @media (max-width: 768px) { .query-params { grid-template-columns: 1fr; } }
-        button { background: #007cba; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
-        button:hover { background: #005a8a; }
-        .endpoint-info { background: #e3f2fd; padding: 10px; margin: 10px 0; border-radius: 4px; font-size: 14px; }
-        .result-section { margin-top: 30px; }
-        pre { background: #f5f5f5; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        .error { color: #d32f2f; background: #ffebee; padding: 15px; border-radius: 5px; }
-        .nav-links { margin-bottom: 20px; }
-        .nav-links a { text-decoration: none; margin-right: 15px; color: #007cba; }
-        .nav-links a:hover { text-decoration: underline; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Exact Online API Explorer</h1>
-            <div class="nav-links">
-                <a href="{% url 'ask:home' %}">Home</a>
-                <a href="{% url 'exact_oauth:status' %}">OAuth Status</a>
-                <a href="{% url 'exact_oauth:authorize' %}">Authorize</a>
-                <a href="{% url 'exact_oauth:refresh_token' %}">Refresh Token</a>
-                <a href="{% url 'exact_oauth:revoke' %}">Revoke Token</a>
-                <a href="/admin/">Admin</a>
-            </div>
-        </header>
+
+        // Hide previous results
+        document.getElementById('chatResult').classList.add('hidden');
+        document.getElementById('chatError').classList.add('hidden');
         
-</body>
-</html>
+        // Show loading state
+        const button = document.querySelector('button');
+        const originalText = button.textContent;
+        button.textContent = 'Thinking...';
+        button.disabled = true;
+
+        try {
+            const response = await fetch('/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: message })
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                // Show success result
+                document.getElementById('chatResponse').innerHTML = 
+                    `<div class="whitespace-pre-wrap mb-4"><strong>User:</strong> ${data.message}</div>` +
+                    `<div class="whitespace-pre-wrap"><strong>AI:</strong> ${data.response}</div>`;
+                document.getElementById('chatResult').classList.remove('hidden');
+            } else {
+                // Show error
+                document.getElementById('chatError').textContent = data.error || 'An error occurred';
+                document.getElementById('chatError').classList.remove('hidden');
+            }
+        } catch (error) {
+            document.getElementById('chatError').textContent = 'Network error: ' + error.message;
+            document.getElementById('chatError').classList.remove('hidden');
+        } finally {
+            // Reset button state
+            button.textContent = originalText;
+            button.disabled = false;
+        }
+    }
+
+    // Allow Enter key to send message
+    document.getElementById('chatMessage').addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' && !event.shiftKey) {
+            event.preventDefault();
+            sendChatMessage();
+        }
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,839 @@
+{
+  "name": "LogisticsItems",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "A guid that is the unique identifier of the item"
+    },
+    "AssembledLeadDays": {
+      "name": "AssembledLeadDays",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Assembly lead days"
+    },
+    "AverageCost": {
+      "name": "AverageCost",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The current average cost price"
+    },
+    "Barcode": {
+      "name": "Barcode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Barcode of the item (numeric string)"
+    },
+    "BatchQuantity": {
+      "name": "BatchQuantity",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Batch quantity"
+    },
+    "Class_01": {
+      "name": "Class_01",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Item class code referring to ItemClasses with ClassID 1"
+    },
+    "Class_02": {
+      "name": "Class_02",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Item class code referring to ItemClasses with ClassID 2"
+    },
+    "Class_03": {
+      "name": "Class_03",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Item class code referring to ItemClasses with ClassID 3"
+    },
+    "Class_04": {
+      "name": "Class_04",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Item class code referring to ItemClasses with ClassID 4"
+    },
+    "Class_05": {
+      "name": "Class_05",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Item class code referring to ItemClasses with ClassID 5"
+    },
+    "Class_06": {
+      "name": "Class_06",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Item class code referring to ItemClasses with ClassID 6"
+    },
+    "Class_07": {
+      "name": "Class_07",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Item class code referring to ItemClasses with ClassID 7"
+    },
+    "Class_08": {
+      "name": "Class_08",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Item class code referring to ItemClasses with ClassID 8"
+    },
+    "Class_09": {
+      "name": "Class_09",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Item class code referring to ItemClasses with ClassID 9"
+    },
+    "Class_10": {
+      "name": "Class_10",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Item class code referring to ItemClasses with ClassID 10"
+    },
+    "Code": {
+      "name": "Code",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Item code"
+    },
+    "CopyRemarks": {
+      "name": "CopyRemarks",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Copy sales remarks to sales lines"
+    },
+    "CostPriceCurrency": {
+      "name": "CostPriceCurrency",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The currency of the current and proposed cost price"
+    },
+    "CostPriceNew": {
+      "name": "CostPriceNew",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Proposed cost price"
+    },
+    "CostPriceStandard": {
+      "name": "CostPriceStandard",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The current standard cost price"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of creator"
+    },
+    "CustomField": {
+      "name": "CustomField",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Custom field endpoint. Provided only for the Exact Online Premium users."
+    },
+    "Description": {
+      "name": "Description",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Description of the item"
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "EndDate": {
+      "name": "EndDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Together with StartDate this determines if the item is active"
+    },
+    "ExtraDescription": {
+      "name": "ExtraDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Extra description text, slightly longer than the regular description (255 instead of 60)"
+    },
+    "FreeBoolField_01": {
+      "name": "FreeBoolField_01",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free boolean field 1"
+    },
+    "FreeBoolField_02": {
+      "name": "FreeBoolField_02",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free boolean field 2"
+    },
+    "FreeBoolField_03": {
+      "name": "FreeBoolField_03",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free boolean field 3"
+    },
+    "FreeBoolField_04": {
+      "name": "FreeBoolField_04",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free boolean field 4"
+    },
+    "FreeBoolField_05": {
+      "name": "FreeBoolField_05",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free boolean field 5"
+    },
+    "FreeDateField_01": {
+      "name": "FreeDateField_01",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free date field 1"
+    },
+    "FreeDateField_02": {
+      "name": "FreeDateField_02",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free date field 2"
+    },
+    "FreeDateField_03": {
+      "name": "FreeDateField_03",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free date field 3"
+    },
+    "FreeDateField_04": {
+      "name": "FreeDateField_04",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free date field 4"
+    },
+    "FreeDateField_05": {
+      "name": "FreeDateField_05",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free date field 5"
+    },
+    "FreeNumberField_01": {
+      "name": "FreeNumberField_01",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free numeric field 1"
+    },
+    "FreeNumberField_02": {
+      "name": "FreeNumberField_02",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free numeric field 2"
+    },
+    "FreeNumberField_03": {
+      "name": "FreeNumberField_03",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free numeric field 3"
+    },
+    "FreeNumberField_04": {
+      "name": "FreeNumberField_04",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free numeric field 4"
+    },
+    "FreeNumberField_05": {
+      "name": "FreeNumberField_05",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free numeric field 5"
+    },
+    "FreeNumberField_06": {
+      "name": "FreeNumberField_06",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free numeric field 6"
+    },
+    "FreeNumberField_07": {
+      "name": "FreeNumberField_07",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free numeric field 7"
+    },
+    "FreeNumberField_08": {
+      "name": "FreeNumberField_08",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free numeric field 8"
+    },
+    "FreeTextField_01": {
+      "name": "FreeTextField_01",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free text field 1"
+    },
+    "FreeTextField_02": {
+      "name": "FreeTextField_02",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free text field 2"
+    },
+    "FreeTextField_03": {
+      "name": "FreeTextField_03",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free text field 3"
+    },
+    "FreeTextField_04": {
+      "name": "FreeTextField_04",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free text field 4"
+    },
+    "FreeTextField_05": {
+      "name": "FreeTextField_05",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free text field 5"
+    },
+    "FreeTextField_06": {
+      "name": "FreeTextField_06",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free text field 6"
+    },
+    "FreeTextField_07": {
+      "name": "FreeTextField_07",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free text field 7"
+    },
+    "FreeTextField_08": {
+      "name": "FreeTextField_08",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free text field 8"
+    },
+    "FreeTextField_09": {
+      "name": "FreeTextField_09",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free text field 9"
+    },
+    "FreeTextField_10": {
+      "name": "FreeTextField_10",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free text field 10"
+    },
+    "GLCosts": {
+      "name": "GLCosts",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "GL account the cost entries will be booked on. This overrules the GL account from the item group. If the license contains 'Intuit integration' this property overrides the value in Settings, not the item group."
+    },
+    "GLCostsCode": {
+      "name": "GLCostsCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of GL account for costs"
+    },
+    "GLCostsDescription": {
+      "name": "GLCostsDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of GLCosts"
+    },
+    "GLCostsWorkInProgress": {
+      "name": "GLCostsWorkInProgress",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "GL account the work in progress project cost entries will be booked on. This overrules the GL account from the item group."
+    },
+    "GLCostsWorkInProgressCode": {
+      "name": "GLCostsWorkInProgressCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of GL account for costs Work In Progress"
+    },
+    "GLCostsWorkInProgressDescription": {
+      "name": "GLCostsWorkInProgressDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of GLCosts Work In Progress"
+    },
+    "GLRevenue": {
+      "name": "GLRevenue",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "GL account the revenue will be booked on. This overrules the GL account from the item group. If the license contains 'Intuit integration' this property overrides the value in Settings, not the item group."
+    },
+    "GLRevenueCode": {
+      "name": "GLRevenueCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of GLRevenue"
+    },
+    "GLRevenueDescription": {
+      "name": "GLRevenueDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of GLRevenue"
+    },
+    "GLRevenueWorkInProgress": {
+      "name": "GLRevenueWorkInProgress",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "GL account the work in progress project revenue entries will be booked on. This overrules the GL account from the item group."
+    },
+    "GLRevenueWorkInProgressCode": {
+      "name": "GLRevenueWorkInProgressCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of GLRevenue Work In Progress"
+    },
+    "GLRevenueWorkInProgressDescription": {
+      "name": "GLRevenueWorkInProgressDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of GLRevenue Work In Progress"
+    },
+    "GLStock": {
+      "name": "GLStock",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "GL account the stock entries will be booked on. This overrules the GL account from the item group. If the license contains 'Intuit integration' this property overrides the value in Settings, not the item group."
+    },
+    "GLStockCode": {
+      "name": "GLStockCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of GL account for stock"
+    },
+    "GLStockDescription": {
+      "name": "GLStockDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of GLStock"
+    },
+    "GrossWeight": {
+      "name": "GrossWeight",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Gross weight for international goods shipments"
+    },
+    "IsBatchItem": {
+      "name": "IsBatchItem",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if batches are used for this item"
+    },
+    "IsBatchNumberItem": {
+      "name": "IsBatchNumberItem",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "This property is obsolete. Use property 'IsBatchItem' instead."
+    },
+    "IsFractionAllowedItem": {
+      "name": "IsFractionAllowedItem",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if fractions (for example 0.35) are allowed for quantities of this item"
+    },
+    "IsMakeItem": {
+      "name": "IsMakeItem",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates that an Item is produced to Inventory, not purchased"
+    },
+    "IsNewContract": {
+      "name": "IsNewContract",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Only used for packages (IsPackageItem=1). To indicate if this package is a new contract type package"
+    },
+    "IsOnDemandItem": {
+      "name": "IsOnDemandItem",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Is On demand Item"
+    },
+    "IsPackageItem": {
+      "name": "IsPackageItem",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if the item is a package item. Can only be created in the hosting administration"
+    },
+    "IsPurchaseItem": {
+      "name": "IsPurchaseItem",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if the item can be purchased"
+    },
+    "IsRegistrationCodeItem": {
+      "name": "IsRegistrationCodeItem",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicated if the item is used in voucher functionality"
+    },
+    "IsSalesItem": {
+      "name": "IsSalesItem",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if the item can be sold"
+    },
+    "IsSerialItem": {
+      "name": "IsSerialItem",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates that serial numbers are used for this item"
+    },
+    "IsSerialNumberItem": {
+      "name": "IsSerialNumberItem",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "This property is obsolete. Use property 'IsSerialItem' instead."
+    },
+    "IsStockItem": {
+      "name": "IsStockItem",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "If you have the Trade or Manufacturing license and you check this property the item will be shown in the stock positions overview, stock counts and transaction lists. If you have the Invoice module and you check this property you will get a general journal entry based on the Stock and Costs G/L accounts of the item group. If you don’t want the general journal entry to be created you should change the Stock/Costs G/L account on the Item group page to the type Costs instead of Inventory. If you have the CRM Standalone license, the item will not be available."
+    },
+    "IsSubcontractedItem": {
+      "name": "IsSubcontractedItem",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if the item is provided by an outside supplier"
+    },
+    "IsTaxableItem": {
+      "name": "IsTaxableItem",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if tax needs to be calculated for this item"
+    },
+    "IsTime": {
+      "name": "IsTime",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if the item is a time unit item (for example a labor hour item)"
+    },
+    "IsWebshopItem": {
+      "name": "IsWebshopItem",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if the item can be exported to a web shop. If you have the CRM Standalone license, the item will not be available."
+    },
+    "ItemGroup": {
+      "name": "ItemGroup",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "GUID of Item group of the item"
+    },
+    "ItemGroupCode": {
+      "name": "ItemGroupCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of ItemGroup"
+    },
+    "ItemGroupDescription": {
+      "name": "ItemGroupDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of ItemGroup"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of modifier"
+    },
+    "NetWeight": {
+      "name": "NetWeight",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Net weight for international goods shipments"
+    },
+    "NetWeightUnit": {
+      "name": "NetWeightUnit",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Net Weight unit for international goods shipment, only available in manufacturing packages"
+    },
+    "Notes": {
+      "name": "Notes",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Notes"
+    },
+    "Picture": {
+      "name": "Picture",
+      "type": "Edm.Binary",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "This field is write-only. The picture can be downloaded through PictureUrl and PictureThumbnailUrl."
+    },
+    "PictureName": {
+      "name": "PictureName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "File name of picture"
+    },
+    "PictureThumbnailUrl": {
+      "name": "PictureThumbnailUrl",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Url where thumbnail picture can be retrieved"
+    },
+    "PictureUrl": {
+      "name": "PictureUrl",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Url where picture can be retrieved"
+    },
+    "SalesVatCode": {
+      "name": "SalesVatCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of SalesVat"
+    },
+    "SalesVatCodeDescription": {
+      "name": "SalesVatCodeDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of SalesVatCode"
+    },
+    "SearchCode": {
+      "name": "SearchCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Search code of the item"
+    },
+    "SecurityLevel": {
+      "name": "SecurityLevel",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Security level (0 - 100)"
+    },
+    "StandardSalesPrice": {
+      "name": "StandardSalesPrice",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Standard sales price"
+    },
+    "StartDate": {
+      "name": "StartDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Together with EndDate this determines if the item is active"
+    },
+    "StatisticalCode": {
+      "name": "StatisticalCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Statistical code"
+    },
+    "StatisticalNetWeight": {
+      "name": "StatisticalNetWeight",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Statistical net weight"
+    },
+    "StatisticalUnits": {
+      "name": "StatisticalUnits",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Statistical units"
+    },
+    "StatisticalValue": {
+      "name": "StatisticalValue",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Statistical value"
+    },
+    "Stock": {
+      "name": "Stock",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Quantity that is in stock"
+    },
+    "Unit": {
+      "name": "Unit",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The standard unit of this item"
+    },
+    "UnitDescription": {
+      "name": "UnitDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Unit"
+    },
+    "UnitType": {
+      "name": "UnitType",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Type of unit: A=Area, L=Length, O=Other, T=Time, V=Volume, W=Weight"
+    },
+    "UseExplosion": {
+      "name": "UseExplosion",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Assemble at delivery"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 15:58:48 UTC",
+    "total_fields": 117,
+    "scraping_method": "documentation_only",
+    "doc_url": "LogisticsItems"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "Items",
+      "good_to_know": "Use this endpoint to create, read, update and delete Items.Add CustomDescriptionLanguage='[ NL | FR-BE | NL-BE | ... ]' to the header to retrieve language sensitive properties such as descriptions in a specific language.Items are used in sales, purchase orders, shop orders, and more. You can organise Items into item groups, assortments, storage locations, and warehouses.For more information about the Items functionality in Exact Online, see Working with items.",
+      "scope": "Logistics items",
+      "uri": "/api/v1/{division}/logistics/Items",
+      "example_usage": "/api/v1/{division}/logistics/Items"
+    }
+  }
+}

@@ -1,0 +1,377 @@
+{
+  "name": "SalesOrderSalesOrderLines",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "AmountDC": {
+      "name": "AmountDC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount in the default currency of the company"
+    },
+    "AmountFC": {
+      "name": "AmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount in the currency of the transaction"
+    },
+    "CostCenter": {
+      "name": "CostCenter",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to Cost center"
+    },
+    "CostCenterDescription": {
+      "name": "CostCenterDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of CostCenter"
+    },
+    "CostPriceFC": {
+      "name": "CostPriceFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Item cost price"
+    },
+    "CostUnit": {
+      "name": "CostUnit",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to Cost unit"
+    },
+    "CostUnitDescription": {
+      "name": "CostUnitDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of CostUnit"
+    },
+    "CustomerItemCode": {
+      "name": "CustomerItemCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code the customer uses for this item"
+    },
+    "CustomField": {
+      "name": "CustomField",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Custom field endpoint. Provided only for the Exact Online Premium users."
+    },
+    "DeliveryDate": {
+      "name": "DeliveryDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Delivery date of this line"
+    },
+    "DeliveryStatus": {
+      "name": "DeliveryStatus",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Shipping status of the sales order line. 12=Open, 20=Partial, 21=Complete, 45=Cancelled"
+    },
+    "Description": {
+      "name": "Description",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description"
+    },
+    "Discount": {
+      "name": "Discount",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Discount given on the default price. Discount = (DefaultPrice of Item - PriceItem in line) / DefaultPrice of Item"
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "InvoiceStatus": {
+      "name": "InvoiceStatus",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Invoice status of the sales order line. 12=Open, 20=Partial, 21=Complete, 45=Cancelled"
+    },
+    "Item": {
+      "name": "Item",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Reference to the item that is sold in this sales order line"
+    },
+    "ItemCode": {
+      "name": "ItemCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Item"
+    },
+    "ItemDescription": {
+      "name": "ItemDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Item"
+    },
+    "ItemVersion": {
+      "name": "ItemVersion",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Item Version"
+    },
+    "ItemVersionDescription": {
+      "name": "ItemVersionDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Item Version"
+    },
+    "LineNumber": {
+      "name": "LineNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Line number"
+    },
+    "Margin": {
+      "name": "Margin",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Sales margin of the sales order line"
+    },
+    "NetPrice": {
+      "name": "NetPrice",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Net price of the sales order line"
+    },
+    "Notes": {
+      "name": "Notes",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Extra notes"
+    },
+    "OrderID": {
+      "name": "OrderID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "The OrderID identifies the sales order. All the lines of a sales order have the same OrderID"
+    },
+    "OrderNumber": {
+      "name": "OrderNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Number of sales order"
+    },
+    "OrderStatus": {
+      "name": "OrderStatus",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The status of the sales order line. 12=Open, 20=Partial, 21=Complete, 45=Cancelled"
+    },
+    "Pricelist": {
+      "name": "Pricelist",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Price list"
+    },
+    "PricelistDescription": {
+      "name": "PricelistDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Pricelist"
+    },
+    "Project": {
+      "name": "Project",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The project to which the sales order line is linked. The project can be different per line. Sometimes also the project in the header is filled although this is not really used"
+    },
+    "ProjectDescription": {
+      "name": "ProjectDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Project"
+    },
+    "PurchaseOrder": {
+      "name": "PurchaseOrder",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Purchase order that is linked to the sales order"
+    },
+    "PurchaseOrderLine": {
+      "name": "PurchaseOrderLine",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Purchase order line of the purchase order that is linked to the sales order"
+    },
+    "PurchaseOrderLineNumber": {
+      "name": "PurchaseOrderLineNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Number of the purchase order line"
+    },
+    "PurchaseOrderNumber": {
+      "name": "PurchaseOrderNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Number of the purchase order"
+    },
+    "Quantity": {
+      "name": "Quantity",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The number of items sold in default units. The quantity shown in the entry screen is Quantity * UnitFactor.Positive quantity = Sales order lines, Negative quantity = Trade-in lines."
+    },
+    "QuantityDelivered": {
+      "name": "QuantityDelivered",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The number of items delivered"
+    },
+    "QuantityInvoiced": {
+      "name": "QuantityInvoiced",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The number of items invoiced"
+    },
+    "ShopOrder": {
+      "name": "ShopOrder",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to ShopOrder"
+    },
+    "TaxSchedule": {
+      "name": "TaxSchedule",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "TaxScheduleCode": {
+      "name": "TaxScheduleCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "TaxScheduleDescription": {
+      "name": "TaxScheduleDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "UnitCode": {
+      "name": "UnitCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of item unit"
+    },
+    "UnitDescription": {
+      "name": "UnitDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Unit"
+    },
+    "UnitPrice": {
+      "name": "UnitPrice",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Price per unit in the currency of the transaction"
+    },
+    "UseDropShipment": {
+      "name": "UseDropShipment",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if drop shipment is used (delivery directly to customer, invoice to wholesaler)"
+    },
+    "VATAmount": {
+      "name": "VATAmount",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "VAT amount in the currency of the transaction"
+    },
+    "VATCode": {
+      "name": "VATCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "VAT code"
+    },
+    "VATCodeDescription": {
+      "name": "VATCodeDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of VATCode"
+    },
+    "VATPercentage": {
+      "name": "VATPercentage",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The vat percentage of the VAT code. This is the percentage at the moment the sales order is created. It's also used for the default calculation of VAT amounts and VAT base amounts"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 15:58:36 UTC",
+    "total_fields": 51,
+    "scraping_method": "documentation_only",
+    "doc_url": "SalesOrderSalesOrderLines"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "SalesOrderLines",
+      "good_to_know": "Use this endpoint to create, read, update and delete sales order lines.Sales order lines support trade-in lines. For more details, please refer description under properties QuantitySales orders describe the items that you plan to sell to your customers.For more information about the sales order functionality in Exact Online, see About sales orders.To view an example of the business use of this endpoint, see Rest API - Business example API sales order.",
+      "scope": "Sales orders",
+      "uri": "/api/v1/{division}/salesorder/SalesOrderLines",
+      "example_usage": "/api/v1/{division}/salesorder/SalesOrderLines"
+    }
+  }
+}

@@ -1,0 +1,349 @@
+{
+  "name": "FinancialTransactionCashEntryLines",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "Account": {
+      "name": "Account",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to Account"
+    },
+    "AccountCode": {
+      "name": "AccountCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Account"
+    },
+    "AccountName": {
+      "name": "AccountName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of Account"
+    },
+    "AmountDC": {
+      "name": "AmountDC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount in the default currency of the company"
+    },
+    "AmountFC": {
+      "name": "AmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Amount in the currency of the transaction"
+    },
+    "AmountVATFC": {
+      "name": "AmountVATFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Vat amount in the currency of the transaction"
+    },
+    "Asset": {
+      "name": "Asset",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to an asset"
+    },
+    "AssetCode": {
+      "name": "AssetCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Asset"
+    },
+    "AssetDescription": {
+      "name": "AssetDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Asset"
+    },
+    "CostCenter": {
+      "name": "CostCenter",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to a cost center"
+    },
+    "CostCenterDescription": {
+      "name": "CostCenterDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of CostCenter"
+    },
+    "CostUnit": {
+      "name": "CostUnit",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to a cost unit"
+    },
+    "CostUnitDescription": {
+      "name": "CostUnitDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of CostUnit"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of creator"
+    },
+    "CustomField": {
+      "name": "CustomField",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Custom field endpoint"
+    },
+    "Date": {
+      "name": "Date",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Date of the entry"
+    },
+    "Description": {
+      "name": "Description",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description"
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "Document": {
+      "name": "Document",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to a document"
+    },
+    "DocumentNumber": {
+      "name": "DocumentNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Number of Document"
+    },
+    "DocumentSubject": {
+      "name": "DocumentSubject",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Subject of Document"
+    },
+    "EntryID": {
+      "name": "EntryID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Reference to the header"
+    },
+    "EntryNumber": {
+      "name": "EntryNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Entry number of the header"
+    },
+    "ExchangeRate": {
+      "name": "ExchangeRate",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Exchange rate"
+    },
+    "GLAccount": {
+      "name": "GLAccount",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "General ledger account"
+    },
+    "GLAccountCode": {
+      "name": "GLAccountCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of GLAccount"
+    },
+    "GLAccountDescription": {
+      "name": "GLAccountDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of GLAccount"
+    },
+    "LineNumber": {
+      "name": "LineNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Line number"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of modifier"
+    },
+    "Notes": {
+      "name": "Notes",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Extra remarks"
+    },
+    "OffsetID": {
+      "name": "OffsetID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to offset line"
+    },
+    "OurRef": {
+      "name": "OurRef",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Invoice number"
+    },
+    "Project": {
+      "name": "Project",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to a project"
+    },
+    "ProjectCode": {
+      "name": "ProjectCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Project"
+    },
+    "ProjectDescription": {
+      "name": "ProjectDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Project"
+    },
+    "ProjectWBS": {
+      "name": "ProjectWBS",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to Project WBS"
+    },
+    "ProjectWBSDescription": {
+      "name": "ProjectWBSDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Project WBS"
+    },
+    "Quantity": {
+      "name": "Quantity",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Quantity"
+    },
+    "VATCode": {
+      "name": "VATCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to vat code. If this property is not filled, it will use the default VAT code of the G/L account property"
+    },
+    "VATCodeDescription": {
+      "name": "VATCodeDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of VATCode"
+    },
+    "VATPercentage": {
+      "name": "VATPercentage",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Vat code percentage"
+    },
+    "VATType": {
+      "name": "VATType",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Type of vat code"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 15:56:59 UTC",
+    "total_fields": 47,
+    "scraping_method": "documentation_only",
+    "doc_url": "FinancialTransactionCashEntryLines"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "CashEntryLines",
+      "good_to_know": "Use this endpoint to create or read cash entry lines.  Note: Cash entries are separated to header and line information. Endpoint CashEntryLines is used for the line information.",
+      "scope": "Financial accounting",
+      "uri": "/api/v1/{division}/financialtransaction/CashEntryLines",
+      "example_usage": "/api/v1/{division}/financialtransaction/CashEntryLines"
+    }
+  }
+}

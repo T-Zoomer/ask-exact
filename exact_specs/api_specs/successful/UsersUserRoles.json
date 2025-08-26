@@ -1,0 +1,111 @@
+{
+  "name": "UsersUserRoles",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of the creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the creator"
+    },
+    "Description": {
+      "name": "Description",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description"
+    },
+    "EndDate": {
+      "name": "EndDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates the date and time when te role becomes inactive for the user"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of the last modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the last modifier"
+    },
+    "Role": {
+      "name": "Role",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The role that the user is linked to"
+    },
+    "RoleLevel": {
+      "name": "RoleLevel",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Rolelevel sets the level on which a role for a user is active. This can be: 1 = Database, 2 = Customer, 3 = Division, 100 = Transferred to accountant"
+    },
+    "StartDate": {
+      "name": "StartDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates the date when the role becomes active for the user"
+    },
+    "UserID": {
+      "name": "UserID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The user that is linked to the role"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 16:23:01 UTC",
+    "total_fields": 13,
+    "scraping_method": "documentation_only",
+    "doc_url": "UsersUserRoles"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "UserRoles",
+      "good_to_know": "This end point returns a list of roles per user.",
+      "scope": "Organization administration",
+      "uri": "/api/v1/{division}/users/UserRoles",
+      "example_usage": "/api/v1/{division}/users/UserRoles"
+    }
+  }
+}

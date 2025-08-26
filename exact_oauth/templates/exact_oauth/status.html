@@ -1,63 +1,71 @@
-{% extends 'exact_oauth/base.html' %}
+{% extends 'base.html' %}
 
-{% block title %}Exact Online OAuth Status{% endblock %}
-{% block header %}Exact Online OAuth Status{% endblock %}
+{% block title %}OAuth Status - {{ block.super }}{% endblock %}
 
 {% block content %}
-    <div class="section">
-        <h2>Configuration Status</h2>
-        <div class="card">
+<div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
+    <h2 class="text-2xl font-bold text-gray-900 mb-4">Configuration Status</h2>
+    <div class="bg-gray-50 rounded-md p-4 border border-gray-200">
+        {% if configured %}
+            <p class="mb-2">✅ <strong>Configured:</strong> Environment variables are set</p>
+            <p class="mb-2"><strong>Country:</strong> {{ config.country }}</p>
+            <p><strong>Redirect URI:</strong> {{ config.redirect_uri }}</p>
+        {% else %}
+            <p class="mb-3">❌ <strong>Not Configured:</strong> Missing environment variables</p>
+            <p class="mb-2">Please set the following environment variables:</p>
+            <ul class="list-disc ml-6 space-y-1">
+                <li><code class="bg-gray-200 px-2 py-1 rounded text-sm">EXACT_CLIENT_ID</code></li>
+                <li><code class="bg-gray-200 px-2 py-1 rounded text-sm">EXACT_CLIENT_SECRET</code></li>
+                <li><code class="bg-gray-200 px-2 py-1 rounded text-sm">EXACT_COUNTRY</code> (optional, defaults to NL)</li>
+            </ul>
+        {% endif %}
+    </div>
+</div>
+
+<div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+    <h2 class="text-2xl font-bold text-gray-900 mb-4">Authorization Status</h2>
+    <div class="bg-gray-50 rounded-md p-4 border border-gray-200">
+        {% if has_token %}
+            {% if is_expired %}
+                <p class="mb-2">❌ <strong>Token Expired</strong></p>
+                <p class="mb-4">Your token expired on {{ token.expires_at|date:"Y-m-d H:i:s" }} UTC</p>
+            {% elif expires_soon %}
+                <p class="mb-2">⚠️ <strong>Token Expires Soon</strong></p>
+                <p class="mb-4">Your token will expire on {{ token.expires_at|date:"Y-m-d H:i:s" }} UTC</p>
+            {% else %}
+                <p class="mb-2">✅ <strong>Authorized</strong></p>
+                <p class="mb-4">Token expires on {{ token.expires_at|date:"Y-m-d H:i:s" }} UTC</p>
+            {% endif %}
+            
+            {% if token.division %}
+                <p class="mb-4"><strong>Division:</strong> {{ token.division }}</p>
+            {% endif %}
+            
+            <div class="flex gap-3">
+                <a href="{% url 'exact_oauth:refresh_token' %}" 
+                   class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md font-medium transition-colors">
+                    Refresh Token
+                </a>
+                <form method="post" action="{% url 'exact_oauth:revoke' %}" class="inline">
+                    {% csrf_token %}
+                    <button type="submit" 
+                            class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md font-medium transition-colors"
+                            onclick="return confirm('Are you sure you want to revoke access?')">
+                        Revoke Access
+                    </button>
+                </form>
+            </div>
+        {% else %}
+            <p class="mb-4">❌ <strong>Not Authorized</strong></p>
             {% if configured %}
-                <p>✅ <strong>Configured:</strong> Environment variables are set</p>
-                <p><strong>Country:</strong> {{ config.country }}</p>
-                <p><strong>Redirect URI:</strong> {{ config.redirect_uri }}</p>
+                <a href="{% url 'exact_oauth:authorize' %}" 
+                   class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-medium transition-colors">
+                    Authorize Now
+                </a>
             {% else %}
-                <p>❌ <strong>Not Configured:</strong> Missing environment variables</p>
-                <p>Please set the following environment variables:</p>
-                <ul>
-                    <li><code>EXACT_CLIENT_ID</code></li>
-                    <li><code>EXACT_CLIENT_SECRET</code></li>
-                    <li><code>EXACT_COUNTRY</code> (optional, defaults to NL)</li>
-                </ul>
+                <p>Configure environment variables first</p>
             {% endif %}
-        </div>
+        {% endif %}
     </div>
-
-    <div class="section">
-        <h2>Authorization Status</h2>
-        <div class="card">
-            {% if has_token %}
-                {% if is_expired %}
-                    <p>❌ <strong>Token Expired</strong></p>
-                    <p>Your token expired on {{ token.expires_at|date:"Y-m-d H:i:s" }} UTC</p>
-                {% elif expires_soon %}
-                    <p>⚠️ <strong>Token Expires Soon</strong></p>
-                    <p>Your token will expire on {{ token.expires_at|date:"Y-m-d H:i:s" }} UTC</p>
-                {% else %}
-                    <p>✅ <strong>Authorized</strong></p>
-                    <p>Token expires on {{ token.expires_at|date:"Y-m-d H:i:s" }} UTC</p>
-                {% endif %}
-                
-                {% if token.division %}
-                    <p><strong>Division:</strong> {{ token.division }}</p>
-                {% endif %}
-                
-                <div style="margin-top: 20px;">
-                    <a href="{% url 'exact_oauth:refresh_token' %}" class="btn btn-success">Refresh Token</a>
-                    <form method="post" action="{% url 'exact_oauth:revoke' %}" style="display: inline;">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to revoke access?')">Revoke Access</button>
-                    </form>
-                </div>
-            {% else %}
-                <p>❌ <strong>Not Authorized</strong></p>
-                {% if configured %}
-                    <a href="{% url 'exact_oauth:authorize' %}" class="btn btn-primary">Authorize Now</a>
-                {% else %}
-                    <p>Configure environment variables first</p>
-                {% endif %}
-            {% endif %}
-        </div>
-    </div>
-
+</div>
 {% endblock %}

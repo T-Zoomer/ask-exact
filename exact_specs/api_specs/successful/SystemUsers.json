@@ -1,0 +1,279 @@
+{
+  "name": "SystemUsers",
+  "fields": {
+    "UserID": {
+      "name": "UserID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "AuthenticationType": {
+      "name": "AuthenticationType",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Authentication Type: 2=Forms, 8=Totp, 64=B2CFederatedLogin, 128=B2CLogin. It is a bitwise enumerator, e.g. Forms + Totp = 10"
+    },
+    "BirthDate": {
+      "name": "BirthDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Birth date"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of the creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the creator"
+    },
+    "Customer": {
+      "name": "Customer",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Customer the user belongs to"
+    },
+    "CustomerName": {
+      "name": "CustomerName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of Customer"
+    },
+    "Email": {
+      "name": "Email",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Email address of the user"
+    },
+    "EndDate": {
+      "name": "EndDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Date after which the user login is disabled. NULL means no enddate"
+    },
+    "FirstName": {
+      "name": "FirstName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "First name"
+    },
+    "FullName": {
+      "name": "FullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Full name of the user"
+    },
+    "Gender": {
+      "name": "Gender",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Gender: M=Male, V=Female, O=Unknown"
+    },
+    "HasRegisteredForTwoStepVerification": {
+      "name": "HasRegisteredForTwoStepVerification",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User has completed registration of Two-Step verification"
+    },
+    "HasTwoStepVerification": {
+      "name": "HasTwoStepVerification",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User must use Two-Step verification to log in"
+    },
+    "Initials": {
+      "name": "Initials",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Initials"
+    },
+    "IsAnonymised": {
+      "name": "IsAnonymised",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates whether the user is anonymised."
+    },
+    "IsAPICall": {
+      "name": "IsAPICall",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "To validate default values for API"
+    },
+    "Language": {
+      "name": "Language",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Language (culture) that is used in Exact Online"
+    },
+    "LastLogin": {
+      "name": "LastLogin",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The last time this user logged in"
+    },
+    "LastName": {
+      "name": "LastName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last name"
+    },
+    "MiddleName": {
+      "name": "MiddleName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Middle name"
+    },
+    "Mobile": {
+      "name": "Mobile",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Mobile phone"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of the last modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the last modifier"
+    },
+    "Nationality": {
+      "name": "Nationality",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Nationality"
+    },
+    "Notes": {
+      "name": "Notes",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Remarks"
+    },
+    "Phone": {
+      "name": "Phone",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Phone number"
+    },
+    "PhoneExtension": {
+      "name": "PhoneExtension",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Phone number extension"
+    },
+    "ProfileCode": {
+      "name": "ProfileCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Profile code"
+    },
+    "StartDate": {
+      "name": "StartDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Startdate after which the login is allowed. If the start date is NULL the login is allowed as well"
+    },
+    "Title": {
+      "name": "Title",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Title"
+    },
+    "UserDivisionList": {
+      "name": "UserDivisionList",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User Division List - CSV format"
+    },
+    "UserLanguage": {
+      "name": "UserLanguage",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User's regional language option setting in User settings"
+    },
+    "UserName": {
+      "name": "UserName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Login name of the user. If the user logs in with One Exact Identity, the login name is in the email address field"
+    },
+    "UserTypeCode": {
+      "name": "UserTypeCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "User type code"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 16:13:47 UTC",
+    "total_fields": 37,
+    "scraping_method": "documentation_only",
+    "doc_url": "SystemUsers"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "Users",
+      "good_to_know": "Unlike many other APIs, this API does not support the division code in the URL. If you supply the division code in the URL then the response status\r\nwill be 501 - Not Implemented.\r\n\n\r\nThe following properties will only have an effect during PUT and POST operations:\r\n\n\r\n- Customer: when trying to create or update a user you must supply the ID of that user's customer in this property. You can retrieve that\r\nID using the CRMAccounts API.\r\nThe ID property indicates the customer's ID. The user will become a member of that customer. It means that,\r\nin case the request is executed on behalf of a user that has rights to create users for his/her clients the customer ID can be different from\r\n his/her own customer.\r\n\r\nThis scenario may be applicable e.g. for an accountant that manages his client's license and/or administrations.\r\n\n\r\n- UserDivisionList: the property is used to grant/revoke access to one or more divisions.\r\n\r\nThe list is comma separated.\r\n\r\nIf the property is omitted access to divisions will not be modified.\r\n\r\nWhen a division is not in the list, but access was already granted, the access to that division will be revoked.\r\n\r\nIf the property is supplied without any values access to all divisions will be revoked.\r\n\n\r\n- UserTypeCode: through the UserTypeCode roles will be assigned to the user, that in turn determines the rights the user will have\r\nwhile accessing a given division.\r\n\r\nThis property is mandatory.\r\n\n\r\n- ProfileCode: If ProfileCode is supported, Roles assigned to the user will be filtered based on the ProfileCode.\r\nThat in turn determines the rights the user will have while accessing a given division.",
+      "scope": "Organization administration",
+      "uri": "/api/v1/system/Users",
+      "example_usage": "/api/v1/system/Users"
+    }
+  }
+}

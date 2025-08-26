@@ -1,0 +1,531 @@
+{
+  "name": "SalesOrderSalesOrders",
+  "fields": {
+    "OrderID": {
+      "name": "OrderID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "AmountDC": {
+      "name": "AmountDC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount in the default currency of the company"
+    },
+    "AmountDiscount": {
+      "name": "AmountDiscount",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Discount amount in the default currency of the company"
+    },
+    "AmountDiscountExclVat": {
+      "name": "AmountDiscountExclVat",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Discount amount excluding VAT in the default currency of the company"
+    },
+    "AmountFC": {
+      "name": "AmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount in the currency of the transaction"
+    },
+    "AmountFCExclVat": {
+      "name": "AmountFCExclVat",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount exclude VAT in the currency of the transaction"
+    },
+    "ApprovalStatus": {
+      "name": "ApprovalStatus",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Approval status of sales order. 0=Awaiting approval, 1=Automatically, 2=Approved. Approve a new sales order by giving value 2 if user has SalesOrderApproval right."
+    },
+    "ApprovalStatusDescription": {
+      "name": "ApprovalStatusDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of ApprovalStatus"
+    },
+    "Approved": {
+      "name": "Approved",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Approval datetime"
+    },
+    "Approver": {
+      "name": "Approver",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User who approved the sales order"
+    },
+    "ApproverFullName": {
+      "name": "ApproverFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of approver"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of creator"
+    },
+    "Currency": {
+      "name": "Currency",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Currency code"
+    },
+    "CustomField": {
+      "name": "CustomField",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Custom field endpoint. Provided only for the Exact Online Premium users."
+    },
+    "DeliverTo": {
+      "name": "DeliverTo",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to the delivery customer. For an existing sales order this value can not be changed."
+    },
+    "DeliverToContactPerson": {
+      "name": "DeliverToContactPerson",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to contact person of delivery customer"
+    },
+    "DeliverToContactPersonFullName": {
+      "name": "DeliverToContactPersonFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of contact person of delivery customer"
+    },
+    "DeliverToName": {
+      "name": "DeliverToName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of delivery customer"
+    },
+    "DeliveryAddress": {
+      "name": "DeliveryAddress",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Delivery address"
+    },
+    "DeliveryDate": {
+      "name": "DeliveryDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Delivery date"
+    },
+    "DeliveryStatus": {
+      "name": "DeliveryStatus",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Shipping status"
+    },
+    "DeliveryStatusDescription": {
+      "name": "DeliveryStatusDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of DeliveryStatus"
+    },
+    "Description": {
+      "name": "Description",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description"
+    },
+    "Discount": {
+      "name": "Discount",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Discount percentage"
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "Document": {
+      "name": "Document",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Document that is manually linked to the sales order"
+    },
+    "DocumentNumber": {
+      "name": "DocumentNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Number of the document"
+    },
+    "DocumentSubject": {
+      "name": "DocumentSubject",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Subject of the document"
+    },
+    "IncotermAddress": {
+      "name": "IncotermAddress",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Address of Incoterm"
+    },
+    "IncotermCode": {
+      "name": "IncotermCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Incoterm"
+    },
+    "IncotermVersion": {
+      "name": "IncotermVersion",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Version of Incoterm Supported version for Incoterms : 2010, 2020"
+    },
+    "InvoiceStatus": {
+      "name": "InvoiceStatus",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Invoice status"
+    },
+    "InvoiceStatusDescription": {
+      "name": "InvoiceStatusDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of InvoiceStatus"
+    },
+    "InvoiceTo": {
+      "name": "InvoiceTo",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to the customer who will receive the invoice. For an existing sales order this value can not be changed."
+    },
+    "InvoiceToContactPerson": {
+      "name": "InvoiceToContactPerson",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to the contact person of the customer who will receive the invoice"
+    },
+    "InvoiceToContactPersonFullName": {
+      "name": "InvoiceToContactPersonFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the contact person of the customer who will receive the invoice"
+    },
+    "InvoiceToName": {
+      "name": "InvoiceToName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the customer who will receive the invoice"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of modifier"
+    },
+    "OrderDate": {
+      "name": "OrderDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Order date"
+    },
+    "OrderedBy": {
+      "name": "OrderedBy",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Customer who ordered the sales order. For an existing sales order this value can not be changed."
+    },
+    "OrderedByContactPerson": {
+      "name": "OrderedByContactPerson",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Contact person of the customer who ordered the sales order"
+    },
+    "OrderedByContactPersonFullName": {
+      "name": "OrderedByContactPersonFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of contact person of the customer who ordered the sales order"
+    },
+    "OrderedByName": {
+      "name": "OrderedByName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the customer who ordered the sales order"
+    },
+    "OrderNumber": {
+      "name": "OrderNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Number of sales order"
+    },
+    "PaymentCondition": {
+      "name": "PaymentCondition",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The payment condition used for due date and discount calculation"
+    },
+    "PaymentConditionDescription": {
+      "name": "PaymentConditionDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of PaymentCondition"
+    },
+    "PaymentReference": {
+      "name": "PaymentReference",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Payment reference for sales order"
+    },
+    "Remarks": {
+      "name": "Remarks",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Extra remarks"
+    },
+    "SalesChannel": {
+      "name": "SalesChannel",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "ID of Sales channel."
+    },
+    "SalesChannelCode": {
+      "name": "SalesChannelCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Sales channel"
+    },
+    "SalesChannelDescription": {
+      "name": "SalesChannelDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Sales channel"
+    },
+    "SalesOrderLines": {
+      "name": "SalesOrderLines",
+      "type": "SalesOrderLines",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Collection of lines"
+    },
+    "SalesOrderOrderChargeLines": {
+      "name": "SalesOrderOrderChargeLines",
+      "type": "SalesOrderOrderChargeLines",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Collection of order charge lines"
+    },
+    "Salesperson": {
+      "name": "Salesperson",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Sales representative"
+    },
+    "SalespersonFullName": {
+      "name": "SalespersonFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of sales representative"
+    },
+    "SelectionCode": {
+      "name": "SelectionCode",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "ID of selection code. Only supported by the Plus, Professional and Premium for Wholesale & Distribution and Manufacturing"
+    },
+    "SelectionCodeCode": {
+      "name": "SelectionCodeCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of selection code"
+    },
+    "SelectionCodeDescription": {
+      "name": "SelectionCodeDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of selection code"
+    },
+    "ShippingMethod": {
+      "name": "ShippingMethod",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "ShippingMethod"
+    },
+    "ShippingMethodDescription": {
+      "name": "ShippingMethodDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of ShippingMethod"
+    },
+    "Status": {
+      "name": "Status",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The status of the sales order. 12 = Open, 20 = Partial, 21 = Complete, 45 = Cancelled."
+    },
+    "StatusDescription": {
+      "name": "StatusDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Status"
+    },
+    "TaxSchedule": {
+      "name": "TaxSchedule",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "TaxScheduleCode": {
+      "name": "TaxScheduleCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "TaxScheduleDescription": {
+      "name": "TaxScheduleDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "WarehouseCode": {
+      "name": "WarehouseCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Warehouse"
+    },
+    "WarehouseDescription": {
+      "name": "WarehouseDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Warehouse"
+    },
+    "WarehouseID": {
+      "name": "WarehouseID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Warehouse. Only supported by the Plus, Professional and Premium editions for Wholesale & Distribution and Manufacturing"
+    },
+    "YourRef": {
+      "name": "YourRef",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The reference number of the customer"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 15:58:35 UTC",
+    "total_fields": 73,
+    "scraping_method": "documentation_only",
+    "doc_url": "SalesOrderSalesOrders"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "SalesOrders",
+      "good_to_know": "Use this endpoint to create, read, update and delete sales orders.Note: You must include a parameter for 'SalesOrderLines' to add sales order lines when you POST to the SalesOrders endpoint. This parameter is not necessary when you PUT to this endpoint.It is not recommended to make changes to sales orders after it is completed. If you use an API command to update a completed sales order, it will not be successful. However, you can still make changes to it from Exact Online by retrieving the sales order and clicking Edit. The updated sales order may need to be approved again depending on your settings. Sales order lines support trade-in lines. For more details, please refer description under properties SalesOrderLines > QuantitySales orders describe the items that you plan to sell to your customers.For more information about the sales order functionality in Exact Online, see About sales orders.To view an example of the business use of this endpoint, see Rest API - Business example API sales order.",
+      "scope": "Sales orders",
+      "uri": "/api/v1/{division}/salesorder/SalesOrders",
+      "example_usage": "/api/v1/{division}/salesorder/SalesOrders"
+    }
+  }
+}

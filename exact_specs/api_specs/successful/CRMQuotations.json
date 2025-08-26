@@ -1,0 +1,503 @@
+{
+  "name": "CRMQuotations",
+  "fields": {
+    "QuotationID": {
+      "name": "QuotationID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Identifier of the quotation"
+    },
+    "AmountDC": {
+      "name": "AmountDC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount in the default currency of the company"
+    },
+    "AmountDiscount": {
+      "name": "AmountDiscount",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Discount Amount in the currency of the transaction"
+    },
+    "AmountDiscountExclVat": {
+      "name": "AmountDiscountExclVat",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Discount Amount excluding VAT in the currency of the transaction"
+    },
+    "AmountFC": {
+      "name": "AmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount in the currency of the transaction"
+    },
+    "CloseDate": {
+      "name": "CloseDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Date on which the customer accepted or rejected the quotation version"
+    },
+    "ClosingDate": {
+      "name": "ClosingDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Date on which you expect to close/win the deal"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Date and time on which the quotation was created"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of the creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the creator"
+    },
+    "Currency": {
+      "name": "Currency",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The currency of the quotation"
+    },
+    "DeliveryAccount": {
+      "name": "DeliveryAccount",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The account where the items should delivered"
+    },
+    "DeliveryAccountCode": {
+      "name": "DeliveryAccountCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The code of the delivery account"
+    },
+    "DeliveryAccountContact": {
+      "name": "DeliveryAccountContact",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The contact person of the delivery account"
+    },
+    "DeliveryAccountContactFullName": {
+      "name": "DeliveryAccountContactFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Full name of the delivery account contact person"
+    },
+    "DeliveryAccountName": {
+      "name": "DeliveryAccountName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The name of the delivery account"
+    },
+    "DeliveryAddress": {
+      "name": "DeliveryAddress",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The id of the delivery address"
+    },
+    "DeliveryDate": {
+      "name": "DeliveryDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The date of the delivery"
+    },
+    "Description": {
+      "name": "Description",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The description of the quotation"
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "Document": {
+      "name": "Document",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Document linked to the quotation"
+    },
+    "DocumentSubject": {
+      "name": "DocumentSubject",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The subject of the document"
+    },
+    "DueDate": {
+      "name": "DueDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Date after which the quotation is no longer valid"
+    },
+    "IncotermAddress": {
+      "name": "IncotermAddress",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Address of Incoterm"
+    },
+    "IncotermCode": {
+      "name": "IncotermCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Incoterm"
+    },
+    "IncotermVersion": {
+      "name": "IncotermVersion",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Version of Incoterm Supported version for Incoterms : 2010, 2020"
+    },
+    "InvoiceAccount": {
+      "name": "InvoiceAccount",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The account to which the invoice is sent"
+    },
+    "InvoiceAccountCode": {
+      "name": "InvoiceAccountCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The code of the invoice account"
+    },
+    "InvoiceAccountContact": {
+      "name": "InvoiceAccountContact",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The contact person of the invoice account"
+    },
+    "InvoiceAccountContactFullName": {
+      "name": "InvoiceAccountContactFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Full name of the invoice account contact person"
+    },
+    "InvoiceAccountName": {
+      "name": "InvoiceAccountName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The name of the invoice account"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Date and time on which the quotation was last modified"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of the modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the modifier"
+    },
+    "Opportunity": {
+      "name": "Opportunity",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Opportunity linked to the quotation"
+    },
+    "OpportunityName": {
+      "name": "OpportunityName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The name of the opportunity"
+    },
+    "OrderAccount": {
+      "name": "OrderAccount",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "The account that requested the quotation"
+    },
+    "OrderAccountCode": {
+      "name": "OrderAccountCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The code of the order account"
+    },
+    "OrderAccountContact": {
+      "name": "OrderAccountContact",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The contact person of the order account"
+    },
+    "OrderAccountContactFullName": {
+      "name": "OrderAccountContactFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Full name of the order account contact person"
+    },
+    "OrderAccountName": {
+      "name": "OrderAccountName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The name of the order account"
+    },
+    "PaymentCondition": {
+      "name": "PaymentCondition",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Payment condition code"
+    },
+    "PaymentConditionDescription": {
+      "name": "PaymentConditionDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Payment condition description"
+    },
+    "Project": {
+      "name": "Project",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The project linked to the quotation"
+    },
+    "ProjectCode": {
+      "name": "ProjectCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The code of the project"
+    },
+    "ProjectDescription": {
+      "name": "ProjectDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The description of the project"
+    },
+    "QuotationDate": {
+      "name": "QuotationDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Date on which the quotation version is entered or printed. Both during entering and printing this date can be adjusted"
+    },
+    "QuotationLines": {
+      "name": "QuotationLines",
+      "type": "QuotationLines",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "The collection of quotation lines"
+    },
+    "QuotationNumber": {
+      "name": "QuotationNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Unique number to indentify the quotation. By default this number is based on the setting for first available number"
+    },
+    "QuotationOrderChargeLines": {
+      "name": "QuotationOrderChargeLines",
+      "type": "QuotationOrderChargeLines",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Collection of shipping cost and order charge lines. Only applicable in POST. Ignore the URL returns in GET."
+    },
+    "Remarks": {
+      "name": "Remarks",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Extra text that can be added to the quotation"
+    },
+    "SalesChannel": {
+      "name": "SalesChannel",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "ID of Sales channel."
+    },
+    "SalesChannelCode": {
+      "name": "SalesChannelCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Sales channel."
+    },
+    "SalesChannelDescription": {
+      "name": "SalesChannelDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Sales channel."
+    },
+    "SalesPerson": {
+      "name": "SalesPerson",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The user that is responsible for the quotation version"
+    },
+    "SalesPersonFullName": {
+      "name": "SalesPersonFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Full name of the sales person"
+    },
+    "SelectionCode": {
+      "name": "SelectionCode",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "ID of selection code. Only supported by the Plus, Professional and Premium for Wholesale & Distribution and Manufacturing"
+    },
+    "SelectionCodeCode": {
+      "name": "SelectionCodeCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of selection code"
+    },
+    "SelectionCodeDescription": {
+      "name": "SelectionCodeDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of selection code"
+    },
+    "ShippingMethod": {
+      "name": "ShippingMethod",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Shipping method ID"
+    },
+    "ShippingMethodDescription": {
+      "name": "ShippingMethodDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Shipping method description"
+    },
+    "Status": {
+      "name": "Status",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The status of the quotation version. 5 = Rejected, 6 = Reviewed and closed, 10 = Recovery, 20 = Draft, 25 = Open, 35 = Processing... , 40 = Printed, 50 = Accepted, 60 = Awaiting online acceptance, 70 = Accepted but an error occurred during processing"
+    },
+    "StatusDescription": {
+      "name": "StatusDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The description of the status"
+    },
+    "VATAmountFC": {
+      "name": "VATAmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Total VAT amount in the currency of the transaction"
+    },
+    "VersionNumber": {
+      "name": "VersionNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Number indicating the different reviews which are made for the quotation"
+    },
+    "WarehouseCode": {
+      "name": "WarehouseCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Warehouse"
+    },
+    "WarehouseDescription": {
+      "name": "WarehouseDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Warehouse"
+    },
+    "WarehouseID": {
+      "name": "WarehouseID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Warehouse. Only supported by the Plus, Professional and Premium editions for Wholesale & Distribution and Manufacturing"
+    },
+    "YourRef": {
+      "name": "YourRef",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The number by which this quotation is identified by the order account"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 16:13:21 UTC",
+    "total_fields": 69,
+    "scraping_method": "documentation_only",
+    "doc_url": "CRMQuotations"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "Quotations",
+      "good_to_know": "This entity supports webhooks.Subscribe to the topic Quotations to get updates on the Quotations resource. Note that you will also receive events on the QuotationLines resource.",
+      "scope": "Crm quotes",
+      "uri": "/api/v1/{division}/crm/Quotations",
+      "example_usage": "/api/v1/{division}/crm/Quotations"
+    }
+  }
+}

@@ -1,0 +1,147 @@
+{
+    "name": "BudgetBudgets",
+    "fields": {
+        "ID": {
+            "name": "ID",
+            "type": "Edm.Guid",
+            "description": "Primary key"
+        },
+        "AmountDC": {
+            "name": "AmountDC",
+            "type": "Edm.Double",
+            "source": "documentation",
+            "mandatory": true,
+            "description": "Budget amount (always in the default currency of the company)"
+        },
+        "BudgetScenario": {
+            "name": "BudgetScenario",
+            "type": "Edm.Guid",
+            "description": "Budget scenario"
+        },
+        "BudgetScenarioCode": {
+            "name": "BudgetScenarioCode",
+            "type": "Edm.String",
+            "description": "Code of BudgetScenario"
+        },
+        "BudgetScenarioDescription": {
+            "name": "BudgetScenarioDescription",
+            "type": "Edm.String",
+            "description": "Description of BudgetScenario"
+        },
+        "Costcenter": {
+            "name": "Costcenter",
+            "type": "Edm.String",
+            "description": "Used for cost center-specific budgets - NULL otherwise"
+        },
+        "CostcenterDescription": {
+            "name": "CostcenterDescription",
+            "type": "Edm.String",
+            "description": "Description of Costcenter"
+        },
+        "Costunit": {
+            "name": "Costunit",
+            "type": "Edm.String",
+            "description": "Used for cost unit-specific budgets - NULL otherwise"
+        },
+        "CostunitDescription": {
+            "name": "CostunitDescription",
+            "type": "Edm.String",
+            "description": "Description of Costunit"
+        },
+        "Created": {
+            "name": "Created",
+            "type": "Edm.DateTime",
+            "description": "Creation date"
+        },
+        "Creator": {
+            "name": "Creator",
+            "type": "Edm.Guid",
+            "description": "User ID of creator"
+        },
+        "CreatorFullName": {
+            "name": "CreatorFullName",
+            "type": "Edm.String",
+            "description": "Name of creator"
+        },
+        "Division": {
+            "name": "Division",
+            "type": "Edm.Int32",
+            "description": "Division code"
+        },
+        "GLAccount": {
+            "name": "GLAccount",
+            "type": "Edm.Guid",
+            "description": "G/L account"
+        },
+        "GLAccountCode": {
+            "name": "GLAccountCode",
+            "type": "Edm.String",
+            "description": "Code of GLAccount"
+        },
+        "GLAccountDescription": {
+            "name": "GLAccountDescription",
+            "type": "Edm.String",
+            "description": "Description of GLAccount"
+        },
+        "HID": {
+            "name": "HID",
+            "type": "Edm.Int64",
+            "description": "Numerical ID. Never displayed to the user, but it may have its use for performance reasons"
+        },
+        "Item": {
+            "name": "Item",
+            "type": "Edm.Guid",
+            "description": "Used for item-specific budgets - NULL otherwise"
+        },
+        "ItemCode": {
+            "name": "ItemCode",
+            "type": "Edm.String",
+            "description": "Code of Item"
+        },
+        "ItemDescription": {
+            "name": "ItemDescription",
+            "type": "Edm.String",
+            "description": "Description of Item"
+        },
+        "Modified": {
+            "name": "Modified",
+            "type": "Edm.DateTime",
+            "description": "Last modified date"
+        },
+        "Modifier": {
+            "name": "Modifier",
+            "type": "Edm.Guid",
+            "description": "User ID of modifier"
+        },
+        "ModifierFullName": {
+            "name": "ModifierFullName",
+            "type": "Edm.String",
+            "description": "Name of modifier"
+        },
+        "ReportingPeriod": {
+            "name": "ReportingPeriod",
+            "type": "Edm.Int16",
+            "description": "Period (combined with financial year)"
+        },
+        "ReportingYear": {
+            "name": "ReportingYear",
+            "type": "Edm.Int16",
+            "description": "Financial year"
+        }
+    },
+    "metadata": {
+        "scraped_at": "2025-08-26 17:29:49 UTC",
+        "total_fields": 25,
+        "scraping_method": "documentation_only",
+        "doc_url": "BudgetBudgets"
+    },
+    "documentation": {
+        "endpoint_info": {
+            "endpoint": "Budgets",
+            "good_to_know": "Use this endpoint to get the budgets that you have allocated to a G/L account in your administration. For more information about budget, you can refer to Budgets.",
+            "scope": "Financial budgets",
+            "uri": "/api/v1/{division}/budget/Budgets",
+            "example_usage": "/api/v1/{division}/budget/Budgets"
+        }
+    }
+}

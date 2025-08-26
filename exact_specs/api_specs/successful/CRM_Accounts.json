@@ -1,0 +1,890 @@
+{
+  "name": "CRM/Accounts",
+  "path": "crm/Accounts",
+  "service": "CRM",
+  "methods": "GET, POST, PUT, DELETE",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "guid",
+      "source": "single_endpoint_scraper",
+      "sample_value": "52831e57-f586-4a01-a608-b39edfa07401"
+    },
+    "Accountant": {
+      "name": "Accountant",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "AccountManager": {
+      "name": "AccountManager",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "AccountManagerFullName": {
+      "name": "AccountManagerFullName",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "AccountManagerHID": {
+      "name": "AccountManagerHID",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "ActivitySector": {
+      "name": "ActivitySector",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "ActivitySubSector": {
+      "name": "ActivitySubSector",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "AddressLine1": {
+      "name": "AddressLine1",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "AddressLine2": {
+      "name": "AddressLine2",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "AddressLine3": {
+      "name": "AddressLine3",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "BankAccounts": {
+      "name": "BankAccounts",
+      "type": "object",
+      "source": "single_endpoint_scraper"
+    },
+    "Blocked": {
+      "name": "Blocked",
+      "type": "boolean",
+      "source": "single_endpoint_scraper",
+      "sample_value": false
+    },
+    "BRIN": {
+      "name": "BRIN",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "BSN": {
+      "name": "BSN",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "BusinessType": {
+      "name": "BusinessType",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "CanDropShip": {
+      "name": "CanDropShip",
+      "type": "boolean",
+      "source": "single_endpoint_scraper",
+      "sample_value": false
+    },
+    "ChamberOfCommerce": {
+      "name": "ChamberOfCommerce",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "City": {
+      "name": "City",
+      "type": "string",
+      "source": "single_endpoint_scraper",
+      "sample_value": "Apeldoorn"
+    },
+    "Classification": {
+      "name": "Classification",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "Classification1": {
+      "name": "Classification1",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "Classification2": {
+      "name": "Classification2",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "Classification3": {
+      "name": "Classification3",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "Classification4": {
+      "name": "Classification4",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "Classification5": {
+      "name": "Classification5",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "Classification6": {
+      "name": "Classification6",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "Classification7": {
+      "name": "Classification7",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "Classification8": {
+      "name": "Classification8",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "ClassificationDescription": {
+      "name": "ClassificationDescription",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "Code": {
+      "name": "Code",
+      "type": "string",
+      "source": "single_endpoint_scraper",
+      "sample_value": "                 1"
+    },
+    "CodeAtSupplier": {
+      "name": "CodeAtSupplier",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "CompanySize": {
+      "name": "CompanySize",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "ConsolidationScenario": {
+      "name": "ConsolidationScenario",
+      "type": "integer",
+      "source": "single_endpoint_scraper",
+      "sample_value": 4
+    },
+    "ControlledDate": {
+      "name": "ControlledDate",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "Costcenter": {
+      "name": "Costcenter",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "CostcenterDescription": {
+      "name": "CostcenterDescription",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "CostPaid": {
+      "name": "CostPaid",
+      "type": "integer",
+      "source": "single_endpoint_scraper",
+      "sample_value": 0
+    },
+    "Country": {
+      "name": "Country",
+      "type": "string",
+      "source": "single_endpoint_scraper",
+      "sample_value": "NL "
+    },
+    "CountryName": {
+      "name": "CountryName",
+      "type": "string",
+      "source": "single_endpoint_scraper",
+      "sample_value": "Nederland"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "datetime",
+      "source": "single_endpoint_scraper",
+      "sample_value": "/Date(1728361776717)/"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "guid",
+      "source": "single_endpoint_scraper",
+      "sample_value": "db1e80c7-8aa5-4378-aa69-e4d391c60dd4"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "CreditLinePurchase": {
+      "name": "CreditLinePurchase",
+      "type": "integer",
+      "source": "single_endpoint_scraper",
+      "sample_value": 0
+    },
+    "CreditLineSales": {
+      "name": "CreditLineSales",
+      "type": "integer",
+      "source": "single_endpoint_scraper",
+      "sample_value": 0
+    },
+    "Currency": {
+      "name": "Currency",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "CustomField": {
+      "name": "CustomField",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "CustomerSince": {
+      "name": "CustomerSince",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "DatevCreditorCode": {
+      "name": "DatevCreditorCode",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "DatevDebtorCode": {
+      "name": "DatevDebtorCode",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "DeliveryAdvice": {
+      "name": "DeliveryAdvice",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "DiscountPurchase": {
+      "name": "DiscountPurchase",
+      "type": "integer",
+      "source": "single_endpoint_scraper",
+      "sample_value": 0
+    },
+    "DiscountSales": {
+      "name": "DiscountSales",
+      "type": "integer",
+      "source": "single_endpoint_scraper",
+      "sample_value": 0
+    },
+    "Division": {
+      "name": "Division",
+      "type": "integer",
+      "source": "single_endpoint_scraper",
+      "sample_value": 4173552
+    },
+    "Document": {
+      "name": "Document",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "DunsNumber": {
+      "name": "DunsNumber",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "Email": {
+      "name": "Email",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "EnableSalesPaymentLink": {
+      "name": "EnableSalesPaymentLink",
+      "type": "boolean",
+      "source": "single_endpoint_scraper",
+      "sample_value": false
+    },
+    "EndDate": {
+      "name": "EndDate",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "EstablishedDate": {
+      "name": "EstablishedDate",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "Fax": {
+      "name": "Fax",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "GLAccountPurchase": {
+      "name": "GLAccountPurchase",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "GLAccountSales": {
+      "name": "GLAccountSales",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "GLAP": {
+      "name": "GLAP",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "GLAR": {
+      "name": "GLAR",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "GlnNumber": {
+      "name": "GlnNumber",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "HasWithholdingTaxSales": {
+      "name": "HasWithholdingTaxSales",
+      "type": "boolean",
+      "source": "single_endpoint_scraper",
+      "sample_value": false
+    },
+    "IgnoreDatevWarningMessage": {
+      "name": "IgnoreDatevWarningMessage",
+      "type": "boolean",
+      "source": "single_endpoint_scraper",
+      "sample_value": false
+    },
+    "IncotermAddressPurchase": {
+      "name": "IncotermAddressPurchase",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "IncotermCodePurchase": {
+      "name": "IncotermCodePurchase",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "IncotermVersionPurchase": {
+      "name": "IncotermVersionPurchase",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "IncotermAddressSales": {
+      "name": "IncotermAddressSales",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "IncotermCodeSales": {
+      "name": "IncotermCodeSales",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "IncotermVersionSales": {
+      "name": "IncotermVersionSales",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "IntraStatArea": {
+      "name": "IntraStatArea",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "IntraStatDeliveryTerm": {
+      "name": "IntraStatDeliveryTerm",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "IntraStatSystem": {
+      "name": "IntraStatSystem",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "IntraStatTransactionA": {
+      "name": "IntraStatTransactionA",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "IntraStatTransactionB": {
+      "name": "IntraStatTransactionB",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "IntraStatTransportMethod": {
+      "name": "IntraStatTransportMethod",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "InvoiceAccount": {
+      "name": "InvoiceAccount",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "InvoiceAccountCode": {
+      "name": "InvoiceAccountCode",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "InvoiceAccountName": {
+      "name": "InvoiceAccountName",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "InvoiceAttachmentType": {
+      "name": "InvoiceAttachmentType",
+      "type": "integer",
+      "source": "single_endpoint_scraper",
+      "sample_value": 1
+    },
+    "InvoicingMethod": {
+      "name": "InvoicingMethod",
+      "type": "integer",
+      "source": "single_endpoint_scraper",
+      "sample_value": 0
+    },
+    "AutomaticProcessProposedEntry": {
+      "name": "AutomaticProcessProposedEntry",
+      "type": "integer",
+      "source": "single_endpoint_scraper",
+      "sample_value": 0
+    },
+    "IsAccountant": {
+      "name": "IsAccountant",
+      "type": "integer",
+      "source": "single_endpoint_scraper",
+      "sample_value": 0
+    },
+    "IsAgency": {
+      "name": "IsAgency",
+      "type": "integer",
+      "source": "single_endpoint_scraper",
+      "sample_value": 0
+    },
+    "IsAnonymised": {
+      "name": "IsAnonymised",
+      "type": "integer",
+      "source": "single_endpoint_scraper",
+      "sample_value": 0
+    },
+    "IsBank": {
+      "name": "IsBank",
+      "type": "boolean",
+      "source": "single_endpoint_scraper",
+      "sample_value": false
+    },
+    "IsCompetitor": {
+      "name": "IsCompetitor",
+      "type": "integer",
+      "source": "single_endpoint_scraper",
+      "sample_value": 0
+    },
+    "IsExtraDuty": {
+      "name": "IsExtraDuty",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "IsMailing": {
+      "name": "IsMailing",
+      "type": "integer",
+      "source": "single_endpoint_scraper",
+      "sample_value": 0
+    },
+    "IsMember": {
+      "name": "IsMember",
+      "type": "boolean",
+      "source": "single_endpoint_scraper",
+      "sample_value": false
+    },
+    "IsPilot": {
+      "name": "IsPilot",
+      "type": "boolean",
+      "source": "single_endpoint_scraper",
+      "sample_value": false
+    },
+    "IsPurchase": {
+      "name": "IsPurchase",
+      "type": "boolean",
+      "source": "single_endpoint_scraper",
+      "sample_value": false
+    },
+    "IsReseller": {
+      "name": "IsReseller",
+      "type": "boolean",
+      "source": "single_endpoint_scraper",
+      "sample_value": false
+    },
+    "IsSales": {
+      "name": "IsSales",
+      "type": "boolean",
+      "source": "single_endpoint_scraper",
+      "sample_value": false
+    },
+    "IsSupplier": {
+      "name": "IsSupplier",
+      "type": "boolean",
+      "source": "single_endpoint_scraper",
+      "sample_value": true
+    },
+    "Language": {
+      "name": "Language",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "LanguageDescription": {
+      "name": "LanguageDescription",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "Latitude": {
+      "name": "Latitude",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "LeadSource": {
+      "name": "LeadSource",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "LeadPurpose": {
+      "name": "LeadPurpose",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "LogoFileName": {
+      "name": "LogoFileName",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "LogoThumbnailUrl": {
+      "name": "LogoThumbnailUrl",
+      "type": "string",
+      "source": "single_endpoint_scraper",
+      "sample_value": "https://start.exactonline.nl//docs/images/placeholder_account_myeol.png"
+    },
+    "LogoUrl": {
+      "name": "LogoUrl",
+      "type": "string",
+      "source": "single_endpoint_scraper",
+      "sample_value": "https://start.exactonline.nl//docs/images/placeholder_account_myeol.png"
+    },
+    "Logo": {
+      "name": "Logo",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "Longitude": {
+      "name": "Longitude",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "MainContact": {
+      "name": "MainContact",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "datetime",
+      "source": "single_endpoint_scraper",
+      "sample_value": "/Date(1728361777530)/"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "guid",
+      "source": "single_endpoint_scraper",
+      "sample_value": "db1e80c7-8aa5-4378-aa69-e4d391c60dd4"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "Name": {
+      "name": "Name",
+      "type": "string",
+      "source": "single_endpoint_scraper",
+      "sample_value": "Belastingdienst"
+    },
+    "OINNumber": {
+      "name": "OINNumber",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "Parent": {
+      "name": "Parent",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "PaymentConditionPurchase": {
+      "name": "PaymentConditionPurchase",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "PaymentConditionPurchaseDescription": {
+      "name": "PaymentConditionPurchaseDescription",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "PaymentConditionSales": {
+      "name": "PaymentConditionSales",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "PaymentConditionSalesDescription": {
+      "name": "PaymentConditionSalesDescription",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "PayAsYouEarn": {
+      "name": "PayAsYouEarn",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "Phone": {
+      "name": "Phone",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "PhoneExtension": {
+      "name": "PhoneExtension",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "Postcode": {
+      "name": "Postcode",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "PriceList": {
+      "name": "PriceList",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "PurchaseCurrency": {
+      "name": "PurchaseCurrency",
+      "type": "string",
+      "source": "single_endpoint_scraper",
+      "sample_value": "EUR"
+    },
+    "PurchaseCurrencyDescription": {
+      "name": "PurchaseCurrencyDescription",
+      "type": "string",
+      "source": "single_endpoint_scraper",
+      "sample_value": "Euro"
+    },
+    "PurchaseLeadDays": {
+      "name": "PurchaseLeadDays",
+      "type": "integer",
+      "source": "single_endpoint_scraper",
+      "sample_value": 0
+    },
+    "PurchaseVATCode": {
+      "name": "PurchaseVATCode",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "PurchaseVATCodeDescription": {
+      "name": "PurchaseVATCodeDescription",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "Remarks": {
+      "name": "Remarks",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "RecepientOfCommissions": {
+      "name": "RecepientOfCommissions",
+      "type": "boolean",
+      "source": "single_endpoint_scraper",
+      "sample_value": false
+    },
+    "Reseller": {
+      "name": "Reseller",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "ResellerCode": {
+      "name": "ResellerCode",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "ResellerName": {
+      "name": "ResellerName",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "RSIN": {
+      "name": "RSIN",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "SalesCurrency": {
+      "name": "SalesCurrency",
+      "type": "string",
+      "source": "single_endpoint_scraper",
+      "sample_value": "EUR"
+    },
+    "SalesCurrencyDescription": {
+      "name": "SalesCurrencyDescription",
+      "type": "string",
+      "source": "single_endpoint_scraper",
+      "sample_value": "Euro"
+    },
+    "SalesVATCode": {
+      "name": "SalesVATCode",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "SalesVATCodeDescription": {
+      "name": "SalesVATCodeDescription",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "SearchCode": {
+      "name": "SearchCode",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "SecurityLevel": {
+      "name": "SecurityLevel",
+      "type": "integer",
+      "source": "single_endpoint_scraper",
+      "sample_value": 10
+    },
+    "SeparateInvPerProject": {
+      "name": "SeparateInvPerProject",
+      "type": "integer",
+      "source": "single_endpoint_scraper",
+      "sample_value": 0
+    },
+    "SeparateInvPerSubscription": {
+      "name": "SeparateInvPerSubscription",
+      "type": "integer",
+      "source": "single_endpoint_scraper",
+      "sample_value": 0
+    },
+    "ShippingLeadDays": {
+      "name": "ShippingLeadDays",
+      "type": "integer",
+      "source": "single_endpoint_scraper",
+      "sample_value": 0
+    },
+    "ShippingMethod": {
+      "name": "ShippingMethod",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "ShowRemarkForSales": {
+      "name": "ShowRemarkForSales",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "StartDate": {
+      "name": "StartDate",
+      "type": "datetime",
+      "source": "single_endpoint_scraper",
+      "sample_value": "/Date(1351123200000)/"
+    },
+    "State": {
+      "name": "State",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "StateName": {
+      "name": "StateName",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "Status": {
+      "name": "Status",
+      "type": "string",
+      "source": "single_endpoint_scraper",
+      "sample_value": "A"
+    },
+    "StatusSince": {
+      "name": "StatusSince",
+      "type": "datetime",
+      "source": "single_endpoint_scraper",
+      "sample_value": "/Date(1728345600000)/"
+    },
+    "SalesTaxSchedule": {
+      "name": "SalesTaxSchedule",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "SalesTaxScheduleCode": {
+      "name": "SalesTaxScheduleCode",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "SalesTaxScheduleDescription": {
+      "name": "SalesTaxScheduleDescription",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "TradeName": {
+      "name": "TradeName",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "Type": {
+      "name": "Type",
+      "type": "string",
+      "source": "single_endpoint_scraper",
+      "sample_value": "A"
+    },
+    "UniqueTaxpayerReference": {
+      "name": "UniqueTaxpayerReference",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "VATLiability": {
+      "name": "VATLiability",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "VATNumber": {
+      "name": "VATNumber",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "Website": {
+      "name": "Website",
+      "type": "string",
+      "source": "single_endpoint_scraper",
+      "sample_value": "www.belastingdienst.nl"
+    },
+    "EORINumber": {
+      "name": "EORINumber",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "AddressSource": {
+      "name": "AddressSource",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "Source": {
+      "name": "Source",
+      "type": "integer",
+      "source": "single_endpoint_scraper",
+      "sample_value": 3
+    },
+    "PeppolIdentifierType": {
+      "name": "PeppolIdentifierType",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    },
+    "PeppolIdentifier": {
+      "name": "PeppolIdentifier",
+      "type": "nullable",
+      "source": "single_endpoint_scraper"
+    }
+  },
+  "documentation": {},
+  "metadata": {
+    "scraped_at": "2025-08-25 12:25:39 UTC",
+    "total_fields": 164,
+    "scraping_method": "single_endpoint",
+    "includes_documentation": true
+  }
+}

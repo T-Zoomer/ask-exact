@@ -1,0 +1,1989 @@
+{
+    "ProfitLossOverview": {
+        "name": "ReadFinancialProfitLossOverview",
+        "fields": {
+            "CurrentYear": {
+                "name": "CurrentYear",
+                "type": "Edm.Int32",
+                "description": "Primary key, Current year"
+            },
+            "CostsCurrentPeriod": {
+                "name": "CostsCurrentPeriod",
+                "type": "Edm.Double",
+                "description": "Total cost for the current year and period"
+            },
+            "CostsCurrentYear": {
+                "name": "CostsCurrentYear",
+                "type": "Edm.Double",
+                "description": "Total cost for the current year"
+            },
+            "CostsPreviousYear": {
+                "name": "CostsPreviousYear",
+                "type": "Edm.Double",
+                "description": "Total cost for the previous year"
+            },
+            "CostsPreviousYearPeriod": {
+                "name": "CostsPreviousYearPeriod",
+                "type": "Edm.Double",
+                "description": "Total cost for the previous year and period"
+            },
+            "CurrencyCode": {
+                "name": "CurrencyCode",
+                "type": "Edm.String",
+                "description": "Currency code"
+            },
+            "CurrentPeriod": {
+                "name": "CurrentPeriod",
+                "type": "Edm.Int32",
+                "description": "Current period"
+            },
+            "PreviousYear": {
+                "name": "PreviousYear",
+                "type": "Edm.Int32",
+                "description": "Previous year"
+            },
+            "PreviousYearPeriod": {
+                "name": "PreviousYearPeriod",
+                "type": "Edm.Int32",
+                "description": "Period in previous year"
+            },
+            "ResultCurrentPeriod": {
+                "name": "ResultCurrentPeriod",
+                "type": "Edm.Double",
+                "description": "Results of current year and period"
+            },
+            "ResultCurrentYear": {
+                "name": "ResultCurrentYear",
+                "type": "Edm.Double",
+                "description": "Results of current year"
+            },
+            "ResultPreviousYear": {
+                "name": "ResultPreviousYear",
+                "type": "Edm.Double",
+                "description": "Results of previous year"
+            },
+            "ResultPreviousYearPeriod": {
+                "name": "ResultPreviousYearPeriod",
+                "type": "Edm.Double",
+                "description": "Results of previous year and period"
+            },
+            "RevenueCurrentPeriod": {
+                "name": "RevenueCurrentPeriod",
+                "type": "Edm.Double",
+                "description": "Total revenue for the current year and period"
+            },
+            "RevenueCurrentYear": {
+                "name": "RevenueCurrentYear",
+                "type": "Edm.Double",
+                "description": "Total revenue for the current year"
+            },
+            "RevenuePreviousYear": {
+                "name": "RevenuePreviousYear",
+                "type": "Edm.Double",
+                "description": "Total revenue for the previous year"
+            },
+            "RevenuePreviousYearPeriod": {
+                "name": "RevenuePreviousYearPeriod",
+                "type": "Edm.Double",
+                "description": "Total revenue for the previous year and period"
+            }
+        },
+        "metadata": {
+            "scraped_at": "2025-08-26 17:25:11 UTC",
+            "total_fields": 17,
+            "scraping_method": "documentation_only",
+            "doc_url": "ReadFinancialProfitLossOverview"
+        },
+        "documentation": {
+            "endpoint_info": {
+                "endpoint": "ProfitLossOverview",
+                "good_to_know": "Use this endpoint if you want to know the financial result of the current and previous year. The current period is determined by checking the date of the endpoint execution against the Financial Year/Period setup.  E.g. Date of Endpoint execution = 24-oct-2019. In your administration, the financial year 2019 period 10 has the following setup of 01-10-2019 till 31-10-2019. Current year is 2019,  current period is 10. Previous year is 2018. previous period is 10. Only P&L G/L Accounts are considered for this endpoint. Costs are balances of all G/L Account of type Costs. Revenue are balances of all G/L Account of type Revenue. Results are calculated by subtracting cost from revenue.  For more information about profit and loss, kindly refer to the following help file Balance Sheet/Profit & Loss.",
+                "scope": "Financial accounting",
+                "uri": "/api/v1/{division}/read/financial/ProfitLossOverview",
+                "example_usage": "/api/v1/{division}/read/financial/ProfitLossOverview"
+            },
+            "llm_description": "Retrieve profit and loss overview data including costs and revenues for current and previous periods/years",
+            "keywords": [
+                "profit",
+                "loss",
+                "P&L",
+                "income",
+                "revenue",
+                "costs",
+                "expenses",
+                "financial",
+                "reporting",
+                "period",
+                "year"
+            ]
+        }
+    },
+    "Budgets": {
+        "name": "BudgetBudgets",
+        "fields": {
+            "ID": {
+                "name": "ID",
+                "type": "Edm.Guid",
+                "description": "Primary key"
+            },
+            "AmountDC": {
+                "name": "AmountDC",
+                "type": "Edm.Double",
+                "source": "documentation",
+                "mandatory": true,
+                "description": "Budget amount (always in the default currency of the company)"
+            },
+            "BudgetScenario": {
+                "name": "BudgetScenario",
+                "type": "Edm.Guid",
+                "description": "Budget scenario"
+            },
+            "BudgetScenarioCode": {
+                "name": "BudgetScenarioCode",
+                "type": "Edm.String",
+                "description": "Code of BudgetScenario"
+            },
+            "BudgetScenarioDescription": {
+                "name": "BudgetScenarioDescription",
+                "type": "Edm.String",
+                "description": "Description of BudgetScenario"
+            },
+            "Costcenter": {
+                "name": "Costcenter",
+                "type": "Edm.String",
+                "description": "Used for cost center-specific budgets - NULL otherwise"
+            },
+            "CostcenterDescription": {
+                "name": "CostcenterDescription",
+                "type": "Edm.String",
+                "description": "Description of Costcenter"
+            },
+            "Costunit": {
+                "name": "Costunit",
+                "type": "Edm.String",
+                "description": "Used for cost unit-specific budgets - NULL otherwise"
+            },
+            "CostunitDescription": {
+                "name": "CostunitDescription",
+                "type": "Edm.String",
+                "description": "Description of Costunit"
+            },
+            "Created": {
+                "name": "Created",
+                "type": "Edm.DateTime",
+                "description": "Creation date"
+            },
+            "Creator": {
+                "name": "Creator",
+                "type": "Edm.Guid",
+                "description": "User ID of creator"
+            },
+            "CreatorFullName": {
+                "name": "CreatorFullName",
+                "type": "Edm.String",
+                "description": "Name of creator"
+            },
+            "Division": {
+                "name": "Division",
+                "type": "Edm.Int32",
+                "description": "Division code"
+            },
+            "GLAccount": {
+                "name": "GLAccount",
+                "type": "Edm.Guid",
+                "description": "G/L account"
+            },
+            "GLAccountCode": {
+                "name": "GLAccountCode",
+                "type": "Edm.String",
+                "description": "Code of GLAccount"
+            },
+            "GLAccountDescription": {
+                "name": "GLAccountDescription",
+                "type": "Edm.String",
+                "description": "Description of GLAccount"
+            },
+            "HID": {
+                "name": "HID",
+                "type": "Edm.Int64",
+                "description": "Numerical ID. Never displayed to the user, but it may have its use for performance reasons"
+            },
+            "Item": {
+                "name": "Item",
+                "type": "Edm.Guid",
+                "description": "Used for item-specific budgets - NULL otherwise"
+            },
+            "ItemCode": {
+                "name": "ItemCode",
+                "type": "Edm.String",
+                "description": "Code of Item"
+            },
+            "ItemDescription": {
+                "name": "ItemDescription",
+                "type": "Edm.String",
+                "description": "Description of Item"
+            },
+            "Modified": {
+                "name": "Modified",
+                "type": "Edm.DateTime",
+                "description": "Last modified date"
+            },
+            "Modifier": {
+                "name": "Modifier",
+                "type": "Edm.Guid",
+                "description": "User ID of modifier"
+            },
+            "ModifierFullName": {
+                "name": "ModifierFullName",
+                "type": "Edm.String",
+                "description": "Name of modifier"
+            },
+            "ReportingPeriod": {
+                "name": "ReportingPeriod",
+                "type": "Edm.Int16",
+                "description": "Period (combined with financial year)"
+            },
+            "ReportingYear": {
+                "name": "ReportingYear",
+                "type": "Edm.Int16",
+                "description": "Financial year"
+            }
+        },
+        "metadata": {
+            "scraped_at": "2025-08-26 17:29:49 UTC",
+            "total_fields": 25,
+            "scraping_method": "documentation_only",
+            "doc_url": "BudgetBudgets"
+        },
+        "documentation": {
+            "endpoint_info": {
+                "endpoint": "Budgets",
+                "good_to_know": "Use this endpoint to get the budgets that you have allocated to a G/L account in your administration. For more information about budget, you can refer to Budgets.",
+                "scope": "Financial budgets",
+                "uri": "/api/v1/{division}/budget/Budgets",
+                "example_usage": "/api/v1/{division}/budget/Budgets"
+            },
+            "llm_description": "Access budget allocations for G/L accounts, cost centers, cost units and items with scenario planning",
+            "keywords": [
+                "budget",
+                "planning",
+                "allocation",
+                "scenario",
+                "GL account",
+                "cost center",
+                "cost unit",
+                "financial planning"
+            ]
+        }
+    },
+    "Cashflow/Receivables": {
+        "name": "BulkCashflowReceivables",
+        "fields": {
+            "ID": {
+                "name": "ID",
+                "type": "Edm.Guid",
+                "description": "Identifier of the receivable."
+            },
+            "Account": {
+                "name": "Account",
+                "type": "Edm.Guid",
+                "description": "The customer from which the receivable will come."
+            },
+            "AccountBankAccountID": {
+                "name": "AccountBankAccountID",
+                "type": "Edm.Guid",
+                "description": "The bank account of the customer, from which the receivable will come."
+            },
+            "AccountBankAccountNumber": {
+                "name": "AccountBankAccountNumber",
+                "type": "Edm.String",
+                "description": "The bank account number of the customer, from which the receivable will come."
+            },
+            "AccountCode": {
+                "name": "AccountCode",
+                "type": "Edm.String",
+                "description": "The code of the customer from which the receivable will come."
+            },
+            "AccountContact": {
+                "name": "AccountContact",
+                "type": "Edm.Guid",
+                "description": "Contact person copied from the purchase invoice linked to the related purchase entry."
+            },
+            "AccountContactName": {
+                "name": "AccountContactName",
+                "type": "Edm.String",
+                "description": "Name of the contact person of the customer."
+            },
+            "AccountCountry": {
+                "name": "AccountCountry",
+                "type": "Edm.String",
+                "description": "Country code of the customer."
+            },
+            "AccountName": {
+                "name": "AccountName",
+                "type": "Edm.String",
+                "description": "Name of the customer."
+            },
+            "AmountDC": {
+                "name": "AmountDC",
+                "type": "Edm.Double",
+                "description": "The amount in default currency (division currency). Receivables are matched on this amount."
+            },
+            "AmountDiscountDC": {
+                "name": "AmountDiscountDC",
+                "type": "Edm.Double",
+                "description": "The amount of the discount in the default currency."
+            },
+            "AmountDiscountFC": {
+                "name": "AmountDiscountFC",
+                "type": "Edm.Double",
+                "description": "The amount of the discount. This is in the amount of the selected currency."
+            },
+            "AmountFC": {
+                "name": "AmountFC",
+                "type": "Edm.Double",
+                "description": "The amount of the receivable. This is in the amount of the selected currency."
+            },
+            "BankAccountID": {
+                "name": "BankAccountID",
+                "type": "Edm.Guid",
+                "description": "Own bank account to which the receivable will be done."
+            },
+            "BankAccountNumber": {
+                "name": "BankAccountNumber",
+                "type": "Edm.String",
+                "description": "Own bank account number to which the receivable will be done."
+            },
+            "CashflowTransactionBatchCode": {
+                "name": "CashflowTransactionBatchCode",
+                "type": "Edm.String",
+                "description": "When processing receivables, all receivable with the same processing data are put in a batch. This field contains the code of that batch."
+            },
+            "Created": {
+                "name": "Created",
+                "type": "Edm.DateTime",
+                "description": "Creation date."
+            },
+            "Creator": {
+                "name": "Creator",
+                "type": "Edm.Guid",
+                "description": "User ID of the creator."
+            },
+            "CreatorFullName": {
+                "name": "CreatorFullName",
+                "type": "Edm.String",
+                "description": "Name of the creator."
+            },
+            "Currency": {
+                "name": "Currency",
+                "type": "Edm.String",
+                "description": "The currency of the receivable. This currency can only deviate from the division currency if the module Currency is in the license."
+            },
+            "Description": {
+                "name": "Description",
+                "type": "Edm.String",
+                "description": "Description."
+            },
+            "DirectDebitMandate": {
+                "name": "DirectDebitMandate",
+                "type": "Edm.Guid",
+                "description": "Direct Debit Mandate used to collect the receivable."
+            },
+            "DirectDebitMandateDescription": {
+                "name": "DirectDebitMandateDescription",
+                "type": "Edm.String",
+                "description": "Description of the mandate."
+            },
+            "DirectDebitMandatePaymentType": {
+                "name": "DirectDebitMandatePaymentType",
+                "type": "Edm.Int16",
+                "description": "Payment type of the mandate. 0 = One off payment 1 = Recurrent payment."
+            },
+            "DirectDebitMandateReference": {
+                "name": "DirectDebitMandateReference",
+                "type": "Edm.String",
+                "description": "Unique mandate reference."
+            },
+            "DirectDebitMandateType": {
+                "name": "DirectDebitMandateType",
+                "type": "Edm.Int16",
+                "description": "Type of the mandate. 0 = Core 1 = Business-to-business."
+            },
+            "DiscountDueDate": {
+                "name": "DiscountDueDate",
+                "type": "Edm.DateTime",
+                "description": "Date before which the payment by the customer must be done to be eligible for discount."
+            },
+            "Division": {
+                "name": "Division",
+                "type": "Edm.Int32",
+                "description": "Division code."
+            },
+            "Document": {
+                "name": "Document",
+                "type": "Edm.Guid",
+                "description": "Document that is created when processing collections.  The bank export file is attached to the document."
+            },
+            "DocumentNumber": {
+                "name": "DocumentNumber",
+                "type": "Edm.Int32",
+                "description": "Number of the document."
+            },
+            "DocumentSubject": {
+                "name": "DocumentSubject",
+                "type": "Edm.String",
+                "description": "Subject of the document."
+            },
+            "DueDate": {
+                "name": "DueDate",
+                "type": "Edm.DateTime",
+                "description": "Date before which the payment by the customer must be done."
+            },
+            "EndDate": {
+                "name": "EndDate",
+                "type": "Edm.DateTime",
+                "description": "Date since when the receivable is no longer an outstanding item. This is the highest invoice date of all matched receivables."
+            },
+            "EndPeriod": {
+                "name": "EndPeriod",
+                "type": "Edm.Int16",
+                "description": "Period since when the receivable is no longer an outstanding item. This is the highest period of all matched receivables."
+            },
+            "EndToEndID": {
+                "name": "EndToEndID",
+                "type": "Edm.String",
+                "description": "The value of the tag 'EndToEndID' when generating a SEPA file."
+            },
+            "EndYear": {
+                "name": "EndYear",
+                "type": "Edm.Int16",
+                "description": "Year (of period) since when the receivable is no longer an outstanding item. This is the highest year of all matched receivables. Used in combination with EndPeriod."
+            },
+            "EntryDate": {
+                "name": "EntryDate",
+                "type": "Edm.DateTime",
+                "description": "Processing date of the receivable."
+            },
+            "EntryID": {
+                "name": "EntryID",
+                "type": "Edm.Guid",
+                "description": "The unique identifier for a set of receivables. A receivable can be split so that one part is received on a different date. In that case the two records get a different EntryID."
+            },
+            "EntryNumber": {
+                "name": "EntryNumber",
+                "type": "Edm.Int32",
+                "description": "Entry number of the linked transaction."
+            },
+            "GLAccount": {
+                "name": "GLAccount",
+                "type": "Edm.Guid",
+                "description": "G/L account of the payment. Must be of type 20 (Accounts receivable)."
+            },
+            "GLAccountCode": {
+                "name": "GLAccountCode",
+                "type": "Edm.String",
+                "description": "Code of the G/L account."
+            },
+            "GLAccountDescription": {
+                "name": "GLAccountDescription",
+                "type": "Edm.String",
+                "description": "Description of the G/L account."
+            },
+            "InvoiceDate": {
+                "name": "InvoiceDate",
+                "type": "Edm.DateTime",
+                "description": "Invoice date of the linked transaction."
+            },
+            "InvoiceNumber": {
+                "name": "InvoiceNumber",
+                "type": "Edm.Int32",
+                "description": "Invoice number of the linked transaction."
+            },
+            "IsBatchBooking": {
+                "name": "IsBatchBooking",
+                "type": "Edm.Byte",
+                "description": "Boolean indicating whether the receivable is part of a batch booking."
+            },
+            "IsFullyPaid": {
+                "name": "IsFullyPaid",
+                "type": "Edm.Boolean",
+                "description": "Boolean indicating whether the receivable was fully paid by the customer."
+            },
+            "Journal": {
+                "name": "Journal",
+                "type": "Edm.String",
+                "description": "Journal of the linked transaction."
+            },
+            "JournalDescription": {
+                "name": "JournalDescription",
+                "type": "Edm.String",
+                "description": "Description of the journal."
+            },
+            "LastPaymentDate": {
+                "name": "LastPaymentDate",
+                "type": "Edm.DateTime",
+                "description": "Last payment date."
+            },
+            "Modified": {
+                "name": "Modified",
+                "type": "Edm.DateTime",
+                "description": "Last modified date."
+            },
+            "Modifier": {
+                "name": "Modifier",
+                "type": "Edm.Guid",
+                "description": "User ID of modifier."
+            },
+            "ModifierFullName": {
+                "name": "ModifierFullName",
+                "type": "Edm.String",
+                "description": "Name of modifier."
+            },
+            "OrderNumber": {
+                "name": "OrderNumber",
+                "type": "Edm.Int32",
+                "description": "Order number of the linked transaction."
+            },
+            "PaymentCondition": {
+                "name": "PaymentCondition",
+                "type": "Edm.String",
+                "description": "Payment condition of the linked transaction."
+            },
+            "PaymentConditionDescription": {
+                "name": "PaymentConditionDescription",
+                "type": "Edm.String",
+                "description": "Description of the payment condition."
+            },
+            "PaymentDays": {
+                "name": "PaymentDays",
+                "type": "Edm.Int32",
+                "description": "Number of days between invoice date and due date."
+            },
+            "PaymentDaysDiscount": {
+                "name": "PaymentDaysDiscount",
+                "type": "Edm.Int32",
+                "description": "Number of days between invoice date and due date of the discount."
+            },
+            "PaymentDiscountPercentage": {
+                "name": "PaymentDiscountPercentage",
+                "type": "Edm.Double",
+                "description": "Payment discount percentage."
+            },
+            "PaymentInformationID": {
+                "name": "PaymentInformationID",
+                "type": "Edm.String",
+                "description": "PaymentInformationID tag from the SEPA xml file."
+            },
+            "PaymentMethod": {
+                "name": "PaymentMethod",
+                "type": "Edm.String",
+                "description": "Method of payment. B = On credit (default) I = Collection K = Cash V = Credit card"
+            },
+            "PaymentReference": {
+                "name": "PaymentReference",
+                "type": "Edm.String",
+                "description": "Payment reference for the receivable that may be included In the bank export file"
+            },
+            "RateFC": {
+                "name": "RateFC",
+                "type": "Edm.Double",
+                "description": "Exchange rate from receivable currency to division currency. AmountFC * RateFC = AmountDC."
+            },
+            "ReceivableBatchNumber": {
+                "name": "ReceivableBatchNumber",
+                "type": "Edm.Int32",
+                "description": "Number assigned during the processing of receivables."
+            },
+            "ReceivableSelected": {
+                "name": "ReceivableSelected",
+                "type": "Edm.DateTime",
+                "description": "Date and time since when the receivable is selected to be collected."
+            },
+            "ReceivableSelector": {
+                "name": "ReceivableSelector",
+                "type": "Edm.Guid",
+                "description": "User who selected the receivable to be collected."
+            },
+            "ReceivableSelectorFullName": {
+                "name": "ReceivableSelectorFullName",
+                "type": "Edm.String",
+                "description": "Name of the receivable selector."
+            },
+            "Source": {
+                "name": "Source",
+                "type": "Edm.Int32",
+                "description": "The source of the receivable."
+            },
+            "Status": {
+                "name": "Status",
+                "type": "Edm.Int16",
+                "description": "The status of the receivable. 20 = open 30 = selected - receivable is selected to be collected 40 = processed - collection has been done 50 = matched - receivable is matched with one or more other outstanding items or financial statement lines"
+            },
+            "TransactionAmountDC": {
+                "name": "TransactionAmountDC",
+                "type": "Edm.Double",
+                "description": "Total amount of the linked transaction in default currency (division currency)."
+            },
+            "TransactionAmountFC": {
+                "name": "TransactionAmountFC",
+                "type": "Edm.Double",
+                "description": "Total amount of the linked transaction in the selected currency."
+            },
+            "TransactionDueDate": {
+                "name": "TransactionDueDate",
+                "type": "Edm.DateTime",
+                "description": "Due date of the linked transaction."
+            },
+            "TransactionEntryID": {
+                "name": "TransactionEntryID",
+                "type": "Edm.Guid",
+                "description": "Linked transaction. Use this as reference to SalesEntries."
+            },
+            "TransactionID": {
+                "name": "TransactionID",
+                "type": "Edm.Guid",
+                "description": "Linked transaction line. Use this as reference to SalesEntryLines."
+            },
+            "TransactionIsReversal": {
+                "name": "TransactionIsReversal",
+                "type": "Edm.Boolean",
+                "description": "Indicates if the linked transaction is a reversal entry."
+            },
+            "TransactionReportingPeriod": {
+                "name": "TransactionReportingPeriod",
+                "type": "Edm.Int16",
+                "description": "Period of the linked transaction."
+            },
+            "TransactionReportingYear": {
+                "name": "TransactionReportingYear",
+                "type": "Edm.Int16",
+                "description": "Year of the linked transaction."
+            },
+            "TransactionStatus": {
+                "name": "TransactionStatus",
+                "type": "Edm.Int16",
+                "description": "Status of the linked transaction."
+            },
+            "TransactionType": {
+                "name": "TransactionType",
+                "type": "Edm.Int32",
+                "description": "Type of the linked transaction."
+            },
+            "YourRef": {
+                "name": "YourRef",
+                "type": "Edm.String",
+                "description": "Invoice number. In case the receivable belongs to a bank entry line and is matched with one invoice, YourRef is filled with the YourRef of this invoice."
+            }
+        },
+        "metadata": {
+            "scraped_at": "2025-08-26 17:27:50 UTC",
+            "total_fields": 79,
+            "scraping_method": "documentation_only",
+            "doc_url": "BulkCashflowReceivables"
+        },
+        "documentation": {
+            "endpoint_info": {
+                "endpoint": "Cashflow/Receivables",
+                "good_to_know": "Use this endpoint to get an overview of all the payment to be received in your administration. Paymentlines are grouped by own bank account, account bank account, payment reference, payment method, entry date and status. Payments of one entry have the same TransactionId. Among other things, with this endpoint you can get information like the payments status (e.g. Open, Processed) or when is the collection is due.\r\nThis bulk service has a page size of 1000.\r\nIt is mandatory to provide the $select query option with a selection of one or more of the resource properties.\r\nOnly the following filters are supported for this endpoint:\r\nAccount, Document, EndDate, EndToEndID, EntryDate, EntryID, GLAccount, ID, InvoiceDate, InvoiceNumber, Source, Status, TransactionID, TransactionType",
+                "scope": "Financial receivables",
+                "uri": "/api/v1/{division}/bulk/Cashflow/Receivables",
+                "example_usage": "/api/v1/{division}/bulk/Cashflow/Receivables"
+            },
+            "llm_description": "Use this endpoint to get an overview of all the payment to be received in your administration. Paymentlines are grouped by own bank account, account bank account, payment reference, payment method, entry date and status. Payments of one entry have the same TransactionId. Among other things, with this endpoint you can get information like the payments status (e.g. Open, Processed) or when is the collection is due.\r\nThis bulk service has a page size of 1000.\r\nIt is mandatory to provide the $select query option with a selection of one or more of the resource properties.\r\nOnly the following filters are supported for this endpoint:\r\nAccount, Document, EndDate, EndToEndID, EntryDate, EntryID, GLAccount, ID, InvoiceDate, InvoiceNumber, Source, Status, TransactionID, TransactionType",
+            "keywords": [
+                "cashflow/receivables",
+                "data",
+                "api",
+                "endpoint"
+            ]
+        }
+    },
+    "ReportingBalance": {
+        "name": "FinancialReportingBalance",
+        "fields": {
+            "ID": {
+                "name": "ID",
+                "type": "Edm.Int64",
+                "description": "Record ID"
+            },
+            "Amount": {
+                "name": "Amount",
+                "type": "Edm.Double",
+                "description": "The sum of the amounts of all transactions in the grouping."
+            },
+            "AmountCredit": {
+                "name": "AmountCredit",
+                "type": "Edm.Double",
+                "description": "The sum of the amounts of all credit transactions in the grouping."
+            },
+            "AmountDebit": {
+                "name": "AmountDebit",
+                "type": "Edm.Double",
+                "description": "The sum of the amounts of all debit transactions in the grouping."
+            },
+            "BalanceType": {
+                "name": "BalanceType",
+                "type": "Edm.String",
+                "description": "Balance type of the G/L account: B = Balance Sheet, W = Profit & Loss."
+            },
+            "CostCenterCode": {
+                "name": "CostCenterCode",
+                "type": "Edm.String",
+                "description": "The code of the cost center."
+            },
+            "CostCenterDescription": {
+                "name": "CostCenterDescription",
+                "type": "Edm.String",
+                "description": "The description of the cost center."
+            },
+            "CostUnitCode": {
+                "name": "CostUnitCode",
+                "type": "Edm.String",
+                "description": "The code of the cost unit."
+            },
+            "CostUnitDescription": {
+                "name": "CostUnitDescription",
+                "type": "Edm.String",
+                "description": "The description of the cost unit."
+            },
+            "Count": {
+                "name": "Count",
+                "type": "Edm.Int32",
+                "description": "The number of transactions in the grouping."
+            },
+            "Division": {
+                "name": "Division",
+                "type": "Edm.Int32",
+                "description": "Division code"
+            },
+            "GLAccount": {
+                "name": "GLAccount",
+                "type": "Edm.Guid",
+                "description": "G/L account"
+            },
+            "GLAccountCode": {
+                "name": "GLAccountCode",
+                "type": "Edm.String",
+                "description": "The code of the G/L account."
+            },
+            "GLAccountDescription": {
+                "name": "GLAccountDescription",
+                "type": "Edm.String",
+                "description": "The description of the G/L account."
+            },
+            "ReportingPeriod": {
+                "name": "ReportingPeriod",
+                "type": "Edm.Int32",
+                "description": "The reporting period of the transactions in the grouping."
+            },
+            "ReportingYear": {
+                "name": "ReportingYear",
+                "type": "Edm.Int32",
+                "description": "The reporting year of the transactions in the grouping."
+            },
+            "Status": {
+                "name": "Status",
+                "type": "Edm.Int32",
+                "description": "Status: 20 = Open, 50 = Processed. To get 'after entry' results, both Open and Processed amounts have to be included. This is by default, so it requires no extra filtering."
+            },
+            "Type": {
+                "name": "Type",
+                "type": "Edm.Int32",
+                "description": "The type of the transactions in the grouping."
+            }
+        },
+        "metadata": {
+            "scraped_at": "2025-08-26 17:26:27 UTC",
+            "total_fields": 18,
+            "scraping_method": "documentation_only",
+            "doc_url": "FinancialReportingBalance"
+        },
+        "documentation": {
+            "endpoint_info": {
+                "endpoint": "ReportingBalance",
+                "good_to_know": "This service returns summarized data of financial transactions. It's intended for reporting balances and period totals. The summarized amounts are grouped by: Division, ReportingYear, ReportingPeriod, G/L account, Cost center, Cost unit, Type, Status. For optimal filter, only include a reporting year in the filter.",
+                "scope": "Financial accounting",
+                "uri": "/api/v1/{division}/financial/ReportingBalance",
+                "example_usage": "/api/v1/{division}/financial/ReportingBalance"
+            },
+            "llm_description": "This service returns summarized data of financial transactions. It's intended for reporting balances and period totals. The summarized amounts are grouped by: Division, ReportingYear, ReportingPeriod, G/L account, Cost center, Cost unit, Type, Status. For optimal filter, only include a reporting year in the filter.",
+            "keywords": [
+                "reportingbalance",
+                "data",
+                "api",
+                "endpoint"
+            ]
+        }
+    },
+    "BankEntries": {
+        "name": "FinancialTransactionBankEntries",
+        "fields": {
+            "EntryID": {
+                "name": "EntryID",
+                "type": "Edm.Guid",
+                "description": "Primary key"
+            },
+            "BankEntryLines": {
+                "name": "BankEntryLines",
+                "type": "BankEntryLines",
+                "source": "documentation",
+                "mandatory": true,
+                "description": "Collection of lines"
+            },
+            "BankStatementDocument": {
+                "name": "BankStatementDocument",
+                "type": "Edm.Guid",
+                "description": "Reference to document with bank statement"
+            },
+            "BankStatementDocumentNumber": {
+                "name": "BankStatementDocumentNumber",
+                "type": "Edm.Int32",
+                "description": "Document number of document with bank statement"
+            },
+            "BankStatementDocumentSubject": {
+                "name": "BankStatementDocumentSubject",
+                "type": "Edm.String",
+                "description": "Subject of document with bank statement"
+            },
+            "ClosingBalanceFC": {
+                "name": "ClosingBalanceFC",
+                "type": "Edm.Double",
+                "description": "Closing balance in the currency of the transaction"
+            },
+            "Created": {
+                "name": "Created",
+                "type": "Edm.DateTime",
+                "description": "Creation date"
+            },
+            "Currency": {
+                "name": "Currency",
+                "type": "Edm.String",
+                "description": "Currency code"
+            },
+            "CustomField": {
+                "name": "CustomField",
+                "type": "Edm.String",
+                "description": "Custom field endpoint"
+            },
+            "Division": {
+                "name": "Division",
+                "type": "Edm.Int32",
+                "description": "Division code"
+            },
+            "EntryNumber": {
+                "name": "EntryNumber",
+                "type": "Edm.Int32",
+                "description": "Entry number"
+            },
+            "FinancialPeriod": {
+                "name": "FinancialPeriod",
+                "type": "Edm.Int16",
+                "description": "The period of the transaction lines. The period should exist in the period date table"
+            },
+            "FinancialYear": {
+                "name": "FinancialYear",
+                "type": "Edm.Int16",
+                "description": "The financial year to which the entry belongs. The financial year should exist in the period date table"
+            },
+            "JournalCode": {
+                "name": "JournalCode",
+                "type": "Edm.String",
+                "source": "documentation",
+                "mandatory": true,
+                "description": "Code of Journal"
+            },
+            "JournalDescription": {
+                "name": "JournalDescription",
+                "type": "Edm.String",
+                "description": "Description of Journal"
+            },
+            "Modified": {
+                "name": "Modified",
+                "type": "Edm.DateTime",
+                "description": "Last modified date"
+            },
+            "OpeningBalanceFC": {
+                "name": "OpeningBalanceFC",
+                "type": "Edm.Double",
+                "description": "Opening balance in the currency of the transaction"
+            },
+            "Status": {
+                "name": "Status",
+                "type": "Edm.Int16",
+                "description": "Status: 20 = Open, 50 = Processed"
+            },
+            "StatusDescription": {
+                "name": "StatusDescription",
+                "type": "Edm.String",
+                "description": "Description of Status"
+            }
+        },
+        "metadata": {
+            "scraped_at": "2025-08-26 17:23:22 UTC",
+            "total_fields": 19,
+            "scraping_method": "documentation_only",
+            "doc_url": "FinancialTransactionBankEntries"
+        },
+        "documentation": {
+            "endpoint_info": {
+                "endpoint": "BankEntries",
+                "good_to_know": "Use this endpoint to create, delete or read bank entries for the bank statements received. Note: Bank entries are separated to header and line information. Endpoint BankEntries is used for the header information. You must include a parameter for 'BankEntryLines' to add cash entry lines when you POST to the BankEntries endpoint.Bank entries have an opening balance which should be the end balance of the previous entry. Opening balance plus all bank entry lines should result in the closing balance.",
+                "scope": "Financial accounting",
+                "uri": "/api/v1/{division}/financialtransaction/BankEntries",
+                "example_usage": "/api/v1/{division}/financialtransaction/BankEntries"
+            },
+            "llm_description": "Access bank transaction entries and financial transaction records",
+            "keywords": [
+                "bank entries",
+                "transactions",
+                "banking",
+                "financial entries",
+                "payments",
+                "receipts"
+            ]
+        }
+    },
+    "PayablesList": {
+        "name": "ReadFinancialPayablesList",
+        "fields": {
+            "HID": {
+                "name": "HID",
+                "type": "Edm.Int64",
+                "description": "Primary key, human readable ID"
+            },
+            "AccountCode": {
+                "name": "AccountCode",
+                "type": "Edm.String",
+                "description": "Code of Account"
+            },
+            "AccountId": {
+                "name": "AccountId",
+                "type": "Edm.Guid",
+                "description": "Reference to the account"
+            },
+            "AccountName": {
+                "name": "AccountName",
+                "type": "Edm.String",
+                "description": "Name of Account"
+            },
+            "Amount": {
+                "name": "Amount",
+                "type": "Edm.Double",
+                "description": "Amount"
+            },
+            "AmountInTransit": {
+                "name": "AmountInTransit",
+                "type": "Edm.Double",
+                "description": "Amount in transit - The amount that you have requested your bank to pay"
+            },
+            "ApprovalStatus": {
+                "name": "ApprovalStatus",
+                "type": "Edm.Int16",
+                "description": "Approval status:\r\n\t\t\t\t\t\tnull - Invoice was entered before approval functionality was activated (treated as Approved for payments)\r\n\t\t\t\t\t\t1 - N/A (used for non-electronic payment methods)\r\n\t\t\t\t\t\t2 - Awaiting review\r\n\t\t\t\t\t\t3 - Awaiting approval\r\n\t\t\t\t\t\t4 - Approved"
+            },
+            "CurrencyCode": {
+                "name": "CurrencyCode",
+                "type": "Edm.String",
+                "description": "Code of Currency"
+            },
+            "Description": {
+                "name": "Description",
+                "type": "Edm.String",
+                "description": "Description"
+            },
+            "DueDate": {
+                "name": "DueDate",
+                "type": "Edm.DateTime",
+                "description": "Date the invoice is due (This due date is not the discount due date)"
+            },
+            "EntryNumber": {
+                "name": "EntryNumber",
+                "type": "Edm.Int32",
+                "description": "The entry number of this payment term corresponding purchase/cashflow entry"
+            },
+            "Id": {
+                "name": "Id",
+                "type": "Edm.Guid",
+                "description": "Obsolete"
+            },
+            "InvoiceDate": {
+                "name": "InvoiceDate",
+                "type": "Edm.DateTime",
+                "description": "The date of the invoice or the date when money is paid to the supplier"
+            },
+            "InvoiceNumber": {
+                "name": "InvoiceNumber",
+                "type": "Edm.Int32",
+                "description": "For purchase entry, it would be the entrynumber. For the cashflow entry, it will be entrynumber of an invoice which this payment is for"
+            },
+            "JournalCode": {
+                "name": "JournalCode",
+                "type": "Edm.String",
+                "description": "Code of Journal"
+            },
+            "JournalDescription": {
+                "name": "JournalDescription",
+                "type": "Edm.String",
+                "description": "Description of Journal"
+            },
+            "Notes": {
+                "name": "Notes",
+                "type": "Notes",
+                "description": "Notes collection"
+            },
+            "YourRef": {
+                "name": "YourRef",
+                "type": "Edm.String",
+                "description": "Purchase invoice Your Reference number. Will be null if it is a cashflow entry"
+            }
+        },
+        "metadata": {
+            "scraped_at": "2025-08-26 17:29:06 UTC",
+            "total_fields": 18,
+            "scraping_method": "documentation_only",
+            "doc_url": "ReadFinancialPayablesList"
+        },
+        "documentation": {
+            "endpoint_info": {
+                "endpoint": "PayablesList",
+                "good_to_know": "Use this endpoint to get all your suppliers payment terms information. Payment term are created when an purchase invoice is created or when money is paid to the supplier.You can view this information in the Outstanding items report as well.",
+                "scope": "Financial payables",
+                "uri": "/api/v1/{division}/read/financial/PayablesList",
+                "example_usage": "/api/v1/{division}/read/financial/PayablesList"
+            },
+            "llm_description": "Retrieve accounts payable information and outstanding payment obligations",
+            "keywords": [
+                "payables",
+                "accounts payable",
+                "AP",
+                "suppliers",
+                "vendors",
+                "outstanding",
+                "payments",
+                "obligations"
+            ]
+        }
+    },
+    "Divisions": {
+        "name": "HRMDivisions",
+        "fields": {
+            "Code": {
+                "name": "Code",
+                "type": "Edm.Int32",
+                "description": "Primary key"
+            },
+            "ArchiveDate": {
+                "name": "ArchiveDate",
+                "type": "Edm.DateTime",
+                "description": "Date on which the division is archived"
+            },
+            "BlockingStatus": {
+                "name": "BlockingStatus",
+                "type": "Edm.Int32",
+                "description": "Values: 0 = Not blocked, 1 = Backup/restore, 2 = Conversion busy, 3 = Conversion shadow, 4 = Conversion waiting, 5 = Copy data waiting, 6 = Copy data busy"
+            },
+            "Class_01": {
+                "name": "Class_01",
+                "type": "DivisionClasses",
+                "description": "First division classification. User should have access rights to view division classifications."
+            },
+            "Class_02": {
+                "name": "Class_02",
+                "type": "DivisionClasses",
+                "description": "Second division classification. User should have access rights to view division classifications."
+            },
+            "Class_03": {
+                "name": "Class_03",
+                "type": "DivisionClasses",
+                "description": "Third division classification. User should have access rights to view division classifications."
+            },
+            "Class_04": {
+                "name": "Class_04",
+                "type": "DivisionClasses",
+                "description": "Fourth division classification. User should have access rights to view division classifications."
+            },
+            "Class_05": {
+                "name": "Class_05",
+                "type": "DivisionClasses",
+                "description": "Fifth division classification. User should have access rights to view division classifications."
+            },
+            "Country": {
+                "name": "Country",
+                "type": "Edm.String",
+                "description": "Country of the division. Is used for determination of legislation"
+            },
+            "CountryDescription": {
+                "name": "CountryDescription",
+                "type": "Edm.String",
+                "description": "Description of Country"
+            },
+            "Created": {
+                "name": "Created",
+                "type": "Edm.DateTime",
+                "description": "Creation date"
+            },
+            "Creator": {
+                "name": "Creator",
+                "type": "Edm.Guid",
+                "description": "User ID of creator"
+            },
+            "CreatorFullName": {
+                "name": "CreatorFullName",
+                "type": "Edm.String",
+                "description": "Name of the creator"
+            },
+            "Currency": {
+                "name": "Currency",
+                "type": "Edm.String",
+                "description": "Default currency of the division"
+            },
+            "CurrencyDescription": {
+                "name": "CurrencyDescription",
+                "type": "Edm.String",
+                "description": "Description of Currency"
+            },
+            "Customer": {
+                "name": "Customer",
+                "type": "Edm.Guid",
+                "description": "Owner account of the division"
+            },
+            "CustomerCode": {
+                "name": "CustomerCode",
+                "type": "Edm.String",
+                "description": "Owner account code of the division"
+            },
+            "CustomerName": {
+                "name": "CustomerName",
+                "type": "Edm.String",
+                "description": "Owner account name of the division"
+            },
+            "Description": {
+                "name": "Description",
+                "type": "Edm.String",
+                "description": "Description"
+            },
+            "HID": {
+                "name": "HID",
+                "type": "Edm.Int64",
+                "description": "Number that customers give to the division"
+            },
+            "Main": {
+                "name": "Main",
+                "type": "Edm.Boolean",
+                "description": "True for the main (hosting) division"
+            },
+            "Modified": {
+                "name": "Modified",
+                "type": "Edm.DateTime",
+                "description": "Last modified date"
+            },
+            "Modifier": {
+                "name": "Modifier",
+                "type": "Edm.Guid",
+                "description": "User ID of modifier"
+            },
+            "ModifierFullName": {
+                "name": "ModifierFullName",
+                "type": "Edm.String",
+                "description": "Name of the last modifier"
+            },
+            "OBNumber": {
+                "name": "OBNumber",
+                "type": "Edm.String",
+                "description": "The soletrader VAT number used for offical returns to tax authority"
+            },
+            "SiretNumber": {
+                "name": "SiretNumber",
+                "type": "Edm.String",
+                "description": "Siret Number of the division (France)"
+            },
+            "StartDate": {
+                "name": "StartDate",
+                "type": "Edm.DateTime",
+                "description": "Date on which the division becomes active"
+            },
+            "Status": {
+                "name": "Status",
+                "type": "Edm.Int16",
+                "description": "Regular administrations will have status 0.  Currently, the only other possibility is 'archived' (1), which means the administration is not actively used, but still needs to be accessible for the customer/accountant to meet legal obligations"
+            },
+            "TaxOfficeNumber": {
+                "name": "TaxOfficeNumber",
+                "type": "Edm.String",
+                "description": "Number of your local tax authority (Germany)"
+            },
+            "TaxReferenceNumber": {
+                "name": "TaxReferenceNumber",
+                "type": "Edm.String",
+                "description": "Local tax reference number (Germany)"
+            },
+            "TemplateCode": {
+                "name": "TemplateCode",
+                "type": "Edm.String",
+                "description": "Division template code"
+            },
+            "VATNumber": {
+                "name": "VATNumber",
+                "type": "Edm.String",
+                "description": "VAT number"
+            },
+            "Website": {
+                "name": "Website",
+                "type": "Edm.String",
+                "description": "Customer value, hyperlink to external website"
+            }
+        },
+        "metadata": {
+            "scraped_at": "2025-08-26 17:26:52 UTC",
+            "total_fields": 33,
+            "scraping_method": "documentation_only",
+            "doc_url": "HRMDivisions"
+        },
+        "documentation": {
+            "endpoint_info": {
+                "endpoint": "Divisions",
+                "good_to_know": "Returns only divisions that are accessible to the signed-in user, as configured in the user card under 'Companies: Access rights'. Accountants will only see divisions that belong to a single license (either their own or a client's), being the license that owns the division specified in the URI.Please note that divisions returned are only those which the user has granted permission to.Recommended alternative that is not limited to accessible divisions: /api/v1/{division}/system/AllDivisionsRecommended alternative that is not limited to a single license: /api/v1/{division}/system/Divisions",
+                "scope": "-",
+                "uri": "/api/v1/{division}/hrm/Divisions",
+                "example_usage": "/api/v1/{division}/hrm/Divisions"
+            },
+            "llm_description": "Access company division and organizational structure information",
+            "keywords": [
+                "divisions",
+                "company",
+                "organization",
+                "structure",
+                "business units",
+                "subsidiaries"
+            ]
+        }
+    },
+    "Banks": {
+        "name": "CashflowBanks",
+        "fields": {
+            "ID": {
+                "name": "ID",
+                "type": "Edm.Guid",
+                "description": "Primary key"
+            },
+            "BankName": {
+                "name": "BankName",
+                "type": "Edm.String",
+                "description": "The name of the bank"
+            },
+            "BICCode": {
+                "name": "BICCode",
+                "type": "Edm.String",
+                "description": "The bank identification code of the bank"
+            },
+            "Country": {
+                "name": "Country",
+                "type": "Edm.String",
+                "description": "The country in which the bank is based"
+            },
+            "Created": {
+                "name": "Created",
+                "type": "Edm.DateTime",
+                "description": "Creation date"
+            },
+            "Description": {
+                "name": "Description",
+                "type": "Edm.String",
+                "description": "The extended description of the bank"
+            },
+            "Format": {
+                "name": "Format",
+                "type": "Edm.String",
+                "description": "The account format used by the bank"
+            },
+            "HomePageAddress": {
+                "name": "HomePageAddress",
+                "type": "Edm.String",
+                "description": "The website of the bank"
+            },
+            "Modified": {
+                "name": "Modified",
+                "type": "Edm.DateTime",
+                "description": "Last modified date"
+            },
+            "Status": {
+                "name": "Status",
+                "type": "Edm.String",
+                "description": "The status of the bank. A = Active, P = Passive"
+            }
+        },
+        "metadata": {
+            "scraped_at": "2025-08-26 17:30:13 UTC",
+            "total_fields": 10,
+            "scraping_method": "documentation_only",
+            "doc_url": "CashflowBanks"
+        },
+        "documentation": {
+            "endpoint_info": {
+                "endpoint": "Banks",
+                "good_to_know": "Use this endpoint to get all the banks that are supported by EOL.",
+                "scope": "Financial cashflow",
+                "uri": "/api/v1/{division}/cashflow/Banks",
+                "example_usage": "/api/v1/{division}/cashflow/Banks"
+            },
+            "llm_description": "Access bank account information and banking details for cash flow management",
+            "keywords": [
+                "bank",
+                "banking",
+                "account",
+                "cash",
+                "financial institution",
+                "payment"
+            ]
+        }
+    },
+    "DirectDebitMandates": {
+        "name": "CashflowDirectDebitMandates",
+        "fields": {
+            "ID": {
+                "name": "ID",
+                "type": "Edm.Guid",
+                "description": "Primary key"
+            },
+            "Account": {
+                "name": "Account",
+                "type": "Edm.Guid",
+                "source": "documentation",
+                "mandatory": true,
+                "description": "Account to which the mandate belongs."
+            },
+            "Attachment": {
+                "name": "Attachment",
+                "type": "Edm.Binary",
+                "description": "Contain attachment (Format: Base64 encoded) of the mandate belongs. Binaries are not sent in the response."
+            },
+            "AttachmentFileName": {
+                "name": "AttachmentFileName",
+                "type": "Edm.String",
+                "description": "Filename of the attachment to which the mandate belongs."
+            },
+            "BankAccount": {
+                "name": "BankAccount",
+                "type": "Edm.Guid",
+                "source": "documentation",
+                "mandatory": true,
+                "description": "Bank account to which the mandate belongs."
+            },
+            "CancellationDate": {
+                "name": "CancellationDate",
+                "type": "Edm.DateTime",
+                "description": "Date that the mandate is cancelled. Used to check the validity of the mandate."
+            },
+            "Created": {
+                "name": "Created",
+                "type": "Edm.DateTime",
+                "description": "Creation date"
+            },
+            "Creator": {
+                "name": "Creator",
+                "type": "Edm.Guid",
+                "description": "User ID of creator"
+            },
+            "CreatorFullName": {
+                "name": "CreatorFullName",
+                "type": "Edm.String",
+                "description": "Name of creator"
+            },
+            "Description": {
+                "name": "Description",
+                "type": "Edm.String",
+                "description": "Displays the description of the mandate."
+            },
+            "Division": {
+                "name": "Division",
+                "type": "Edm.Int32",
+                "description": "Division code"
+            },
+            "FirstSend": {
+                "name": "FirstSend",
+                "type": "Edm.Byte",
+                "description": "Indicates the first collection hasn't been sent/confirmed with this mandate."
+            },
+            "Main": {
+                "name": "Main",
+                "type": "Edm.Byte",
+                "description": "Indicates if the mandate is the main, you can have only one main mandate"
+            },
+            "Modified": {
+                "name": "Modified",
+                "type": "Edm.DateTime",
+                "description": "Last modified date"
+            },
+            "Modifier": {
+                "name": "Modifier",
+                "type": "Edm.Guid",
+                "description": "User ID of modifier"
+            },
+            "ModifierFullName": {
+                "name": "ModifierFullName",
+                "type": "Edm.String",
+                "description": "Name of modifier"
+            },
+            "PaymentType": {
+                "name": "PaymentType",
+                "type": "Edm.Int16",
+                "description": "Depending on the payment type, a different bank file will be generated. 0 = One-off payment, 1 = Recurrent payment, 2 = AdHoc (UK only)"
+            },
+            "Reference": {
+                "name": "Reference",
+                "type": "Edm.String",
+                "description": "Displays a reference number for the mandate. It is a unique reference number that you can assign to each mandate."
+            },
+            "SignatureDate": {
+                "name": "SignatureDate",
+                "type": "Edm.DateTime",
+                "description": "Date that the mandate is signed. The collection must take place after the signature date of the mandate. The date is used to check the validity of the mandate."
+            },
+            "Type": {
+                "name": "Type",
+                "type": "Edm.Int16",
+                "description": "Depending on the type, a different bank file will be generated. 0 = Core, 1 = B2B and 2 = bottomline (UK only)"
+            }
+        },
+        "metadata": {
+            "scraped_at": "2025-08-26 17:29:20 UTC",
+            "total_fields": 20,
+            "scraping_method": "documentation_only",
+            "doc_url": "CashflowDirectDebitMandates"
+        },
+        "documentation": {
+            "endpoint_info": {
+                "endpoint": "DirectDebitMandates",
+                "good_to_know": "Use this endpoint to retrieve, create, update or delete a mandate of your administration. For more information about mandate, you can visit the following help file Mandates.",
+                "scope": "Financial cashflow",
+                "uri": "/api/v1/{division}/cashflow/DirectDebitMandates",
+                "example_usage": "/api/v1/{division}/cashflow/DirectDebitMandates"
+            },
+            "llm_description": "Handle direct debit mandates for automated payment collection processes",
+            "keywords": [
+                "direct debit",
+                "mandate",
+                "payment",
+                "automated",
+                "collection",
+                "bank",
+                "SEPA"
+            ]
+        }
+    },
+    "TransactionLines": {
+        "name": "FinancialTransactionTransactionLines",
+        "fields": {
+            "ID": {
+                "name": "ID",
+                "type": "Edm.Guid",
+                "description": "Primary key"
+            },
+            "Account": {
+                "name": "Account",
+                "type": "Edm.Guid",
+                "description": "Reference to account"
+            },
+            "AccountCode": {
+                "name": "AccountCode",
+                "type": "Edm.String",
+                "description": "Code of the Account"
+            },
+            "AccountName": {
+                "name": "AccountName",
+                "type": "Edm.String",
+                "description": "Name of the Account"
+            },
+            "AmountDC": {
+                "name": "AmountDC",
+                "type": "Edm.Double",
+                "description": "Amount in the default currency of the company"
+            },
+            "AmountFC": {
+                "name": "AmountFC",
+                "type": "Edm.Double",
+                "description": "Amount in the currency of the transaction"
+            },
+            "AmountVATBaseFC": {
+                "name": "AmountVATBaseFC",
+                "type": "Edm.Double",
+                "description": "Vat base amount in the currency of the transaction"
+            },
+            "AmountVATFC": {
+                "name": "AmountVATFC",
+                "type": "Edm.Double",
+                "description": "Vat amount in the currency of the transaction"
+            },
+            "Asset": {
+                "name": "Asset",
+                "type": "Edm.Guid",
+                "description": "Reference to asset"
+            },
+            "AssetCode": {
+                "name": "AssetCode",
+                "type": "Edm.String",
+                "description": "Code of Asset"
+            },
+            "AssetDescription": {
+                "name": "AssetDescription",
+                "type": "Edm.String",
+                "description": "Description of Asset"
+            },
+            "CostCenter": {
+                "name": "CostCenter",
+                "type": "Edm.String",
+                "description": "Reference to cost center"
+            },
+            "CostCenterDescription": {
+                "name": "CostCenterDescription",
+                "type": "Edm.String",
+                "description": "Description of CostCenter"
+            },
+            "CostUnit": {
+                "name": "CostUnit",
+                "type": "Edm.String",
+                "description": "Reference to cost unit"
+            },
+            "CostUnitDescription": {
+                "name": "CostUnitDescription",
+                "type": "Edm.String",
+                "description": "Description of CostUnit"
+            },
+            "Created": {
+                "name": "Created",
+                "type": "Edm.DateTime",
+                "description": "Creation date"
+            },
+            "Creator": {
+                "name": "Creator",
+                "type": "Edm.Guid",
+                "description": "User ID of creator"
+            },
+            "CreatorFullName": {
+                "name": "CreatorFullName",
+                "type": "Edm.String",
+                "description": "Name of creator"
+            },
+            "Currency": {
+                "name": "Currency",
+                "type": "Edm.String",
+                "description": "Currency"
+            },
+            "CustomField": {
+                "name": "CustomField",
+                "type": "Edm.String",
+                "description": "Custom field endpoint"
+            },
+            "Date": {
+                "name": "Date",
+                "type": "Edm.DateTime",
+                "description": "Entry date"
+            },
+            "Description": {
+                "name": "Description",
+                "type": "Edm.String",
+                "description": "Description"
+            },
+            "Division": {
+                "name": "Division",
+                "type": "Edm.Int32",
+                "description": "Division code"
+            },
+            "Document": {
+                "name": "Document",
+                "type": "Edm.Guid",
+                "description": "Reference to document"
+            },
+            "DocumentNumber": {
+                "name": "DocumentNumber",
+                "type": "Edm.Int32",
+                "description": "Number of the document"
+            },
+            "DocumentSubject": {
+                "name": "DocumentSubject",
+                "type": "Edm.String",
+                "description": "Subject of the document"
+            },
+            "DueDate": {
+                "name": "DueDate",
+                "type": "Edm.DateTime",
+                "description": "Date that payment should be done"
+            },
+            "EntryID": {
+                "name": "EntryID",
+                "type": "Edm.Guid",
+                "source": "documentation",
+                "mandatory": true,
+                "description": "The transaction lines that make up a financial entry share the same EntryID"
+            },
+            "EntryNumber": {
+                "name": "EntryNumber",
+                "type": "Edm.Int32",
+                "description": "Entry number of the header"
+            },
+            "ExchangeRate": {
+                "name": "ExchangeRate",
+                "type": "Edm.Double",
+                "description": "Exchange rate"
+            },
+            "ExternalLinkDescription": {
+                "name": "ExternalLinkDescription",
+                "type": "Edm.String",
+                "description": "Description of ExternalLink"
+            },
+            "ExternalLinkReference": {
+                "name": "ExternalLinkReference",
+                "type": "Edm.String",
+                "description": "External link"
+            },
+            "ExtraDutyAmountFC": {
+                "name": "ExtraDutyAmountFC",
+                "type": "Edm.Double",
+                "description": "Extra duty amount"
+            },
+            "ExtraDutyPercentage": {
+                "name": "ExtraDutyPercentage",
+                "type": "Edm.Double",
+                "description": "Extra duty percentage"
+            },
+            "FinancialPeriod": {
+                "name": "FinancialPeriod",
+                "type": "Edm.Int16",
+                "description": "Financial period"
+            },
+            "FinancialYear": {
+                "name": "FinancialYear",
+                "type": "Edm.Int16",
+                "description": "Financial year"
+            },
+            "GLAccount": {
+                "name": "GLAccount",
+                "type": "Edm.Guid",
+                "description": "General ledger account"
+            },
+            "GLAccountCode": {
+                "name": "GLAccountCode",
+                "type": "Edm.String",
+                "description": "Code of GLAccount"
+            },
+            "GLAccountDescription": {
+                "name": "GLAccountDescription",
+                "type": "Edm.String",
+                "description": "Description of GLAccount"
+            },
+            "InvoiceNumber": {
+                "name": "InvoiceNumber",
+                "type": "Edm.Int32",
+                "description": "Invoice number"
+            },
+            "Item": {
+                "name": "Item",
+                "type": "Edm.Guid",
+                "description": "Reference to item"
+            },
+            "ItemCode": {
+                "name": "ItemCode",
+                "type": "Edm.String",
+                "description": "Code of Item"
+            },
+            "ItemDescription": {
+                "name": "ItemDescription",
+                "type": "Edm.String",
+                "description": "Description of Item"
+            },
+            "JournalCode": {
+                "name": "JournalCode",
+                "type": "Edm.String",
+                "description": "The journal code"
+            },
+            "JournalDescription": {
+                "name": "JournalDescription",
+                "type": "Edm.String",
+                "description": "The journal description"
+            },
+            "LineNumber": {
+                "name": "LineNumber",
+                "type": "Edm.Int32",
+                "description": "Line number"
+            },
+            "LineType": {
+                "name": "LineType",
+                "type": "Edm.Int16",
+                "description": "Line type"
+            },
+            "Modified": {
+                "name": "Modified",
+                "type": "Edm.DateTime",
+                "description": "Last modified date"
+            },
+            "Modifier": {
+                "name": "Modifier",
+                "type": "Edm.Guid",
+                "description": "User ID of modifier"
+            },
+            "ModifierFullName": {
+                "name": "ModifierFullName",
+                "type": "Edm.String",
+                "description": "Name of modifier"
+            },
+            "Notes": {
+                "name": "Notes",
+                "type": "Edm.String",
+                "description": "Extra remarks"
+            },
+            "OffsetID": {
+                "name": "OffsetID",
+                "type": "Edm.Guid",
+                "description": "OffsetID"
+            },
+            "OrderNumber": {
+                "name": "OrderNumber",
+                "type": "Edm.Int32",
+                "description": "Order number"
+            },
+            "PaymentDiscountAmount": {
+                "name": "PaymentDiscountAmount",
+                "type": "Edm.Double",
+                "description": "Discount amount when paid in time"
+            },
+            "PaymentReference": {
+                "name": "PaymentReference",
+                "type": "Edm.String",
+                "description": "Payment reference"
+            },
+            "Project": {
+                "name": "Project",
+                "type": "Edm.Guid",
+                "description": "Reference to project"
+            },
+            "ProjectCode": {
+                "name": "ProjectCode",
+                "type": "Edm.String",
+                "description": "Code of Project"
+            },
+            "ProjectDescription": {
+                "name": "ProjectDescription",
+                "type": "Edm.String",
+                "description": "Description of Project"
+            },
+            "ProjectWBS": {
+                "name": "ProjectWBS",
+                "type": "Edm.Guid",
+                "description": "Reference to Project WBS"
+            },
+            "ProjectWBSDescription": {
+                "name": "ProjectWBSDescription",
+                "type": "Edm.String",
+                "description": "Description of Project WBS"
+            },
+            "Quantity": {
+                "name": "Quantity",
+                "type": "Edm.Double",
+                "description": "Quantity"
+            },
+            "SerialNumber": {
+                "name": "SerialNumber",
+                "type": "Edm.String",
+                "description": "Obsolete"
+            },
+            "ShopOrder": {
+                "name": "ShopOrder",
+                "type": "Edm.Guid",
+                "description": "Reference to shop order"
+            },
+            "Status": {
+                "name": "Status",
+                "type": "Edm.Int16",
+                "description": "20 = Open, 50 = Processed"
+            },
+            "Subscription": {
+                "name": "Subscription",
+                "type": "Edm.Guid",
+                "description": "Reference to subscription line (Note: LineNumber greater than 0 is subscription line)"
+            },
+            "SubscriptionDescription": {
+                "name": "SubscriptionDescription",
+                "type": "Edm.String",
+                "description": "Description of subscription line"
+            },
+            "TrackingNumber": {
+                "name": "TrackingNumber",
+                "type": "Edm.String",
+                "description": "Tracking number of item"
+            },
+            "TrackingNumberDescription": {
+                "name": "TrackingNumberDescription",
+                "type": "Edm.String",
+                "description": "Tracking number description"
+            },
+            "Type": {
+                "name": "Type",
+                "type": "Edm.Int32",
+                "description": "The transaction type."
+            }
+        },
+        "metadata": {
+            "scraped_at": "2025-08-26 17:24:49 UTC",
+            "total_fields": 69,
+            "scraping_method": "documentation_only",
+            "doc_url": "FinancialTransactionTransactionLines"
+        },
+        "documentation": {
+            "endpoint_info": {
+                "endpoint": "TransactionLines",
+                "good_to_know": "Use this endpoint to read all kind of transactions created in Exact.  Find more details on the attributes in the relevant topic description for BankEntries, CashEntries, GeneralJournalEntries, PurchaseEntries or SalesEntries.",
+                "scope": "Financial accounting",
+                "uri": "/api/v1/{division}/financialtransaction/TransactionLines",
+                "example_usage": "/api/v1/{division}/financialtransaction/TransactionLines"
+            },
+            "llm_description": "Access detailed transaction line items and financial transaction details",
+            "keywords": [
+                "transaction lines",
+                "line items",
+                "transaction details",
+                "financial entries",
+                "accounting"
+            ]
+        }
+    },
+    "CashEntries": {
+        "name": "FinancialTransactionCashEntries",
+        "fields": {
+            "EntryID": {
+                "name": "EntryID",
+                "type": "Edm.Guid",
+                "source": "documentation",
+                "mandatory": false,
+                "description": "Primary key"
+            },
+            "CashEntryLines": {
+                "name": "CashEntryLines",
+                "type": "CashEntryLines",
+                "source": "documentation",
+                "mandatory": true,
+                "description": "Collection of lines"
+            },
+            "ClosingBalanceFC": {
+                "name": "ClosingBalanceFC",
+                "type": "Edm.Double",
+                "source": "documentation",
+                "mandatory": false,
+                "description": "Closing balance in the currency of the transaction"
+            },
+            "Created": {
+                "name": "Created",
+                "type": "Edm.DateTime",
+                "source": "documentation",
+                "mandatory": false,
+                "description": "Creation date"
+            },
+            "Currency": {
+                "name": "Currency",
+                "type": "Edm.String",
+                "source": "documentation",
+                "mandatory": false,
+                "description": "Currency code"
+            },
+            "CustomField": {
+                "name": "CustomField",
+                "type": "Edm.String",
+                "source": "documentation",
+                "mandatory": false,
+                "description": "Custom field endpoint"
+            },
+            "Division": {
+                "name": "Division",
+                "type": "Edm.Int32",
+                "source": "documentation",
+                "mandatory": false,
+                "description": "Division code"
+            },
+            "EntryNumber": {
+                "name": "EntryNumber",
+                "type": "Edm.Int32",
+                "source": "documentation",
+                "mandatory": false,
+                "description": "Entry number"
+            },
+            "FinancialPeriod": {
+                "name": "FinancialPeriod",
+                "type": "Edm.Int16",
+                "source": "documentation",
+                "mandatory": false,
+                "description": "The period of the transaction lines. The period should exist in the period date table"
+            },
+            "FinancialYear": {
+                "name": "FinancialYear",
+                "type": "Edm.Int16",
+                "source": "documentation",
+                "mandatory": false,
+                "description": "The financial year to which the entry belongs. The financial year should exist in the period date table"
+            },
+            "JournalCode": {
+                "name": "JournalCode",
+                "type": "Edm.String",
+                "source": "documentation",
+                "mandatory": true,
+                "description": "Code of Journal"
+            },
+            "JournalDescription": {
+                "name": "JournalDescription",
+                "type": "Edm.String",
+                "source": "documentation",
+                "mandatory": false,
+                "description": "Description of Journal"
+            },
+            "Modified": {
+                "name": "Modified",
+                "type": "Edm.DateTime",
+                "source": "documentation",
+                "mandatory": false,
+                "description": "Last modified date"
+            },
+            "OpeningBalanceFC": {
+                "name": "OpeningBalanceFC",
+                "type": "Edm.Double",
+                "source": "documentation",
+                "mandatory": false,
+                "description": "Opening balance in the currency of the transaction"
+            },
+            "Status": {
+                "name": "Status",
+                "type": "Edm.Int16",
+                "source": "documentation",
+                "mandatory": false,
+                "description": "Status: 20 = Open, 50 = Processed"
+            },
+            "StatusDescription": {
+                "name": "StatusDescription",
+                "type": "Edm.String",
+                "source": "documentation",
+                "mandatory": false,
+                "description": "Description of Status"
+            }
+        },
+        "metadata": {
+            "scraped_at": "2025-08-26 17:24:17 UTC",
+            "total_fields": 16,
+            "scraping_method": "documentation_only",
+            "doc_url": "FinancialTransactionCashEntries"
+        },
+        "documentation": {
+            "endpoint_info": {
+                "endpoint": "CashEntries",
+                "good_to_know": "Use this endpoint to create, delete or read cash entries.Note: Cash entries are separated to header and line information. Endpoint CashEntries is used for the header information. You must include a parameter for 'CashEntryLines' to add cash entry lines when you POST to the CashEntries endpoint.Cash entries have an opening balance which should be the end balance of the previous entry. Opening balance plus all cash entry lines should result in the closing balance.",
+                "scope": "Financial accounting",
+                "uri": "/api/v1/{division}/financialtransaction/CashEntries",
+                "example_usage": "/api/v1/{division}/financialtransaction/CashEntries"
+            },
+            "llm_description": "Manage cash transaction entries and cash-based financial records",
+            "keywords": [
+                "cash entries",
+                "cash transactions",
+                "petty cash",
+                "cash management",
+                "receipts"
+            ]
+        }
+    }
+}

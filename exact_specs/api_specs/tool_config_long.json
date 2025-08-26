@@ -305,12 +305,6 @@
         "keywords": ["sync", "bulk", "general ledger", "GL accounts", "chart of accounts", "data integration", "synchronization", "high volume", "account sync"],
         "page_size": 1000
       },
-      "SyncItems": {
-        "path": "https://start.exactonline.nl/api/v1/{division}/sync/Logistics/Items",
-        "description": "Bulk synchronization endpoint for inventory items - high-performance endpoint for retrieving large volumes of product/item master data for data integration and synchronization.",
-        "keywords": ["sync", "bulk", "items", "products", "inventory", "logistics", "data integration", "synchronization", "high volume", "item sync"],
-        "page_size": 1000
-      },
       "SyncAccounts": {
         "path": "https://start.exactonline.nl/api/v1/{division}/sync/CRM/Accounts",
         "description": "Bulk synchronization endpoint for CRM accounts - high-performance endpoint for retrieving large volumes of customer/prospect account data for data integration and synchronization.",

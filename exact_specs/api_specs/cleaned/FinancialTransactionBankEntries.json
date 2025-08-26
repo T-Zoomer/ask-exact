@@ -1,0 +1,119 @@
+{
+    "name": "FinancialTransactionBankEntries",
+    "fields": {
+        "EntryID": {
+            "name": "EntryID",
+            "type": "Edm.Guid",
+            "description": "Primary key"
+        },
+        "BankEntryLines": {
+            "name": "BankEntryLines",
+            "type": "BankEntryLines",
+            "source": "documentation",
+            "mandatory": true,
+            "description": "Collection of lines"
+        },
+        "BankStatementDocument": {
+            "name": "BankStatementDocument",
+            "type": "Edm.Guid",
+            "description": "Reference to document with bank statement"
+        },
+        "BankStatementDocumentNumber": {
+            "name": "BankStatementDocumentNumber",
+            "type": "Edm.Int32",
+            "description": "Document number of document with bank statement"
+        },
+        "BankStatementDocumentSubject": {
+            "name": "BankStatementDocumentSubject",
+            "type": "Edm.String",
+            "description": "Subject of document with bank statement"
+        },
+        "ClosingBalanceFC": {
+            "name": "ClosingBalanceFC",
+            "type": "Edm.Double",
+            "description": "Closing balance in the currency of the transaction"
+        },
+        "Created": {
+            "name": "Created",
+            "type": "Edm.DateTime",
+            "description": "Creation date"
+        },
+        "Currency": {
+            "name": "Currency",
+            "type": "Edm.String",
+            "description": "Currency code"
+        },
+        "CustomField": {
+            "name": "CustomField",
+            "type": "Edm.String",
+            "description": "Custom field endpoint"
+        },
+        "Division": {
+            "name": "Division",
+            "type": "Edm.Int32",
+            "description": "Division code"
+        },
+        "EntryNumber": {
+            "name": "EntryNumber",
+            "type": "Edm.Int32",
+            "description": "Entry number"
+        },
+        "FinancialPeriod": {
+            "name": "FinancialPeriod",
+            "type": "Edm.Int16",
+            "description": "The period of the transaction lines. The period should exist in the period date table"
+        },
+        "FinancialYear": {
+            "name": "FinancialYear",
+            "type": "Edm.Int16",
+            "description": "The financial year to which the entry belongs. The financial year should exist in the period date table"
+        },
+        "JournalCode": {
+            "name": "JournalCode",
+            "type": "Edm.String",
+            "source": "documentation",
+            "mandatory": true,
+            "description": "Code of Journal"
+        },
+        "JournalDescription": {
+            "name": "JournalDescription",
+            "type": "Edm.String",
+            "description": "Description of Journal"
+        },
+        "Modified": {
+            "name": "Modified",
+            "type": "Edm.DateTime",
+            "description": "Last modified date"
+        },
+        "OpeningBalanceFC": {
+            "name": "OpeningBalanceFC",
+            "type": "Edm.Double",
+            "description": "Opening balance in the currency of the transaction"
+        },
+        "Status": {
+            "name": "Status",
+            "type": "Edm.Int16",
+            "description": "Status: 20 = Open, 50 = Processed"
+        },
+        "StatusDescription": {
+            "name": "StatusDescription",
+            "type": "Edm.String",
+            "description": "Description of Status"
+        }
+    },
+    "metadata": {
+        "scraped_at": "2025-08-26 17:23:22 UTC",
+        "total_fields": 19,
+        "scraping_method": "documentation_only",
+        "doc_url": "FinancialTransactionBankEntries"
+    },
+    "documentation": {
+        "endpoint_info": {
+            "endpoint": "BankEntries",
+            "good_to_know": "Use this endpoint to create, delete or read bank entries for the bank statements received. Note: Bank entries are separated to header and line information. Endpoint BankEntries is used for the header information. You must include a parameter for 'BankEntryLines' to add cash entry lines when you POST to the BankEntries endpoint.Bank entries have an opening balance which should be the end balance of the previous entry. Opening balance plus all bank entry lines should result in the closing balance.",
+            "scope": "Financial accounting",
+            "uri": "/api/v1/{division}/financialtransaction/BankEntries",
+            "example_usage": "/api/v1/{division}/financialtransaction/BankEntries"
+        }
+    }
+}

@@ -1,0 +1,482 @@
+{
+  "name": "PurchaseOrderPurchaseOrders",
+  "fields": {
+    "PurchaseOrderID": {
+      "name": "PurchaseOrderID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "AmountDC": {
+      "name": "AmountDC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Total amount in the default currency of the company"
+    },
+    "AmountDiscount": {
+      "name": "AmountDiscount",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Discount amount in the default currency of the company"
+    },
+    "AmountDiscountExclVat": {
+      "name": "AmountDiscountExclVat",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Discount amount excluding VAT in the default currency of the company"
+    },
+    "AmountFC": {
+      "name": "AmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Total amount in the currency of the transaction"
+    },
+    "AmountFCExclVat": {
+      "name": "AmountFCExclVat",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount exclude VAT in the currency of the transaction."
+    },
+    "ApprovalStatus": {
+      "name": "ApprovalStatus",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Approval status of purchase order. 0=Awaiting approval, 1=Automatically, 2=Approved."
+    },
+    "ApprovalStatusDescription": {
+      "name": "ApprovalStatusDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of ApprovalStatus"
+    },
+    "Approved": {
+      "name": "Approved",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Approval datetime"
+    },
+    "Approver": {
+      "name": "Approver",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User who approved the purchase order"
+    },
+    "ApproverFullName": {
+      "name": "ApproverFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of approver"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of creator"
+    },
+    "Currency": {
+      "name": "Currency",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Currency code"
+    },
+    "DeliveryAccount": {
+      "name": "DeliveryAccount",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to account for delivery"
+    },
+    "DeliveryAccountCode": {
+      "name": "DeliveryAccountCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Delivery account code"
+    },
+    "DeliveryAccountName": {
+      "name": "DeliveryAccountName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Account name"
+    },
+    "DeliveryAddress": {
+      "name": "DeliveryAddress",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to shipping address"
+    },
+    "DeliveryContact": {
+      "name": "DeliveryContact",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to contact for delivery"
+    },
+    "DeliveryContactPersonFullName": {
+      "name": "DeliveryContactPersonFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the contact person of the customer who will receive delivered goods"
+    },
+    "Description": {
+      "name": "Description",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of the purchase order"
+    },
+    "Discount": {
+      "name": "Discount",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Discount percentage"
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "Document": {
+      "name": "Document",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Document that is manually linked to the purchase order"
+    },
+    "DocumentSubject": {
+      "name": "DocumentSubject",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Subject of the document"
+    },
+    "DropShipment": {
+      "name": "DropShipment",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Shows if it is a drop shipment purchase order"
+    },
+    "ExchangeRate": {
+      "name": "ExchangeRate",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The exchange rate between the invoice currency and the default currency of the division."
+    },
+    "IncotermAddress": {
+      "name": "IncotermAddress",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Address of Incoterm"
+    },
+    "IncotermCode": {
+      "name": "IncotermCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Incoterm"
+    },
+    "IncotermVersion": {
+      "name": "IncotermVersion",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Version of Incoterm Supported version for Incoterms : 2010, 2020"
+    },
+    "InvoiceStatus": {
+      "name": "InvoiceStatus",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Invoice status of purchase order: 10-Open, 20-Partial, 30-Complete, 40-Canceled"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of modifier"
+    },
+    "OrderDate": {
+      "name": "OrderDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Order date"
+    },
+    "OrderNumber": {
+      "name": "OrderNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Human readable id of the purchase order"
+    },
+    "OrderStatus": {
+      "name": "OrderStatus",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Purchase order status: 10-Open, 20-Partial, 30-Complete, 40-Canceled"
+    },
+    "PaymentCondition": {
+      "name": "PaymentCondition",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The payment condition code used for due date and discount calculation"
+    },
+    "PaymentConditionDescription": {
+      "name": "PaymentConditionDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of payment condition"
+    },
+    "PurchaseAgent": {
+      "name": "PurchaseAgent",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Purchase agent"
+    },
+    "PurchaseAgentFullName": {
+      "name": "PurchaseAgentFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of purchase agent"
+    },
+    "PurchaseOrderLineCount": {
+      "name": "PurchaseOrderLineCount",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Total row count of lines"
+    },
+    "PurchaseOrderLines": {
+      "name": "PurchaseOrderLines",
+      "type": "PurchaseOrderLines",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Collection of lines"
+    },
+    "ReceiptDate": {
+      "name": "ReceiptDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "This field shows the date the goods are expected to be received."
+    },
+    "ReceiptStatus": {
+      "name": "ReceiptStatus",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Receipt status of purchase order: 10-Open, 20-Partial, 30-Complete, 40-Canceled"
+    },
+    "Remarks": {
+      "name": "Remarks",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Include any relevant remarks regarding the purchase order."
+    },
+    "SalesOrder": {
+      "name": "SalesOrder",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to sales order when purchase order generated via back to back sales order. Show NULL if more than one sales order is linked to the purchase order."
+    },
+    "SalesOrderNumber": {
+      "name": "SalesOrderNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Number of the sales order. Show NULL if more than one sales order is linked to the purchase order."
+    },
+    "SelectionCode": {
+      "name": "SelectionCode",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "ID of selection code. Only supported by the Plus, Professional and Premium for Wholesale & Distribution and Manufacturing"
+    },
+    "SelectionCodeCode": {
+      "name": "SelectionCodeCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of selection code"
+    },
+    "SelectionCodeDescription": {
+      "name": "SelectionCodeDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of selection code"
+    },
+    "ShippingMethod": {
+      "name": "ShippingMethod",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "ShippingMethod"
+    },
+    "ShippingMethodCode": {
+      "name": "ShippingMethodCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of ShippingMethod"
+    },
+    "ShippingMethodDescription": {
+      "name": "ShippingMethodDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of ShippingMethod"
+    },
+    "Source": {
+      "name": "Source",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "This shows how the purchase order was created: 1-Manual entry, 2-Import, 3-Other, 4-Purchase order, 5-Sales order, 6-Supplier's items, 7-Subcontract, 8-Purchase order advice, 9-Shop order, 10-MRP calculation, 11-Rest API, 12-Merge purchase orders"
+    },
+    "Supplier": {
+      "name": "Supplier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Reference to supplier account"
+    },
+    "SupplierCode": {
+      "name": "SupplierCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of supplier"
+    },
+    "SupplierContact": {
+      "name": "SupplierContact",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Contact of supplier"
+    },
+    "SupplierContactPersonFullName": {
+      "name": "SupplierContactPersonFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Contact person full name of supplier"
+    },
+    "SupplierName": {
+      "name": "SupplierName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of supplier"
+    },
+    "VATAmount": {
+      "name": "VATAmount",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Total VAT amount in the currency of the transaction"
+    },
+    "Warehouse": {
+      "name": "Warehouse",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Warehouse"
+    },
+    "WarehouseCode": {
+      "name": "WarehouseCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Warehouse"
+    },
+    "WarehouseDescription": {
+      "name": "WarehouseDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Warehouse"
+    },
+    "YourRef": {
+      "name": "YourRef",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Shows the reference number associated with the purchase order. Enter a description and reference to make the purchase order easier to identify."
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 15:58:46 UTC",
+    "total_fields": 66,
+    "scraping_method": "documentation_only",
+    "doc_url": "PurchaseOrderPurchaseOrders"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "PurchaseOrders",
+      "good_to_know": "Use this endpoint to : • Create a new purchase order. • Read existing purchase orders. • Update existing purchase orders. • Remove an existing purchase order. When using the POST method of this endpoint to create a purchase order, it is mandatory to provide a valid supplier and purchase order lines. The purchase order lines is not necessary when you PUT to this endpoint.For more information about the  functionality in Exact Online, see Overview | Purchase orders.",
+      "scope": "Purchase orders",
+      "uri": "/api/v1/{division}/purchaseorder/PurchaseOrders",
+      "example_usage": "/api/v1/{division}/purchaseorder/PurchaseOrders"
+    }
+  }
+}

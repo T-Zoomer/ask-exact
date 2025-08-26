@@ -1,0 +1,62 @@
+{
+  "name": "DocumentsDocumentAttachments",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "Attachment": {
+      "name": "Attachment",
+      "type": "Edm.Binary",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Contains the attachment(Format: Base64 encoded)"
+    },
+    "Document": {
+      "name": "Document",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Reference to the Document"
+    },
+    "FileName": {
+      "name": "FileName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Filename of the attachment"
+    },
+    "FileSize": {
+      "name": "FileSize",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "File size of the attachment"
+    },
+    "Url": {
+      "name": "Url",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Url of the attachment. To get the file in its original format (xml, jpg, pdf, etc.) append &Download=1 to the url."
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 16:23:13 UTC",
+    "total_fields": 6,
+    "scraping_method": "documentation_only",
+    "doc_url": "DocumentsDocumentAttachments"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "DocumentAttachments",
+      "good_to_know": "Use this endpoint to create, read and delete attachments of one or more documents.",
+      "scope": "Organization documents",
+      "uri": "/api/v1/{division}/documents/DocumentAttachments",
+      "example_usage": "/api/v1/{division}/documents/DocumentAttachments"
+    }
+  }
+}

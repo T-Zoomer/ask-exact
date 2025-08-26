@@ -1,0 +1,202 @@
+{
+  "name": "AssetsAssetGroups",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "Code": {
+      "name": "Code",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of the asset group"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of creator"
+    },
+    "DepreciationMethod": {
+      "name": "DepreciationMethod",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Default depreciation method of the assets in this asset group"
+    },
+    "DepreciationMethodCode": {
+      "name": "DepreciationMethodCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of the depreciation method"
+    },
+    "DepreciationMethodDescription": {
+      "name": "DepreciationMethodDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of the depreciation method"
+    },
+    "Description": {
+      "name": "Description",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of the asset group"
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "GLAccountAssets": {
+      "name": "GLAccountAssets",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "GLAccount for the assets"
+    },
+    "GLAccountAssetsCode": {
+      "name": "GLAccountAssetsCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of the GLAccount for the assets"
+    },
+    "GLAccountAssetsDescription": {
+      "name": "GLAccountAssetsDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of the GLAccount for the assets"
+    },
+    "GLAccountDepreciationBS": {
+      "name": "GLAccountDepreciationBS",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "GLAccount for depreciation (Balance sheet)"
+    },
+    "GLAccountDepreciationBSCode": {
+      "name": "GLAccountDepreciationBSCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of the GLAccount for depreciation (Balance sheet)"
+    },
+    "GLAccountDepreciationBSDescription": {
+      "name": "GLAccountDepreciationBSDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of the GLAccount for depreciation (Balance sheet)"
+    },
+    "GLAccountDepreciationPL": {
+      "name": "GLAccountDepreciationPL",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "GLAccount for depreciation (Profit & Loss)"
+    },
+    "GLAccountDepreciationPLCode": {
+      "name": "GLAccountDepreciationPLCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of the GLAccount for depreciation (Profit & Loss)"
+    },
+    "GLAccountDepreciationPLDescription": {
+      "name": "GLAccountDepreciationPLDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of the GLAccount for depreciation (Profit & Loss)"
+    },
+    "GLAccountRevaluationBS": {
+      "name": "GLAccountRevaluationBS",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "GLAccount for revaluation (Balance sheet)"
+    },
+    "GLAccountRevaluationBSCode": {
+      "name": "GLAccountRevaluationBSCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of the GLAccount for revaluation (Balance sheet)"
+    },
+    "GLAccountRevaluationBSDescription": {
+      "name": "GLAccountRevaluationBSDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of the GLAccount for revaluation (Balance sheet)"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of modifier"
+    },
+    "Notes": {
+      "name": "Notes",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Notes"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 16:22:39 UTC",
+    "total_fields": 26,
+    "scraping_method": "documentation_only",
+    "doc_url": "AssetsAssetGroups"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "AssetGroups",
+      "good_to_know": "Use this endpoint to get all information related to the asset groups of the administration.  Asset groups are used to maintain depreciation method and G/L accounts for a group of assets.",
+      "scope": "Financial assets",
+      "uri": "/api/v1/{division}/assets/AssetGroups",
+      "example_usage": "/api/v1/{division}/assets/AssetGroups"
+    }
+  }
+}

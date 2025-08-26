@@ -73,7 +73,7 @@ class ExactOnlineToken(models.Model):
         """Refresh the access token using the refresh token"""
         config = get_exact_config()
         base_url = get_auth_base_url(config["country"])
-        
+
         refresh_data = {
             "grant_type": "refresh_token",
             "client_id": config["client_id"],
@@ -82,9 +82,13 @@ class ExactOnlineToken(models.Model):
         }
 
         print(f"DEBUG - AUTO REFRESH: Using base_url: {base_url}")
-        print(f"DEBUG - AUTO REFRESH: refresh_token length: {len(self.refresh_token) if self.refresh_token else 0}")
-        print(f"DEBUG - AUTO REFRESH: client_id: {config['client_id'][:10] if config['client_id'] else 'None'}...")
-        
+        print(
+            f"DEBUG - AUTO REFRESH: refresh_token length: {len(self.refresh_token) if self.refresh_token else 0}"
+        )
+        print(
+            f"DEBUG - AUTO REFRESH: client_id: {config['client_id'][:10] if config['client_id'] else 'None'}..."
+        )
+
         try:
             headers = {"Content-Type": "application/x-www-form-urlencoded"}
             token_url = f"{base_url}/api/oauth2/token"
@@ -98,12 +102,20 @@ class ExactOnlineToken(models.Model):
                 return True
             elif response.status_code == 400 or response.status_code == 404:
                 # Log the actual error instead of immediately deleting
-                error_detail = response.text if hasattr(response, 'text') else 'No error details'
-                print(f"DEBUG - Refresh token error (HTTP {response.status_code}): {error_detail}")
-                raise ValueError(f"Refresh token failed (HTTP {response.status_code}): {error_detail}")
+                error_detail = (
+                    response.text if hasattr(response, "text") else "No error details"
+                )
+                print(
+                    f"DEBUG - Refresh token error (HTTP {response.status_code}): {error_detail}"
+                )
+                raise ValueError(
+                    f"Refresh token failed (HTTP {response.status_code}): {error_detail}"
+                )
             else:
-                raise ValueError(f"Failed to refresh token (HTTP {response.status_code}): {response.text}")
-                
+                raise ValueError(
+                    f"Failed to refresh token (HTTP {response.status_code}): {response.text}"
+                )
+
         except requests.RequestException as e:
             raise ValueError(f"Network error during token refresh: {str(e)}")
 

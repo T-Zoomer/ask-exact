@@ -1,0 +1,482 @@
+{
+  "name": "ProjectProjects",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "Account": {
+      "name": "Account",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The account for this project"
+    },
+    "AccountCode": {
+      "name": "AccountCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Account"
+    },
+    "AccountContact": {
+      "name": "AccountContact",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Contact person of Account"
+    },
+    "AccountName": {
+      "name": "AccountName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of Account"
+    },
+    "AllowAdditionalInvoicing": {
+      "name": "AllowAdditionalInvoicing",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if additional invoice is allowed for project"
+    },
+    "AllowMemberEntryOnly": {
+      "name": "AllowMemberEntryOnly",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Allow only member to create time or cost entry"
+    },
+    "BlockEntry": {
+      "name": "BlockEntry",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Block time and cost entries"
+    },
+    "BlockInvoicing": {
+      "name": "BlockInvoicing",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Block invoicing"
+    },
+    "BlockPlanning": {
+      "name": "BlockPlanning",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Block planning and reservations"
+    },
+    "BlockPurchasing": {
+      "name": "BlockPurchasing",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Block purchasing"
+    },
+    "BlockRebilling": {
+      "name": "BlockRebilling",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Block rebilling"
+    },
+    "BudgetedAmount": {
+      "name": "BudgetedAmount",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Budgeted amount of sales in the default currency of the company"
+    },
+    "BudgetedCosts": {
+      "name": "BudgetedCosts",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Budgeted amount of costs in the default currency of the company"
+    },
+    "BudgetedHoursPerHourType": {
+      "name": "BudgetedHoursPerHourType",
+      "type": "BudgetedHoursPerHourType",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Collection of budgeted hours"
+    },
+    "BudgetedRevenue": {
+      "name": "BudgetedRevenue",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Budgeted amount of revenue in the default currency of the company"
+    },
+    "BudgetOverrunHours": {
+      "name": "BudgetOverrunHours",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "BudgetOverrunHours: 10-Allowed, 20-Not Allowed"
+    },
+    "BudgetType": {
+      "name": "BudgetType",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Budget type"
+    },
+    "BudgetTypeDescription": {
+      "name": "BudgetTypeDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Budget type description"
+    },
+    "Classification": {
+      "name": "Classification",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Used only for PSA to link a project classification to the project"
+    },
+    "ClassificationDescription": {
+      "name": "ClassificationDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Classification"
+    },
+    "Code": {
+      "name": "Code",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Code Note :  Code is not mandatory in PSA packages.If no code is provided, project auto number will be used, but this can only be applied to PSA packages."
+    },
+    "CostsAmountFC": {
+      "name": "CostsAmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Used only for PSA to store the budgetted costs of a project (except for project type Campaign and Non-billable). Positive quantities only"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of creator"
+    },
+    "CustomerPOnumber": {
+      "name": "CustomerPOnumber",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Used only for PSA to store the customer's PO number"
+    },
+    "CustomField": {
+      "name": "CustomField",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Custom field endpoint. Provided only for the Exact Online Premium users."
+    },
+    "Description": {
+      "name": "Description",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Description of the project"
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "DivisionName": {
+      "name": "DivisionName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of Division"
+    },
+    "EnableWorkInProgress": {
+      "name": "EnableWorkInProgress",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Work in progress: To be invoiced"
+    },
+    "EndDate": {
+      "name": "EndDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "End date of the project. In combination with the start date the status is determined"
+    },
+    "FixedPriceItem": {
+      "name": "FixedPriceItem",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Item used for fixed price invoicing. To be defined per project. If empty the functionality relies on the setting"
+    },
+    "FixedPriceItemDescription": {
+      "name": "FixedPriceItemDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of FixedPriceItem"
+    },
+    "HasWBSLines": {
+      "name": "HasWBSLines",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if whether the Project has WBS"
+    },
+    "IncludeInvoiceSpecification": {
+      "name": "IncludeInvoiceSpecification",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Include invoice specification. E.g: 1 = Based on account, 2 = Always, 3 = Never"
+    },
+    "IncludeSpecificationInInvoicePdf": {
+      "name": "IncludeSpecificationInInvoicePdf",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates whether to include invoice specification in invoice PDF"
+    },
+    "InternalNotes": {
+      "name": "InternalNotes",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Internal notes not to be printed in invoice"
+    },
+    "InvoiceAddress": {
+      "name": "InvoiceAddress",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Invoice address"
+    },
+    "InvoiceAsQuoted": {
+      "name": "InvoiceAsQuoted",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates whether the project is invoice as quoted"
+    },
+    "InvoiceDescription": {
+      "name": "InvoiceDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description for generate project invoice"
+    },
+    "InvoiceTerms": {
+      "name": "InvoiceTerms",
+      "type": "InvoiceTerms",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Collection of invoice terms"
+    },
+    "IsWBSRequiredForEntry": {
+      "name": "IsWBSRequiredForEntry",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates whether the project WBS is required for time and cost entry E.g: 0 = Based on company setting, 1 = Yes, 2 = No"
+    },
+    "Manager": {
+      "name": "Manager",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Responsible person for this project"
+    },
+    "ManagerFullname": {
+      "name": "ManagerFullname",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of Manager"
+    },
+    "MarkupPercentage": {
+      "name": "MarkupPercentage",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Purchase markup percentage"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of modifier"
+    },
+    "Notes": {
+      "name": "Notes",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "For additional information about projects"
+    },
+    "PaymentCondition": {
+      "name": "PaymentCondition",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Payment condition code for this project"
+    },
+    "PrepaidItem": {
+      "name": "PrepaidItem",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Used only for PSA. This item is used for prepaid invoicing. If left empty, the functionality relies on a setting"
+    },
+    "PrepaidItemDescription": {
+      "name": "PrepaidItemDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of PrepaidItem"
+    },
+    "PrepaidType": {
+      "name": "PrepaidType",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "PrepaidType: 1-Retainer, 2-Hour type bundle"
+    },
+    "PrepaidTypeDescription": {
+      "name": "PrepaidTypeDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of PrepaidType"
+    },
+    "ProjectRestrictionEmployees": {
+      "name": "ProjectRestrictionEmployees",
+      "type": "ProjectRestrictionEmployees",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Collection of employee restrictions"
+    },
+    "ProjectRestrictionItems": {
+      "name": "ProjectRestrictionItems",
+      "type": "ProjectRestrictionItems",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Collection of item restrictions"
+    },
+    "ProjectRestrictionRebillings": {
+      "name": "ProjectRestrictionRebillings",
+      "type": "ProjectRestrictionRebillings",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Collection of rebilling restrictions"
+    },
+    "SalesTimeQuantity": {
+      "name": "SalesTimeQuantity",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Budgeted time. Total number of hours estimated for the fixed price project"
+    },
+    "SourceQuotation": {
+      "name": "SourceQuotation",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Source quotation"
+    },
+    "StartDate": {
+      "name": "StartDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Start date of a project. In combination with the end date the status is determined"
+    },
+    "TimeQuantityToAlert": {
+      "name": "TimeQuantityToAlert",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Alert when exceeding (Hours)"
+    },
+    "Type": {
+      "name": "Type",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Reference to ProjectTypes. E.g: 1 = Campaign , 2 = Fixed Price, 3 = Time and Material, 4 = Non billable, 5 = Prepaid"
+    },
+    "TypeDescription": {
+      "name": "TypeDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Type"
+    },
+    "UseBillingMilestones": {
+      "name": "UseBillingMilestones",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates whether the Project is using billing milestones"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 16:13:34 UTC",
+    "total_fields": 66,
+    "scraping_method": "documentation_only",
+    "doc_url": "ProjectProjects"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "Projects",
+      "good_to_know": "Use this endpoint to create, read, update and delete projects.Note: Projects enable you to bundle quotations, sales invoices, and time and cost entries, so that you can track work and progress by project. For POST it is mandatory to provide Code, Description and Type.",
+      "scope": "Projects projects",
+      "uri": "/api/v1/{division}/project/Projects",
+      "example_usage": "/api/v1/{division}/project/Projects"
+    }
+  }
+}

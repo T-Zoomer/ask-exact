@@ -9,4 +9,7 @@ dependencies = [
     "requests>=2.31.0",
     "python-dotenv>=1.0.0",
     "cryptography>=41.0.0",
+    "mcp>=1.13.1",
+    "openai>=1.101.0",
+    "beautifulsoup4>=4.12.0",
 ]

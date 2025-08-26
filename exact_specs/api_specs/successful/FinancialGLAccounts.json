@@ -1,0 +1,328 @@
+{
+  "name": "FinancialGLAccounts",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary Key"
+    },
+    "AllowCostsInSales": {
+      "name": "AllowCostsInSales",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Allow cost base amount and vat amount to be generated in sales entries"
+    },
+    "AssimilatedVATBox": {
+      "name": "AssimilatedVATBox",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "AssimilatedVATBox (France)"
+    },
+    "BalanceSide": {
+      "name": "BalanceSide",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The following values are supported: D (Debit) C (Credit)"
+    },
+    "BalanceType": {
+      "name": "BalanceType",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The following values are supported: B (Balance Sheet) W (Profit & Loss)"
+    },
+    "BelcotaxType": {
+      "name": "BelcotaxType",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indentify the kind of rewarding for the G/L account. This is used in the official document for the fiscal fiches Belcotax"
+    },
+    "Code": {
+      "name": "Code",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Unique Code of the G/L account"
+    },
+    "Compress": {
+      "name": "Compress",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicate if this G/L account should be shown as compressed without the details in the CRW report of G/L history"
+    },
+    "Costcenter": {
+      "name": "Costcenter",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Cost Center linked to the G/L account"
+    },
+    "CostcenterDescription": {
+      "name": "CostcenterDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Costcenter"
+    },
+    "Costunit": {
+      "name": "Costunit",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Cost Unit linked to the G/L account"
+    },
+    "CostunitDescription": {
+      "name": "CostunitDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Costunit"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of creator"
+    },
+    "CustomField": {
+      "name": "CustomField",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Custom field endpoint"
+    },
+    "DeductibilityPercentages": {
+      "name": "DeductibilityPercentages",
+      "type": "DeductibilityPercentages",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Deductibility percentages. You can have several Deductibility percentages, with start and end dates"
+    },
+    "Description": {
+      "name": "Description",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Name of the G/L account. If Multilanguage featureset is enabled in the administration and the G/L account already has a set of termed description, this field is not allowed to change."
+    },
+    "DescriptionTermID": {
+      "name": "DescriptionTermID",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Term ID for description"
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "ExcludeVATListing": {
+      "name": "ExcludeVATListing",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "General ledger transactions on this G/L account should not appear on the VAT listing"
+    },
+    "ExpenseNonDeductiblePercentage": {
+      "name": "ExpenseNonDeductiblePercentage",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Expenses on this G/L account can not be used to reduce the incomes"
+    },
+    "IsBlocked": {
+      "name": "IsBlocked",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "When blocked you can't use this general ledger account anymore for new entries"
+    },
+    "Matching": {
+      "name": "Matching",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Allow entries on this general ledger account to be matched via the G/L account card"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of modifier"
+    },
+    "PrivateGLAccount": {
+      "name": "PrivateGLAccount",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "If a private use percentage is defined, you need to specify the G/L account used for the re-invoice of the private use to the owner of the company"
+    },
+    "PrivatePercentage": {
+      "name": "PrivatePercentage",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Specify the percentage of the cost that should be re-invoiced to the owner of the company as private use of the costs"
+    },
+    "ReportingCode": {
+      "name": "ReportingCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Used in the export of yearly report"
+    },
+    "RevalueCurrency": {
+      "name": "RevalueCurrency",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if the amounts booked on this general ledger account will be recalculated when currency revaluation is done"
+    },
+    "SearchCode": {
+      "name": "SearchCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Search Code"
+    },
+    "Type": {
+      "name": "Type",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The type of the G/L account. Supported values are:10 = Cash12 = Bank14 = Credit card16 = Payment services20 = Accounts receivable21 = Prepayment accounts receivable22 = Accounts payable24 = VAT25 = Employees payable26 = Prepaid expenses27 = Accrued expenses29 = Income taxes payable30 = Fixed assets32 = Other assets35 = Accumulated depreciation40 = Inventory50 = Capital stock52 = Retained earnings55 = Long term debt60 = Current portion of debt90 = General100 = Tax payable110 = Revenue111 = Cost of goods120 = Other costs121 = Sales, general administrative expenses122 = Depreciation costs123 = Research and development125 = Employee costs126 = Employment costs130 = Exceptional costs140 = Exceptional income150 = Income taxes160 = Interest income300 = Year end reflection301 = Indirect year end costing302 = Direct year end costing"
+    },
+    "TypeDescription": {
+      "name": "TypeDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Type"
+    },
+    "UseCostcenter": {
+      "name": "UseCostcenter",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if cost centers can be used when using this general ledger account. The following values are supported: 0 (Optional) 1 (Mandatory) 2 (No)"
+    },
+    "UseCostunit": {
+      "name": "UseCostunit",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if cost units can be used when using this general ledger account. The following values are supported: 0 (Optional) 1 (Mandatory) 2 (No)"
+    },
+    "VATCode": {
+      "name": "VATCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "VAT Code linked to the G/L account"
+    },
+    "VATDescription": {
+      "name": "VATDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of VAT"
+    },
+    "VATGLAccountType": {
+      "name": "VATGLAccountType",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Specify the kind of purchase this G/L account is used for. This is important for the Belgian VAT return to indicate in which VAT box the base amount of purchase should go"
+    },
+    "VATNonDeductibleGLAccount": {
+      "name": "VATNonDeductibleGLAccount",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "If you use a percentage of non deductible VAT, you can specify another G/L account that will be used for the non deductible part of the VAT amount. This is used directly in the entry application of purchase invoices."
+    },
+    "VATNonDeductiblePercentage": {
+      "name": "VATNonDeductiblePercentage",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "If not the full amount of the VAT is deductible, you can indicate a percentage for the non decuctible part. This is used during the entry of purchase invoices"
+    },
+    "VATSystem": {
+      "name": "VATSystem",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The following values are supported: I (Invoice) C (Cash) (France)"
+    },
+    "YearEndCostGLAccount": {
+      "name": "YearEndCostGLAccount",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates the costing account for year end calculations"
+    },
+    "YearEndReflectionGLAccount": {
+      "name": "YearEndReflectionGLAccount",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates the reflection account that is used by year end application"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 16:05:59 UTC",
+    "total_fields": 44,
+    "scraping_method": "documentation_only",
+    "doc_url": "FinancialGLAccounts"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "GLAccounts",
+      "good_to_know": "Use this endpoint to retrieve information of all the G/L accounts of your administration. Aside from that you can also create, update or delete G/L account.Add CustomDescriptionLanguage='[ NL | FR-BE | NL-BE | ... ]' to the header to retrieve language sensitive properties such as descriptions in a specific language.For more information about G/L accounts, you can visit the following help file Working with G/L accounts.",
+      "scope": "Financial generalledgers",
+      "uri": "/api/v1/{division}/financial/GLAccounts",
+      "example_usage": "/api/v1/{division}/financial/GLAccounts"
+    }
+  }
+}

@@ -1,0 +1,363 @@
+{
+  "name": "DocumentsDocuments",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "Account": {
+      "name": "Account",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "ID of the related account of this document"
+    },
+    "AccountCode": {
+      "name": "AccountCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Account"
+    },
+    "AccountName": {
+      "name": "AccountName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of Account"
+    },
+    "AmountFC": {
+      "name": "AmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount in the currency of the transaction"
+    },
+    "Body": {
+      "name": "Body",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Body of this document"
+    },
+    "Category": {
+      "name": "Category",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "ID of the category of this document"
+    },
+    "CategoryDescription": {
+      "name": "CategoryDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Category"
+    },
+    "Contact": {
+      "name": "Contact",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "ID of the related contact of this document"
+    },
+    "ContactFullName": {
+      "name": "ContactFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Contact full name"
+    },
+    "ContractID": {
+      "name": "ContractID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The contract linked to the document"
+    },
+    "ContractNumber": {
+      "name": "ContractNumber",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Contract Number"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of creator"
+    },
+    "Currency": {
+      "name": "Currency",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Currency code"
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "DocumentDate": {
+      "name": "DocumentDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Entry date of the incoming document"
+    },
+    "DocumentFolder": {
+      "name": "DocumentFolder",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The Id of document folder"
+    },
+    "DocumentFolderCode": {
+      "name": "DocumentFolderCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The Code of document folder"
+    },
+    "DocumentFolderDescription": {
+      "name": "DocumentFolderDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The Decsription of document folder"
+    },
+    "DocumentViewUrl": {
+      "name": "DocumentViewUrl",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Url to view the document"
+    },
+    "EntryStatusDescription": {
+      "name": "EntryStatusDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "EntryStatusDescription"
+    },
+    "ExpiryDate": {
+      "name": "ExpiryDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Expiry date of this document"
+    },
+    "FinancialTransactionEntryID": {
+      "name": "FinancialTransactionEntryID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to the transaction lines of the financial entry. For a document of type sales invoice it will return the InvoiceID of the sales invoice (SalesInvoices API)."
+    },
+    "HasEmptyBody": {
+      "name": "HasEmptyBody",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates that the document body is empty"
+    },
+    "HID": {
+      "name": "HID",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Human-readable ID, formatted as xx.xxx.xxx. Unique. May not be equal to zero"
+    },
+    "InheritShare": {
+      "name": "InheritShare",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "InheritShare value"
+    },
+    "Item": {
+      "name": "Item",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The item linked to the document"
+    },
+    "ItemCode": {
+      "name": "ItemCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Item"
+    },
+    "ItemDescription": {
+      "name": "ItemDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Item"
+    },
+    "Language": {
+      "name": "Language",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The language code of the document"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of modifier"
+    },
+    "Opportunity": {
+      "name": "Opportunity",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The opportunity linked to the document"
+    },
+    "Project": {
+      "name": "Project",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The project linked to the document"
+    },
+    "ProjectCode": {
+      "name": "ProjectCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of project"
+    },
+    "ProjectDescription": {
+      "name": "ProjectDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of project"
+    },
+    "ProposedEntryStatus": {
+      "name": "ProposedEntryStatus",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "ProposedEntryStatus, 0 = Void, 5 = Rejected, 20 = Open, 50 = Processed"
+    },
+    "SalesInvoiceNumber": {
+      "name": "SalesInvoiceNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "'Our reference' of the transaction that belongs to this document"
+    },
+    "SalesOrderNumber": {
+      "name": "SalesOrderNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Number of the sales order"
+    },
+    "ScanServiceStatus": {
+      "name": "ScanServiceStatus",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "SendMethod": {
+      "name": "SendMethod",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Send method"
+    },
+    "ShopOrderNumber": {
+      "name": "ShopOrderNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Number of the shop order"
+    },
+    "Subject": {
+      "name": "Subject",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Subject of this document"
+    },
+    "TeamsMeetingId": {
+      "name": "TeamsMeetingId",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Teams meeting id"
+    },
+    "Type": {
+      "name": "Type",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "ID of the type of this document"
+    },
+    "TypeDescription": {
+      "name": "TypeDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Type"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 16:19:28 UTC",
+    "total_fields": 49,
+    "scraping_method": "documentation_only",
+    "doc_url": "DocumentsDocuments"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "Documents",
+      "good_to_know": "Use this endpoint to create, read, update and delete documents.",
+      "scope": "Organization documents",
+      "uri": "/api/v1/{division}/documents/Documents",
+      "example_usage": "/api/v1/{division}/documents/Documents"
+    }
+  }
+}

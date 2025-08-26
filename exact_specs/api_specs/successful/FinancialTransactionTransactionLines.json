@@ -1,0 +1,503 @@
+{
+  "name": "FinancialTransactionTransactionLines",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "Account": {
+      "name": "Account",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to account"
+    },
+    "AccountCode": {
+      "name": "AccountCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of the Account"
+    },
+    "AccountName": {
+      "name": "AccountName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the Account"
+    },
+    "AmountDC": {
+      "name": "AmountDC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount in the default currency of the company"
+    },
+    "AmountFC": {
+      "name": "AmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount in the currency of the transaction"
+    },
+    "AmountVATBaseFC": {
+      "name": "AmountVATBaseFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Vat base amount in the currency of the transaction"
+    },
+    "AmountVATFC": {
+      "name": "AmountVATFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Vat amount in the currency of the transaction"
+    },
+    "Asset": {
+      "name": "Asset",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to asset"
+    },
+    "AssetCode": {
+      "name": "AssetCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Asset"
+    },
+    "AssetDescription": {
+      "name": "AssetDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Asset"
+    },
+    "CostCenter": {
+      "name": "CostCenter",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to cost center"
+    },
+    "CostCenterDescription": {
+      "name": "CostCenterDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of CostCenter"
+    },
+    "CostUnit": {
+      "name": "CostUnit",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to cost unit"
+    },
+    "CostUnitDescription": {
+      "name": "CostUnitDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of CostUnit"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of creator"
+    },
+    "Currency": {
+      "name": "Currency",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Currency"
+    },
+    "CustomField": {
+      "name": "CustomField",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Custom field endpoint"
+    },
+    "Date": {
+      "name": "Date",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Entry date"
+    },
+    "Description": {
+      "name": "Description",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description"
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "Document": {
+      "name": "Document",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to document"
+    },
+    "DocumentNumber": {
+      "name": "DocumentNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Number of the document"
+    },
+    "DocumentSubject": {
+      "name": "DocumentSubject",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Subject of the document"
+    },
+    "DueDate": {
+      "name": "DueDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Date that payment should be done"
+    },
+    "EntryID": {
+      "name": "EntryID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "The transaction lines that make up a financial entry share the same EntryID"
+    },
+    "EntryNumber": {
+      "name": "EntryNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Entry number of the header"
+    },
+    "ExchangeRate": {
+      "name": "ExchangeRate",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Exchange rate"
+    },
+    "ExternalLinkDescription": {
+      "name": "ExternalLinkDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of ExternalLink"
+    },
+    "ExternalLinkReference": {
+      "name": "ExternalLinkReference",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "External link"
+    },
+    "ExtraDutyAmountFC": {
+      "name": "ExtraDutyAmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Extra duty amount"
+    },
+    "ExtraDutyPercentage": {
+      "name": "ExtraDutyPercentage",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Extra duty percentage"
+    },
+    "FinancialPeriod": {
+      "name": "FinancialPeriod",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Financial period"
+    },
+    "FinancialYear": {
+      "name": "FinancialYear",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Financial year"
+    },
+    "GLAccount": {
+      "name": "GLAccount",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "General ledger account"
+    },
+    "GLAccountCode": {
+      "name": "GLAccountCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of GLAccount"
+    },
+    "GLAccountDescription": {
+      "name": "GLAccountDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of GLAccount"
+    },
+    "InvoiceNumber": {
+      "name": "InvoiceNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Invoice number"
+    },
+    "Item": {
+      "name": "Item",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to item"
+    },
+    "ItemCode": {
+      "name": "ItemCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Item"
+    },
+    "ItemDescription": {
+      "name": "ItemDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Item"
+    },
+    "JournalCode": {
+      "name": "JournalCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The journal code"
+    },
+    "JournalDescription": {
+      "name": "JournalDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The journal description"
+    },
+    "LineNumber": {
+      "name": "LineNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Line number"
+    },
+    "LineType": {
+      "name": "LineType",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Line type"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of modifier"
+    },
+    "Notes": {
+      "name": "Notes",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Extra remarks"
+    },
+    "OffsetID": {
+      "name": "OffsetID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "OffsetID"
+    },
+    "OrderNumber": {
+      "name": "OrderNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Order number"
+    },
+    "PaymentDiscountAmount": {
+      "name": "PaymentDiscountAmount",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Discount amount when paid in time"
+    },
+    "PaymentReference": {
+      "name": "PaymentReference",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Payment reference"
+    },
+    "Project": {
+      "name": "Project",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to project"
+    },
+    "ProjectCode": {
+      "name": "ProjectCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Project"
+    },
+    "ProjectDescription": {
+      "name": "ProjectDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Project"
+    },
+    "ProjectWBS": {
+      "name": "ProjectWBS",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to Project WBS"
+    },
+    "ProjectWBSDescription": {
+      "name": "ProjectWBSDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Project WBS"
+    },
+    "Quantity": {
+      "name": "Quantity",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Quantity"
+    },
+    "SerialNumber": {
+      "name": "SerialNumber",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "ShopOrder": {
+      "name": "ShopOrder",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to shop order"
+    },
+    "Status": {
+      "name": "Status",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "20 = Open, 50 = Processed"
+    },
+    "Subscription": {
+      "name": "Subscription",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to subscription line (Note: LineNumber greater than 0 is subscription line)"
+    },
+    "SubscriptionDescription": {
+      "name": "SubscriptionDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of subscription line"
+    },
+    "TrackingNumber": {
+      "name": "TrackingNumber",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Tracking number of item"
+    },
+    "TrackingNumberDescription": {
+      "name": "TrackingNumberDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Tracking number description"
+    },
+    "Type": {
+      "name": "Type",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The transaction type."
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 16:13:07 UTC",
+    "total_fields": 69,
+    "scraping_method": "documentation_only",
+    "doc_url": "FinancialTransactionTransactionLines"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "TransactionLines",
+      "good_to_know": "Use this endpoint to read all kind of transactions created in Exact.  Find more details on the attributes in the relevant topic description for BankEntries, CashEntries, GeneralJournalEntries, PurchaseEntries or SalesEntries.",
+      "scope": "Financial accounting",
+      "uri": "/api/v1/{division}/financialtransaction/TransactionLines",
+      "example_usage": "/api/v1/{division}/financialtransaction/TransactionLines"
+    }
+  }
+}

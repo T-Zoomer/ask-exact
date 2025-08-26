@@ -1,0 +1,412 @@
+{
+  "name": "AssetsAssets",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "AlreadyDepreciated": {
+      "name": "AlreadyDepreciated",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if an asset was already depreciated before registering it in Exact Online"
+    },
+    "AssetFrom": {
+      "name": "AssetFrom",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "In case of a transfer or a split, the original asset ID is saved in this field. This is done to provide tracability of the Asset"
+    },
+    "AssetFromDescription": {
+      "name": "AssetFromDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of AssetFrom"
+    },
+    "AssetGroup": {
+      "name": "AssetGroup",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Asset group identifies GLAccounts to be used for Asset transactions"
+    },
+    "AssetGroupCode": {
+      "name": "AssetGroupCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of the asset group"
+    },
+    "AssetGroupDescription": {
+      "name": "AssetGroupDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of the asset group"
+    },
+    "CatalogueValue": {
+      "name": "CatalogueValue",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The catalogue value of the asset"
+    },
+    "Code": {
+      "name": "Code",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of the asset"
+    },
+    "CommercialBuildingValues": {
+      "name": "CommercialBuildingValues",
+      "type": "CommercialBuildingValues",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Commercial building value. You can have several commercial building value, with start and end dates"
+    },
+    "Costcenter": {
+      "name": "Costcenter",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Assets can be linked to a cost center"
+    },
+    "CostcenterDescription": {
+      "name": "CostcenterDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Costcenter"
+    },
+    "Costunit": {
+      "name": "Costunit",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Assets can be linked to a cost unit"
+    },
+    "CostunitDescription": {
+      "name": "CostunitDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Costunit"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of creator"
+    },
+    "CustomField": {
+      "name": "CustomField",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Custom field endpoint"
+    },
+    "DeductionPercentage": {
+      "name": "DeductionPercentage",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Used for Belgium legislation. Used to produce the official 'Investment deduction' report"
+    },
+    "DepreciatedAmount": {
+      "name": "DepreciatedAmount",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount that is already depreciated when adding an existing asset. Can only be filled when 'Alreadydepreciated' is on"
+    },
+    "DepreciatedPeriods": {
+      "name": "DepreciatedPeriods",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Number of periods that already have been depreciated for the asset. Can only be filled when 'Alreadydepreciated' is on"
+    },
+    "DepreciatedStartDate": {
+      "name": "DepreciatedStartDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "StartDate of depreciating. Can only be filled when 'Alreadydepreciated' is on"
+    },
+    "Description": {
+      "name": "Description",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "This is the description of the Asset"
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "EndDate": {
+      "name": "EndDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Asset EndDate is filled when asset is Sold or Inactive"
+    },
+    "EngineEmission": {
+      "name": "EngineEmission",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Engine emission of the asset, needed to calculate the co² report"
+    },
+    "EngineType": {
+      "name": "EngineType",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Engine type of the asset, Needed to generate a co² report"
+    },
+    "GLTransactionLine": {
+      "name": "GLTransactionLine",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Links to the gltransactions.id. GL transaction line based on which the asset is created"
+    },
+    "GLTransactionLineDescription": {
+      "name": "GLTransactionLineDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of GLTransactionLine"
+    },
+    "InvestmentAccount": {
+      "name": "InvestmentAccount",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Supplier of the asset"
+    },
+    "InvestmentAccountCode": {
+      "name": "InvestmentAccountCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of InvestmentAccount"
+    },
+    "InvestmentAccountName": {
+      "name": "InvestmentAccountName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of InvestmentAccount"
+    },
+    "InvestmentAmountDC": {
+      "name": "InvestmentAmountDC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Investment amount in the default currency of the company"
+    },
+    "InvestmentAmountFC": {
+      "name": "InvestmentAmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Investment value of the asset. Currently the field is filled with the PurchasePriceLocal. Can be status 'Not used' after sources have been cleaned"
+    },
+    "InvestmentCurrency": {
+      "name": "InvestmentCurrency",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates the currency of the investment amount"
+    },
+    "InvestmentCurrencyDescription": {
+      "name": "InvestmentCurrencyDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of InvestmentCurrency"
+    },
+    "InvestmentDate": {
+      "name": "InvestmentDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Refers to the original date when the asset was bought"
+    },
+    "InvestmentDeduction": {
+      "name": "InvestmentDeduction",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Belgian functionality, to determine how a local legal report regarding investment deduction must be created"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of modifier"
+    },
+    "Notes": {
+      "name": "Notes",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Extra remarks for the asset"
+    },
+    "Parent": {
+      "name": "Parent",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Parent asset"
+    },
+    "ParentCode": {
+      "name": "ParentCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Parent"
+    },
+    "ParentDescription": {
+      "name": "ParentDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Parent"
+    },
+    "Picture": {
+      "name": "Picture",
+      "type": "Edm.Binary",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Image for an asset"
+    },
+    "PictureFileName": {
+      "name": "PictureFileName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Filename of the image"
+    },
+    "PrimaryMethod": {
+      "name": "PrimaryMethod",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "First method of depreciation. Currently, it is the only one used"
+    },
+    "PrimaryMethodCode": {
+      "name": "PrimaryMethodCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of PrimaryMethod"
+    },
+    "PrimaryMethodDescription": {
+      "name": "PrimaryMethodDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of PrimaryMethod"
+    },
+    "ResidualValue": {
+      "name": "ResidualValue",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates the residual value of the asset at the end of the depreciation"
+    },
+    "StartDate": {
+      "name": "StartDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Asset Depreciation StartDate"
+    },
+    "Status": {
+      "name": "Status",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Identifies the status of the Asset. (1 = Active, 2 = Not validated, 3 = Inactive, 4 = Depreciated, 5 = Blocked, 6 = Sold)"
+    },
+    "TransactionEntryID": {
+      "name": "TransactionEntryID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to the transaction lines that make up the financial entry."
+    },
+    "TransactionEntryNo": {
+      "name": "TransactionEntryNo",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Entry number of transaction"
+    },
+    "Type": {
+      "name": "Type",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicate if an asset is commercial building or other asset. (0 = Other Assets, 1 = Commercial Building)"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 15:28:52 UTC",
+    "total_fields": 56,
+    "scraping_method": "documentation_only",
+    "doc_url": "AssetsAssets"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "Assets",
+      "good_to_know": "Use this endpoint to get all information related to your admininstrations asset master data. This REST API returns the information as seen on the asset card.To retrieve the total depreciated amount and the last depreciation date as calculated in Exact Online, you must use XML API.",
+      "scope": "Financial assets",
+      "uri": "/api/v1/{division}/assets/Assets",
+      "example_usage": "/api/v1/{division}/assets/Assets"
+    }
+  }
+}

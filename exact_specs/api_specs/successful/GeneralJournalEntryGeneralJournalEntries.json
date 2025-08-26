@@ -1,0 +1,146 @@
+{
+  "name": "GeneralJournalEntryGeneralJournalEntries",
+  "fields": {
+    "EntryID": {
+      "name": "EntryID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Currency": {
+      "name": "Currency",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Currency code"
+    },
+    "CustomField": {
+      "name": "CustomField",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Custom field endpoint"
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "EntryNumber": {
+      "name": "EntryNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Entry number"
+    },
+    "ExchangeRate": {
+      "name": "ExchangeRate",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Exchange rate"
+    },
+    "FinancialPeriod": {
+      "name": "FinancialPeriod",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The period of the transaction lines. The period should exist in the period date table"
+    },
+    "FinancialYear": {
+      "name": "FinancialYear",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The financial year to which the entry belongs. The financial year should exist in the period date table"
+    },
+    "GeneralJournalEntryLines": {
+      "name": "GeneralJournalEntryLines",
+      "type": "GeneralJournalEntryLines",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Collection of lines"
+    },
+    "JournalCode": {
+      "name": "JournalCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Code of Journal"
+    },
+    "JournalDescription": {
+      "name": "JournalDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Journal"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Reversal": {
+      "name": "Reversal",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates that amounts are reversed, reversal allows to create correction entries with negative amounts on same side (debit/credit) as the original entry."
+    },
+    "Status": {
+      "name": "Status",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Status: 5 = Rejected, 20 = Open, 50 = Processed"
+    },
+    "StatusDescription": {
+      "name": "StatusDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Status"
+    },
+    "Type": {
+      "name": "Type",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Type: 10 = Opening balance, 90 = Other"
+    },
+    "TypeDescription": {
+      "name": "TypeDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Type"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 16:19:49 UTC",
+    "total_fields": 18,
+    "scraping_method": "documentation_only",
+    "doc_url": "GeneralJournalEntryGeneralJournalEntries"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "GeneralJournalEntries",
+      "good_to_know": "Use this endpoint to create, read or delete general entries not created in bank, cash, purchase or sales journal.Entries created with this service will get type 90 (Other). It Is Not possible to create entries of type 10 (Opening balance).",
+      "scope": "Financial accounting",
+      "uri": "/api/v1/{division}/generaljournalentry/GeneralJournalEntries",
+      "example_usage": "/api/v1/{division}/generaljournalentry/GeneralJournalEntries"
+    }
+  }
+}

@@ -1,0 +1,377 @@
+{
+  "name": "SalesEntrySalesEntryLines",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "AmountDC": {
+      "name": "AmountDC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount in the default currency of the company. For almost all lines this can be calculated like: AmountDC = AmountFC * RateFC."
+    },
+    "AmountFC": {
+      "name": "AmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "For normal lines it's the amount excluding VAT"
+    },
+    "Asset": {
+      "name": "Asset",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to Asset"
+    },
+    "AssetDescription": {
+      "name": "AssetDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Asset"
+    },
+    "CostCenter": {
+      "name": "CostCenter",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to Cost center"
+    },
+    "CostCenterDescription": {
+      "name": "CostCenterDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of CostCenter"
+    },
+    "CostUnit": {
+      "name": "CostUnit",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to Cost unit"
+    },
+    "CostUnitDescription": {
+      "name": "CostUnitDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of CostUnit"
+    },
+    "CustomField": {
+      "name": "CustomField",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Custom field endpoint"
+    },
+    "Description": {
+      "name": "Description",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description. Can be different for header and lines"
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "EntryID": {
+      "name": "EntryID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "The unique ID of the entry. Via this ID all transaction lines of a single entry can be retrieved"
+    },
+    "ExtraDutyAmountFC": {
+      "name": "ExtraDutyAmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Extra duty amount in the currency of the transaction. Both extra duty amount and VAT amount need to be specified in order to differ this property from automatically calculated."
+    },
+    "ExtraDutyPercentage": {
+      "name": "ExtraDutyPercentage",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Extra duty percentage for the item"
+    },
+    "From": {
+      "name": "From",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "From date to identify the range for accrued/deferred revenue. This is used in combination with the property 'To' that defines the end date"
+    },
+    "GLAccount": {
+      "name": "GLAccount",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "The GL Account of the invoice line. This field is generated based on the revenue account of the item (or the related item group). G/L Account is also used to determine whether the costcenter / costunit is mandatory"
+    },
+    "GLAccountCode": {
+      "name": "GLAccountCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of GLAccount"
+    },
+    "GLAccountDescription": {
+      "name": "GLAccountDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of GLAccount"
+    },
+    "IntraStatArea": {
+      "name": "IntraStatArea",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "IntraStat area (only relevant when IntraStat for sales is enabled in the administration)"
+    },
+    "IntraStatCountry": {
+      "name": "IntraStatCountry",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "IntraStatCountry (only relevant when IntraStat for sales is enabled in the administration)"
+    },
+    "IntraStatDeliveryTerm": {
+      "name": "IntraStatDeliveryTerm",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "IntraStat delivery term (only relevant when IntraStat for sales is enabled in the administration)"
+    },
+    "IntraStatTransactionA": {
+      "name": "IntraStatTransactionA",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "IntraStat transaction A (only relevant when IntraStat for sales is enabled in the administration)"
+    },
+    "IntraStatTransactionB": {
+      "name": "IntraStatTransactionB",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "IntraStat transaction B (only relevant when IntraStat for sales is enabled in the Belgium, Luxembourg, France & United Kingdom administration)"
+    },
+    "IntraStatTransportMethod": {
+      "name": "IntraStatTransportMethod",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "IntraStat transport method (only relevant when IntraStat for sales is enabled in the administration)"
+    },
+    "LineNumber": {
+      "name": "LineNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates the sequence of the lines within one entry"
+    },
+    "Notes": {
+      "name": "Notes",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Extra notes"
+    },
+    "Project": {
+      "name": "Project",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The project to which the sales transaction line is linked. The project can be different per line. Sometimes also the project in the header is filled although this is not really used"
+    },
+    "ProjectDescription": {
+      "name": "ProjectDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Project"
+    },
+    "ProjectWBS": {
+      "name": "ProjectWBS",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to Project WBS"
+    },
+    "ProjectWBSDescription": {
+      "name": "ProjectWBSDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Project WBS"
+    },
+    "Quantity": {
+      "name": "Quantity",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The number of items sold in default units. The quantity shown in the entry screen is Quantity * UnitFactor"
+    },
+    "SerialNumber": {
+      "name": "SerialNumber",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Serial number"
+    },
+    "StatisticalNetWeight": {
+      "name": "StatisticalNetWeight",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Statistical NetWeight (only relevant when IntraStat for sales is enabled in the administration)"
+    },
+    "StatisticalNumber": {
+      "name": "StatisticalNumber",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Statistical Number (only relevant when IntraStat for sales is enabled in the administration)"
+    },
+    "StatisticalQuantity": {
+      "name": "StatisticalQuantity",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Statistical Quantity (only relevant when IntraStat for sales is enabled in the administration)"
+    },
+    "StatisticalValue": {
+      "name": "StatisticalValue",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Statistical Value (only relevant when IntraStat for sales is enabled in the administration)"
+    },
+    "Subscription": {
+      "name": "Subscription",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "When generating invoices from subscriptions, this field records the link between invoice lines and subscription lines"
+    },
+    "SubscriptionDescription": {
+      "name": "SubscriptionDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Subscription"
+    },
+    "TaxSchedule": {
+      "name": "TaxSchedule",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "To": {
+      "name": "To",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "To date to identify the range for accrued/deferred revenue. This is used in combination with the property 'From' that defines the start date"
+    },
+    "TrackingNumber": {
+      "name": "TrackingNumber",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to TrackingNumber"
+    },
+    "TrackingNumberDescription": {
+      "name": "TrackingNumberDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of TrackingNumber"
+    },
+    "Type": {
+      "name": "Type",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Type: 20 = Sales entry, 21 = Sales credit note"
+    },
+    "VATAmountDC": {
+      "name": "VATAmountDC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "VAT amount in the default currency of the company"
+    },
+    "VATAmountFC": {
+      "name": "VATAmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "VAT amount in the currency of the transaction. Use this property to specify a VAT amount that differs from the VAT amount that is automatically calculated. However if the transaction uses extra duty, extra duty amount also needs to be specified."
+    },
+    "VATBaseAmountDC": {
+      "name": "VATBaseAmountDC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The VAT base amount in the default currency of the company. This is calculated based on the VATBaseAmountFC"
+    },
+    "VATBaseAmountFC": {
+      "name": "VATBaseAmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The VAT base amount in invoice currency. This is calculated with the use of VAT codes. It's an internal value"
+    },
+    "VATCode": {
+      "name": "VATCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The VAT code used when the invoice was registered. If this property is not filled, it will use the default VAT code of the G/L account property"
+    },
+    "VATCodeDescription": {
+      "name": "VATCodeDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of VATCode"
+    },
+    "VATPercentage": {
+      "name": "VATPercentage",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The VAT percentage of the VAT code. This is the percentage at the moment the invoice is created. It's also used by the default calculation of VAT amounts and VAT base amounts"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 16:22:38 UTC",
+    "total_fields": 51,
+    "scraping_method": "documentation_only",
+    "doc_url": "SalesEntrySalesEntryLines"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "SalesEntryLines",
+      "good_to_know": "Use this endpoint to create, read, update or delete the entry lines of sales entries  created for your sales invoices. Note: Sales entries are separated to header and line information. Endpoint SalesEntryLines is used for the line information.  The relevance of properties is very much depending on the legislation and the package used.",
+      "scope": "Financial accounting",
+      "uri": "/api/v1/{division}/salesentry/SalesEntryLines",
+      "example_usage": "/api/v1/{division}/salesentry/SalesEntryLines"
+    }
+  }
+}

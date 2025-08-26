@@ -1,0 +1,230 @@
+{
+  "name": "PurchasePurchaseInvoices",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "A guid that is the unique identifier of the purchase invoice."
+    },
+    "Amount": {
+      "name": "Amount",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The amount including VAT in the foreign currency."
+    },
+    "AmountDC": {
+      "name": "AmountDC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The amount including VAT in the default currency."
+    },
+    "AmountDiscount": {
+      "name": "AmountDiscount",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Discount amount in the default currency of the company"
+    },
+    "AmountDiscountExclVat": {
+      "name": "AmountDiscountExclVat",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Discount amount excluding VAT in the default currency of the company"
+    },
+    "AmountFCExclVat": {
+      "name": "AmountFCExclVat",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount exclude VAT in the currency of the transaction."
+    },
+    "ContactPerson": {
+      "name": "ContactPerson",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Guid identifying the contact person of the supplier."
+    },
+    "Currency": {
+      "name": "Currency",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The code of the currency of the invoiced amount."
+    },
+    "Description": {
+      "name": "Description",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The description of the invoice."
+    },
+    "Discount": {
+      "name": "Discount",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Discount percentage"
+    },
+    "Document": {
+      "name": "Document",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Guid identifying a document that is attached to the invoice."
+    },
+    "DueDate": {
+      "name": "DueDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The date before which the invoice has to be paid. This by default will be set according to the payment condition."
+    },
+    "EntryNumber": {
+      "name": "EntryNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The unique number of the purchase invoice. The entry number is based on a setting in the purchase journal and incremented for each new purchase invoice."
+    },
+    "ExchangeRate": {
+      "name": "ExchangeRate",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The exchange rate between the invoice currency and the default currency of the division."
+    },
+    "FinancialPeriod": {
+      "name": "FinancialPeriod",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The financial period in which the invoice is entered."
+    },
+    "FinancialYear": {
+      "name": "FinancialYear",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The financial year in which the invoice is entered."
+    },
+    "InvoiceDate": {
+      "name": "InvoiceDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The date on which the supplier entered the invoice."
+    },
+    "Journal": {
+      "name": "Journal",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "The code of the purchase journal in which the invoice is entered."
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The date and time the invoice was last modified."
+    },
+    "PaymentCondition": {
+      "name": "PaymentCondition",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The code of the payment condition that is used to calculate the due date and discount."
+    },
+    "PaymentReference": {
+      "name": "PaymentReference",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Unique reference to match payments and invoices."
+    },
+    "PurchaseInvoiceLines": {
+      "name": "PurchaseInvoiceLines",
+      "type": "PurchaseInvoiceLines",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "The collection of lines that belong to the purchase invoice."
+    },
+    "Remarks": {
+      "name": "Remarks",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The user can enter remarks related to the invoice here."
+    },
+    "Source": {
+      "name": "Source",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates the origin of the invoice. 1 Manual entry, 3 Purchase invoice, 4 Purchase order, 5 Web service."
+    },
+    "Status": {
+      "name": "Status",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The status of the invoice. 10 Draft, 20 Open, 50 Processed."
+    },
+    "Supplier": {
+      "name": "Supplier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Guid that identifies the supplier."
+    },
+    "Type": {
+      "name": "Type",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Indicates the type of the purchase invoice. 8030 Direct purchase invoice, 8031 Direct purchase invoice (Credit), 8033 Purchase invoice, 8034 Purchase invoice (Credit)"
+    },
+    "VATAmount": {
+      "name": "VATAmount",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The total VAT amount of the purchase invoice."
+    },
+    "Warehouse": {
+      "name": "Warehouse",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Guid that identifies the warehouse that will receive the purchased goods. This is mandatory for creating a direct purchase invoice except for Exact Online Projects."
+    },
+    "YourRef": {
+      "name": "YourRef",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The invoice number provided by the supplier."
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 16:12:51 UTC",
+    "total_fields": 30,
+    "scraping_method": "documentation_only",
+    "doc_url": "PurchasePurchaseInvoices"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "PurchaseInvoices",
+      "good_to_know": "Use this endpoint to create, read, update and delete purchase invoices.A purchase invoice describes the items that you purchased from a supplier. This endpoint supports purchase invoices and direct purchase invoices. Each purchase invoice line has to contain either an item or a purchase order line.The direct purchase invoice is a purchase invoice and receipt at the same time. A purchase order is not required and the stock positions and financial entries are updated directly.To create a direct purchase invoice you have to specify the warehouse that is receiving the purchased items. To get only direct purchase invoices apply this filter on warehouse: $filter=Warehouse ne nullCurrently project WBS (work breakdown structure) and rebilling functionality are not supported.For more information about the purchase invoice functionality in Exact Online, see Create purchase invoices.",
+      "scope": "Purchase invoices",
+      "uri": "/api/v1/{division}/purchase/PurchaseInvoices",
+      "example_usage": "/api/v1/{division}/purchase/PurchaseInvoices"
+    }
+  }
+}

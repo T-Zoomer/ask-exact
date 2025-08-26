@@ -160,8 +160,12 @@ def refresh_token(request):
         base_url = get_auth_base_url(config["country"])
         token_url = f"{base_url}/api/oauth2/token"
         print(f"DEBUG - MANUAL REFRESH: Using base_url: {base_url}")
-        print(f"DEBUG - MANUAL REFRESH: refresh_token length: {len(token.refresh_token) if token.refresh_token else 0}")
-        print(f"DEBUG - MANUAL REFRESH: client_id: {config['client_id'][:10] if config['client_id'] else 'None'}...")
+        print(
+            f"DEBUG - MANUAL REFRESH: refresh_token length: {len(token.refresh_token) if token.refresh_token else 0}"
+        )
+        print(
+            f"DEBUG - MANUAL REFRESH: client_id: {config['client_id'][:10] if config['client_id'] else 'None'}..."
+        )
         print(f"DEBUG - MANUAL REFRESH: Making request to {token_url}")
         response = requests.post(token_url, data=refresh_data)
         print(f"DEBUG - MANUAL REFRESH: Response status: {response.status_code}")

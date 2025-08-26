@@ -1,0 +1,573 @@
+{
+  "name": "SalesInvoiceSalesInvoices",
+  "fields": {
+    "InvoiceID": {
+      "name": "InvoiceID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "AmountDC": {
+      "name": "AmountDC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "For the header lines (LineNumber = 0) of an entry this is the SUM(AmountDC) of all lines"
+    },
+    "AmountDiscount": {
+      "name": "AmountDiscount",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Discount amount in the default currency of the company"
+    },
+    "AmountDiscountExclVat": {
+      "name": "AmountDiscountExclVat",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Discount amount exclude VAT in the default currency of the company"
+    },
+    "AmountFC": {
+      "name": "AmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "For the header this is the sum of all lines, including VAT"
+    },
+    "AmountFCExclVat": {
+      "name": "AmountFCExclVat",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "For the header this is the sum of all lines, excluding VAT"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of creator"
+    },
+    "Currency": {
+      "name": "Currency",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Currency for the invoice. Default this is the currency of the administration"
+    },
+    "DeliverTo": {
+      "name": "DeliverTo",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Delivery account for invoice"
+    },
+    "DeliverToAddress": {
+      "name": "DeliverToAddress",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Address of delivery as per invoice delivery account"
+    },
+    "DeliverToContactPerson": {
+      "name": "DeliverToContactPerson",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Delivery account person for invoice"
+    },
+    "DeliverToContactPersonFullName": {
+      "name": "DeliverToContactPersonFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of delivery account's contact person as per invoice"
+    },
+    "DeliverToName": {
+      "name": "DeliverToName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the delivery account's customer as per invoice"
+    },
+    "Description": {
+      "name": "Description",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description. Can be different for header and lines"
+    },
+    "Discount": {
+      "name": "Discount",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Discount percentage"
+    },
+    "DiscountType": {
+      "name": "DiscountType",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Leading field of total discount. 1=Discount percentage, 2=Discount amount excl. VAT, 3=Discount amount incl. VAT, 4=Total amount excl. VAT, 5=Total amount incl. VAT"
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "Document": {
+      "name": "Document",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Document that is manually linked to the invoice"
+    },
+    "DocumentNumber": {
+      "name": "DocumentNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Number of the document"
+    },
+    "DocumentSubject": {
+      "name": "DocumentSubject",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Subject of the document"
+    },
+    "DueDate": {
+      "name": "DueDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The due date for payments. This date is calculated based on the EntryDate and the Paymentcondition"
+    },
+    "ExtraDutyAmountFC": {
+      "name": "ExtraDutyAmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Extra duty amount in the currency of the transaction. Both extra duty amount and VAT amount need to be specified in order to differ this property from automatically calculated."
+    },
+    "GAccountAmountFC": {
+      "name": "GAccountAmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "A positive value of the amount indicates that the amount is to be paid by the customer to your G bank account.In case of a credit invoice the amount should have negative value when retrieved or posted to Exact."
+    },
+    "IncotermAddress": {
+      "name": "IncotermAddress",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Address of Incoterm"
+    },
+    "IncotermCode": {
+      "name": "IncotermCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Incoterm"
+    },
+    "IncotermVersion": {
+      "name": "IncotermVersion",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Version of Incoterm Supported version for Incoterms : 2010, 2020"
+    },
+    "InvoiceDate": {
+      "name": "InvoiceDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Official date for the invoice. When the invoice is entered it's equal to the field 'EntryDate'. During the printing process the invoice date can be entered"
+    },
+    "InvoiceNumber": {
+      "name": "InvoiceNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Assigned at entry or at printing depending on setting. The number assigned is based on the freenumbers as defined for the Journal. When printing the field InvoiceNumber is copied to the fields EntryNumber and InvoiceNumber of the sales entry"
+    },
+    "InvoiceTo": {
+      "name": "InvoiceTo",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to the Customer who will receive the invoice"
+    },
+    "InvoiceToContactPerson": {
+      "name": "InvoiceToContactPerson",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to the Contact person of the customer who will receive the invoice"
+    },
+    "InvoiceToContactPersonFullName": {
+      "name": "InvoiceToContactPersonFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the contact person of the customer who will receive the invoice"
+    },
+    "InvoiceToName": {
+      "name": "InvoiceToName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the customer who will receive the invoice"
+    },
+    "IsExtraDuty": {
+      "name": "IsExtraDuty",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates whether the invoice has extra duty"
+    },
+    "Journal": {
+      "name": "Journal",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "The journal code. Every invoice should be linked to a sales journal"
+    },
+    "JournalDescription": {
+      "name": "JournalDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Journal"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of modifier"
+    },
+    "OrderDate": {
+      "name": "OrderDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Order date"
+    },
+    "OrderedBy": {
+      "name": "OrderedBy",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Customer who ordered the invoice"
+    },
+    "OrderedByContactPerson": {
+      "name": "OrderedByContactPerson",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Contact person of customer who ordered the invoice"
+    },
+    "OrderedByContactPersonFullName": {
+      "name": "OrderedByContactPersonFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of contact person of customer who ordered the invoice"
+    },
+    "OrderedByName": {
+      "name": "OrderedByName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of customer who ordered the invoice"
+    },
+    "OrderNumber": {
+      "name": "OrderNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Number to identify the order. By default the number is based on a setting for the first free number, but you can post your own number."
+    },
+    "PaymentCondition": {
+      "name": "PaymentCondition",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The payment condition used for due date and discount calculation"
+    },
+    "PaymentConditionDescription": {
+      "name": "PaymentConditionDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of PaymentCondition"
+    },
+    "PaymentReference": {
+      "name": "PaymentReference",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Payment reference for sales invoice"
+    },
+    "Remarks": {
+      "name": "Remarks",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Extra remarks"
+    },
+    "SalesChannel": {
+      "name": "SalesChannel",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "ID of Sales channel."
+    },
+    "SalesChannelCode": {
+      "name": "SalesChannelCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Sales channel."
+    },
+    "SalesChannelDescription": {
+      "name": "SalesChannelDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Sales channel."
+    },
+    "SalesInvoiceLines": {
+      "name": "SalesInvoiceLines",
+      "type": "SalesInvoiceLines",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Collection of lines"
+    },
+    "SalesInvoiceOrderChargeLines": {
+      "name": "SalesInvoiceOrderChargeLines",
+      "type": "SalesInvoiceOrderChargeLines",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Collection of shipping cost and order charge lines. Only applicable in POST. Ignore the URL returns in GET."
+    },
+    "Salesperson": {
+      "name": "Salesperson",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Sales representative"
+    },
+    "SalespersonFullName": {
+      "name": "SalespersonFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of sales representative"
+    },
+    "SelectionCode": {
+      "name": "SelectionCode",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "ID of selection code. Only supported by the Plus, Professional and Premium for Wholesale & Distribution and Manufacturing"
+    },
+    "SelectionCodeCode": {
+      "name": "SelectionCodeCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of selection code"
+    },
+    "SelectionCodeDescription": {
+      "name": "SelectionCodeDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of selection code"
+    },
+    "ShippingMethod": {
+      "name": "ShippingMethod",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Shipping method ID"
+    },
+    "ShippingMethodCode": {
+      "name": "ShippingMethodCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Shipping method code"
+    },
+    "ShippingMethodDescription": {
+      "name": "ShippingMethodDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Shipping method description"
+    },
+    "StarterSalesInvoiceStatus": {
+      "name": "StarterSalesInvoiceStatus",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Starter Sales invoice status (for starter functionality)"
+    },
+    "StarterSalesInvoiceStatusDescription": {
+      "name": "StarterSalesInvoiceStatusDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of StarterSalesInvoiceStatus"
+    },
+    "Status": {
+      "name": "Status",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The status of the entry. 10 = draft. During the creation of an invoice draft records occur in the draft modus if during an invoice a new page with lines is triggered. If the user leaves the invoice in an abnormal way the draft invoices can be recovered. Draft invoices are not included in financial reports, balances etc. 20 = open. Open invoices can be changed. New invoices get the status open by default. 50 = processed. Processed invoices can't be changed anymore. Processing is done via printing. Processed invoices can't be reopened"
+    },
+    "StatusDescription": {
+      "name": "StatusDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Status"
+    },
+    "TaxSchedule": {
+      "name": "TaxSchedule",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "TaxScheduleCode": {
+      "name": "TaxScheduleCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "TaxScheduleDescription": {
+      "name": "TaxScheduleDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "Type": {
+      "name": "Type",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates the type of invoice Values: 8020 - Sales invoices, 8021 - Sales credit note, 8023 - Direct sales invoice, 8024 - Direct credit note. Type 8023 and 8024 are only supported by the Plus, Professional and Premium editions for Wholesale & Distribution and Manufacturing"
+    },
+    "TypeDescription": {
+      "name": "TypeDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of the type"
+    },
+    "VATAmountDC": {
+      "name": "VATAmountDC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Total VAT amount in the default currency of the company"
+    },
+    "VATAmountFC": {
+      "name": "VATAmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Total VAT amount in the currency of the transaction"
+    },
+    "Warehouse": {
+      "name": "Warehouse",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Mandatory for direct sales invoice/credit note, cannot be set for normal sales invoice/credit note."
+    },
+    "WithholdingTaxAmountFC": {
+      "name": "WithholdingTaxAmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Withholding tax amount applied to sales invoice. Not supported in The Netherlands."
+    },
+    "WithholdingTaxBaseAmount": {
+      "name": "WithholdingTaxBaseAmount",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Withholding tax base amount to calculate withholding amount. Not supported in The Netherlands."
+    },
+    "WithholdingTaxPercentage": {
+      "name": "WithholdingTaxPercentage",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Withholding tax percentage applied to sales invoice. Not supported in The Netherlands."
+    },
+    "YourRef": {
+      "name": "YourRef",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The invoice number of the customer"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 15:58:34 UTC",
+    "total_fields": 79,
+    "scraping_method": "documentation_only",
+    "doc_url": "SalesInvoiceSalesInvoices"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "SalesInvoices",
+      "good_to_know": "Use this endpoint to create, read, update and delete sales invoices or direct sales invoices.Note: You must include a parameter for 'SalesInvoiceLines' to add sales invoice lines when you POST to the SalesInvoices endpoint. This parameter is not necessary when you PUT to this endpoint. Currently, assigning serial or batch numbers is not supported when you create or update direct sales invoices.Sales invoice describe the items that you sell to your customers.For more information about the sales invoice functionality in Exact Online, see About sales invoices  Direct sales invoices are entries that combine a normal sales invoice with a stock movement, whether it is in or out. For more information about the direct sales invoice functionality in Exact Online, see Create direct sales invoices or direct credit notes To view an example of the business use of this endpoint, see Rest API - Business example API sales invoice.",
+      "scope": "Sales invoices",
+      "uri": "/api/v1/{division}/salesinvoice/SalesInvoices",
+      "example_usage": "/api/v1/{division}/salesinvoice/SalesInvoices"
+    }
+  }
+}

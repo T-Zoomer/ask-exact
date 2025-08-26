@@ -1,0 +1,342 @@
+{
+  "name": "PurchaseEntryPurchaseEntries",
+  "fields": {
+    "EntryID": {
+      "name": "EntryID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "AmountDC": {
+      "name": "AmountDC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount in the default currency of the company"
+    },
+    "AmountFC": {
+      "name": "AmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount in the currency of the transaction"
+    },
+    "BatchNumber": {
+      "name": "BatchNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The number of the batch of entries. Normally a batch consists of multiple entries. Batchnumbers are filled for invoices created by: - Fixed entries - Prolongation (only available with module hosting)"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of creator"
+    },
+    "Currency": {
+      "name": "Currency",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Currency code"
+    },
+    "CustomField": {
+      "name": "CustomField",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Custom field endpoint"
+    },
+    "Description": {
+      "name": "Description",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description"
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "Document": {
+      "name": "Document",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to document"
+    },
+    "DocumentNumber": {
+      "name": "DocumentNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Document number"
+    },
+    "DocumentSubject": {
+      "name": "DocumentSubject",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Document subject"
+    },
+    "DueDate": {
+      "name": "DueDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Date when payment should be done"
+    },
+    "EntryDate": {
+      "name": "EntryDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Invoice date"
+    },
+    "EntryNumber": {
+      "name": "EntryNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Entry number"
+    },
+    "ExternalLinkDescription": {
+      "name": "ExternalLinkDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of ExternalLink"
+    },
+    "ExternalLinkReference": {
+      "name": "ExternalLinkReference",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "External link"
+    },
+    "GAccountAmountFC": {
+      "name": "GAccountAmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "A positive value of the amount indicates that the amount is to be paid to the suppliers G bank account.In case of a credit invoice the amount should have negative value when retrieved or posted to Exact."
+    },
+    "InvoiceNumber": {
+      "name": "InvoiceNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Invoice number"
+    },
+    "Journal": {
+      "name": "Journal",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Journal"
+    },
+    "JournalDescription": {
+      "name": "JournalDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Journal"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of modifier"
+    },
+    "OrderNumber": {
+      "name": "OrderNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Order number"
+    },
+    "PaymentCondition": {
+      "name": "PaymentCondition",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Payment condition"
+    },
+    "PaymentConditionDescription": {
+      "name": "PaymentConditionDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of PaymentCondition"
+    },
+    "PaymentConditionPaymentMethod": {
+      "name": "PaymentConditionPaymentMethod",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Payment method of Payment condition. Values: B = On credit, I = Collection, K = Cash"
+    },
+    "PaymentReference": {
+      "name": "PaymentReference",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The payment reference used for bank imports, VAT return and Tax reference"
+    },
+    "ProcessNumber": {
+      "name": "ProcessNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Internal processing number, only relevant for Germany"
+    },
+    "PurchaseEntryLines": {
+      "name": "PurchaseEntryLines",
+      "type": "PurchaseEntryLines",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Collection of lines"
+    },
+    "Rate": {
+      "name": "Rate",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Currency exchange rate"
+    },
+    "ReportingPeriod": {
+      "name": "ReportingPeriod",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The period of the transaction lines. The period should exist in the period date table"
+    },
+    "ReportingYear": {
+      "name": "ReportingYear",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The financial year to which the entry belongs. The financial year should exist in the period date table"
+    },
+    "Reversal": {
+      "name": "Reversal",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates that amounts are reversed"
+    },
+    "Status": {
+      "name": "Status",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Status: 5 = Rejected, 20 = Open, 50 = Processed"
+    },
+    "StatusDescription": {
+      "name": "StatusDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Status"
+    },
+    "Supplier": {
+      "name": "Supplier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Reference to supplier (account)"
+    },
+    "SupplierName": {
+      "name": "SupplierName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of supplier"
+    },
+    "Type": {
+      "name": "Type",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Type: 30 = Purchase entry, 31 = Purchase credit note"
+    },
+    "TypeDescription": {
+      "name": "TypeDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Type"
+    },
+    "VATAmountDC": {
+      "name": "VATAmountDC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Vat Amount in the default currency of the company"
+    },
+    "VATAmountFC": {
+      "name": "VATAmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Vat Amount in the currency of the transaction"
+    },
+    "YourRef": {
+      "name": "YourRef",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Your reference"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 16:19:47 UTC",
+    "total_fields": 46,
+    "scraping_method": "documentation_only",
+    "doc_url": "PurchaseEntryPurchaseEntries"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "PurchaseEntries",
+      "good_to_know": "Use this endpoint to create, read, update or delete purchase entries as financial entries created for your purchase invoices.Note: Purchase entries are separated to header and line information. Endpoint PurchaseEntries is used for the header information. You must include a parameter for 'PurchaseEntryLines' to add purchase entry lines when you POST to the PurchaseEntries endpoint. This parameter is not necessary when you PUT to this endpoint.The relevance of properties is very much depending on the legislation and the package used.For optimal performance, refer 'Example usage' below to call our API.",
+      "scope": "Financial accounting",
+      "uri": "/api/v1/{division}/purchaseentry/PurchaseEntries",
+      "example_usage": "/api/v1/{division}/purchaseentry/PurchaseEntries"
+    }
+  }
+}

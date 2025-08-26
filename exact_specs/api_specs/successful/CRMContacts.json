@@ -1,0 +1,510 @@
+{
+  "name": "CRMContacts",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "Account": {
+      "name": "Account",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "The account to which the contact belongs"
+    },
+    "AccountIsCustomer": {
+      "name": "AccountIsCustomer",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if account is a customer"
+    },
+    "AccountIsSupplier": {
+      "name": "AccountIsSupplier",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if account is a supplier"
+    },
+    "AccountMainContact": {
+      "name": "AccountMainContact",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to the main contact of the account"
+    },
+    "AccountName": {
+      "name": "AccountName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the account"
+    },
+    "AddressLine2": {
+      "name": "AddressLine2",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Second address line"
+    },
+    "AddressStreet": {
+      "name": "AddressStreet",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Street name of the address"
+    },
+    "AddressStreetNumber": {
+      "name": "AddressStreetNumber",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Street number of the address"
+    },
+    "AddressStreetNumberSuffix": {
+      "name": "AddressStreetNumberSuffix",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Street number suffix of the address"
+    },
+    "AllowMailing": {
+      "name": "AllowMailing",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "BirthDate": {
+      "name": "BirthDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Birth date"
+    },
+    "BirthName": {
+      "name": "BirthName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete. Please don't use this field anymore as it may overwrite LastName."
+    },
+    "BirthNamePrefix": {
+      "name": "BirthNamePrefix",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete. Please don't use this field anymore as it may overwrite MiddleName."
+    },
+    "BirthPlace": {
+      "name": "BirthPlace",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Birth place"
+    },
+    "BusinessEmail": {
+      "name": "BusinessEmail",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Email address of the contact"
+    },
+    "BusinessFax": {
+      "name": "BusinessFax",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Fax of the contact"
+    },
+    "BusinessMobile": {
+      "name": "BusinessMobile",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Mobile of the contact"
+    },
+    "BusinessPhone": {
+      "name": "BusinessPhone",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Phone of the contact"
+    },
+    "BusinessPhoneExtension": {
+      "name": "BusinessPhoneExtension",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Phone extension of the contact"
+    },
+    "City": {
+      "name": "City",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "City"
+    },
+    "Code": {
+      "name": "Code",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of the account"
+    },
+    "Country": {
+      "name": "Country",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Country code"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of the creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the creator"
+    },
+    "CustomField": {
+      "name": "CustomField",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Custom field endpoint. Provided only for the Exact Online Premium users."
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "Email": {
+      "name": "Email",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Email address of the contact"
+    },
+    "EndDate": {
+      "name": "EndDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "End date"
+    },
+    "FirstName": {
+      "name": "FirstName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "First name. Provide at least first name or last name to create a new contact"
+    },
+    "FullName": {
+      "name": "FullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Full name (First name Middle name Last name)"
+    },
+    "Gender": {
+      "name": "Gender",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Gender"
+    },
+    "HID": {
+      "name": "HID",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Contact ID"
+    },
+    "IdentificationDate": {
+      "name": "IdentificationDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Identification date"
+    },
+    "IdentificationDocument": {
+      "name": "IdentificationDocument",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to the identification document of the contact"
+    },
+    "IdentificationUser": {
+      "name": "IdentificationUser",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to the user responsible for identification"
+    },
+    "Initials": {
+      "name": "Initials",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Initials"
+    },
+    "IsAnonymised": {
+      "name": "IsAnonymised",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates whether the contact is anonymised."
+    },
+    "IsMailingExcluded": {
+      "name": "IsMailingExcluded",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates whether contacts are excluded from the marketing list"
+    },
+    "IsMainContact": {
+      "name": "IsMainContact",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if this is the main contact of the linked account"
+    },
+    "JobTitleDescription": {
+      "name": "JobTitleDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Jobtitle of the contact"
+    },
+    "Language": {
+      "name": "Language",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Language code"
+    },
+    "LastName": {
+      "name": "LastName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Last name. Provide at least first name or last name to create a new contact"
+    },
+    "LeadPurpose": {
+      "name": "LeadPurpose",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to purpose of an contact"
+    },
+    "LeadSource": {
+      "name": "LeadSource",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to source of an contact"
+    },
+    "MarketingNotes": {
+      "name": "MarketingNotes",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The user should be able to do a full text search on these notes to gather contacts for a marketing campaign"
+    },
+    "MiddleName": {
+      "name": "MiddleName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Middle name"
+    },
+    "Mobile": {
+      "name": "Mobile",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Business phone of the contact"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the last modifier"
+    },
+    "Nationality": {
+      "name": "Nationality",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Nationality"
+    },
+    "Notes": {
+      "name": "Notes",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Extra remarks"
+    },
+    "PartnerName": {
+      "name": "PartnerName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last name of partner"
+    },
+    "PartnerNamePrefix": {
+      "name": "PartnerNamePrefix",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Middlename of partner"
+    },
+    "Person": {
+      "name": "Person",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to the personal information of this contact such as name, gender, address etc."
+    },
+    "Phone": {
+      "name": "Phone",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Phone of the contact"
+    },
+    "PhoneExtension": {
+      "name": "PhoneExtension",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Phone extension of the contact"
+    },
+    "Picture": {
+      "name": "Picture",
+      "type": "Edm.Binary",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "This field is write-only. The picture can be downloaded through PictureUrl and PictureThumbnailUrl."
+    },
+    "PictureName": {
+      "name": "PictureName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Filename of the picture"
+    },
+    "PictureThumbnailUrl": {
+      "name": "PictureThumbnailUrl",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Url to retrieve the picture thumbnail"
+    },
+    "PictureUrl": {
+      "name": "PictureUrl",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Url to retrieve the picture"
+    },
+    "Postcode": {
+      "name": "Postcode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Postcode"
+    },
+    "SocialSecurityNumber": {
+      "name": "SocialSecurityNumber",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Social security number"
+    },
+    "StartDate": {
+      "name": "StartDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Start date"
+    },
+    "State": {
+      "name": "State",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "State"
+    },
+    "Title": {
+      "name": "Title",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Title"
+    },
+    "TitleAbbreviation": {
+      "name": "TitleAbbreviation",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "TitleAbbreviation"
+    },
+    "TitleDescription": {
+      "name": "TitleDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "TitleDescription"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 15:58:47 UTC",
+    "total_fields": 70,
+    "scraping_method": "documentation_only",
+    "doc_url": "CRMContacts"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "Contacts",
+      "good_to_know": "This entity supports webhooks.",
+      "scope": "Crm accounts",
+      "uri": "/api/v1/{division}/crm/Contacts",
+      "example_usage": "/api/v1/{division}/crm/Contacts"
+    }
+  }
+}

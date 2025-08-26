@@ -1,0 +1,363 @@
+{
+  "name": "GeneralJournalEntryGeneralJournalEntryLines",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "Account": {
+      "name": "Account",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to account"
+    },
+    "AccountCode": {
+      "name": "AccountCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Account"
+    },
+    "AccountName": {
+      "name": "AccountName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of Account"
+    },
+    "AmountDC": {
+      "name": "AmountDC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount in the default currency of the company, If an 'Including' VAT code is used this amount includes the VAT amount."
+    },
+    "AmountFC": {
+      "name": "AmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount in the currency of the transaction. If an 'Including' VAT code is used this amount includes the VAT amount."
+    },
+    "AmountVATDC": {
+      "name": "AmountVATDC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Vat amount in the default currency of the company."
+    },
+    "AmountVATFC": {
+      "name": "AmountVATFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Vat amount in the currency of the transaction. If you want to set this in a POST you have to specify VATCode as well."
+    },
+    "Asset": {
+      "name": "Asset",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to asset"
+    },
+    "AssetCode": {
+      "name": "AssetCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Asset"
+    },
+    "AssetDescription": {
+      "name": "AssetDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Asset"
+    },
+    "CostCenter": {
+      "name": "CostCenter",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to cost center"
+    },
+    "CostCenterDescription": {
+      "name": "CostCenterDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of CostCenter"
+    },
+    "CostUnit": {
+      "name": "CostUnit",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to cost unit"
+    },
+    "CostUnitDescription": {
+      "name": "CostUnitDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of CostUnit"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of creator"
+    },
+    "CustomField": {
+      "name": "CustomField",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Custom field endpoint"
+    },
+    "Date": {
+      "name": "Date",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Entry date"
+    },
+    "Description": {
+      "name": "Description",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description"
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "Document": {
+      "name": "Document",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to document"
+    },
+    "DocumentNumber": {
+      "name": "DocumentNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Document number"
+    },
+    "DocumentSubject": {
+      "name": "DocumentSubject",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Document subject"
+    },
+    "EntryID": {
+      "name": "EntryID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Reference to header of the entry"
+    },
+    "EntryNumber": {
+      "name": "EntryNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Entry number of the header"
+    },
+    "GLAccount": {
+      "name": "GLAccount",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "General ledger account"
+    },
+    "GLAccountCode": {
+      "name": "GLAccountCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of GLAccount"
+    },
+    "GLAccountDescription": {
+      "name": "GLAccountDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of GLAccount"
+    },
+    "LineNumber": {
+      "name": "LineNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Line number"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of modifier"
+    },
+    "Notes": {
+      "name": "Notes",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Extra remarks"
+    },
+    "OffsetID": {
+      "name": "OffsetID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "OffsetID - The GUID of the entryline which contain the off set amount of this entry"
+    },
+    "OurRef": {
+      "name": "OurRef",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Our ref of general journal entry"
+    },
+    "Project": {
+      "name": "Project",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to project"
+    },
+    "ProjectCode": {
+      "name": "ProjectCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Project"
+    },
+    "ProjectDescription": {
+      "name": "ProjectDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Project"
+    },
+    "ProjectWBS": {
+      "name": "ProjectWBS",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to Project WBS"
+    },
+    "ProjectWBSDescription": {
+      "name": "ProjectWBSDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Project WBS"
+    },
+    "Quantity": {
+      "name": "Quantity",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Quantity"
+    },
+    "VATBaseAmountDC": {
+      "name": "VATBaseAmountDC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "VAT base amount in the default currency of the company"
+    },
+    "VATBaseAmountFC": {
+      "name": "VATBaseAmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "VAT base amount in the currency of the transaction"
+    },
+    "VATCode": {
+      "name": "VATCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "VATCode can only be used if the general journal has VAT enabled. VAT Lines will be automatically created if the VATCode is specified when creating a new general journal entry. If this property is not filled, it will use the default VAT code of the G/L account property"
+    },
+    "VATCodeDescription": {
+      "name": "VATCodeDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of VATCode"
+    },
+    "VATPercentage": {
+      "name": "VATPercentage",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Vat percentage"
+    },
+    "VATType": {
+      "name": "VATType",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The VAT type determines what the values are in relation to VAT returns. The following values are supported:A Sales VAT to pay,D Credit note extra duty to claim,I Purchase basis,M Credit note purchase non-deductible,N Purchase non-deductible,O Purchase VAT to claim,P Purchase VAT to pay,Q Credit note purchase VAT to claim,R Extra duty to pay,S No VAT,V Sales basis,W Credit note purchase basis,X Credit note sales basis,Y Credit note purchase VAT to pay,Z Credit note sales VAT to claim"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 16:22:48 UTC",
+    "total_fields": 49,
+    "scraping_method": "documentation_only",
+    "doc_url": "GeneralJournalEntryGeneralJournalEntryLines"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "GeneralJournalEntryLines",
+      "good_to_know": "Use this endpoint to create and read general entries not created in bank, cash, purchase or sales journal.  Journals for general journal entries can be set up with and without VAT functionality (VAT checkbox in Journals). Specifying any VAT related property in a POST request is only useful if supported by the general journal of the entry.",
+      "scope": "Financial accounting",
+      "uri": "/api/v1/{division}/generaljournalentry/GeneralJournalEntryLines",
+      "example_usage": "/api/v1/{division}/generaljournalentry/GeneralJournalEntryLines"
+    }
+  }
+}

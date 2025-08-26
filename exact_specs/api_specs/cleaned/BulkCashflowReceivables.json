@@ -1,0 +1,415 @@
+{
+    "name": "BulkCashflowReceivables",
+    "fields": {
+        "ID": {
+            "name": "ID",
+            "type": "Edm.Guid",
+            "description": "Identifier of the receivable."
+        },
+        "Account": {
+            "name": "Account",
+            "type": "Edm.Guid",
+            "description": "The customer from which the receivable will come."
+        },
+        "AccountBankAccountID": {
+            "name": "AccountBankAccountID",
+            "type": "Edm.Guid",
+            "description": "The bank account of the customer, from which the receivable will come."
+        },
+        "AccountBankAccountNumber": {
+            "name": "AccountBankAccountNumber",
+            "type": "Edm.String",
+            "description": "The bank account number of the customer, from which the receivable will come."
+        },
+        "AccountCode": {
+            "name": "AccountCode",
+            "type": "Edm.String",
+            "description": "The code of the customer from which the receivable will come."
+        },
+        "AccountContact": {
+            "name": "AccountContact",
+            "type": "Edm.Guid",
+            "description": "Contact person copied from the purchase invoice linked to the related purchase entry."
+        },
+        "AccountContactName": {
+            "name": "AccountContactName",
+            "type": "Edm.String",
+            "description": "Name of the contact person of the customer."
+        },
+        "AccountCountry": {
+            "name": "AccountCountry",
+            "type": "Edm.String",
+            "description": "Country code of the customer."
+        },
+        "AccountName": {
+            "name": "AccountName",
+            "type": "Edm.String",
+            "description": "Name of the customer."
+        },
+        "AmountDC": {
+            "name": "AmountDC",
+            "type": "Edm.Double",
+            "description": "The amount in default currency (division currency). Receivables are matched on this amount."
+        },
+        "AmountDiscountDC": {
+            "name": "AmountDiscountDC",
+            "type": "Edm.Double",
+            "description": "The amount of the discount in the default currency."
+        },
+        "AmountDiscountFC": {
+            "name": "AmountDiscountFC",
+            "type": "Edm.Double",
+            "description": "The amount of the discount. This is in the amount of the selected currency."
+        },
+        "AmountFC": {
+            "name": "AmountFC",
+            "type": "Edm.Double",
+            "description": "The amount of the receivable. This is in the amount of the selected currency."
+        },
+        "BankAccountID": {
+            "name": "BankAccountID",
+            "type": "Edm.Guid",
+            "description": "Own bank account to which the receivable will be done."
+        },
+        "BankAccountNumber": {
+            "name": "BankAccountNumber",
+            "type": "Edm.String",
+            "description": "Own bank account number to which the receivable will be done."
+        },
+        "CashflowTransactionBatchCode": {
+            "name": "CashflowTransactionBatchCode",
+            "type": "Edm.String",
+            "description": "When processing receivables, all receivable with the same processing data are put in a batch. This field contains the code of that batch."
+        },
+        "Created": {
+            "name": "Created",
+            "type": "Edm.DateTime",
+            "description": "Creation date."
+        },
+        "Creator": {
+            "name": "Creator",
+            "type": "Edm.Guid",
+            "description": "User ID of the creator."
+        },
+        "CreatorFullName": {
+            "name": "CreatorFullName",
+            "type": "Edm.String",
+            "description": "Name of the creator."
+        },
+        "Currency": {
+            "name": "Currency",
+            "type": "Edm.String",
+            "description": "The currency of the receivable. This currency can only deviate from the division currency if the module Currency is in the license."
+        },
+        "Description": {
+            "name": "Description",
+            "type": "Edm.String",
+            "description": "Description."
+        },
+        "DirectDebitMandate": {
+            "name": "DirectDebitMandate",
+            "type": "Edm.Guid",
+            "description": "Direct Debit Mandate used to collect the receivable."
+        },
+        "DirectDebitMandateDescription": {
+            "name": "DirectDebitMandateDescription",
+            "type": "Edm.String",
+            "description": "Description of the mandate."
+        },
+        "DirectDebitMandatePaymentType": {
+            "name": "DirectDebitMandatePaymentType",
+            "type": "Edm.Int16",
+            "description": "Payment type of the mandate. 0 = One off payment 1 = Recurrent payment."
+        },
+        "DirectDebitMandateReference": {
+            "name": "DirectDebitMandateReference",
+            "type": "Edm.String",
+            "description": "Unique mandate reference."
+        },
+        "DirectDebitMandateType": {
+            "name": "DirectDebitMandateType",
+            "type": "Edm.Int16",
+            "description": "Type of the mandate. 0 = Core 1 = Business-to-business."
+        },
+        "DiscountDueDate": {
+            "name": "DiscountDueDate",
+            "type": "Edm.DateTime",
+            "description": "Date before which the payment by the customer must be done to be eligible for discount."
+        },
+        "Division": {
+            "name": "Division",
+            "type": "Edm.Int32",
+            "description": "Division code."
+        },
+        "Document": {
+            "name": "Document",
+            "type": "Edm.Guid",
+            "description": "Document that is created when processing collections.  The bank export file is attached to the document."
+        },
+        "DocumentNumber": {
+            "name": "DocumentNumber",
+            "type": "Edm.Int32",
+            "description": "Number of the document."
+        },
+        "DocumentSubject": {
+            "name": "DocumentSubject",
+            "type": "Edm.String",
+            "description": "Subject of the document."
+        },
+        "DueDate": {
+            "name": "DueDate",
+            "type": "Edm.DateTime",
+            "description": "Date before which the payment by the customer must be done."
+        },
+        "EndDate": {
+            "name": "EndDate",
+            "type": "Edm.DateTime",
+            "description": "Date since when the receivable is no longer an outstanding item. This is the highest invoice date of all matched receivables."
+        },
+        "EndPeriod": {
+            "name": "EndPeriod",
+            "type": "Edm.Int16",
+            "description": "Period since when the receivable is no longer an outstanding item. This is the highest period of all matched receivables."
+        },
+        "EndToEndID": {
+            "name": "EndToEndID",
+            "type": "Edm.String",
+            "description": "The value of the tag 'EndToEndID' when generating a SEPA file."
+        },
+        "EndYear": {
+            "name": "EndYear",
+            "type": "Edm.Int16",
+            "description": "Year (of period) since when the receivable is no longer an outstanding item. This is the highest year of all matched receivables. Used in combination with EndPeriod."
+        },
+        "EntryDate": {
+            "name": "EntryDate",
+            "type": "Edm.DateTime",
+            "description": "Processing date of the receivable."
+        },
+        "EntryID": {
+            "name": "EntryID",
+            "type": "Edm.Guid",
+            "description": "The unique identifier for a set of receivables. A receivable can be split so that one part is received on a different date. In that case the two records get a different EntryID."
+        },
+        "EntryNumber": {
+            "name": "EntryNumber",
+            "type": "Edm.Int32",
+            "description": "Entry number of the linked transaction."
+        },
+        "GLAccount": {
+            "name": "GLAccount",
+            "type": "Edm.Guid",
+            "description": "G/L account of the payment. Must be of type 20 (Accounts receivable)."
+        },
+        "GLAccountCode": {
+            "name": "GLAccountCode",
+            "type": "Edm.String",
+            "description": "Code of the G/L account."
+        },
+        "GLAccountDescription": {
+            "name": "GLAccountDescription",
+            "type": "Edm.String",
+            "description": "Description of the G/L account."
+        },
+        "InvoiceDate": {
+            "name": "InvoiceDate",
+            "type": "Edm.DateTime",
+            "description": "Invoice date of the linked transaction."
+        },
+        "InvoiceNumber": {
+            "name": "InvoiceNumber",
+            "type": "Edm.Int32",
+            "description": "Invoice number of the linked transaction."
+        },
+        "IsBatchBooking": {
+            "name": "IsBatchBooking",
+            "type": "Edm.Byte",
+            "description": "Boolean indicating whether the receivable is part of a batch booking."
+        },
+        "IsFullyPaid": {
+            "name": "IsFullyPaid",
+            "type": "Edm.Boolean",
+            "description": "Boolean indicating whether the receivable was fully paid by the customer."
+        },
+        "Journal": {
+            "name": "Journal",
+            "type": "Edm.String",
+            "description": "Journal of the linked transaction."
+        },
+        "JournalDescription": {
+            "name": "JournalDescription",
+            "type": "Edm.String",
+            "description": "Description of the journal."
+        },
+        "LastPaymentDate": {
+            "name": "LastPaymentDate",
+            "type": "Edm.DateTime",
+            "description": "Last payment date."
+        },
+        "Modified": {
+            "name": "Modified",
+            "type": "Edm.DateTime",
+            "description": "Last modified date."
+        },
+        "Modifier": {
+            "name": "Modifier",
+            "type": "Edm.Guid",
+            "description": "User ID of modifier."
+        },
+        "ModifierFullName": {
+            "name": "ModifierFullName",
+            "type": "Edm.String",
+            "description": "Name of modifier."
+        },
+        "OrderNumber": {
+            "name": "OrderNumber",
+            "type": "Edm.Int32",
+            "description": "Order number of the linked transaction."
+        },
+        "PaymentCondition": {
+            "name": "PaymentCondition",
+            "type": "Edm.String",
+            "description": "Payment condition of the linked transaction."
+        },
+        "PaymentConditionDescription": {
+            "name": "PaymentConditionDescription",
+            "type": "Edm.String",
+            "description": "Description of the payment condition."
+        },
+        "PaymentDays": {
+            "name": "PaymentDays",
+            "type": "Edm.Int32",
+            "description": "Number of days between invoice date and due date."
+        },
+        "PaymentDaysDiscount": {
+            "name": "PaymentDaysDiscount",
+            "type": "Edm.Int32",
+            "description": "Number of days between invoice date and due date of the discount."
+        },
+        "PaymentDiscountPercentage": {
+            "name": "PaymentDiscountPercentage",
+            "type": "Edm.Double",
+            "description": "Payment discount percentage."
+        },
+        "PaymentInformationID": {
+            "name": "PaymentInformationID",
+            "type": "Edm.String",
+            "description": "PaymentInformationID tag from the SEPA xml file."
+        },
+        "PaymentMethod": {
+            "name": "PaymentMethod",
+            "type": "Edm.String",
+            "description": "Method of payment. B = On credit (default) I = Collection K = Cash V = Credit card"
+        },
+        "PaymentReference": {
+            "name": "PaymentReference",
+            "type": "Edm.String",
+            "description": "Payment reference for the receivable that may be included In the bank export file"
+        },
+        "RateFC": {
+            "name": "RateFC",
+            "type": "Edm.Double",
+            "description": "Exchange rate from receivable currency to division currency. AmountFC * RateFC = AmountDC."
+        },
+        "ReceivableBatchNumber": {
+            "name": "ReceivableBatchNumber",
+            "type": "Edm.Int32",
+            "description": "Number assigned during the processing of receivables."
+        },
+        "ReceivableSelected": {
+            "name": "ReceivableSelected",
+            "type": "Edm.DateTime",
+            "description": "Date and time since when the receivable is selected to be collected."
+        },
+        "ReceivableSelector": {
+            "name": "ReceivableSelector",
+            "type": "Edm.Guid",
+            "description": "User who selected the receivable to be collected."
+        },
+        "ReceivableSelectorFullName": {
+            "name": "ReceivableSelectorFullName",
+            "type": "Edm.String",
+            "description": "Name of the receivable selector."
+        },
+        "Source": {
+            "name": "Source",
+            "type": "Edm.Int32",
+            "description": "The source of the receivable."
+        },
+        "Status": {
+            "name": "Status",
+            "type": "Edm.Int16",
+            "description": "The status of the receivable. 20 = open 30 = selected - receivable is selected to be collected 40 = processed - collection has been done 50 = matched - receivable is matched with one or more other outstanding items or financial statement lines"
+        },
+        "TransactionAmountDC": {
+            "name": "TransactionAmountDC",
+            "type": "Edm.Double",
+            "description": "Total amount of the linked transaction in default currency (division currency)."
+        },
+        "TransactionAmountFC": {
+            "name": "TransactionAmountFC",
+            "type": "Edm.Double",
+            "description": "Total amount of the linked transaction in the selected currency."
+        },
+        "TransactionDueDate": {
+            "name": "TransactionDueDate",
+            "type": "Edm.DateTime",
+            "description": "Due date of the linked transaction."
+        },
+        "TransactionEntryID": {
+            "name": "TransactionEntryID",
+            "type": "Edm.Guid",
+            "description": "Linked transaction. Use this as reference to SalesEntries."
+        },
+        "TransactionID": {
+            "name": "TransactionID",
+            "type": "Edm.Guid",
+            "description": "Linked transaction line. Use this as reference to SalesEntryLines."
+        },
+        "TransactionIsReversal": {
+            "name": "TransactionIsReversal",
+            "type": "Edm.Boolean",
+            "description": "Indicates if the linked transaction is a reversal entry."
+        },
+        "TransactionReportingPeriod": {
+            "name": "TransactionReportingPeriod",
+            "type": "Edm.Int16",
+            "description": "Period of the linked transaction."
+        },
+        "TransactionReportingYear": {
+            "name": "TransactionReportingYear",
+            "type": "Edm.Int16",
+            "description": "Year of the linked transaction."
+        },
+        "TransactionStatus": {
+            "name": "TransactionStatus",
+            "type": "Edm.Int16",
+            "description": "Status of the linked transaction."
+        },
+        "TransactionType": {
+            "name": "TransactionType",
+            "type": "Edm.Int32",
+            "description": "Type of the linked transaction."
+        },
+        "YourRef": {
+            "name": "YourRef",
+            "type": "Edm.String",
+            "description": "Invoice number. In case the receivable belongs to a bank entry line and is matched with one invoice, YourRef is filled with the YourRef of this invoice."
+        }
+    },
+    "metadata": {
+        "scraped_at": "2025-08-26 17:27:50 UTC",
+        "total_fields": 79,
+        "scraping_method": "documentation_only",
+        "doc_url": "BulkCashflowReceivables"
+    },
+    "documentation": {
+        "endpoint_info": {
+            "endpoint": "Cashflow/Receivables",
+            "good_to_know": "Use this endpoint to get an overview of all the payment to be received in your administration. Paymentlines are grouped by own bank account, account bank account, payment reference, payment method, entry date and status. Payments of one entry have the same TransactionId. Among other things, with this endpoint you can get information like the payments status (e.g. Open, Processed) or when is the collection is due.\r\nThis bulk service has a page size of 1000.\r\nIt is mandatory to provide the $select query option with a selection of one or more of the resource properties.\r\nOnly the following filters are supported for this endpoint:\r\nAccount, Document, EndDate, EndToEndID, EntryDate, EntryID, GLAccount, ID, InvoiceDate, InvoiceNumber, Source, Status, TransactionID, TransactionType",
+            "scope": "Financial receivables",
+            "uri": "/api/v1/{division}/bulk/Cashflow/Receivables",
+            "example_usage": "/api/v1/{division}/bulk/Cashflow/Receivables"
+        }
+    }
+}

@@ -1,0 +1,405 @@
+{
+  "name": "CRMAddresses",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "Account": {
+      "name": "Account",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Account linked to the address"
+    },
+    "AccountIsSupplier": {
+      "name": "AccountIsSupplier",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if the account is a supplier"
+    },
+    "AccountName": {
+      "name": "AccountName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the account"
+    },
+    "AddressLine1": {
+      "name": "AddressLine1",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "First address line"
+    },
+    "AddressLine2": {
+      "name": "AddressLine2",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Second address line"
+    },
+    "AddressLine3": {
+      "name": "AddressLine3",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Third address line"
+    },
+    "City": {
+      "name": "City",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "City"
+    },
+    "Contact": {
+      "name": "Contact",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Contact linked to Address"
+    },
+    "ContactName": {
+      "name": "ContactName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Contact name"
+    },
+    "Country": {
+      "name": "Country",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Country code"
+    },
+    "CountryName": {
+      "name": "CountryName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Country name"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of creator"
+    },
+    "CustomField": {
+      "name": "CustomField",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Custom field endpoint. Provided only for the Exact Online Premium users."
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "Fax": {
+      "name": "Fax",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Fax number"
+    },
+    "FreeBoolField_01": {
+      "name": "FreeBoolField_01",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free boolean field 1"
+    },
+    "FreeBoolField_02": {
+      "name": "FreeBoolField_02",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free boolean field 2"
+    },
+    "FreeBoolField_03": {
+      "name": "FreeBoolField_03",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free boolean field 3"
+    },
+    "FreeBoolField_04": {
+      "name": "FreeBoolField_04",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free boolean field 4"
+    },
+    "FreeBoolField_05": {
+      "name": "FreeBoolField_05",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free boolean field 5"
+    },
+    "FreeDateField_01": {
+      "name": "FreeDateField_01",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free date field 1"
+    },
+    "FreeDateField_02": {
+      "name": "FreeDateField_02",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free date field 2"
+    },
+    "FreeDateField_03": {
+      "name": "FreeDateField_03",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free date field 3"
+    },
+    "FreeDateField_04": {
+      "name": "FreeDateField_04",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free date field 4"
+    },
+    "FreeDateField_05": {
+      "name": "FreeDateField_05",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free date field 5"
+    },
+    "FreeNumberField_01": {
+      "name": "FreeNumberField_01",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free number field 1"
+    },
+    "FreeNumberField_02": {
+      "name": "FreeNumberField_02",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free number field 2"
+    },
+    "FreeNumberField_03": {
+      "name": "FreeNumberField_03",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free number field 3"
+    },
+    "FreeNumberField_04": {
+      "name": "FreeNumberField_04",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free number field 4"
+    },
+    "FreeNumberField_05": {
+      "name": "FreeNumberField_05",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free number field 5"
+    },
+    "FreeTextField_01": {
+      "name": "FreeTextField_01",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free text field 1"
+    },
+    "FreeTextField_02": {
+      "name": "FreeTextField_02",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free text field 2"
+    },
+    "FreeTextField_03": {
+      "name": "FreeTextField_03",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free text field 3"
+    },
+    "FreeTextField_04": {
+      "name": "FreeTextField_04",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free text field 4"
+    },
+    "FreeTextField_05": {
+      "name": "FreeTextField_05",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Free text field 5"
+    },
+    "Mailbox": {
+      "name": "Mailbox",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "MailboxTake notes: The 'Mailbox' functionality required the Mailbox feature set in the licence."
+    },
+    "Main": {
+      "name": "Main",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if the address is the main address for this type"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of modifier"
+    },
+    "NicNumber": {
+      "name": "NicNumber",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last 5 digits of SIRET number which is an intern sequential number of 4 digits representing the identification of the localization of the office"
+    },
+    "Notes": {
+      "name": "Notes",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Notes for an address"
+    },
+    "Phone": {
+      "name": "Phone",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Phone number"
+    },
+    "PhoneExtension": {
+      "name": "PhoneExtension",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Phone extension"
+    },
+    "Postcode": {
+      "name": "Postcode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Postcode"
+    },
+    "Source": {
+      "name": "Source",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "CRM creation source"
+    },
+    "State": {
+      "name": "State",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "State"
+    },
+    "StateDescription": {
+      "name": "StateDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the State"
+    },
+    "Type": {
+      "name": "Type",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The type of address. Visit=1, Postal=2, Invoice=3, Delivery=4"
+    },
+    "Warehouse": {
+      "name": "Warehouse",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The warehouse linked to the address, if a warehouse is linked the account will be empty. Can only be filled for type=Delivery"
+    },
+    "WarehouseCode": {
+      "name": "WarehouseCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of the warehoude"
+    },
+    "WarehouseDescription": {
+      "name": "WarehouseDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of the warehouse"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 16:22:24 UTC",
+    "total_fields": 55,
+    "scraping_method": "documentation_only",
+    "doc_url": "CRMAddresses"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "Addresses",
+      "good_to_know": "When using the POST method, it is first checked whether the specified address already exists. If so, the ID property of the existing address is returned. Otherwise, the new address is created.",
+      "scope": "Crm accounts",
+      "uri": "/api/v1/{division}/crm/Addresses",
+      "example_usage": "/api/v1/{division}/crm/Addresses"
+    }
+  }
+}

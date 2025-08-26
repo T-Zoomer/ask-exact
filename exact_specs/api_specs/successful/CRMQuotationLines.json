@@ -1,0 +1,223 @@
+{
+  "name": "CRMQuotationLines",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "AmountDC": {
+      "name": "AmountDC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount in the default currency of the company"
+    },
+    "AmountFC": {
+      "name": "AmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount in the currency of the transaction"
+    },
+    "CostCenter": {
+      "name": "CostCenter",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to Cost center"
+    },
+    "CostCenterDescription": {
+      "name": "CostCenterDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of CostCenter"
+    },
+    "CostUnit": {
+      "name": "CostUnit",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to Cost unit"
+    },
+    "CostUnitDescription": {
+      "name": "CostUnitDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of CostUnit"
+    },
+    "CustomerItemCode": {
+      "name": "CustomerItemCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code the customer uses for this item"
+    },
+    "CustomField": {
+      "name": "CustomField",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Custom field endpoint"
+    },
+    "Description": {
+      "name": "Description",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "By default this contains the item description"
+    },
+    "Discount": {
+      "name": "Discount",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Discount given on the default price. This is stored as a fraction. ie 5.5% is stored as .055"
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "Item": {
+      "name": "Item",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Reference to the item that is sold in this quotation line"
+    },
+    "ItemDescription": {
+      "name": "ItemDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of the item"
+    },
+    "LineNumber": {
+      "name": "LineNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates the sequence of the lines within one quotation"
+    },
+    "NetPrice": {
+      "name": "NetPrice",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Net price of the quotation line"
+    },
+    "Notes": {
+      "name": "Notes",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Extra notes"
+    },
+    "Optional": {
+      "name": "Optional",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates the optional line"
+    },
+    "Quantity": {
+      "name": "Quantity",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The number of items sold in default units. The quantity shown in the entry screen is Quantity * UnitFactor"
+    },
+    "QuotationID": {
+      "name": "QuotationID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Identifies the quotation. All the lines of a quotation have the same QuotationID"
+    },
+    "QuotationNumber": {
+      "name": "QuotationNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Unique number to indentify the quotation. By default this number is based on the setting for first available number"
+    },
+    "UnitCode": {
+      "name": "UnitCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of the item unit"
+    },
+    "UnitDescription": {
+      "name": "UnitDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of the item unit"
+    },
+    "UnitPrice": {
+      "name": "UnitPrice",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Price per item unit"
+    },
+    "VATAmountFC": {
+      "name": "VATAmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "VAT amount of the line in the currency of the transaction"
+    },
+    "VATCode": {
+      "name": "VATCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The VAT code that is used when the quotation is invoiced"
+    },
+    "VATDescription": {
+      "name": "VATDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of the VAT code"
+    },
+    "VATPercentage": {
+      "name": "VATPercentage",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The VAT percentage of the VAT code"
+    },
+    "VersionNumber": {
+      "name": "VersionNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Number indicating the different reviews which are made for the quotation"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 16:22:39 UTC",
+    "total_fields": 29,
+    "scraping_method": "documentation_only",
+    "doc_url": "CRMQuotationLines"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "QuotationLines",
+      "good_to_know": "This entity supports webhooks.Subscribe to the topic Quotations to get updates on the QuotationLines resource. Note that you will also receive events on the Quotations resource.",
+      "scope": "Crm quotes",
+      "uri": "/api/v1/{division}/crm/QuotationLines",
+      "example_usage": "/api/v1/{division}/crm/QuotationLines"
+    }
+  }
+}

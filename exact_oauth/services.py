@@ -29,7 +29,9 @@ class ExactOnlineService:
         try:
             self.token.refresh_access_token()
             headers = request_kwargs.get("headers", {})
-            headers["Authorization"] = f"{self.token.token_type} {self.token.access_token}"
+            headers["Authorization"] = (
+                f"{self.token.token_type} {self.token.access_token}"
+            )
             request_kwargs["headers"] = headers
             response = getattr(requests, request_method)(url, **request_kwargs)
             print(f"DEBUG - Retry response status: {response.status_code}")
@@ -39,10 +41,9 @@ class ExactOnlineService:
             # If refresh fails, return None to indicate retry failed
             return None
 
-
     def _ensure_user_info(self):
         self._get_or_refresh_token()
-        
+
         if not self.token.current_division:
             me_url = f"{self.base_url}/api/v1/current/Me"
             headers = {
@@ -53,7 +54,9 @@ class ExactOnlineService:
 
             # Handle authentication failures by refreshing token and retrying
             if response.status_code == 401 or response.status_code == 404:
-                retry_response = self._handle_auth_error_and_retry(me_url, "get", headers=headers)
+                retry_response = self._handle_auth_error_and_retry(
+                    me_url, "get", headers=headers
+                )
                 if retry_response is not None:
                     response = retry_response
 
@@ -65,7 +68,6 @@ class ExactOnlineService:
                     self.token.save()
             else:
                 raise ValueError(f"Failed to get user info: {response.text}")
-
 
     def get(self, endpoint, params=None):
         self._ensure_user_info()
@@ -82,7 +84,9 @@ class ExactOnlineService:
 
         # Handle authentication failures by refreshing token and retrying
         if response.status_code == 401 or response.status_code == 404:
-            retry_response = self._handle_auth_error_and_retry(url, "get", **request_kwargs)
+            retry_response = self._handle_auth_error_and_retry(
+                url, "get", **request_kwargs
+            )
             if retry_response is not None:
                 response = retry_response
 

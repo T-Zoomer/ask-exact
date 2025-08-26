@@ -1,82 +1,91 @@
-{% extends 'exact_oauth/base.html' %}
+{% extends 'base.html' %}
 
-{% block title %}Token Details - {{ token.app.name }}{% endblock %}
-
-{% block header %}Token Details: {{ token.app.name }}{% endblock %}
+{% block title %}Token Details - {{ block.super }}{% endblock %}
 
 {% block content %}
-    <div class="section">
-        <h2>OAuth Token Information</h2>
-        
-        <table class="info-table">
-            <tr>
-                <th>Application</th>
-                <td>{{ token.app.name }} ({{ token.app.get_country_display }})</td>
+<div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
+    <h2 class="text-2xl font-bold text-gray-900 mb-4">OAuth Token Information</h2>
+    
+    <div class="bg-white rounded border border-gray-200">
+        <table class="w-full">
+            <tr class="border-b border-gray-200">
+                <th class="text-left p-3 bg-gray-50 font-medium">Application</th>
+                <td class="p-3">{{ token.app.name }} ({{ token.app.get_country_display }})</td>
             </tr>
-            <tr>
-                <th>User</th>
-                <td>{{ token.user.username }}</td>
+            <tr class="border-b border-gray-200">
+                <th class="text-left p-3 bg-gray-50 font-medium">User</th>
+                <td class="p-3">{{ token.user.username }}</td>
             </tr>
-            <tr>
-                <th>Token Type</th>
-                <td>{{ token.token_type }}</td>
+            <tr class="border-b border-gray-200">
+                <th class="text-left p-3 bg-gray-50 font-medium">Token Type</th>
+                <td class="p-3">{{ token.token_type }}</td>
             </tr>
-            <tr>
-                <th>Status</th>
-                <td>
+            <tr class="border-b border-gray-200">
+                <th class="text-left p-3 bg-gray-50 font-medium">Status</th>
+                <td class="p-3">
                     {% if is_expired %}
-                        <span class="status status-expired">Expired</span>
+                        <span class="bg-red-100 text-red-800 px-2 py-1 rounded-md text-sm">Expired</span>
                     {% elif expires_soon %}
-                        <span class="status status-expired">Expires Soon</span>
+                        <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-md text-sm">Expires Soon</span>
                     {% else %}
-                        <span class="status status-authorized">Valid</span>
+                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded-md text-sm">Valid</span>
                     {% endif %}
                 </td>
             </tr>
-            <tr>
-                <th>Expires At</th>
-                <td>{{ token.expires_at|date:"Y-m-d H:i:s" }} UTC</td>
+            <tr class="border-b border-gray-200">
+                <th class="text-left p-3 bg-gray-50 font-medium">Expires At</th>
+                <td class="p-3">{{ token.expires_at|date:"Y-m-d H:i:s" }} UTC</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+                <th class="text-left p-3 bg-gray-50 font-medium">Division</th>
+                <td class="p-3">{{ token.division|default:"Not set" }}</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+                <th class="text-left p-3 bg-gray-50 font-medium">Base Server URI</th>
+                <td class="p-3">{{ token.base_server_uri|default:"Not set" }}</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+                <th class="text-left p-3 bg-gray-50 font-medium">Created</th>
+                <td class="p-3">{{ token.created_at|date:"Y-m-d H:i:s" }} UTC</td>
             </tr>
             <tr>
-                <th>Division</th>
-                <td>{{ token.division|default:"Not set" }}</td>
-            </tr>
-            <tr>
-                <th>Base Server URI</th>
-                <td>{{ token.base_server_uri|default:"Not set" }}</td>
-            </tr>
-            <tr>
-                <th>Created</th>
-                <td>{{ token.created_at|date:"Y-m-d H:i:s" }} UTC</td>
-            </tr>
-            <tr>
-                <th>Last Updated</th>
-                <td>{{ token.updated_at|date:"Y-m-d H:i:s" }} UTC</td>
+                <th class="text-left p-3 bg-gray-50 font-medium">Last Updated</th>
+                <td class="p-3">{{ token.updated_at|date:"Y-m-d H:i:s" }} UTC</td>
             </tr>
         </table>
     </div>
+</div>
 
-    <div class="section" style="margin-top: 30px;">
-        <h2>Token Management</h2>
-        <div class="card">
-            {% if is_expired or expires_soon %}
-                <p>Your token has expired or will expire soon. Refresh it to continue using the Exact Online API.</p>
-                <a href="{% url 'exact_oauth:refresh_token' token.id %}" class="btn btn-success">Refresh Token</a>
-            {% else %}
-                <p>Your token is valid and can be used to make API requests.</p>
-                <a href="{% url 'exact_oauth:refresh_token' token.id %}" class="btn btn-success">Refresh Token</a>
-            {% endif %}
-            
-            <a href="{% url 'exact_oauth:revoke_token' token.id %}" class="btn btn-danger">Revoke Access</a>
-            <a href="{% url 'exact_oauth:app_list' %}" class="btn btn-primary">Back to Apps</a>
-        </div>
+<div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
+    <h2 class="text-2xl font-bold text-gray-900 mb-4">Token Management</h2>
+    <div class="mb-4">
+        {% if is_expired or expires_soon %}
+            <p class="text-gray-700 mb-4">Your token has expired or will expire soon. Refresh it to continue using the Exact Online API.</p>
+        {% else %}
+            <p class="text-gray-700 mb-4">Your token is valid and can be used to make API requests.</p>
+        {% endif %}
     </div>
+    
+    <div class="flex gap-3 flex-wrap">
+        <a href="{% url 'exact_oauth:refresh_token' token.id %}" 
+           class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md font-medium transition-colors">
+            Refresh Token
+        </a>
+        <a href="{% url 'exact_oauth:revoke_token' token.id %}" 
+           class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md font-medium transition-colors">
+            Revoke Access
+        </a>
+        <a href="{% url 'exact_oauth:app_list' %}" 
+           class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-medium transition-colors">
+            Back to Apps
+        </a>
+    </div>
+</div>
 
-    <div class="section" style="margin-top: 30px;">
-        <h2>API Usage Example</h2>
-        <div class="card">
-            <p>You can use this token to make requests to the Exact Online API. Here's a Python example:</p>
-            <pre style="background-color: #f8f9fa; padding: 15px; border-radius: 4px; overflow-x: auto;">
+<div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+    <h2 class="text-2xl font-bold text-gray-900 mb-4">API Usage Example</h2>
+    <p class="text-gray-700 mb-4">You can use this token to make requests to the Exact Online API. Here's a Python example:</p>
+    <pre class="bg-gray-100 p-4 rounded-md overflow-x-auto text-sm">
 <code>from exact_oauth.services import ExactOnlineService
 
 # Create a service instance
@@ -94,6 +103,5 @@ invoices = service.get_sales_invoices()
 # Make custom API request
 response = service.get('crm/Accounts', params={'$top': 10})
 </code></pre>
-        </div>
-    </div>
+</div>
 {% endblock %}

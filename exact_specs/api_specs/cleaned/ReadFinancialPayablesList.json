@@ -1,0 +1,110 @@
+{
+    "name": "ReadFinancialPayablesList",
+    "fields": {
+        "HID": {
+            "name": "HID",
+            "type": "Edm.Int64",
+            "description": "Primary key, human readable ID"
+        },
+        "AccountCode": {
+            "name": "AccountCode",
+            "type": "Edm.String",
+            "description": "Code of Account"
+        },
+        "AccountId": {
+            "name": "AccountId",
+            "type": "Edm.Guid",
+            "description": "Reference to the account"
+        },
+        "AccountName": {
+            "name": "AccountName",
+            "type": "Edm.String",
+            "description": "Name of Account"
+        },
+        "Amount": {
+            "name": "Amount",
+            "type": "Edm.Double",
+            "description": "Amount"
+        },
+        "AmountInTransit": {
+            "name": "AmountInTransit",
+            "type": "Edm.Double",
+            "description": "Amount in transit - The amount that you have requested your bank to pay"
+        },
+        "ApprovalStatus": {
+            "name": "ApprovalStatus",
+            "type": "Edm.Int16",
+            "description": "Approval status:\r\n\t\t\t\t\t\tnull - Invoice was entered before approval functionality was activated (treated as Approved for payments)\r\n\t\t\t\t\t\t1 - N/A (used for non-electronic payment methods)\r\n\t\t\t\t\t\t2 - Awaiting review\r\n\t\t\t\t\t\t3 - Awaiting approval\r\n\t\t\t\t\t\t4 - Approved"
+        },
+        "CurrencyCode": {
+            "name": "CurrencyCode",
+            "type": "Edm.String",
+            "description": "Code of Currency"
+        },
+        "Description": {
+            "name": "Description",
+            "type": "Edm.String",
+            "description": "Description"
+        },
+        "DueDate": {
+            "name": "DueDate",
+            "type": "Edm.DateTime",
+            "description": "Date the invoice is due (This due date is not the discount due date)"
+        },
+        "EntryNumber": {
+            "name": "EntryNumber",
+            "type": "Edm.Int32",
+            "description": "The entry number of this payment term corresponding purchase/cashflow entry"
+        },
+        "Id": {
+            "name": "Id",
+            "type": "Edm.Guid",
+            "description": "Obsolete"
+        },
+        "InvoiceDate": {
+            "name": "InvoiceDate",
+            "type": "Edm.DateTime",
+            "description": "The date of the invoice or the date when money is paid to the supplier"
+        },
+        "InvoiceNumber": {
+            "name": "InvoiceNumber",
+            "type": "Edm.Int32",
+            "description": "For purchase entry, it would be the entrynumber. For the cashflow entry, it will be entrynumber of an invoice which this payment is for"
+        },
+        "JournalCode": {
+            "name": "JournalCode",
+            "type": "Edm.String",
+            "description": "Code of Journal"
+        },
+        "JournalDescription": {
+            "name": "JournalDescription",
+            "type": "Edm.String",
+            "description": "Description of Journal"
+        },
+        "Notes": {
+            "name": "Notes",
+            "type": "Notes",
+            "description": "Notes collection"
+        },
+        "YourRef": {
+            "name": "YourRef",
+            "type": "Edm.String",
+            "description": "Purchase invoice Your Reference number. Will be null if it is a cashflow entry"
+        }
+    },
+    "metadata": {
+        "scraped_at": "2025-08-26 17:29:06 UTC",
+        "total_fields": 18,
+        "scraping_method": "documentation_only",
+        "doc_url": "ReadFinancialPayablesList"
+    },
+    "documentation": {
+        "endpoint_info": {
+            "endpoint": "PayablesList",
+            "good_to_know": "Use this endpoint to get all your suppliers payment terms information. Payment term are created when an purchase invoice is created or when money is paid to the supplier.You can view this information in the Outstanding items report as well.",
+            "scope": "Financial payables",
+            "uri": "/api/v1/{division}/read/financial/PayablesList",
+            "example_usage": "/api/v1/{division}/read/financial/PayablesList"
+        }
+    }
+}

@@ -1,58 +1,61 @@
-{% extends 'exact_oauth/base.html' %}
+{% extends 'base.html' %}
 
-{% block title %}Revoke Token - {{ token.app.name }}{% endblock %}
-
-{% block header %}Revoke OAuth Token{% endblock %}
+{% block title %}Revoke Token - {{ block.super }}{% endblock %}
 
 {% block content %}
-    <div class="section">
-        <h2>Confirm Token Revocation</h2>
+<div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
+    <h2 class="text-2xl font-bold text-gray-900 mb-4">Confirm Token Revocation</h2>
+    
+    <div class="bg-red-50 border border-red-200 rounded-md p-4 mb-6">
+        <p class="mb-4"><strong>Warning:</strong> You are about to revoke OAuth access for the following application:</p>
         
-        <div class="card">
-            <p><strong>Warning:</strong> You are about to revoke OAuth access for the following application:</p>
-            
-            <table class="info-table">
-                <tr>
-                    <th>Application</th>
-                    <td>{{ token.app.name }}</td>
+        <div class="bg-white rounded border border-gray-200">
+            <table class="w-full">
+                <tr class="border-b border-gray-200">
+                    <th class="text-left p-3 bg-gray-50 font-medium">Application</th>
+                    <td class="p-3">{{ token.app.name }}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                    <th class="text-left p-3 bg-gray-50 font-medium">Country</th>
+                    <td class="p-3">{{ token.app.get_country_display }}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                    <th class="text-left p-3 bg-gray-50 font-medium">User</th>
+                    <td class="p-3">{{ token.user.username }}</td>
                 </tr>
                 <tr>
-                    <th>Country</th>
-                    <td>{{ token.app.get_country_display }}</td>
-                </tr>
-                <tr>
-                    <th>User</th>
-                    <td>{{ token.user.username }}</td>
-                </tr>
-                <tr>
-                    <th>Created</th>
-                    <td>{{ token.created_at|date:"Y-m-d H:i:s" }} UTC</td>
+                    <th class="text-left p-3 bg-gray-50 font-medium">Created</th>
+                    <td class="p-3">{{ token.created_at|date:"Y-m-d H:i:s" }} UTC</td>
                 </tr>
             </table>
-            
-            <p style="margin-top: 20px;">
-                <strong>This action will:</strong>
-            </p>
-            <ul>
+        </div>
+        
+        <div class="mt-4">
+            <p class="mb-2"><strong>This action will:</strong></p>
+            <ul class="list-disc ml-6 space-y-1">
                 <li>Permanently delete the stored OAuth token</li>
                 <li>Prevent this application from making API requests on your behalf</li>
                 <li>Require you to re-authorize if you want to use this application again</li>
             </ul>
-            
-            <p style="color: #dc3545; font-weight: bold;">
-                This action cannot be undone!
-            </p>
         </div>
+        
+        <p class="text-red-600 font-bold mt-4">
+            This action cannot be undone!
+        </p>
     </div>
+</div>
 
-    <div class="section" style="margin-top: 30px;">
-        <h2>Confirmation</h2>
-        <div class="card">
-            <form method="post">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-danger">Yes, Revoke Access</button>
-                <a href="{% url 'exact_oauth:token_detail' token.id %}" class="btn btn-primary">Cancel</a>
-            </form>
-        </div>
-    </div>
+<div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+    <h2 class="text-2xl font-bold text-gray-900 mb-4">Confirmation</h2>
+    <form method="post" class="flex gap-3">
+        {% csrf_token %}
+        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md font-medium transition-colors">
+            Yes, Revoke Access
+        </button>
+        <a href="{% url 'exact_oauth:token_detail' token.id %}" 
+           class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-medium transition-colors">
+            Cancel
+        </a>
+    </form>
+</div>
 {% endblock %}

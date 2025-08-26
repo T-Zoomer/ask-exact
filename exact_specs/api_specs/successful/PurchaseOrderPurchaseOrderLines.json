@@ -1,0 +1,461 @@
+{
+  "name": "PurchaseOrderPurchaseOrderLines",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "AmountDC": {
+      "name": "AmountDC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount in the default currency of the company"
+    },
+    "AmountFC": {
+      "name": "AmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount in the currency of the transaction"
+    },
+    "CostCenter": {
+      "name": "CostCenter",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to Cost center"
+    },
+    "CostCenterDescription": {
+      "name": "CostCenterDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of CostCenter"
+    },
+    "CostUnit": {
+      "name": "CostUnit",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to Cost unit"
+    },
+    "CostUnitDescription": {
+      "name": "CostUnitDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of CostUnit"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of creator"
+    },
+    "CustomField": {
+      "name": "CustomField",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Custom field endpoint. Provided only for the Exact Online Premium users."
+    },
+    "Description": {
+      "name": "Description",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of the purchase order line"
+    },
+    "Discount": {
+      "name": "Discount",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Discount in percentage for item"
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "Expense": {
+      "name": "Expense",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Expense related to the Work Breakdown Structure of the selected project. Only available with a professional service license"
+    },
+    "ExpenseDescription": {
+      "name": "ExpenseDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of expense. Only available with a professional service license"
+    },
+    "InStock": {
+      "name": "InStock",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The current stock level of items shown in stock unit. The information is displayed only for items with the stock property selected."
+    },
+    "InvoicedQuantity": {
+      "name": "InvoicedQuantity",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Quantity of item that has been invoiced"
+    },
+    "IsBatchNumberItem": {
+      "name": "IsBatchNumberItem",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates that an Item is an batch item"
+    },
+    "IsSerialNumberItem": {
+      "name": "IsSerialNumberItem",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates that an Item is an serial item"
+    },
+    "Item": {
+      "name": "Item",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Reference to the item for purchase order"
+    },
+    "ItemBarcode": {
+      "name": "ItemBarcode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Barcode of the item (numeric string)"
+    },
+    "ItemBarcodeAdditional": {
+      "name": "ItemBarcodeAdditional",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "This is the barcode for the unit other than standard unit of the item. Only supported by the Premium for Wholesale & Distribution and Manufacturing"
+    },
+    "ItemCode": {
+      "name": "ItemCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Item code"
+    },
+    "ItemDescription": {
+      "name": "ItemDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of item"
+    },
+    "ItemDivisable": {
+      "name": "ItemDivisable",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if fractional quantities of the item can be used, for example quantity = 0.4"
+    },
+    "LineNumber": {
+      "name": "LineNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Line number"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of modifier"
+    },
+    "NetPrice": {
+      "name": "NetPrice",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The net price is the unit price (VAT code taken into account) with any discount applied"
+    },
+    "Notes": {
+      "name": "Notes",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Notes"
+    },
+    "Project": {
+      "name": "Project",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to project. Only available with a professional service license"
+    },
+    "ProjectCode": {
+      "name": "ProjectCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Project code. Only available with a professional service license"
+    },
+    "ProjectDescription": {
+      "name": "ProjectDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of the project. Only available with a professional service license"
+    },
+    "ProjectedStock": {
+      "name": "ProjectedStock",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The current stock level + the planned quantity to be received - the planned quantity to deliver shown in stock unit."
+    },
+    "PurchaseOrderID": {
+      "name": "PurchaseOrderID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Identifies the purchase order. All the lines of a purchase order have the same PurchaseOrderID"
+    },
+    "Quantity": {
+      "name": "Quantity",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Quantity in item units"
+    },
+    "QuantityInPurchaseUnits": {
+      "name": "QuantityInPurchaseUnits",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Quantity in purchase units. Use this field when creating a purchase order"
+    },
+    "Rebill": {
+      "name": "Rebill",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates whether the purchase order line needs to be rebilled. Only available with a professional service license"
+    },
+    "ReceiptDate": {
+      "name": "ReceiptDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Date the goods are expected to be received"
+    },
+    "ReceivedQuantity": {
+      "name": "ReceivedQuantity",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Quantity of goods received"
+    },
+    "SalesOrder": {
+      "name": "SalesOrder",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Sales order that is linked to a back to back sales order in purchase order. Show NULL if more than one sales order is linked to the purchase order line."
+    },
+    "SalesOrderLine": {
+      "name": "SalesOrderLine",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Sales order line of the sales order that Is linked to a back to back sales order in purchase order. Show NULL if more than one sales order is linked to the purchase order line."
+    },
+    "SalesOrderLineNumber": {
+      "name": "SalesOrderLineNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Number of the sales order line. Show NULL if more than one sales order is linked to the purchase order line."
+    },
+    "SalesOrderNumber": {
+      "name": "SalesOrderNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Number of the sales order. Show NULL if more than one sales order is linked to the purchase order line."
+    },
+    "ShopOrder": {
+      "name": "ShopOrder",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete. Please use \"ShopOrderMaterialPlans\" or \"ShopOrderRoutingStepPlans\" property."
+    },
+    "ShopOrderMaterialPlan": {
+      "name": "ShopOrderMaterialPlan",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete. Please use \"ShopOrderMaterialPlans\" property."
+    },
+    "ShopOrderMaterialPlanLineNumber": {
+      "name": "ShopOrderMaterialPlanLineNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete. Please use \"ShopOrderMaterialPlans\" property."
+    },
+    "ShopOrderMaterialPlans": {
+      "name": "ShopOrderMaterialPlans",
+      "type": "ShopOrderMaterialPlans",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Collection of Shop order Material plans"
+    },
+    "ShopOrderNumber": {
+      "name": "ShopOrderNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete. Please use \"ShopOrderMaterialPlans\" or \"ShopOrderRoutingStepPlans\" property."
+    },
+    "ShopOrderRoutingStepPlan": {
+      "name": "ShopOrderRoutingStepPlan",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete. Please use \"ShopOrderRoutingStepPlans\" property."
+    },
+    "ShopOrderRoutingStepPlanLineNumber": {
+      "name": "ShopOrderRoutingStepPlanLineNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete. Please use \"ShopOrderRoutingStepPlans\" property."
+    },
+    "ShopOrderRoutingStepPlans": {
+      "name": "ShopOrderRoutingStepPlans",
+      "type": "ShopOrderRoutingStepPlans",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Collection of Shop order Routing step plans"
+    },
+    "SupplierItemCode": {
+      "name": "SupplierItemCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code the supplier uses for this item"
+    },
+    "SupplierItemCopyRemarks": {
+      "name": "SupplierItemCopyRemarks",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicate if the notes content should be copied from SupplierItem's remarks. The default follows the CopyRemarks value from SupplierItem. Values: 0 = Do not copy remark, 1 = Copy remark"
+    },
+    "Unit": {
+      "name": "Unit",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of item unit"
+    },
+    "UnitDescription": {
+      "name": "UnitDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of unit"
+    },
+    "UnitPrice": {
+      "name": "UnitPrice",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Item price per purchase unit"
+    },
+    "VATAmount": {
+      "name": "VATAmount",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount of VAT charges calculated from total amount and vat percentage"
+    },
+    "VATCode": {
+      "name": "VATCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The VAT code used when the invoice was registered"
+    },
+    "VATDescription": {
+      "name": "VATDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of vat code"
+    },
+    "VATPercentage": {
+      "name": "VATPercentage",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The VAT percentage of the VAT code. This is the percentage at the moment the invoice is created. It's also used by the default calculation of VAT amounts and VAT base amounts"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 16:22:50 UTC",
+    "total_fields": 63,
+    "scraping_method": "documentation_only",
+    "doc_url": "PurchaseOrderPurchaseOrderLines"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "PurchaseOrderLines",
+      "good_to_know": "Use this endpoint to : • Create a new purchase order line. • Read existing purchase order lines. • Update an existing purchase order line • Remove an existing purchase order line. Purchase order lines may not be posted individually. They should be part of the PurchaseOrder Post. When using the POST method of this endpoint to create a purchase order line it is mandatory to provide an Item and Quantity. When deleting a purchase order line, a purchase order must have at least one line. If necessary delete the complete purchase order.For more information about the  functionality in Exact Online, see Overview | Purchase orders.",
+      "scope": "Purchase orders",
+      "uri": "/api/v1/{division}/purchaseorder/PurchaseOrderLines",
+      "example_usage": "/api/v1/{division}/purchaseorder/PurchaseOrderLines"
+    }
+  }
+}

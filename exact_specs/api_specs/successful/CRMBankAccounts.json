@@ -1,0 +1,188 @@
+{
+  "name": "CRMBankAccounts",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "Account": {
+      "name": "Account",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Account (customer, supplier) to which the bank account belongs"
+    },
+    "AccountName": {
+      "name": "AccountName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The name of the account"
+    },
+    "Bank": {
+      "name": "Bank",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "BankAccount": {
+      "name": "BankAccount",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "The bank account number"
+    },
+    "BankAccountHolderName": {
+      "name": "BankAccountHolderName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the holder of the bank account, as known by the bank"
+    },
+    "BankDescription": {
+      "name": "BankDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "BankName": {
+      "name": "BankName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "BICCode": {
+      "name": "BICCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "BIC code of the bank where the bank account is held"
+    },
+    "Blocked": {
+      "name": "Blocked",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if the bank account is blocked"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of creator"
+    },
+    "Description": {
+      "name": "Description",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of the bank account"
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "Format": {
+      "name": "Format",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Format that belongs to the bank account number"
+    },
+    "IBAN": {
+      "name": "IBAN",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "Main": {
+      "name": "Main",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if the bank account is the main bank account"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of modifier"
+    },
+    "PaymentServiceAccount": {
+      "name": "PaymentServiceAccount",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "ID of the Payment service account. Used when Type is 'P' (Payment service)"
+    },
+    "Type": {
+      "name": "Type",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The type indicates what entity the bank account is used for. A = Account (default), E = Employee, K = Cash, P = Payment service, R = Bank, S = Student, U = Unknown. Currently it's only possible to create 'Account' type bank accounts."
+    },
+    "TypeDescription": {
+      "name": "TypeDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of the Type"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 16:12:26 UTC",
+    "total_fields": 24,
+    "scraping_method": "documentation_only",
+    "doc_url": "CRMBankAccounts"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "BankAccounts",
+      "good_to_know": "This entity supports webhooks.",
+      "scope": "Crm accounts",
+      "uri": "/api/v1/{division}/crm/BankAccounts",
+      "example_usage": "/api/v1/{division}/crm/BankAccounts"
+    }
+  }
+}

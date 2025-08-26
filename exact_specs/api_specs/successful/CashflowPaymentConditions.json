@@ -1,0 +1,174 @@
+{
+  "name": "CashflowPaymentConditions",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "Code": {
+      "name": "Code",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Code of the payment condition"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of creator"
+    },
+    "CreditManagementScenario": {
+      "name": "CreditManagementScenario",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Default credit management scenario to be used for new payment terms"
+    },
+    "CreditManagementScenarioCode": {
+      "name": "CreditManagementScenarioCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of CreditManagementScenario"
+    },
+    "CreditManagementScenarioDescription": {
+      "name": "CreditManagementScenarioDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of CreditManagementScenario"
+    },
+    "Description": {
+      "name": "Description",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Description of the payment condition"
+    },
+    "DiscountCalculation": {
+      "name": "DiscountCalculation",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates how the discount amount is calculated. Values: E = Excluding VAT, I = Including VAT"
+    },
+    "DiscountPaymentDays": {
+      "name": "DiscountPaymentDays",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Number of days to pay within, to have the right to take the discount"
+    },
+    "DiscountPercentage": {
+      "name": "DiscountPercentage",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Discount percentage"
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of modifier"
+    },
+    "PaymentDays": {
+      "name": "PaymentDays",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Number of days to be included in the due date calculation. Example: invoice date = 17/01 PaymentEndOfMonths = 2 => 31/03 PaymentDays = 15 => 15/04"
+    },
+    "PaymentDiscountType": {
+      "name": "PaymentDiscountType",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Type of payment discount. Values: B = Settlement discount, K = Credit surcharge"
+    },
+    "PaymentEndOfMonths": {
+      "name": "PaymentEndOfMonths",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Number of month endings to be included in the due date calculation"
+    },
+    "PaymentMethod": {
+      "name": "PaymentMethod",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Method of payment. Values: B = On credit, I = Collection, K = Cash, Q = PSP Collection"
+    },
+    "Percentage": {
+      "name": "Percentage",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Percentage (stored as fraction) of total invoice amount"
+    },
+    "VATCalculation": {
+      "name": "VATCalculation",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates how the VAT amount is calculated Values: E = Excluding discount, I = Including discount"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 16:09:00 UTC",
+    "total_fields": 22,
+    "scraping_method": "documentation_only",
+    "doc_url": "CashflowPaymentConditions"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "PaymentConditions",
+      "good_to_know": "Use this endpoint to retrieve or create payment conditions to be used by your invoices. For more information about payment condition, you can visit the following help file Payment Condition.",
+      "scope": "Financial cashflow",
+      "uri": "/api/v1/{division}/cashflow/PaymentConditions",
+      "example_usage": "/api/v1/{division}/cashflow/PaymentConditions"
+    }
+  }
+}

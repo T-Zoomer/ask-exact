@@ -1,0 +1,105 @@
+{
+    "name": "ReadFinancialProfitLossOverview",
+    "fields": {
+        "CurrentYear": {
+            "name": "CurrentYear",
+            "type": "Edm.Int32",
+            "description": "Primary key, Current year"
+        },
+        "CostsCurrentPeriod": {
+            "name": "CostsCurrentPeriod",
+            "type": "Edm.Double",
+            "description": "Total cost for the current year and period"
+        },
+        "CostsCurrentYear": {
+            "name": "CostsCurrentYear",
+            "type": "Edm.Double",
+            "description": "Total cost for the current year"
+        },
+        "CostsPreviousYear": {
+            "name": "CostsPreviousYear",
+            "type": "Edm.Double",
+            "description": "Total cost for the previous year"
+        },
+        "CostsPreviousYearPeriod": {
+            "name": "CostsPreviousYearPeriod",
+            "type": "Edm.Double",
+            "description": "Total cost for the previous year and period"
+        },
+        "CurrencyCode": {
+            "name": "CurrencyCode",
+            "type": "Edm.String",
+            "description": "Currency code"
+        },
+        "CurrentPeriod": {
+            "name": "CurrentPeriod",
+            "type": "Edm.Int32",
+            "description": "Current period"
+        },
+        "PreviousYear": {
+            "name": "PreviousYear",
+            "type": "Edm.Int32",
+            "description": "Previous year"
+        },
+        "PreviousYearPeriod": {
+            "name": "PreviousYearPeriod",
+            "type": "Edm.Int32",
+            "description": "Period in previous year"
+        },
+        "ResultCurrentPeriod": {
+            "name": "ResultCurrentPeriod",
+            "type": "Edm.Double",
+            "description": "Results of current year and period"
+        },
+        "ResultCurrentYear": {
+            "name": "ResultCurrentYear",
+            "type": "Edm.Double",
+            "description": "Results of current year"
+        },
+        "ResultPreviousYear": {
+            "name": "ResultPreviousYear",
+            "type": "Edm.Double",
+            "description": "Results of previous year"
+        },
+        "ResultPreviousYearPeriod": {
+            "name": "ResultPreviousYearPeriod",
+            "type": "Edm.Double",
+            "description": "Results of previous year and period"
+        },
+        "RevenueCurrentPeriod": {
+            "name": "RevenueCurrentPeriod",
+            "type": "Edm.Double",
+            "description": "Total revenue for the current year and period"
+        },
+        "RevenueCurrentYear": {
+            "name": "RevenueCurrentYear",
+            "type": "Edm.Double",
+            "description": "Total revenue for the current year"
+        },
+        "RevenuePreviousYear": {
+            "name": "RevenuePreviousYear",
+            "type": "Edm.Double",
+            "description": "Total revenue for the previous year"
+        },
+        "RevenuePreviousYearPeriod": {
+            "name": "RevenuePreviousYearPeriod",
+            "type": "Edm.Double",
+            "description": "Total revenue for the previous year and period"
+        }
+    },
+    "metadata": {
+        "scraped_at": "2025-08-26 17:25:11 UTC",
+        "total_fields": 17,
+        "scraping_method": "documentation_only",
+        "doc_url": "ReadFinancialProfitLossOverview"
+    },
+    "documentation": {
+        "endpoint_info": {
+            "endpoint": "ProfitLossOverview",
+            "good_to_know": "Use this endpoint if you want to know the financial result of the current and previous year. The current period is determined by checking the date of the endpoint execution against the Financial Year/Period setup.  E.g. Date of Endpoint execution = 24-oct-2019. In your administration, the financial year 2019 period 10 has the following setup of 01-10-2019 till 31-10-2019. Current year is 2019,  current period is 10. Previous year is 2018. previous period is 10. Only P&L G/L Accounts are considered for this endpoint. Costs are balances of all G/L Account of type Costs. Revenue are balances of all G/L Account of type Revenue. Results are calculated by subtracting cost from revenue.  For more information about profit and loss, kindly refer to the following help file Balance Sheet/Profit & Loss.",
+            "scope": "Financial accounting",
+            "uri": "/api/v1/{division}/read/financial/ProfitLossOverview",
+            "example_usage": "/api/v1/{division}/read/financial/ProfitLossOverview"
+        }
+    }
+}

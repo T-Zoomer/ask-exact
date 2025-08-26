@@ -1,0 +1,384 @@
+{
+  "name": "CRMOpportunities",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "Account": {
+      "name": "Account",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Lead to which the opportunity applies"
+    },
+    "Accountant": {
+      "name": "Accountant",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Accountant linked to the opportunity"
+    },
+    "AccountantCode": {
+      "name": "AccountantCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of the Accountant"
+    },
+    "AccountantName": {
+      "name": "AccountantName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the Accountant"
+    },
+    "AccountCode": {
+      "name": "AccountCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Account"
+    },
+    "AccountName": {
+      "name": "AccountName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of Account"
+    },
+    "ActionDate": {
+      "name": "ActionDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates the date before/on the NextAction is supposed to be done"
+    },
+    "AmountDC": {
+      "name": "AmountDC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount in the default currency of the company. AmountDC = AmountFC * RateFC"
+    },
+    "AmountFC": {
+      "name": "AmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount in the currency of the transaction"
+    },
+    "Campaign": {
+      "name": "Campaign",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to the campaign opportunity is related to"
+    },
+    "CampaignDescription": {
+      "name": "CampaignDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Campaign"
+    },
+    "Channel": {
+      "name": "Channel",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to the channel opportunity is related to"
+    },
+    "ChannelDescription": {
+      "name": "ChannelDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Channel"
+    },
+    "CloseDate": {
+      "name": "CloseDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The date when the opportunity is expected to be closed"
+    },
+    "Contact": {
+      "name": "Contact",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Contact ID of main contact person"
+    },
+    "ContactFullName": {
+      "name": "ContactFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the main contact person"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the creator"
+    },
+    "Currency": {
+      "name": "Currency",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Currency code"
+    },
+    "CustomField": {
+      "name": "CustomField",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Custom field endpoint. Provided only for the Exact Online Premium users."
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "LeadSource": {
+      "name": "LeadSource",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The source of the lead/opportunity"
+    },
+    "LeadSourceDescription": {
+      "name": "LeadSourceDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of LeadSource"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the last modifier"
+    },
+    "NextAction": {
+      "name": "NextAction",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates what follow up action is to be undertaken to move the opportunity towards a deal. Is used in combination with ActionDate"
+    },
+    "Notes": {
+      "name": "Notes",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Notes of the opportunity"
+    },
+    "Number": {
+      "name": "Number",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Internal number of the opportunity"
+    },
+    "OpportunityDepartmentCode": {
+      "name": "OpportunityDepartmentCode",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Opportunity Department"
+    },
+    "OpportunityDepartmentDescription": {
+      "name": "OpportunityDepartmentDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Opportunity Department"
+    },
+    "OpportunityStage": {
+      "name": "OpportunityStage",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The stage of the opportunity. This is a list defined by the user"
+    },
+    "OpportunityStageDescription": {
+      "name": "OpportunityStageDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of OpportunityStage"
+    },
+    "OpportunityStatus": {
+      "name": "OpportunityStatus",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Status: 1=Open, 2=Closed won, 3=Closed lost"
+    },
+    "OpportunityType": {
+      "name": "OpportunityType",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Opportunity Type"
+    },
+    "OpportunityTypeDescription": {
+      "name": "OpportunityTypeDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Opportunity Type"
+    },
+    "Owner": {
+      "name": "Owner",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The resource who owns the opportunity and is responsible to close the opportunity (either won or lost)"
+    },
+    "OwnerFullName": {
+      "name": "OwnerFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of Owner"
+    },
+    "Probability": {
+      "name": "Probability",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The chance that the opportunity will be closed and won. The default for the probability depends on the default from the opportunity stage"
+    },
+    "Project": {
+      "name": "Project",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to project"
+    },
+    "ProjectCode": {
+      "name": "ProjectCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Project"
+    },
+    "ProjectDescription": {
+      "name": "ProjectDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Project"
+    },
+    "RateFC": {
+      "name": "RateFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Exchange rate from original to division currency"
+    },
+    "ReasonCode": {
+      "name": "ReasonCode",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates the reason why the opportunity was lost."
+    },
+    "ReasonCodeDescription": {
+      "name": "ReasonCodeDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of ReasonCode"
+    },
+    "Reseller": {
+      "name": "Reseller",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reseller linked to the opportunity"
+    },
+    "ResellerCode": {
+      "name": "ResellerCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of the Reseller"
+    },
+    "ResellerName": {
+      "name": "ResellerName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the Reseller"
+    },
+    "SalesType": {
+      "name": "SalesType",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to Sales type"
+    },
+    "SalesTypeDescription": {
+      "name": "SalesTypeDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of SalesType"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 16:22:25 UTC",
+    "total_fields": 52,
+    "scraping_method": "documentation_only",
+    "doc_url": "CRMOpportunities"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "Opportunities",
+      "good_to_know": "This entity supports webhooks.",
+      "scope": "Crm opportunities",
+      "uri": "/api/v1/{division}/crm/Opportunities",
+      "example_usage": "/api/v1/{division}/crm/Opportunities"
+    }
+  }
+}

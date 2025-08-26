@@ -1,0 +1,384 @@
+{
+  "name": "SalesInvoiceSalesInvoiceLines",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "AmountDC": {
+      "name": "AmountDC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Amount in the default currency of the company. For almost all lines this can be calculated like: AmountDC = AmountFC * RateFC"
+    },
+    "AmountFC": {
+      "name": "AmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "For normal lines it's the amount excluding VAT"
+    },
+    "CostCenter": {
+      "name": "CostCenter",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to Cost center"
+    },
+    "CostCenterDescription": {
+      "name": "CostCenterDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of CostCenter"
+    },
+    "CostUnit": {
+      "name": "CostUnit",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to Cost unit"
+    },
+    "CostUnitDescription": {
+      "name": "CostUnitDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of CostUnit"
+    },
+    "CustomerItemCode": {
+      "name": "CustomerItemCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code the customer uses for this item"
+    },
+    "CustomField": {
+      "name": "CustomField",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Custom field endpoint. Provided only for the Exact Online Premium users."
+    },
+    "DeliveryDate": {
+      "name": "DeliveryDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Delivery date of an item in a sales invoice. This is used for VAT on prepayments, only if sales order is not used in the license."
+    },
+    "Description": {
+      "name": "Description",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description. Can be different for header and lines"
+    },
+    "Discount": {
+      "name": "Discount",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Discount given on the default price. Discount = (DefaultPrice of Item - PriceItem in line) / DefaultPrice of Item"
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "Employee": {
+      "name": "Employee",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Link to Employee originating from time and cost transactions"
+    },
+    "EmployeeFullName": {
+      "name": "EmployeeFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of employee"
+    },
+    "EndTime": {
+      "name": "EndTime",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "EndTime is used to store the last date of a period. EndTime is used in combination with StartTime"
+    },
+    "ExtraDutyAmountFC": {
+      "name": "ExtraDutyAmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Extra duty amount in the currency of the transaction. Both extra duty amount and VAT amount need to be specified in order to differ this property from automatically calculated."
+    },
+    "ExtraDutyPercentage": {
+      "name": "ExtraDutyPercentage",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Extra duty percentage"
+    },
+    "GLAccount": {
+      "name": "GLAccount",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "The GL Account of the sales invoice line. This field is mandatory. This field is generated based on the revenue account of the item (or the related item group). G/L Account is also used to determine whether the costcenter / costunit is mandatory"
+    },
+    "GLAccountDescription": {
+      "name": "GLAccountDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of GLAccount"
+    },
+    "InvoiceID": {
+      "name": "InvoiceID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "The InvoiceID identifies the sales invoice. All the lines of a sales invoice have the same InvoiceID"
+    },
+    "Item": {
+      "name": "Item",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Reference to the item that is sold in this sales invoice line"
+    },
+    "ItemCode": {
+      "name": "ItemCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Item code"
+    },
+    "ItemDescription": {
+      "name": "ItemDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Item"
+    },
+    "LineNumber": {
+      "name": "LineNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates the sequence of the lines within one invoice"
+    },
+    "NetPrice": {
+      "name": "NetPrice",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Net price of the sales invoice line"
+    },
+    "Notes": {
+      "name": "Notes",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Extra notes"
+    },
+    "Pricelist": {
+      "name": "Pricelist",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Price list"
+    },
+    "PricelistDescription": {
+      "name": "PricelistDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Pricelist"
+    },
+    "Project": {
+      "name": "Project",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The project to which the sales transaction line is linked. The project can be different per line. Sometimes also the project in the header is filled although this is not really used"
+    },
+    "ProjectDescription": {
+      "name": "ProjectDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Project"
+    },
+    "ProjectWBS": {
+      "name": "ProjectWBS",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "WBS linked to the sales invoice"
+    },
+    "ProjectWBSDescription": {
+      "name": "ProjectWBSDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of WBS"
+    },
+    "Quantity": {
+      "name": "Quantity",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The number of items sold in default units. The quantity shown in the entry screen is Quantity * UnitFactor"
+    },
+    "SalesOrder": {
+      "name": "SalesOrder",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Identifies the sales order this invoice line is based on"
+    },
+    "SalesOrderLine": {
+      "name": "SalesOrderLine",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Identifies the sales order line this sales invoice line is based on"
+    },
+    "SalesOrderLineNumber": {
+      "name": "SalesOrderLineNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Then line number of the sales order line on which this invoice line is based on"
+    },
+    "SalesOrderNumber": {
+      "name": "SalesOrderNumber",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The order number of the sales order on which this invoice line is based on"
+    },
+    "StartTime": {
+      "name": "StartTime",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "StartTime is used to store the first date of a period. StartTime is used in combination with EndTime"
+    },
+    "Subscription": {
+      "name": "Subscription",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "When generating invoices from subscriptions, this field records the link between invoice lines and subscription lines"
+    },
+    "SubscriptionDescription": {
+      "name": "SubscriptionDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of subscription line"
+    },
+    "TaxSchedule": {
+      "name": "TaxSchedule",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "TaxScheduleCode": {
+      "name": "TaxScheduleCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "TaxScheduleDescription": {
+      "name": "TaxScheduleDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "UnitCode": {
+      "name": "UnitCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Unit"
+    },
+    "UnitDescription": {
+      "name": "UnitDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of Unit"
+    },
+    "UnitPrice": {
+      "name": "UnitPrice",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Price per unit"
+    },
+    "VATAmountDC": {
+      "name": "VATAmountDC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "VAT amount in the default currency of the company"
+    },
+    "VATAmountFC": {
+      "name": "VATAmountFC",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "VAT amount in the currency of the transaction"
+    },
+    "VATCode": {
+      "name": "VATCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The VAT code that is used when the invoice is registered"
+    },
+    "VATCodeDescription": {
+      "name": "VATCodeDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of VATCode"
+    },
+    "VATPercentage": {
+      "name": "VATPercentage",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The vat percentage of the VAT code. This is the percentage at the moment the invoice is created. It's also used for the default calculation of VAT amounts and VAT base amounts"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 15:58:34 UTC",
+    "total_fields": 52,
+    "scraping_method": "documentation_only",
+    "doc_url": "SalesInvoiceSalesInvoiceLines"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "SalesInvoiceLines",
+      "good_to_know": "Use this endpoint to create, read, update and delete sales invoice lines.Sales invoice describe the items that you sell to your customers.For more information about the sales invoice functionality in Exact Online, see About sales invoices.To view an example of the business use of this endpoint, see Rest API - Business example API sales invoice.",
+      "scope": "Sales invoices",
+      "uri": "/api/v1/{division}/salesinvoice/SalesInvoiceLines",
+      "example_usage": "/api/v1/{division}/salesinvoice/SalesInvoiceLines"
+    }
+  }
+}

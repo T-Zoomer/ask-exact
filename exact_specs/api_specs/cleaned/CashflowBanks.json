@@ -1,0 +1,70 @@
+{
+    "name": "CashflowBanks",
+    "fields": {
+        "ID": {
+            "name": "ID",
+            "type": "Edm.Guid",
+            "description": "Primary key"
+        },
+        "BankName": {
+            "name": "BankName",
+            "type": "Edm.String",
+            "description": "The name of the bank"
+        },
+        "BICCode": {
+            "name": "BICCode",
+            "type": "Edm.String",
+            "description": "The bank identification code of the bank"
+        },
+        "Country": {
+            "name": "Country",
+            "type": "Edm.String",
+            "description": "The country in which the bank is based"
+        },
+        "Created": {
+            "name": "Created",
+            "type": "Edm.DateTime",
+            "description": "Creation date"
+        },
+        "Description": {
+            "name": "Description",
+            "type": "Edm.String",
+            "description": "The extended description of the bank"
+        },
+        "Format": {
+            "name": "Format",
+            "type": "Edm.String",
+            "description": "The account format used by the bank"
+        },
+        "HomePageAddress": {
+            "name": "HomePageAddress",
+            "type": "Edm.String",
+            "description": "The website of the bank"
+        },
+        "Modified": {
+            "name": "Modified",
+            "type": "Edm.DateTime",
+            "description": "Last modified date"
+        },
+        "Status": {
+            "name": "Status",
+            "type": "Edm.String",
+            "description": "The status of the bank. A = Active, P = Passive"
+        }
+    },
+    "metadata": {
+        "scraped_at": "2025-08-26 17:30:13 UTC",
+        "total_fields": 10,
+        "scraping_method": "documentation_only",
+        "doc_url": "CashflowBanks"
+    },
+    "documentation": {
+        "endpoint_info": {
+            "endpoint": "Banks",
+            "good_to_know": "Use this endpoint to get all the banks that are supported by EOL.",
+            "scope": "Financial cashflow",
+            "uri": "/api/v1/{division}/cashflow/Banks",
+            "example_usage": "/api/v1/{division}/cashflow/Banks"
+        }
+    }
+}

@@ -1,0 +1,1161 @@
+{
+  "name": "CRMAccounts",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "Accountant": {
+      "name": "Accountant",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to the accountant of the customer. Conditions: The referred accountant must have value > 0 in the field IsAccountant"
+    },
+    "AccountManager": {
+      "name": "AccountManager",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "ID of the account manager"
+    },
+    "AccountManagerFullName": {
+      "name": "AccountManagerFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of the account manager"
+    },
+    "AccountManagerHID": {
+      "name": "AccountManagerHID",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Number of the account manager"
+    },
+    "ActivitySector": {
+      "name": "ActivitySector",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to Activity sector of the account"
+    },
+    "ActivitySubSector": {
+      "name": "ActivitySubSector",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to Activity sub-sector of the account"
+    },
+    "AddressLine1": {
+      "name": "AddressLine1",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Visit address first line"
+    },
+    "AddressLine2": {
+      "name": "AddressLine2",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Visit address second line"
+    },
+    "AddressLine3": {
+      "name": "AddressLine3",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Visit address third line"
+    },
+    "AddressSource": {
+      "name": "AddressSource",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "CRM creation source"
+    },
+    "AutomaticProcessProposedEntry": {
+      "name": "AutomaticProcessProposedEntry",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Automatically create entries for complete entry proposals"
+    },
+    "BankAccounts": {
+      "name": "BankAccounts",
+      "type": "BankAccounts",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Collection of Bank accounts"
+    },
+    "Blocked": {
+      "name": "Blocked",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if the account is blocked"
+    },
+    "BRIN": {
+      "name": "BRIN",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "BSN": {
+      "name": "BSN",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Citizen Service Number for the Netherlands"
+    },
+    "BusinessType": {
+      "name": "BusinessType",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to the business type of the account"
+    },
+    "CanDropShip": {
+      "name": "CanDropShip",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates the default for the possibility to drop ship when an item is linked to a supplier"
+    },
+    "ChamberOfCommerce": {
+      "name": "ChamberOfCommerce",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Chamber of commerce number"
+    },
+    "City": {
+      "name": "City",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Visit address City"
+    },
+    "Classification": {
+      "name": "Classification",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "Classification1": {
+      "name": "Classification1",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Account classification 1"
+    },
+    "Classification2": {
+      "name": "Classification2",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Account classification 2"
+    },
+    "Classification3": {
+      "name": "Classification3",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Account classification 3"
+    },
+    "Classification4": {
+      "name": "Classification4",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Account classification 4"
+    },
+    "Classification5": {
+      "name": "Classification5",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Account classification 5"
+    },
+    "Classification6": {
+      "name": "Classification6",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Account classification 6"
+    },
+    "Classification7": {
+      "name": "Classification7",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Account classification 7"
+    },
+    "Classification8": {
+      "name": "Classification8",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Account classification 8"
+    },
+    "ClassificationDescription": {
+      "name": "ClassificationDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "Code": {
+      "name": "Code",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Unique key, fixed length numeric string with leading spaces, length 18. IMPORTANT: When you use OData $filter on this field you have to make sure the filter parameter contains the leading spaces"
+    },
+    "CodeAtSupplier": {
+      "name": "CodeAtSupplier",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code under which your own company is known at the account"
+    },
+    "CompanySize": {
+      "name": "CompanySize",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to Company size of the account"
+    },
+    "ConsolidationScenario": {
+      "name": "ConsolidationScenario",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Consolidation scenario (Time & Billing). Values: 0 = No consolidation, 1 = Item, 2 = Item + Project, 3 = Item + Employee, 4 = Item + Employee + Project, 5 = Project + WBS + Item, 6 = Project + WBS + Item + Employee. Item means in this case including Unit and Price, these also have to be the same to consolidate"
+    },
+    "ControlledDate": {
+      "name": "ControlledDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Date of the latest control of account data with external web service"
+    },
+    "Costcenter": {
+      "name": "Costcenter",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "CostcenterDescription": {
+      "name": "CostcenterDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "CostPaid": {
+      "name": "CostPaid",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "Country": {
+      "name": "Country",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Country code"
+    },
+    "CountryName": {
+      "name": "CountryName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Country name"
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of creator"
+    },
+    "CreditLinePurchase": {
+      "name": "CreditLinePurchase",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Maximum amount of credit for Purchase. If no value has been defined, there is no credit limit"
+    },
+    "CreditLineSales": {
+      "name": "CreditLineSales",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Maximum amount of credit for sales. If no value has been defined, there is no credit limit"
+    },
+    "Currency": {
+      "name": "Currency",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "CustomerSince": {
+      "name": "CustomerSince",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "CustomField": {
+      "name": "CustomField",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Custom field endpoint. Provided only for the Exact Online Premium users."
+    },
+    "DatevCreditorCode": {
+      "name": "DatevCreditorCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "DATEV creditor code for Germany legislation"
+    },
+    "DatevDebtorCode": {
+      "name": "DatevDebtorCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "DATEV debtor code for Germany legislation"
+    },
+    "DeliveryAdvice": {
+      "name": "DeliveryAdvice",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Allows a customer to do goods delivery based on setting complete, partial or partial no back order. Values:\r\n\t\t\t\t\t\t\t0 = Partial,\r\n\t\t\t\t\t\t\t1 = Complete,\r\n\t\t\t\t\t\t\t2 = PartialNoBackOrder"
+    },
+    "DiscountPurchase": {
+      "name": "DiscountPurchase",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Default discount percentage for purchase. This is stored as a fraction. ie 5.5% is stored as .055"
+    },
+    "DiscountSales": {
+      "name": "DiscountSales",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Default discount percentage for sales. This is stored as a fraction. ie 5.5% is stored as .055"
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "Document": {
+      "name": "Document",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "DunsNumber": {
+      "name": "DunsNumber",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "Email": {
+      "name": "Email",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "E-Mail address of the account"
+    },
+    "EnableSalesPaymentLink": {
+      "name": "EnableSalesPaymentLink",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates whether payment link is activated for sales"
+    },
+    "EndDate": {
+      "name": "EndDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Determines in combination with the start date if the account is active. If the current date is > end date the account is inactive"
+    },
+    "EORINumber": {
+      "name": "EORINumber",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "EORI number"
+    },
+    "EstablishedDate": {
+      "name": "EstablishedDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "RegistrationDate"
+    },
+    "Fax": {
+      "name": "Fax",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Fax number"
+    },
+    "GLAccountPurchase": {
+      "name": "GLAccountPurchase",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Default (corporate) GL offset account for purchase (cost)"
+    },
+    "GLAccountSales": {
+      "name": "GLAccountSales",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Default (corporate) GL offset account for sales (revenue)"
+    },
+    "GLAP": {
+      "name": "GLAP",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Default GL account for Accounts Payable"
+    },
+    "GLAR": {
+      "name": "GLAR",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Default GL account for Accounts Receivable"
+    },
+    "GlnNumber": {
+      "name": "GlnNumber",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Global Location Number can be used by companies to identify their locations, giving them complete flexibility to identify any type or level of location required"
+    },
+    "HasWithholdingTaxSales": {
+      "name": "HasWithholdingTaxSales",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates whether a customer has withholding tax on sales"
+    },
+    "IgnoreDatevWarningMessage": {
+      "name": "IgnoreDatevWarningMessage",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Suppressed warning message when there is duplication on the DATEV code"
+    },
+    "IncotermAddressPurchase": {
+      "name": "IncotermAddressPurchase",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Address of Incoterm for Purchase"
+    },
+    "IncotermAddressSales": {
+      "name": "IncotermAddressSales",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Address of Incoterm for Sales"
+    },
+    "IncotermCodePurchase": {
+      "name": "IncotermCodePurchase",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Incoterm for Purchase"
+    },
+    "IncotermCodeSales": {
+      "name": "IncotermCodeSales",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Incoterm for Sales"
+    },
+    "IncotermVersionPurchase": {
+      "name": "IncotermVersionPurchase",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Version of Incoterm for Purchase Supported version for Incoterms : 2010, 2020"
+    },
+    "IncotermVersionSales": {
+      "name": "IncotermVersionSales",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Version of Incoterm for Sales Supported version for Incoterms : 2010, 2020"
+    },
+    "IntraStatArea": {
+      "name": "IntraStatArea",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Intrastat Area"
+    },
+    "IntraStatDeliveryTerm": {
+      "name": "IntraStatDeliveryTerm",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Intrastat delivery method"
+    },
+    "IntraStatSystem": {
+      "name": "IntraStatSystem",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "System for Intrastat"
+    },
+    "IntraStatTransactionA": {
+      "name": "IntraStatTransactionA",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Transaction type A for Intrastat"
+    },
+    "IntraStatTransactionB": {
+      "name": "IntraStatTransactionB",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Transaction type B for Intrastat"
+    },
+    "IntraStatTransportMethod": {
+      "name": "IntraStatTransportMethod",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Transport method for Intrastat"
+    },
+    "InvoiceAccount": {
+      "name": "InvoiceAccount",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "ID of account to be invoiced instead of this account"
+    },
+    "InvoiceAccountCode": {
+      "name": "InvoiceAccountCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of InvoiceAccount"
+    },
+    "InvoiceAccountName": {
+      "name": "InvoiceAccountName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of InvoiceAccount"
+    },
+    "InvoiceAttachmentType": {
+      "name": "InvoiceAttachmentType",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates which attachment types should be sent when a sales invoice is printed. Only values in related table with Invoice=1 are allowed"
+    },
+    "InvoicingMethod": {
+      "name": "InvoicingMethod",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Method of sending for sales invoices. Values: 1: Paper, 2: EMail, 4: Mailbox (electronic exchange), 8: Send and trackTake notes: To use the '4 - Mailbox (electronic exchange)' option, the 'Mailbox' feature set is required in the licence."
+    },
+    "IsAccountant": {
+      "name": "IsAccountant",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates whether the account is an accountant. Values: 0 = No accountant, 1 = True, but accountant doesn't want his name to be published in the list of accountants, 2 = True, and accountant is published in the list of accountants"
+    },
+    "IsAgency": {
+      "name": "IsAgency",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates whether the accounti is an agency"
+    },
+    "IsAnonymised": {
+      "name": "IsAnonymised",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates whtether the account is anonymised."
+    },
+    "IsBank": {
+      "name": "IsBank",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "IsCompetitor": {
+      "name": "IsCompetitor",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates whether the account is a competitor"
+    },
+    "IsExtraDuty": {
+      "name": "IsExtraDuty",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates whether a customer is eligible for extra duty"
+    },
+    "IsMailing": {
+      "name": "IsMailing",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if the account is excluded from mailing marketing information"
+    },
+    "IsMember": {
+      "name": "IsMember",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "IsPilot": {
+      "name": "IsPilot",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates whether the account is a pilot account"
+    },
+    "IsPurchase": {
+      "name": "IsPurchase",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "IsReseller": {
+      "name": "IsReseller",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates whether the account is a reseller"
+    },
+    "IsSales": {
+      "name": "IsSales",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates whether the account is allowed for sales"
+    },
+    "IsSupplier": {
+      "name": "IsSupplier",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates whether the account is a supplier"
+    },
+    "Language": {
+      "name": "Language",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Language code"
+    },
+    "LanguageDescription": {
+      "name": "LanguageDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Language description"
+    },
+    "Latitude": {
+      "name": "Latitude",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Latitude (used by Google maps)"
+    },
+    "LeadPurpose": {
+      "name": "LeadPurpose",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to Lead purpose of an account"
+    },
+    "LeadSource": {
+      "name": "LeadSource",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to Lead source of an account"
+    },
+    "Logo": {
+      "name": "Logo",
+      "type": "Edm.Binary",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Bytes of the logo image"
+    },
+    "LogoFileName": {
+      "name": "LogoFileName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The file name (without path, but with extension) of the image"
+    },
+    "LogoThumbnailUrl": {
+      "name": "LogoThumbnailUrl",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Thumbnail url of the logo"
+    },
+    "LogoUrl": {
+      "name": "LogoUrl",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Url to retrieve the logo"
+    },
+    "Longitude": {
+      "name": "Longitude",
+      "type": "Edm.Double",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Longitude (used by Google maps)"
+    },
+    "MainContact": {
+      "name": "MainContact",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Reference to main contact person"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of modifier"
+    },
+    "OINNumber": {
+      "name": "OINNumber",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Dutch government identification number"
+    },
+    "Parent": {
+      "name": "Parent",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "ID of the parent account"
+    },
+    "PayAsYouEarn": {
+      "name": "PayAsYouEarn",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates the loan repayment plan for UK legislation"
+    },
+    "PaymentConditionPurchase": {
+      "name": "PaymentConditionPurchase",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of default payment condition for purchase"
+    },
+    "PaymentConditionPurchaseDescription": {
+      "name": "PaymentConditionPurchaseDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of PaymentConditionPurchase"
+    },
+    "PaymentConditionSales": {
+      "name": "PaymentConditionSales",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of default payment condition for sales"
+    },
+    "PaymentConditionSalesDescription": {
+      "name": "PaymentConditionSalesDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of PaymentConditionSales"
+    },
+    "PeppolIdentifier": {
+      "name": "PeppolIdentifier",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Peppol identifier user entered manually, corresponds to picked peppol adress"
+    },
+    "PeppolIdentifierType": {
+      "name": "PeppolIdentifierType",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Peppol identifier type that user picked manually - GLN, COC, etc"
+    },
+    "Phone": {
+      "name": "Phone",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Phone number"
+    },
+    "PhoneExtension": {
+      "name": "PhoneExtension",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Phone number extention"
+    },
+    "Postcode": {
+      "name": "Postcode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Visit address postcode"
+    },
+    "PriceList": {
+      "name": "PriceList",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Default sales price list for account"
+    },
+    "PurchaseCurrency": {
+      "name": "PurchaseCurrency",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Currency of purchaseTake notes: If the currency code input is not in the active currencies, the value will be set to empty."
+    },
+    "PurchaseCurrencyDescription": {
+      "name": "PurchaseCurrencyDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of PurchaseCurrency"
+    },
+    "PurchaseLeadDays": {
+      "name": "PurchaseLeadDays",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates number of days required to receive a purchase. Acts as a default"
+    },
+    "PurchaseVATCode": {
+      "name": "PurchaseVATCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Default VAT code used for purchase entries"
+    },
+    "PurchaseVATCodeDescription": {
+      "name": "PurchaseVATCodeDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of PurchaseVATCode"
+    },
+    "RecepientOfCommissions": {
+      "name": "RecepientOfCommissions",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Define the relation that should be taken in the official document of the rewarding fiscal fiches Belcotax"
+    },
+    "Remarks": {
+      "name": "Remarks",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Remarks"
+    },
+    "Reseller": {
+      "name": "Reseller",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "ID of the reseller account. Conditions: the target account must have the property IsReseller turned on"
+    },
+    "ResellerCode": {
+      "name": "ResellerCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Code of Reseller"
+    },
+    "ResellerName": {
+      "name": "ResellerName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of Reseller"
+    },
+    "RSIN": {
+      "name": "RSIN",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Fiscal number for NL legislation"
+    },
+    "SalesCurrency": {
+      "name": "SalesCurrency",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Currency of Sales used for Time & BillingTake notes: If the currency code input is not in the active currencies, the value will be set to empty."
+    },
+    "SalesCurrencyDescription": {
+      "name": "SalesCurrencyDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of SalesCurrency"
+    },
+    "SalesTaxSchedule": {
+      "name": "SalesTaxSchedule",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "SalesTaxScheduleCode": {
+      "name": "SalesTaxScheduleCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "SalesTaxScheduleDescription": {
+      "name": "SalesTaxScheduleDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "SalesVATCode": {
+      "name": "SalesVATCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Default VAT code for a sales entry"
+    },
+    "SalesVATCodeDescription": {
+      "name": "SalesVATCodeDescription",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Description of SalesVATCode"
+    },
+    "SearchCode": {
+      "name": "SearchCode",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Search code"
+    },
+    "SecurityLevel": {
+      "name": "SecurityLevel",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Security level (0 - 100)"
+    },
+    "SeparateInvPerProject": {
+      "name": "SeparateInvPerProject",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Separate invoice per project (Time & Billing)"
+    },
+    "SeparateInvPerSubscription": {
+      "name": "SeparateInvPerSubscription",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates how invoices are generated from subscriptions. 0 = subscriptions belonging to the same customer are combined in a single invoice. 1 = each subscription results in one invoice. In both cases, each individual subscription line results in one invoice line"
+    },
+    "ShippingLeadDays": {
+      "name": "ShippingLeadDays",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates the number of days it takes to send goods to the customer. Acts as a default"
+    },
+    "ShippingMethod": {
+      "name": "ShippingMethod",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Default shipping method"
+    },
+    "ShowRemarkForSales": {
+      "name": "ShowRemarkForSales",
+      "type": "Edm.Boolean",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates whether to display Ordered by account's remarks when creating a new sales order"
+    },
+    "Source": {
+      "name": "Source",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "CRM creation source"
+    },
+    "StartDate": {
+      "name": "StartDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates in combination with the end date if the account is active"
+    },
+    "State": {
+      "name": "State",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "State/Province/County code When changing the Country and the State is filled, the State must be assigned with a valid value from the selected country or set to empty"
+    },
+    "StateName": {
+      "name": "StateName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of State"
+    },
+    "Status": {
+      "name": "Status",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "If the status field is filled this means the account is a customer. The value indicates the customer status. Possible values: A=None, S=Suspect, P=Prospect, C=Customer"
+    },
+    "StatusSince": {
+      "name": "StatusSince",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Obsolete"
+    },
+    "TradeName": {
+      "name": "TradeName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Trade name can be registered and shown with the client (for all legislations)"
+    },
+    "Type": {
+      "name": "Type",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Account type: Values: A = Relation, D = Division"
+    },
+    "UniqueTaxpayerReference": {
+      "name": "UniqueTaxpayerReference",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Unique taxpayer reference for UK legislation"
+    },
+    "VATLiability": {
+      "name": "VATLiability",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates the VAT status of an account to be able to identify the relation that should be selected in the VAT debtor listing in Belgium"
+    },
+    "VATNumber": {
+      "name": "VATNumber",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "The number under which the account is known at the Value Added Tax collection agency"
+    },
+    "Website": {
+      "name": "Website",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Website of the account"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 15:28:29 UTC",
+    "total_fields": 163,
+    "scraping_method": "documentation_only",
+    "doc_url": "CRMAccounts"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "Accounts",
+      "good_to_know": "This entity supports webhooks.",
+      "scope": "Crm accounts",
+      "uri": "/api/v1/{division}/crm/Accounts",
+      "example_usage": "/api/v1/{division}/crm/Accounts"
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "name": "CashflowDirectDebitMandates",
+  "fields": {
+    "ID": {
+      "name": "ID",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Primary key"
+    },
+    "Account": {
+      "name": "Account",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Account to which the mandate belongs."
+    },
+    "Attachment": {
+      "name": "Attachment",
+      "type": "Edm.Binary",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Contain attachment (Format: Base64 encoded) of the mandate belongs. Binaries are not sent in the response."
+    },
+    "AttachmentFileName": {
+      "name": "AttachmentFileName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Filename of the attachment to which the mandate belongs."
+    },
+    "BankAccount": {
+      "name": "BankAccount",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": true,
+      "description": "Bank account to which the mandate belongs."
+    },
+    "CancellationDate": {
+      "name": "CancellationDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Date that the mandate is cancelled. Used to check the validity of the mandate."
+    },
+    "Created": {
+      "name": "Created",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Creation date"
+    },
+    "Creator": {
+      "name": "Creator",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of creator"
+    },
+    "CreatorFullName": {
+      "name": "CreatorFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of creator"
+    },
+    "Description": {
+      "name": "Description",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Displays the description of the mandate."
+    },
+    "Division": {
+      "name": "Division",
+      "type": "Edm.Int32",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Division code"
+    },
+    "FirstSend": {
+      "name": "FirstSend",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates the first collection hasn't been sent/confirmed with this mandate."
+    },
+    "Main": {
+      "name": "Main",
+      "type": "Edm.Byte",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Indicates if the mandate is the main, you can have only one main mandate"
+    },
+    "Modified": {
+      "name": "Modified",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Last modified date"
+    },
+    "Modifier": {
+      "name": "Modifier",
+      "type": "Edm.Guid",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "User ID of modifier"
+    },
+    "ModifierFullName": {
+      "name": "ModifierFullName",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Name of modifier"
+    },
+    "PaymentType": {
+      "name": "PaymentType",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Depending on the payment type, a different bank file will be generated. 0 = One-off payment, 1 = Recurrent payment, 2 = AdHoc (UK only)"
+    },
+    "Reference": {
+      "name": "Reference",
+      "type": "Edm.String",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Displays a reference number for the mandate. It is a unique reference number that you can assign to each mandate."
+    },
+    "SignatureDate": {
+      "name": "SignatureDate",
+      "type": "Edm.DateTime",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Date that the mandate is signed. The collection must take place after the signature date of the mandate. The date is used to check the validity of the mandate."
+    },
+    "Type": {
+      "name": "Type",
+      "type": "Edm.Int16",
+      "source": "documentation",
+      "mandatory": false,
+      "description": "Depending on the type, a different bank file will be generated. 0 = Core, 1 = B2B and 2 = bottomline (UK only)"
+    }
+  },
+  "metadata": {
+    "scraped_at": "2025-08-25 16:23:12 UTC",
+    "total_fields": 20,
+    "scraping_method": "documentation_only",
+    "doc_url": "CashflowDirectDebitMandates"
+  },
+  "documentation": {
+    "endpoint_info": {
+      "endpoint": "DirectDebitMandates",
+      "good_to_know": "Use this endpoint to retrieve, create, update or delete a mandate of your administration. For more information about mandate, you can visit the following help file Mandates.",
+      "scope": "Financial cashflow",
+      "uri": "/api/v1/{division}/cashflow/DirectDebitMandates",
+      "example_usage": "/api/v1/{division}/cashflow/DirectDebitMandates"
+    }
+  }
+}

@@ -1,233 +1,38 @@
-# Exact Online OAuth 2.0 Integration
+# Architecture
 
-A Django application that implements OAuth 2.0 authentication for Exact Online, allowing secure access to Exact Online's REST API.
+User intent forming proces
+1. LLM gets told by user what the user wants
+2. LLM determines tool (API call)
+3. LLM gets send the argument spec for that tool and the user message. Then the LLM parses the LLM-facing arguments in UserIntent (start_date, end_date and the filters). 
+4. Code parses the LLM-facing UserIntent arguments to API-facing arguments
 
-## Features
+So to build this i need to:
 
-- Complete OAuth 2.0 authorization flow implementation
-- Multi-country support (NL, BE, UK, FR, DE, US)
-- Automatic token refresh handling
-- Django admin integration for app and token management
-- Easy-to-use service classes for API interactions
-- Web interface for managing OAuth connections
+1. Finish the ExactToolbox
+* Get all the tool / API call specifications in a JSON. I was busy building a scraper for this: scrape_exact_api_specs.py 
+* Or just get some important ones but make them complete. 
 
-## Quick Start
+2. 
+* Then build a second LLM call where the LLM sees the user input, tool and the API spec. Then it parses input args.  
+* 
 
-### 1. Installation
+------
 
-```bash
-# Clone the repository
-git clone <your-repo-url>
-cd ask-exact
 
-# Install dependencies
-pip3 install -r requirements.txt
-# or using the dependencies from pyproject.toml:
-pip3 install requests python-dotenv cryptography django
-```
+1. The user chats with the LLM and tells the LLM what it wants
+2. The LLM knows what tools are available and what arguments per tool, given in context by ExactToolbox. 
+3. The LLM parses the users intent to machine readable data, a class called UserIntent
+4. The arguments in UserIntent that the LLM gives are not neccesarily the exact arguments needed by Exact API. Rather its the arguments that are the easyest and fault-proof for the LLM to give. 
+---- up till here its not Exact Specifix, except for the ExactToolbox
+5.  The UserIntent arguments are reformatted to the rigtht Exact API args. This is done by code. 
+6. UserIntent is then executed, calling the tool with the reformatted arguments. This leads to a API call and chat reply. 
 
-### 2. Django Setup
 
-```bash
-# Run migrations
-python3 manage.py migrate
 
-# Create superuser for admin access
-python3 manage.py createsuperuser
+# Vision
 
-# Start development server
-python3 manage.py runserver
-```
+An organisation exists out of people, but also out of the digital information that administers the running of the organisation. 
 
-### 3. Configure Exact Online App
+A major part of the work that is done by the organisational professional staff, is to manage and analyse this information. Often this work requires specialised roles, such as data analysts, financial controllers, clerks and BI developers. Their role is to analyse and present the information from the ERP programs into understandable chunks for management and organisational decision making. 
 
-1. Visit Exact Online App Center: `https://apps.exactonline.com/be/nl-BE/V2/Manage`
-2. Create a new app or use existing one
-3. Set the OAuth redirect URI to: `http://127.0.0.1:8000/oauth/callback/`
-4. Note your Client ID and Client Secret
-
-### 4. Set Environment Variables
-
-Create a `.env` file or set environment variables:
-
-```bash
-export EXACT_CLIENT_ID="your_client_id_here"
-export EXACT_CLIENT_SECRET="your_client_secret_here"
-export EXACT_COUNTRY="NL"  # Optional, defaults to NL
-export EXACT_REDIRECT_URI="http://127.0.0.1:8000/oauth/callback/"  # Optional
-```
-
-## Usage
-
-### Web Interface
-
-1. Visit the OAuth manager: `http://127.0.0.1:8000/oauth/`
-2. Click "Authorize Application" for your configured app
-3. Complete the OAuth flow in Exact Online
-4. Use the token to make API requests
-
-### Programmatic Usage
-
-```python
-from exact_oauth.services import get_service
-
-# Get service instance (user must be authenticated and have valid token)
-service = get_service(request.user)
-
-# Get accounts
-accounts_response = service.get_accounts(top=50)
-if accounts_response.status_code == 200:
-    accounts = accounts_response.json()
-
-# Get items
-items_response = service.get_items(top=100)
-if items_response.status_code == 200:
-    items = items_response.json()
-
-# Get sales invoices
-invoices_response = service.get_sales_invoices()
-if invoices_response.status_code == 200:
-    invoices = invoices_response.json()
-
-# Make custom API requests
-response = service.get('crm/Accounts', params={'$filter': 'Name eq \'Test\''})
-response = service.post('crm/Accounts', data={'Name': 'New Account'})
-response = service.put('crm/Accounts(guid\'123\')', data={'Name': 'Updated Account'})
-response = service.delete('crm/Accounts(guid\'123\')')
-```
-
-## API Endpoints
-
-- `GET /oauth/` - View OAuth status and manage authorization
-- `GET /oauth/authorize/` - Start OAuth authorization flow
-- `GET /oauth/callback/` - OAuth callback endpoint
-- `GET /oauth/refresh/` - Refresh token
-- `POST /oauth/revoke/` - Revoke token
-- `GET /oauth/test/` - Test API connection (JSON response)
-
-## Configuration
-
-### Settings
-
-The following settings can be configured in your Django settings:
-
-```python
-# Exact Online OAuth Configuration
-EXACT_OAUTH_SETTINGS = {
-    'DEFAULT_REDIRECT_URI': 'http://127.0.0.1:8000/oauth/callback/',
-    'TOKEN_REFRESH_THRESHOLD_MINUTES': 5,  # Refresh token when it expires within this time
-}
-
-# Login URLs for authentication
-LOGIN_URL = '/admin/login/'
-LOGIN_REDIRECT_URL = '/oauth/'
-LOGOUT_REDIRECT_URL = '/oauth/'
-```
-
-### Environment Variables
-
-For production, consider using environment variables:
-
-```bash
-# .env file
-EXACT_CLIENT_ID=your_client_id
-EXACT_CLIENT_SECRET=your_client_secret
-DJANGO_SECRET_KEY=your_django_secret_key
-```
-
-## Models
-
-### ExactOnlineApp
-Stores OAuth app configurations including client credentials and country settings.
-
-### ExactOnlineToken  
-Stores OAuth tokens for users, including access tokens, refresh tokens, and expiration info.
-
-### ExactOnlineAuthState
-Temporary storage for OAuth state parameters during the authorization flow.
-
-## Important Notes
-
-### Session Management
-
-#### Automatic Storage by Django
-
-**Client-side (User's browser):**
-- Django stores a session cookie (typically named `sessionid`) in the user's browser
-- This cookie contains the session key value
-- The browser automatically sends this cookie with each request
-
-**Server-side (Django):**
-- Django stores session data in the configured session backend (database, cache, etc.)
-- The session key maps to session data on the server
-
-#### User Experience
-
-From the user's perspective:
-1. They visit the application
-2. Django automatically creates a session and sets a cookie in their browser
-3. The session key is transparent to the user - they never see or handle it directly
-4. Their OAuth tokens are linked to this session key in the database
-
-The user only needs to keep their browser session active (don't clear cookies) to maintain access to their stored Exact Online tokens. If they clear cookies or use a different browser, they'll get a new session key and need to re-authorize with Exact Online.
-
-### Token Refresh Behavior
-- Exact Online tokens expire every 10 minutes
-- Refresh tokens are invalidated when used and replaced with new ones
-- The service automatically refreshes tokens when they're about to expire
-- Always update both access and refresh tokens when refreshing
-
-### Country-Specific URLs
-Different countries use different base URLs:
-- Netherlands: `https://start.exactonline.nl`
-- Belgium: `https://start.exactonline.be` 
-- UK: `https://start.exactonline.co.uk`
-- France: `https://start.exactonline.fr`
-- Germany: `https://start.exactonline.de`
-- US: `https://start.exactonline.com`
-
-### Security Considerations
-- Store client secrets securely
-- Use HTTPS in production
-- Implement proper session management
-- Monitor token usage and refresh patterns
-
-## Troubleshooting
-
-### Common Issues
-
-1. **"No valid token found"**
-   - Ensure the user has authorized the app
-   - Check if the token has expired
-   - Verify app configuration in admin
-
-2. **"Failed to refresh token"**
-   - Check client credentials
-   - Verify the app is still active in Exact Online
-   - Ensure the user hasn't revoked access
-
-3. **"Could not determine base server URI"**
-   - The initial API call to get user info failed
-   - Check token validity
-   - Verify network connectivity
-
-### Debug Mode
-
-Enable Django debug mode to see detailed error messages:
-
-```python
-# settings.py
-DEBUG = True
-```
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## License
-
-This project is licensed under the MIT License.
+You need specialised people for this because the interface, the point where humans retrieve this data and make it exlpainable, is closed off, hard to work with, disjointed or technically difficult. We rebuild this interface with LLMs, making it approachable and easy to work with for management and decision makers directly. 
