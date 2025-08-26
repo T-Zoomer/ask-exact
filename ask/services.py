@@ -327,12 +327,12 @@ exact_toolbox = ExactToolbox()
 
 
 # --------------------------
-# IntentFormer
+# IntentParser
 # --------------------------
 
 
 
-class IntentFormer:
+class IntentParser:
     """Parses user input into Intent objects using two-step LLM calls."""
 
     def __init__(self, openai_api_key: str, session_key: str):
@@ -398,8 +398,8 @@ Do not include any other text or explanation."""
             {"role": "user", "content": message}
         ]
         
-        print(f"🔍 IntentFormer: Step 1 - Determining tool for: {message}")
-        print(f"🛠️ IntentFormer: Loaded {len(available_tools)} available tools")
+        print(f"🔍 IntentParser: Step 1 - Determining tool for: {message}")
+        print(f"🛠️ IntentParser: Loaded {len(available_tools)} available tools")
         response = self.openai_client.chat.completions.create(
             model="gpt-4",
             messages=messages,
@@ -407,7 +407,7 @@ Do not include any other text or explanation."""
         )
         
         tool_call = response.choices[0].message.content.strip()
-        print(f"🛠️ IntentFormer: Selected tool: {tool_call}")
+        print(f"🛠️ IntentParser: Selected tool: {tool_call}")
         return tool_call
     
     def _determine_filters(self, message: str, tool_call: str) -> List[Filter]:
@@ -418,7 +418,14 @@ Do not include any other text or explanation."""
         print("FIELDS TEXT")
         print(tool_details)
         
+        # Get current date for context
+        current_date = datetime.now()
+        current_year = current_date.year
+        current_month = current_date.month
+        
         filter_system_prompt = f"""You are a filter generator for Exact Online API calls.
+
+Current date context: {current_date.strftime('%Y-%m-%d')} (Year: {current_year}, Month: {current_month})
 
 The user wants to call: {tool_call}
 
@@ -430,6 +437,20 @@ Available filter operators:
 - in (list of values)  
 - contains, startswith, endswith (text search)
 - is_null, is_not_null (null checks)
+
+IMPORTANT: Use the correct data types for field values based on the field definitions above:
+- Edm.Int16, Edm.Int32: Use integers (e.g., 2024, not "2024")  
+- Edm.Double: Use numbers (e.g., 100.50, not "100.50")
+- Edm.DateTime: Use ISO 8601 format (e.g., "2024-01-01T00:00:00Z")
+- Edm.Boolean: Use true/false (not "true"/"false")
+- Edm.Guid: Use string format (e.g., "12345678-1234-1234-1234-123456789abc")
+- Edm.String: Use string values
+- For relative dates, convert using current date context:
+  * "this year" → {current_year}
+  * "this month" → {current_month} 
+  * "last year" → {current_year - 1}
+  * "last month" → {current_month - 1} (handle year rollover appropriately)
+  * Example: FinancialYear should be {current_year}, not "this year"
 
 Analyze the user message and extract any filters they want to apply using the available fields.
 Only use field names that exist in the available fields list above.
@@ -447,9 +468,9 @@ Do not include any other text or explanation."""
             {"role": "user", "content": message}
         ]
         
-        print(f"🔧 IntentFormer: Step 2 - Determining filters for: {message}")
+        print(f"🔧 IntentParser: Step 2 - Determining filters for: {message}")
         field_count = len(tool_details.split('\n')) if tool_details != "No field information available for this endpoint." else 0
-        print(f"📊 IntentFormer: Loaded {field_count} fields for tool: {tool_call}")
+        print(f"📊 IntentParser: Loaded {field_count} fields for tool: {tool_call}")
         response = self.openai_client.chat.completions.create(
             model="gpt-4", 
             messages=messages,
@@ -457,7 +478,7 @@ Do not include any other text or explanation."""
         )
         
         response_content = response.choices[0].message.content.strip()
-        print(f"📋 IntentFormer: Raw filter response: {response_content}")
+        print(f"📋 IntentParser: Raw filter response: {response_content}")
         
         try:
             filter_data = json.loads(response_content)
@@ -469,10 +490,10 @@ Do not include any other text or explanation."""
                     value=f.get("value"),
                     values=f.get("values")
                 ))
-            print(f"🎯 IntentFormer: Parsed {len(filters)} filters")
+            print(f"🎯 IntentParser: Parsed {len(filters)} filters")
             return filters
         except (json.JSONDecodeError, ValueError, KeyError) as e:
-            print(f"❌ IntentFormer: Failed to parse filters: {e}")
+            print(f"❌ IntentParser: Failed to parse filters: {e}")
             return []
     
     def chat(self, message: str) -> str:
@@ -493,7 +514,7 @@ Do not include any other text or explanation."""
                 return "I couldn't understand what you want me to do. Please try rephrasing your request."
 
             # Execute the Intent
-            print(f"⚡ IntentFormer: Executing Intent...")
+            print(f"⚡ IntentParser: Executing Intent...")
             tool_result = exact_toolbox.execute_user_intent(
                 user_intent, self.session_key
             )
@@ -516,9 +537,9 @@ Do not include any other text or explanation."""
             )
 
             final_message = final_response.choices[0].message.content
-            print(f"📝 IntentFormer: Generated response, length: {len(final_message)}")
+            print(f"📝 IntentParser: Generated response, length: {len(final_message)}")
             return final_message
 
         except Exception as e:
-            print(f"❌ IntentFormer: Error processing request: {e}")
+            print(f"❌ IntentParser: Error processing request: {e}")
             return "I had trouble processing your request. Could you please try again?"

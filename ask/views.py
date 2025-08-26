@@ -92,10 +92,10 @@ def ai_chat(request):
             return JsonResponse({"error": "Invalid JSON"}, status=400)
 
         # Import and use the AI client
-        from .services import IntentFormer
+        from .services import IntentParser
 
         print(f"🚀 Django View: Creating AI client and processing request...")
-        client = IntentFormer(openai_api_key, session_key)
+        client = IntentParser(openai_api_key, session_key)
         response = client.chat(message)
 
         print(f"✅ Django View: Got AI response, length: {len(response)}")
@@ -110,7 +110,7 @@ def ai_chat(request):
 
 
 def test_intent(request):
-    """Test page for IntentFormer to see Intent objects."""
+    """Test page for IntentParser to see Intent objects."""
     import os
     import time
     
@@ -139,14 +139,14 @@ def test_intent(request):
             # Get session key (dummy for testing)
             session_key = "test_session"
             
-            # Import and create IntentFormer
-            from .services import IntentFormer
+            # Import and create IntentParser
+            from .services import IntentParser
             
             start_time = time.time()
-            intent_former = IntentFormer(openai_api_key, session_key)
+            intent_parser = IntentParser(openai_api_key, session_key)
             
             # Parse the intent
-            intent = intent_former.parse_intent(message)
+            intent = intent_parser.parse_intent(message)
             processing_time = int((time.time() - start_time) * 1000)
             
             # Create debug info

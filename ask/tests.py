@@ -128,7 +128,7 @@ class AIChatViewTestCase(TestCase):
         self.assertIn("error", data)
         self.assertIn("required", data["error"].lower())
 
-    @patch("ask.services.IntentFormer")
+    @patch("ask.services.IntentParser")
     @patch.dict("os.environ", {"OPENAI_API_KEY": "fake-key"})
     def test_ai_chat_success(self, mock_client_class):
         """Test successful AI chat."""
