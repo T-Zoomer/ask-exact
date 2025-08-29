@@ -1,3 +1,144 @@
 {% extends 'base.html' %}
 
 {% block title %}Home - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto py-8 px-4">
+    <h1 class="text-3xl font-bold text-gray-900 mb-8">Ask Exact</h1>
+    
+    <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
+        <h2 class="text-xl font-semibold text-gray-900 mb-4">Chat with your Exact Online data</h2>
+        
+        <form method="post" class="space-y-4">
+            {% csrf_token %}
+            <div>
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+                    Ask a question about your business data:
+                </label>
+                <textarea 
+                    name="message" 
+                    id="message" 
+                    rows="3" 
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="e.g., Show me profit and loss for this year"
+                >{{ chat_result.message|default:"" }}</textarea>
+            </div>
+            <button 
+                type="submit" 
+                class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            >
+                Parse Intent & Execute
+            </button>
+        </form>
+    </div>
+    
+    {% if chat_result %}
+    <div class="bg-gray-50 shadow-lg rounded-lg p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Result</h3>
+        
+        {% if chat_result.error %}
+        <div class="space-y-6">
+            <!-- Question -->
+            <div>
+                <h4 class="text-lg font-medium text-gray-900 mb-2">Question:</h4>
+                <p class="text-gray-700 bg-white p-4 rounded border">{{ chat_result.message }}</p>
+            </div>
+            
+            <!-- Parsed Intent (show even on error) -->
+            {% if chat_result.intent %}
+            <div>
+                <h4 class="text-lg font-medium text-gray-900 mb-2">Parsed Intent:</h4>
+                <div class="bg-white p-4 rounded border">
+                    <div class="space-y-2">
+                        <p><span class="font-medium">Tool:</span> <code class="bg-gray-100 px-2 py-1 rounded text-sm">{{ chat_result.intent.tool_call }}</code></p>
+                        <p><span class="font-medium">Description:</span> {{ chat_result.intent.description }}</p>
+                        {% if chat_result.intent.filters %}
+                        <p><span class="font-medium">Filters:</span></p>
+                        <div class="ml-4 space-y-1">
+                            {% for filter in chat_result.intent.filters %}
+                            <p class="text-sm"><code class="bg-gray-100 px-2 py-1 rounded">{{ filter.field }} {{ filter.op }} {{ filter.value|default:filter.values }}</code></p>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        {% if chat_result.intent.odata_filter %}
+                        <p><span class="font-medium">OData Filter:</span> <code class="bg-gray-100 px-2 py-1 rounded text-sm">{{ chat_result.intent.odata_filter }}</code></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            
+            <!-- Error Message -->
+            <div class="bg-red-50 border border-red-200 rounded-md p-4">
+                <p class="text-red-800">{{ chat_result.error }}</p>
+            </div>
+        </div>
+        {% else %}
+        <div class="space-y-6">
+            <!-- Question -->
+            <div>
+                <h4 class="text-lg font-medium text-gray-900 mb-2">Question:</h4>
+                <p class="text-gray-700 bg-white p-4 rounded border">{{ chat_result.message }}</p>
+            </div>
+            
+            <!-- Parsed Intent -->
+            {% if chat_result.intent %}
+            <div>
+                <h4 class="text-lg font-medium text-gray-900 mb-2">Parsed Intent:</h4>
+                <div class="bg-white p-4 rounded border">
+                    <div class="space-y-2">
+                        <p><span class="font-medium">Tool:</span> <code class="bg-gray-100 px-2 py-1 rounded text-sm">{{ chat_result.intent.tool_call }}</code></p>
+                        <p><span class="font-medium">Description:</span> {{ chat_result.intent.description }}</p>
+                        {% if chat_result.intent.filters %}
+                        <p><span class="font-medium">Filters:</span></p>
+                        <div class="ml-4 space-y-1">
+                            {% for filter in chat_result.intent.filters %}
+                            <p class="text-sm"><code class="bg-gray-100 px-2 py-1 rounded">{{ filter.field }} {{ filter.op }} {{ filter.value|default:filter.values }}</code></p>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        {% if chat_result.intent.odata_filter %}
+                        <p><span class="font-medium">OData Filter:</span> <code class="bg-gray-100 px-2 py-1 rounded text-sm">{{ chat_result.intent.odata_filter }}</code></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            
+            <!-- API Execution Result -->
+            {% if chat_result.api_result %}
+            <div>
+                <h4 class="text-lg font-medium text-gray-900 mb-2">API Execution Result:</h4>
+                <div class="bg-white p-4 rounded border">
+                    {% if chat_result.api_result.success %}
+                    <div class="flex items-center mb-2">
+                        <span class="inline-block w-3 h-3 bg-green-500 rounded-full mr-2"></span>
+                        <span class="text-green-700 font-medium">Success</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-2">Endpoint: {{ chat_result.api_result.endpoint }}</p>
+                    {% if chat_result.api_result.filters_applied %}
+                    <p class="text-sm text-gray-600 mb-2">✓ Filters applied</p>
+                    {% endif %}
+                    {% else %}
+                    <div class="flex items-center mb-2">
+                        <span class="inline-block w-3 h-3 bg-red-500 rounded-full mr-2"></span>
+                        <span class="text-red-700 font-medium">Failed</span>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+            
+            <!-- Raw API Data -->
+            {% if chat_result.api_result_json %}
+            <div>
+                <h4 class="text-lg font-medium text-gray-900 mb-2">Raw Data from Exact Online:</h4>
+                <pre class="bg-black text-green-400 p-4 rounded text-xs overflow-auto max-h-96 font-mono">{{ chat_result.api_result_json }}</pre>
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -37,8 +37,12 @@
                 <p class="mb-4">Token expires on {{ token.expires_at|date:"Y-m-d H:i:s" }} UTC</p>
             {% endif %}
             
-            {% if token.division %}
-                <p class="mb-4"><strong>Division:</strong> {{ token.division }}</p>
+            {% if token.current_division %}
+                <p class="mb-2"><strong>Division:</strong> {{ token.current_division }}</p>
+            {% endif %}
+            
+            {% if token.refresh_token_created_at %}
+                <p class="mb-4"><strong>Refresh token created:</strong> {{ token.refresh_token_created_at|date:"Y-m-d H:i:s" }} UTC</p>
             {% endif %}
             
             <div class="flex gap-3">

@@ -41,6 +41,7 @@ class ExactOnlineToken(models.Model):
     refresh_token = models.TextField()
     token_type = models.CharField(max_length=50, default="Bearer")
     expires_at = models.DateTimeField(null=True)
+    refresh_token_created_at = models.DateTimeField(null=True)
     current_division = models.IntegerField(null=True, blank=True)
     base_server_uri = models.URLField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -59,6 +60,7 @@ class ExactOnlineToken(models.Model):
     def expires_soon(self, minutes=5):
         return timezone.now() + timedelta(minutes=minutes) >= self.expires_at
 
+
     def set_token_data(self, token_data):
         self.access_token = token_data.get("access_token", "")
         self.refresh_token = token_data.get("refresh_token", "")
@@ -66,6 +68,9 @@ class ExactOnlineToken(models.Model):
 
         expires_in = token_data.get("expires_in", 600)  # Default 10 minutes
         self.expires_at = timezone.now() + timedelta(seconds=int(expires_in))
+        
+        # Track when refresh token was created/updated
+        self.refresh_token_created_at = timezone.now()
 
         self.save()
 

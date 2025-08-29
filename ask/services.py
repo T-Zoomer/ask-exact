@@ -6,6 +6,14 @@ from typing import Any, Dict, List, Optional, Union
 from datetime import date, datetime
 from openai import OpenAI
 from exact_oauth.services import get_service
+from django.conf import settings
+
+# Load the tool documentation globally
+config_path = os.path.join(
+    os.path.dirname(os.path.dirname(__file__)), "exact_specs", "api_specs", "cleaned", "TOOL_DOCUMENTATION.json"
+)
+with open(config_path, "r") as f:
+    TOOL_DOCS = json.load(f)
 
 
 # --------------------------
@@ -94,8 +102,64 @@ class Intent:
     def from_json(cls, json_str: str) -> "Intent":
         return cls.from_dict(json.loads(json_str))
 
-    def is_valid(self) -> bool:
-        return bool(self.tool_call and self.description)
+
+    def validate(self, tool_config: Dict[str, Any] = None) -> Optional[Dict[str, Any]]:
+        """
+        Validate the intent against available tools and fields.
+        
+        Args:
+            tool_config: Optional tool configuration dict, uses global TOOL_CONFIG if not provided
+        
+        Returns:
+            Error dict if validation fails, None if valid
+        """
+        if tool_config is None:
+            tool_config = TOOL_DOCS
+        
+        # Validate tool_call
+        if not self.tool_call:
+            return {"error": "Intent is missing tool_call"}
+        
+        if not self.tool_call.startswith("get_"):
+            return {"error": f"Invalid tool call format: {self.tool_call}. Must start with 'get_'"}
+        
+        # Check if tool exists
+        endpoint_key = self.tool_call[4:]  # Remove 'get_' prefix
+        available_tools = [f"get_{key.lower()}" for key in tool_config.keys()]
+        
+        if self.tool_call not in available_tools:
+            return {
+                "error": f"Tool '{self.tool_call}' not found. Available tools are: {', '.join(available_tools)}",
+                "available_tools": available_tools,
+                "requested_tool": self.tool_call
+            }
+        
+        # Find endpoint config for field validation
+        endpoint_config = None
+        for key, config in TOOL_CONFIG.items():
+            if key.lower() == endpoint_key.lower():
+                endpoint_config = config
+                break
+        
+        # Validate filter fields
+        if self.filters and endpoint_config:
+            available_fields = endpoint_config.get("fields", {})
+            available_field_names = set(available_fields.keys())
+            
+            invalid_fields = []
+            for filter_obj in self.filters:
+                if filter_obj.field not in available_field_names:
+                    invalid_fields.append(filter_obj.field)
+            
+            if invalid_fields:
+                return {
+                    "error": f"Invalid field name(s): {', '.join(invalid_fields)}. Available fields for this endpoint are: {', '.join(sorted(available_field_names))}",
+                    "invalid_fields": invalid_fields,
+                    "available_fields": sorted(available_field_names),
+                    "endpoint": endpoint_config.get("name", "unknown")
+                }
+        
+        return None
 
     def to_odata(self) -> str:
         """
@@ -106,6 +170,7 @@ class Intent:
             return ""
         parts = [self._render_filter(f) for f in self.filters]
         return " and ".join(f"({p})" for p in parts)
+
 
     def _render_filter(self, f: Filter) -> str:
         def _q(value: Primitive) -> str:
@@ -140,12 +205,6 @@ class Intent:
 # ExactToolbox
 # --------------------------
 
-# Load the tool configuration
-config_path = os.path.join(
-    os.path.dirname(os.path.dirname(__file__)), "exact_specs", "api_specs", "cleaned", "TOOL_DOCUMENTATION.json"
-)
-with open(config_path, "r") as f:
-    TOOL_CONFIG = json.load(f)
 
 
 class ExactToolbox:
@@ -159,7 +218,7 @@ class ExactToolbox:
         tools = []
 
         # Generate tools for each API endpoint
-        for endpoint_name, endpoint_config in TOOL_CONFIG.items():
+        for endpoint_name, endpoint_config in TOOL_DOCS.items():
             fields = endpoint_config.get('fields')
             documentation = endpoint_config.get('documentation')
             description = documentation.get('llm_description')
@@ -184,8 +243,8 @@ class ExactToolbox:
             for tool in self.tools
         ]
     
-    def get_endpoint_details_for_llm(self, tool_name: str) -> str:
-        """Get endpoint details including documentation and fields for LLM consumption."""
+    def get_tool_details_for_llm(self, tool_name: str) -> str:
+        """Get endpoint details for a single tool including documentation and fields for LLM consumption."""
         # Find the tool by name
         for tool in self.tools:
             if tool["name"] == tool_name:
@@ -214,111 +273,83 @@ class ExactToolbox:
                 return "\n\n".join(result_parts)
         
         return "Tool not found."
+    
 
-    def execute_tool(
-        self, function_name: str, arguments: Dict[str, Any], session_key: str
-    ) -> Dict[str, Any]:
-        """Execute a tool and return the result."""
-        print(
-            f"🔧 Tool Registry: Executing tool '{function_name}' with args: {arguments}"
-        )
-
-        try:
-            if function_name.startswith("get_"):
-                # Extract endpoint name from function name
-                endpoint_name = function_name[4:]  # Remove "get_" prefix
-                print(f"📡 Tool Registry: Looking for endpoint '{endpoint_name}'")
-                # Find the original endpoint name (case-sensitive)
-                for name in TOOL_CONFIG.keys():
-                    if name.lower() == endpoint_name:
-                        print(
-                            f"✅ Tool Registry: Found endpoint '{name}', calling API..."
-                        )
-                        return self._call_exact_api(name, arguments, session_key)
-                raise ValueError(f"Unknown endpoint: {endpoint_name}")
-            else:
-                raise ValueError(f"Unknown function: {function_name}")
-
-        except Exception as e:
-            print(f"❌ Tool Registry: Error executing '{function_name}': {str(e)}")
-            return {"error": str(e), "function": function_name}
-
-    def execute_user_intent(self, user_intent, session_key: str) -> Dict[str, Any]:
-        """Execute an Intent by calling the specified tool with arguments."""
-        if not user_intent.is_valid():
-            raise ValueError(f"Intent is not valid: missing tool_call or description")
-
-        print(
-            f"🎯 ExactToolbox: Executing Intent '{user_intent.tool_call}' - {user_intent.description}"
-        )
-        print(f"🔧 ExactToolbox: Filters: {user_intent.filters}")
-
-        try:
-            # Convert filters to arguments for the tool
-            arguments = (
-                {"filter": user_intent.to_odata()} if user_intent.filters else {}
-            )
-            result = self.execute_tool(user_intent.tool_call, arguments, session_key)
-            print(
-                f"✅ ExactToolbox: Successfully executed Intent '{user_intent.tool_call}'"
-            )
-            return result
-        except Exception as e:
-            print(
-                f"❌ ExactToolbox: Failed to execute Intent '{user_intent.tool_call}': {e}"
-            )
-            raise ValueError(f"Intent execution failed: {e}")
-
-    def _call_exact_api(
-        self, endpoint_name: str, arguments: Dict[str, Any], session_key: str
-    ) -> Dict[str, Any]:
-        """Call the Exact Online API via the service."""
-        endpoint_config = TOOL_CONFIG[endpoint_name]
+    def execute(self, intent: Intent, session_key: str) -> Dict[str, Any]:
+        """
+        Execute user intent by calling the appropriate tool and corresponding API.
         
-        # Get the API path from documentation
-        endpoint_info = endpoint_config.get('documentation', {}).get('endpoint_info', {})
-        uri = endpoint_info.get('uri', f'/api/v1/{{division}}/{endpoint_name}')
+        Args:
+            intent: Intent object containing tool_call, description, and filters
+            session_key: Django session key for Exact Online authentication
+            
+        Returns:
+            Dict containing API response data
+        """
+        # Validate intent first
+        validation_error = intent.validate()
+        if validation_error:
+            return validation_error
         
-        # Get the API path (remove base URL and division placeholder)
-        path = uri.split("/{division}/")[-1]
-        print(f"🌐 Tool Registry: API path: {path}")
-
-        # Build query parameters
-        params = {}
-        for key, value in arguments.items():
-            if value is not None:
-                if key == "filter":
-                    params["$filter"] = value
-                elif key == "select":
-                    params["$select"] = value
-                elif key == "orderby":
-                    params["$orderby"] = value
-                elif key == "top":
-                    params["$top"] = value
-                elif key == "skip":
-                    params["$skip"] = value
-
-        print(f"🔗 Tool Registry: Query params: {params}")
-
-        # Use the Exact Online service
-        print(f"🔑 Tool Registry: Getting service for session: {session_key[:8]}...")
-        service = get_service(session_key)
-
-        print(f"📞 Tool Registry: Making API call to: {path}")
-        response = service.get(path, params=params)
-
-        print(f"📨 Tool Registry: API response status: {response.status_code}")
-        if response.status_code == 200:
-            data = response.json()
-            result_count = (
-                len(data.get("d", {}).get("results", [])) if "d" in data else 0
-            )
-            print(f"✅ Tool Registry: Successfully retrieved {result_count} records")
-            return data
+        endpoint_key = intent.tool_call[4:]  # Remove 'get_' prefix
+        
+        # Find the endpoint configuration (should exist after validation)
+        endpoint_config = None
+        for key, config in TOOL_DOCS.items():
+            if key.lower() == endpoint_key.lower():
+                endpoint_config = config
+                break
+        
+        # Get the API URI from documentation
+        documentation = endpoint_config.get("documentation", {})
+        endpoint_info = documentation.get("endpoint_info", {})
+        api_uri = endpoint_info.get("uri")
+        
+        if not api_uri:
+            return {"error": f"API URI not found for endpoint: {endpoint_key}"}
+        
+        # Remove the /api/v1/{division}/ prefix since ExactOnlineService adds it
+        if api_uri.startswith("/api/v1/{division}/"):
+            api_endpoint = api_uri[len("/api/v1/{division}/"):]
         else:
-            error_msg = f"API call failed: {response.status_code} - {response.text}"
-            print(f"❌ Tool Registry: {error_msg}")
-            raise Exception(error_msg)
+            api_endpoint = api_uri.lstrip("/")
+        
+        try:
+            # Get ExactOnline service instance
+            service = get_service(session_key)
+            
+            # Build query parameters from intent filters
+            params = {}
+            if intent.filters:
+                odata_filter = intent.to_odata()
+                if odata_filter:
+                    params["$filter"] = odata_filter
+            
+            # Make the API call
+            response = service.get(api_endpoint, params=params)
+            
+            if response.status_code == 200:
+                data = response.json()
+                return {
+                    "success": True,
+                    "data": data,
+                    "intent": intent.to_dict(),
+                    "endpoint": api_endpoint,
+                    "filters_applied": len(intent.filters) > 0
+                }
+            else:
+                return {
+                    "error": f"API call failed with status {response.status_code}",
+                    "details": response.text,
+                    "endpoint": api_endpoint
+                }
+                
+        except Exception as e:
+            return {
+                "error": f"Execution failed: {str(e)}",
+                "intent": intent.to_dict(),
+                "endpoint": api_endpoint if 'api_endpoint' in locals() else None
+            }
 
 
 
@@ -335,16 +366,15 @@ exact_toolbox = ExactToolbox()
 class IntentParser:
     """Parses user input into Intent objects using two-step LLM calls."""
 
-    def __init__(self, openai_api_key: str, session_key: str):
+    def __init__(self):
         """
         Initialize the AI client.
-
-        Args:
-            openai_api_key: OpenAI API key
-            session_key: Django session key for Exact Online authentication
         """
+        openai_api_key = getattr(settings, 'OPENAI_API_KEY', None)
+        if not openai_api_key:
+            raise ValueError("OPENAI_API_KEY not configured in settings")
+        
         self.openai_client = OpenAI(api_key=openai_api_key)
-        self.session_key = session_key
         self.conversation_history = []
 
     def parse_intent(self, message: str) -> Intent:
@@ -413,11 +443,8 @@ Do not include any other text or explanation."""
     def _determine_filters(self, message: str, tool_call: str) -> List[Filter]:
         """Second LLM call to determine filters based on the message and selected tool."""
         # Get formatted endpoint details from toolbox
-        tool_details = exact_toolbox.get_endpoint_details_for_llm(tool_call)
+        tool_details = exact_toolbox.get_tool_details_for_llm(tool_call)
 
-        print("FIELDS TEXT")
-        print(tool_details)
-        
         # Get current date for context
         current_date = datetime.now()
         current_year = current_date.year
@@ -495,51 +522,3 @@ Do not include any other text or explanation."""
         except (json.JSONDecodeError, ValueError, KeyError) as e:
             print(f"❌ IntentParser: Failed to parse filters: {e}")
             return []
-    
-    def chat(self, message: str) -> str:
-        """
-        Chat interface that uses the two-step Intent parsing approach.
-        
-        Args:
-            message: User message
-            
-        Returns:
-            AI response
-        """
-        try:
-            # Parse user input into Intent using two-step approach
-            user_intent = self.parse_intent(message)
-            
-            if not user_intent.is_valid():
-                return "I couldn't understand what you want me to do. Please try rephrasing your request."
-
-            # Execute the Intent
-            print(f"⚡ IntentParser: Executing Intent...")
-            tool_result = exact_toolbox.execute_user_intent(
-                user_intent, self.session_key
-            )
-
-            # Generate a human-friendly response based on the result
-            response_messages = [
-                {
-                    "role": "system", 
-                    "content": "You are a helpful assistant that explains API results in a friendly way. Format the data nicely for the user.",
-                },
-                {"role": "user", "content": f"The user asked: {message}"},
-                {
-                    "role": "user",
-                    "content": f"Here's the API result: {json.dumps(tool_result)[:2000]}",
-                },
-            ]
-
-            final_response = self.openai_client.chat.completions.create(
-                model="gpt-4", messages=response_messages
-            )
-
-            final_message = final_response.choices[0].message.content
-            print(f"📝 IntentParser: Generated response, length: {len(final_message)}")
-            return final_message
-
-        except Exception as e:
-            print(f"❌ IntentParser: Error processing request: {e}")
-            return "I had trouble processing your request. Could you please try again?"

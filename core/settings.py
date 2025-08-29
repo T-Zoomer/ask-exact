@@ -138,3 +138,6 @@ EXACT_OAUTH_SETTINGS = {
 LOGIN_URL = "/admin/login/"
 LOGIN_REDIRECT_URL = "/oauth/"
 LOGOUT_REDIRECT_URL = "/oauth/"
+
+# OpenAI API Configuration
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
