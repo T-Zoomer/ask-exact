@@ -5,3 +5,4 @@
 - Don't keep code to maintain backwards compatibility. I don't care about backwards compatability.
 - Use Tailwind CSS loaded through script tag in base.html
 - Use github for version control and automatically updating my deployment enviroment
+- We are building an MVP. Keep it simple.

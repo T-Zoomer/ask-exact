@@ -1,0 +1,99 @@
+<!-- User Message -->
+<div class="flex items-start space-x-3 justify-end">
+    <div class="bg-blue-600 text-white rounded-lg p-3 max-w-xs lg:max-w-md">
+        <p class="text-sm">{{ user_message }}</p>
+    </div>
+    <div class="flex-shrink-0">
+        <div class="w-8 h-8 bg-gray-400 rounded-full flex items-center justify-center">
+            <span class="text-white text-xs font-bold">U</span>
+        </div>
+    </div>
+</div>
+
+<!-- AI Response -->
+<div class="flex items-start space-x-3">
+    <div class="flex-shrink-0">
+        <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+            <span class="text-white text-xs font-bold">AI</span>
+        </div>
+    </div>
+    <div class="max-w-xs lg:max-w-md">
+        {% if error %}
+            <!-- Error Response -->
+            <div class="bg-red-100 border border-red-300 rounded-lg p-3 mb-2">
+                <div class="flex items-center mb-2">
+                    <svg class="w-4 h-4 text-red-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-sm font-medium text-red-800">Error</span>
+                </div>
+                <p class="text-sm text-red-700">{{ error }}</p>
+            </div>
+        {% else %}
+            <!-- Success Response -->
+            <div class="bg-gray-100 rounded-lg p-3 mb-2">
+                <div class="flex items-center mb-2">
+                    <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-sm font-medium text-gray-800">Found Data</span>
+                </div>
+                
+                {% if intent %}
+                <div class="text-xs text-gray-600 mb-2">
+                    <span class="font-medium">Tool:</span> <code class="bg-gray-200 px-1 rounded">{{ intent.tool_call }}</code>
+                    {% if intent.filters %}
+                    <br><span class="font-medium">Filters:</span> {{ intent.filters|length }} applied
+                    {% endif %}
+                </div>
+                {% endif %}
+                
+                {% if api_result.success and api_result.data.value %}
+                <div class="text-sm text-gray-800 mb-2">
+                    Found <strong>{{ api_result.data.value|length }}</strong> record{{ api_result.data.value|length|pluralize }}.
+                </div>
+                
+                <!-- Show first few records in a nice format -->
+                {% if api_result.data.value %}
+                <div class="space-y-2">
+                    {% for record in api_result.data.value|slice:":3" %}
+                    <div class="bg-white rounded p-2 text-xs border">
+                        {% for key, value in record.items %}
+                            {% if forloop.counter <= 5 %}
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">{{ key }}:</span>
+                                <span class="font-mono">{{ value|truncatechars:30 }}</span>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                        {% if record.items|length > 5 %}
+                        <div class="text-gray-500 text-center mt-1">... and {{ record.items|length|add:"-5" }} more field{{ record.items|length|add:"-5"|pluralize }}</div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                    
+                    {% if api_result.data.value|length > 3 %}
+                    <div class="text-center text-gray-500 text-xs">
+                        ... and {{ api_result.data.value|length|add:"-3" }} more record{{ api_result.data.value|length|add:"-3"|pluralize }}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+                
+                <!-- Show raw data button -->
+                <button 
+                    class="text-xs text-blue-600 hover:text-blue-800 mt-2 underline"
+                    onclick="this.nextElementSibling.classList.toggle('hidden')"
+                >
+                    View Raw JSON Data
+                </button>
+                <div class="hidden mt-2">
+                    <pre class="bg-black text-green-400 p-2 rounded text-xs overflow-auto max-h-40 font-mono">{{ api_result_json }}</pre>
+                </div>
+                {% else %}
+                <p class="text-sm text-gray-600">No data returned from the API.</p>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+</div>
